@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 ali novejši",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Podpora za starejše brskalnike",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Pot do nadomestnega brskalnika",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Pot do nadomestnega brskalnika",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Določite izvedljivo datoteko nadomestnega brskalnika.\nOmogoča izbiro programa, ki se uporabi kot nadomestni brskalnik.\n\nČe je pravilnik omogočen, lahko v njem določite absolutno pot ali uporabite eno od teh spremenljivk:\n\n$${ie} – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Internet Explorerja\n(HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE).\n$${firefox}  – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Firefoxa (HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE).\n$${safari}  – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Safarija (HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE).\n\nČe ta pravilnik ni omogočen ali je prazen, se uporabi privzeti nadomestni brskalnik Internet Explorer, ki je določen, kot da bi bila uporabljena vrednost $${ie}.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Argumenti za nadomestni brskalnik",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Argumenti za nadomestni brskalnik",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Omogoča, da določite argumente, ki se pošljejo izvedljivi datoteki nadomestnega brskalnika.\n\nČe je pravilnik omogočen, se navedeni parametri uporabijo, kadar se zažene nadomestni brskalnik.\n\nUporabite lahko tudi posebni nadomestni znak $${url}, da določite, kje v ukazni vrstici naj se pojavi URL. Primer: »--url=$${url} --kiosk«.\nČe je nadomestni znak dodan na konec ali če je edini argument, vam ga ni treba določiti in lahko pravilnik pustite prazen.\n\nČe je pravilnik onemogočen ali prazen, se brskalniku kot parameter pošlje samo URL.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Pot do Chroma",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Pot do Chroma",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Omogoča izbiro Chromove izvedljive datoteke, ki se zažene pri vrnitvi iz nadomestnega brskalnika (*).\n\nČe je pravilnik omogočen, lahko v njem določite absolutno pot ali uporabite to spremenljivko:\n\n$${chrome} – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Chroma (HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE).\n\nČe je pravilnik onemogočen ali prazen, se uporabi privzeta namestitev Chroma, kot da bi bila uporabljena vrednost $${chrome}.\n\n*: Trenutno podpira samodejno vrnitev v Chrome samo Internet Explorer.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Argumenti za Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Argumenti za Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Omogoča, da določite argumente, ki se posredujejo Chromu, kadar se zažene.\n\nČe je pravilnik omogočen, se navedeni parametri uporabijo, kadar se zažene Chrome.\n\nUporabite lahko tudi posebni nadomestni znak $${url}, da določite, kje v ukazni vrstici naj se pojavi URL. Primer: »--url=$${url} --kiosk«.\nČe je nadomestni znak dodan na konec ali če je edini argument, vam ga ni treba določiti in lahko pravilnik pustite prazen.\n\nČe je pravilnik onemogočen ali prazen, se brskalniku kot parameter pošlje samo URL.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Gostitelji za odpiranje v nadomestnem brskalniku",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Gostitelji za odpiranje v nadomestnem brskalniku",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Omogoča, da določite seznam z imeni domen gostiteljev, ki se odprejo v nadomestnem brskalniku.\n\nČe je pravilnik omogočen, morate navesti seznam filtrov, ki sprožijo prehod na nadomestni brskalnik. Vsak vnos mora biti ena od teh vrst:\n\nDel z imenom gostitelja: določiti je treba celotna imena domen, na primer »www.example.com«, oziroma njihove dele, na primer »example.com« ali celo »example«. Nadomestni znaki še niso podprti.\nPredpona URL-ja: samo pravilne predpone URL-jev se v celoti ujemajo s protokolom in vrati, če je treba. Na primer »http://login.example.com« ali »https://www.example.com:8080/login/«.\nNegativni vnos: začne se z »!« in konča z delom z imenom gostitelja ali predpono URL-ja, kot je opisano zgoraj. Negativni vnosi se vedno odprejo v Chromu. Npr. »!example.com« ali »!file:///c:/localapp/«.\nVnos nadomestnega znaka: vsebuje samo en znak »*«. Ujema se s poljubnim URL-jem. Namenjen uporabi skupaj z negativnimi vnosi, če se naj večina URL-jev odpira v nadomestnem brskalniku in samo določeno število v Chromu.\n\nNegativni vnosi imajo višje prednosti kot pozitivni, kar pomeni, da lahko na seznam dovoljenih daste velik del domene, manjše razdelke pa prihranite za odpiranje v Chromu.\nMorebitni vnos nadomestnega znaka se uporabi šele, ko so bila preverjena vsa druga pravila.\n\nPreusmerjanje se nadzoruje pri teh protokolih: http:, https:.\n\nČe ni navedeno ali je prazno, se prehod na nadomestni brskalnik ne sproži.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Gostitelji za odpiranje v poljubnem brskalniku",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Gostitelji za odpiranje v poljubnem brskalniku",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Omogoča, da določite seznam z imeni domen gostiteljev, ki se odprejo v obeh brskalnikih.\n\nČe je pravilnik omogočen, so domene na seznamu na voljo obema brskalnikoma in ne sprožijo prehoda v nobeno smer.\n\nUporablja se lahko za domene za preverjanje pristnosti, ki jih skupaj uporabljajo nove in starejše aplikacije s tega seznama.\n\nDeli imen gostiteljev: določiti je treba celotna imena domen, na primer »www.example.com«, oziroma njihove dele, na primer »example.com« ali celo »example«. Nadomestni znaki še niso podprti.\nPredpone URL-jev: samo pravilne predpone URL-jev se v celoti ujemajo s protokolom in vrati, če je treba. Na primer »http://login.example.com« ali »https://www.example.com:8080/login/«.\n\nČe pravilnik ni določen ali je prazen, sprožijo domene, ki niso na seznamu »Gostitelji za odpiranje v nadomestnem brskalniku«, prehod na Chrome (*).\n\n(*) Samodejno vrnitev v Chrome trenutno podpira samo Internet Explorer.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Ohranjanje zadnjega Chromovega zavihka pri prehodu",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Ohranjanje zadnjega Chromovega zavihka pri prehodu",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Omogoča, da določite, kaj se zgodi, ko se zadnji zavihek, odprt v Chromu, preusmerja na nadomestni brskalnik.\n\nČe je ta pravilnik omogočen ali ni nastavljen, zadnji zavihek ostane odprt in po prehodu kaže na stran za nov zavihek. Če je onemogočen, se zapre zadnji zavihek, kar pomeni, da se zapre tudi Chrome, če ni odprtih nobenih drugih Chromovih oken.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

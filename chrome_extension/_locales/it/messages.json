@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "Legacy Browser Support",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "Distribuisci Chrome per la tua organizzazione supportando al contempo i browser precedenti.",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "Apertura nel browser alternativo in corso...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "Impossibile aprire il browser alternativo",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "L'amministratore di sistema ha configurato Chrome per l'apertura di un browser alternativo per accedere a <strong>$url$</strong>.",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "Rivolgiti al tuo amministratore di sistema.",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "<strong>$url$</strong> non può essere aperto a causa di un errore di configurazione del protocollo. Rivolgiti al tuo amministratore di sistema.",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "Leggi <a href='https://www.google.com/intl/it/chrome/business/'>ulteriori informazioni</a> sul supporto dei browser precedenti.",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "תמיכה בדפדפן מדור קודם",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "פרוס את Chrome בארגון שלך תוך תמיכה בדפדפנים מדור קודם.",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "פותח בדפדפן חלופי...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "לא ניתן היה לפתוח את הדפדפן החלופי",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "מנהל המערכת שלך הגדיר ש-Chrome יפתח דפדפן חלופי כדי לגשת ל<strong>‏$url$</strong>.",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "צור קשר עם מנהל המערכת שלך.",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "לא ניתן לפתוח את <strong>‏$url$</strong> בשל שגיאה בתצורת פרוטוקול. צור קשר עם מנהל המערכת שלך.",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "<'/‏‎‏‎a href='https://www.google.com/intl/iw/chrome/business‎>למידע נוסף</a> על תמיכה בדפדפנים מדור קודם.",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

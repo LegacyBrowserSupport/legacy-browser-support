@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2013 Google Inc.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+    WiX configuration for the Legacy Browser Support BHO Installer.
+-->
+
+<Include>
+  <!-- Text valid for all languages, ALREADY_UPGRADED is not normally visible. -->
+  <?define COMPANY_NAME="Google" ?>
+  <?define COMPANY_FULLNAME="Google Inc" ?>
+  <?define INSTALL_DIR="Legacy Browser Support" ?>
+  <?define ALREADY_UPGRADED="This product has already been installed." ?>
+  <?define URL="http://www.google.com/intl/en/chrome/business/" ?>
+
+
+  <!-- GUIDs -->
+  <?define GUID_PRODUCT="*" ?>
+  <?define GUID_UPGRADE_CODE="{8A896484-1142-4653-911E-B14D5830B180}" ?>
+  <?define GUID_LIBRARY="{7D7BEC19-57EE-41C9-9FEE-63A873363614}" ?>
+  <?define GUID_BHO_INTERFACE="{68CB9FDF-5E2E-41D7-A906-EF6C58AF0429}" ?>
+  <?define GUID_BHO="{08B5789A-BD8E-4DAE-85DF-EF792C658B86}" ?>
+  <?define GUID_OMAHA="{00EBA25B-97AB-475A-BD68-C3B6C9E94260}" ?>
+  <?define GUID_COMPONENT="{EE74537B-F977-4E41-859B-B7FAD8F56FE1}" ?>
+  <?define GUID_COMPONENT64="{BD8C0450-2AE8-49D4-857A-E8F5A9EF22EC}" ?>
+  <?define GUID_TYPELIB="{E042FD04-3D7E-4A3A-9B9E-D4D9C70B4484}" ?>
+</Include>

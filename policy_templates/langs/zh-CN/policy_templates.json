@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 或更高版本",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "旧版浏览器支持",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "备用浏览器路径",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "备用浏览器路径",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "指定备用浏览器的可执行文件。\n允许您指定将哪个程序用作备用浏览器。\n\n启用后，您可以在此政策中指定绝对路径，也可以使用以下某个变量：\n\n$${ie} - Internet Explorer 的默认安装位置\n在本例中，使用 HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE 选择浏览器的安装位置。\n$${firefox} - Firefox 的默认安装位置\n在本例中，使用 HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE 选择浏览器的安装位置。\n$${safari} - Safari 的默认安装位置\n在本例中，使用 HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE 选择浏览器的安装位置。\n\n如果不启用此政策或将其留空，则默认使用 Internet Explorer 作为备用浏览器，也就是相当于选用 $${ie} 值。",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "备用浏览器参数",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "备用浏览器参数",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "允许您指定要传递给备用浏览器的可执行文件的参数。\n\n启用此政策后，系统在调用备用浏览器时会使用提供的参数。\n\n您也可以使用特殊占位符 $${url} 指定该网址应出现在命令行中的哪个位置，例如“--url=$${url} --kiosk”。\n如果该占位符应当附在末尾，那么您无需指定它；如果该占位符应当是唯一的参数，那么您可将此政策留空。\n\n如果停用此政策或将其留空，则系统只会将该网址作为参数传递给浏览器。",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Chrome 路径",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Chrome 路径",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "允许您指定从备用浏览器(*)返回后要启动的 Chrome 可执行文件。\n\n启用此政策后，您可以在此政策中指定绝对路径，也可以使用以下变量：\n\n$${chrome} - Chrome 的默认安装位置\n在本例中，使用 HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE 选择浏览器的安装位置。\n\n如果停用此政策或将其留空，系统将会使用 Chrome 的默认安装路径，也就是相当于选用 $${chrome} 值。\n\n*：目前只有 Internet Explorer 支持自动返回到 Chrome。",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Chrome 参数",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Chrome 参数",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "允许您指定要在执行 Chrome 时向其传递的参数。\n\n启用此政策后，系统在调用 Chrome 时会使用提供的参数。\n\n您也可以使用特殊占位符 $${url} 指定网址应出现在命令行中的哪个位置，例如“--url=$${url} --kiosk”。\n如果该占位符应当附在末尾，那么您无需指定它；如果该占位符应当是唯一的参数，那么您可将此政策留空。\n\n如果停用此政策或将其留空，则系统只会将该网址作为参数传递给浏览器。",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "在备用浏览器中打开的主机",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "在备用浏览器中打开的主机",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "允许您指定要在备用浏览器中打开的主机域名列表。\n\n启用此政策后，您必须提供一份列表，在其中列出将触发向备用浏览器转换的过滤器。该列表中的每个条目均应为下列四种类型之一：\n\n主机名部分：可指定完整域名（如“www.example.com”），也可指定域名的部分内容（如“example.com”，甚至是“example”）。目前尚不支持通配符。\n网址前缀：只有指定了协议的网址前缀才算完整，必要时还应加上端口。例如，“http://login.example.com”或“https://www.example.com:8080/login/”。\n否定条目：以“!”开头，后跟上述的主机名部分或网址前缀。否定条目一律在 Chrome 中打开。例如，“!example.com”或“!file:///c:/localapp/”。\n通配符条目：仅包含一个“*”字符。匹配任意网址。旨在与否定条目一起使用，前提是大多数网址应在备用浏览器中打开，而只有少数网址应在 Chrome 中打开。\n\n否定条目的优先级高于肯定条目。因此，系统会将相应域名的大部分内容列入白名单，同时只保存它们的小部分内容，以便在 Chrome 中打开这些域名。\n只有当所有其他规则都已被选中之后，通配符条目（如果有）才会被应用。\n\n系统会对下列协议实施监控，以了解其是否会重定向：http:、https:。\n\n如果未指定该列表或将此政策留空，则不会触发向备用浏览器转换。",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "在任一浏览器中打开的主机",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "在任一浏览器中打开的主机",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "允许您指定可在任一浏览器中打开的主机域名列表。\n\n启用此政策后，该列表中的域名在两种浏览器中均可访问，而且无论使用哪一种都不会触发转换。\n\n一个可能的用例就是该列表中由新版应用和旧版应用共享的任何身份验证域名。\n\n主机名部分：可指定完整域名（如“www.example.com”），也可指定域名的部分内容（如“example.com”，甚至是“example”）。目前尚不支持通配符。\n网址前缀：只有指定了协议的网址前缀才算完整，必要时还应加上端口。例如，“http://login.example.com”或“https://www.example.com:8080/login/”。\n\n如果未指定该列表或将此政策留空，那么“在备用浏览器中打开的主机”列表中未列出的任何域名都会触发返回到 Chrome(*) 的转换。\n\n*：目前只有 Internet Explorer 支持自动返回到 Chrome。",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "让最后一个 Chrome 标签页在转换时保持打开状态",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "让最后一个 Chrome 标签页在转换时保持打开状态",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "允许您指定在最后一个打开的 Chrome 标签页重定向到备用浏览器时会出现什么情况。\n\n如果启用了或未设置此政策，最后一个标签页将在转换后保持打开状态并指向新标签页。如果停用了此政策，那么最后一个标签页将被关闭，这将导致 Chrome 也被关闭（如果不存在其他任何打开的 Chrome 窗口）。",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

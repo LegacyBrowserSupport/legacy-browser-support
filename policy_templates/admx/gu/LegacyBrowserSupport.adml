@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+      <string id="KeepLastChromeTab_Policy">છેલ્લા Chrome ટેબને સંક્રમણ પર રાખો</string>
+      <string id="ChromeArguments_Explain">જ્યારે Chrome નો અમલ કરવામાં આવેલો હોય ત્યારે તેના પર પસાર કરવા માટેની દલીલોનો ઉલ્લેખ કરવાની તમને મંજૂરી આપે છે.
+
+જો નીતિ સક્ષમ હોય, તો જ્યારે Chrome થરૂ કર્યું હોય ત્યારે પ્રદાન કરેલા પેરામીટર્સનો ઉપયોગ થશે.
+
+કમાન્ડ લાઇનમાં url ક્યાં દેખાવું જોઈએ તેનો ઉલ્લેખ કરવા માટે તમે વિશેષ પ્લેસહોલ્ડર ${url} નો ઉપયોગ પણ કરી શકો છો. ઉદા.ત. "--url=${url} --કિઓસ્ક".
+તમારે પ્લેસહોલ્ડરનો ઉલ્લેખ કરવાનો રહેતો નથી જો તે સમાપ્તિ પર જોડાયેલું હોવું જોઈએ અથવા તે માત્ર દલીલ હોવું જોઈએ, તમે નીતિને ખાલી છોડી શકો છો.
+
+જો નીતિ અક્ષમ હોય અથવા ખાલી છોડેલી હોય, તો માત્ર url ને બ્રાઉઝર પર પેરામીટર તરીકે પસાર કરવામાં આવશે.</string>
+      <string id="AlternativeBrowserArguments">વૈકલ્પિક બ્રાઉઝર દલીલો</string>
+      <string id="ChromeArguments">Chrome દલીલો</string>
+      <string id="Cat_Google">Google</string>
+      <string id="AlternativeBrowserPath_Part">વૈકલ્પિક બ્રાઉઝર પાથ</string>
+      <string id="URLList_Part">વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટેના હોસ્ટ્સ</string>
+      <string id="KeepLastChromeTab_Explain">જ્યારે Chrome માં છેલ્લે ખોલેલ ટેબને વૈકલ્પિક બ્રાઉઝરમાં રીડાયરેક્ટ કરવામાં આવે ત્યારે શું થાય તેનો ઉલ્લેખ કરવાની તમને મંજૂરી આપે છે.
+
+જ્યારે આ નીતિ સક્ષમ કરેલ હોય અથવા સેટ કરેલ ન હોય ત્યારે, છેલ્લું ટેબ ખુલ્લું રહેશે અને સંક્રમણ પછી નવા ટેબ પૃષ્ઠ પર જશે. જો તે અક્ષમ કરેલ પર સેટ છે, તો પછી છેલ્લું ટેબ બંધ થઈ જશે જેના લીધે જો કોઈ અન્ય Chrome વિંડોઝ ખુલ્લી નહીં હોય તો Chrome બંધ થઈ જશે.</string>
+      <string id="SUPPORTED_WINXPSP2">Microsoft Windows XP SP2 અથવા તે પછીનું</string>
+      <string id="AlternativeBrowserPath">વૈકલ્પિક બ્રાઉઝર પાથ</string>
+      <string id="AlternativeBrowserPath_Explain">અમલીકરણયોગ્ય વૈકલ્પિક બ્રાઉઝરનો ઉલ્લેખ કરો.
+તમને વૈકલ્પિક બ્રાઉઝર તરીકે ઉપયોગ કરવા માટેના પ્રોગ્રામનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.
+
+જો સક્ષમ હોય, તો તમે નીતિમાં કોઈ ચોક્કસ પાથનો ઉલ્લેખ કરી શકો છો અથવા નીચેના ચલમાંથી એકનો ઉપયોગ કરી શકો છો:
+
+${ie} - Internet Explorer માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\IEXPLORE.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.
+${firefox} - Firefox માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\FIREFOX.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.
+${safari} - Safari માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\SAFARI.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.
+
+જો નીતિ સક્ષમ ન હોય અથવા ખાલી છોડેલી હોય, તો ડિફોલ્ટ વૈકલ્પિક બ્રાઉઝરનો ઉપયોગ થશે જે Internet Explorer છે જે ${ie} મૂલ્યનો ઉપયોગ થવા પર નિર્ધારિત થાય છે.</string>
+      <string id="URLList_Explain">તમને વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટેના હોસ્ટ ડોમેન નામોની સૂચિનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.
+
+જો નીતિ સક્ષમ કરેલ છે તો તમારે વૈકલ્પિક બ્રાઉઝર પર સંક્રમણ ટ્રિગર કરશે તે ફિલ્ટર્સની સૂચિ પ્રદાન કરવાની રહે છે. દરેક એન્ટ્રી નીચેના ચાર પ્રકારો પૈકી એક હોવી જોઈએ:
+
+હોસ્ટ-નામનો ભાગ: ક્યાં તો ડોમેનના પૂરા નામ જેમ કે "www.example.com" ઉલ્લેખિત હોવા જોઈએ અથવા તેમાંના ભાગો જેમ કે "example.com: અથવા માત્ર "example". વાઇલ્ડકાર્ડ્સ હજી સુધી સમર્થિત નથી.
+URL ઉપસર્ગ: જો જરૂરી હોય તો ફક્ત યોગ્ય URL ઉપસર્ગો પ્રોટોકોલ અને પોર્ટ સાથે પૂર્ણ મેળ ખાય છે. ઉદા., "http://login.example.com" અથવા "https://www.example.com:8080/login/".
+નકારાત્મક એન્ટ્રી: "!" સાથે શરૂ થાય છે અને ઉપર વર્ણવ્યાં મુજબ હોસ્ટ-નામ ભાગ અથવા URL ઉપસર્ગ તરીકે ચાલુ રહે છે. નકારાત્મક એન્ટ્રીઓ હંમેશાં Chrome માં ખોલવામાં આવે છે. દા.ત. "!example.com" અથવા "!file:///c:/localapp/".
+વાઇલ્ડકાર્ડ એન્ટ્રી: ફક્ત એકલ "*" અક્ષર ધરાવે છે. કોઈપણ URL થી મેળ ખાય છે. જો મોટાભાગના URL વૈકલ્પિક બ્રાઉઝરમાં ખોલવાના હોય અને ફક્ત URL ની એક નાની પસંદગી Chrome માં ખોલવાની હોય તો નકારાત્મક એન્ટ્રીઓની સાથે એકસાથે ઉપયોગમાં લેવા માટે ઇચ્છિત.
+
+Chrome માં ખોલવા માટેના નાના વિભાગોને સાચવતી વખતે ડોમેનના મોટા ભાગોને વ્હાઇટલિસ્ટ કરવાની મંજૂરી આપે છે તે સકારાત્મક એન્ટ્રીઓ કરતાં નકારાત્મક એન્ટ્રીઓની ઉચ્ચ પ્રાધાન્યતાઓ હોય છે.
+જો હાજર હોય તો વાઇલ્ડકાર્ડ એન્ટ્રી બધા અન્ય નિયમો તપાસવામાં આવે તે પછી જ લાગુ થાય છે.
+
+રીડાયરેક્ટ કરવા માટે નીચેના પ્રોટોકૉલ્સ મૉનિટર થાય છે: http:, https:.
+
+જો ઉલ્લેખિત ન હોય અથવા ખાલી છોડેલ હોય તો - વૈકલ્પિક બ્રાઉઝર પર કોઈ સંક્રમણ ટ્રિગર થશે નહીં.</string>
+      <string id="ChromePath_Explain">વૈકલ્પિક બ્રાઉઝર(*)માંથી પાછા ફરતી વખતે લોંચ થવા માટે તમને Chrome ના અમલીકરણયોગ્યનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.
+
+જ્યારે નીતિ સક્ષમ હોય ત્યારે તમે નીતિમાં ચોક્કસ પાથનો ઉલ્લેખ કરી શકો છો અથવા નીચેના ચલમાંથી એકનો ઉપયોગ કરી શકો છો:
+
+${chrome} - Chrome માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\Chrome.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.
+
+જો નીતિ અક્ષમ હોય અથવા ખાલી છોડેલી હોય, તો Chrome ના ડિફોલ્ટ ઇન્સ્ટોલેશનનો ઉપયોગ થશે જો ${chrome} મૂલ્યનો ઉપયોગ કરવામાં આવ્યો હોય.
+
+*: હાલમાં ફક્ત Internet Explorer જ આપમેળે Chrome પર પાછા ફરવાનું સમર્થન કરે છે.</string>
+      <string id="Cat_LegacyBrowserSupport">લેગસી બ્રાઉઝર સમર્થન</string>
+      <string id="AlternativeBrowserArguments_Part">વૈકલ્પિક બ્રાઉઝર દલીલો</string>
+      <string id="URLGreyList_Part">કોઈપણ બ્રાઉઝરમાં ખોલવા માટેના હોસ્ટ્સ</string>
+      <string id="URLGreyList_Policy">કોઈપણ બ્રાઉઝરમાં ખોલવા માટેના હોસ્ટ્સ</string>
+      <string id="URLList_Policy">વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટેના હોસ્ટ્સ</string>
+      <string id="ChromePath">Chrome પાથ</string>
+      <string id="ChromeArguments_Part">Chrome દલીલો</string>
+      <string id="KeepLastChromeTab_Part">છેલ્લા Chrome ટેબને સંક્રમણ પર રાખો</string>
+      <string id="AlternativeBrowserArguments_Explain">અમલીકરણયોગ્ય વૈકલ્પિક બ્રાઉઝર પર પસાર કરવા માટેની દલીલોનો ઉલ્લેખ કરવાની તમને મંજૂરી આપે છે.
+
+જો નીતિ સક્ષમ હોય, તો જ્યારે વૈકલ્પિક બ્રાઉઝર થરૂ કર્યું હોય ત્યારે પ્રદાન કરેલા પેરામીટર્સનો ઉપયોગ થશે.
+
+કમાન્ડ લાઇનમાં url ક્યાં દેખાવું જોઈએ તેનો ઉલ્લેખ કરવા માટે તમે વિશેષ પ્લેસહોલ્ડર ${url} નો ઉપયોગ પણ કરી શકો છો. ઉદા.ત. "--url=${url} --કિઓસ્ક".
+તમારે પ્લેસહોલ્ડરનો ઉલ્લેખ કરવાનો રહેતો નથી જો તે સમાપ્તિ પર જોડાયેલું હોવું જોઈએ અથવા તે માત્ર દલીલ હોવું જોઈએ, તમે નીતિને ખાલી છોડી શકો છો.
+
+જો નીતિ અક્ષમ હોય અથવા ખાલી છોડેલી હોય, તો માત્ર url ને બ્રાઉઝર પર પેરામીટર તરીકે પસાર કરવામાં આવશે.</string>
+      <string id="URLGreyList_Explain">કોઈપણ બ્રાઉઝરમાં ખોલવા માટે તમને હોસ્ટ ડોમેન નામોની એક સૂચિનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.
+
+જ્યારે આ નીતિ સક્ષમ હોય, ત્યારે આ સૂચિમાંના ડોમેન્સ બંને બ્રાઉઝરમાં ઉપલબ્ધ હશે અને કોઈપણ રીતે કોઈ સંક્રમણને ટ્રિગર કરશે નહીં.
+
+એક સંભવિત ઉપયોગ કેસ એ કોઈપણ પ્રમાણીકરણ ડોમેન્સ છે કે જેને આ સૂચિમાં નવી અને લેગસી એપ્લિકેશન્સ વચ્ચે શેર કરેલા છે. 
+
+હોસ્ટ-નામના ભાગો: ક્યાં તો ડોમેનના પૂરા નામ જેમ કે "www.example.com" ઉલ્લેખિત હોવા જોઈએ અથવા તેમાંના ભાગો જેમ કે "example.com: અથવા માત્ર "example". હજી સુધી વાઇલ્ડ કાર્ડ્સને સમર્થન નથી.
+URL ઉપસર્ગો: જો જરૂરી હોય તો ફક્ત યોગ્ય URL ઉપસર્ગો પ્રોટોકોલ અને પોર્ટ સાથે પૂર્ણ મેળ ખાય છે. ઉદા., "http://login.example.com" અથવા "https://www.example.com:8080/login/".
+
+જો ઉલ્લેખ કરેલ ન હોય અથવા ખાલી છોડેલું હોય - તો "વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટેનાં હોસ્ટ્સ'' સૂચિમાં ન હોય તે કોઈપણ ડોમેન સંક્રમણને પાછું Chrome(*) પર ટ્રિગર કરશે.
+
+*: હાલમાં ફક્ત Internet Explorer જ આપમેળે Chrome પર પાછા ફરવાને સમર્થન કરે છે.</string>
+      <string id="ChromePath_Part">Chrome પાથ</string>
+</stringTable>
+  <presentationTable>
+    <presentation id="AlternativeBrowserPath">
+      <textBox refId="AlternativeBrowserPath_Part">
+        <label>વૈકલ્પિક બ્રાઉઝર પાથ</label>
+        <defaultValue></defaultValue>
+      </textBox>
+    </presentation>
+    <presentation id="AlternativeBrowserArguments">
+      <textBox refId="AlternativeBrowserArguments_Part">
+        <label>વૈકલ્પિક બ્રાઉઝર દલીલો</label>
+        <defaultValue></defaultValue>
+      </textBox>
+    </presentation>
+    <presentation id="ChromePath">
+      <textBox refId="ChromePath_Part">
+        <label>Chrome પાથ</label>
+        <defaultValue></defaultValue>
+      </textBox>
+    </presentation>
+    <presentation id="ChromeArguments">
+      <textBox refId="ChromeArguments_Part">
+        <label>Chrome દલીલો</label>
+        <defaultValue></defaultValue>
+      </textBox>
+    </presentation>
+    <presentation id="URLList_Policy">
+      <listBox refId="URLList_Part">વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટેના હોસ્ટ્સ</listBox>
+    </presentation>
+    <presentation id="URLGreyList_Policy">
+      <listBox refId="URLGreyList_Part">કોઈપણ બ્રાઉઝરમાં ખોલવા માટેના હોસ્ટ્સ</listBox>
+    </presentation>
+    <presentation id="KeepLastChromeTab_Policy"/>
+  </presentationTable>
+</resources>
+</policyDefinitionResources>

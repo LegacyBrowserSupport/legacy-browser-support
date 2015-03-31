@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "Uwezo wa kutumia Kivinjari Kilichopitwa.",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "Anza kutumia Chrome katika shirika lako huku ukiweza kutumia vivinjari vilivyopitwa na wakati.",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "Inafungua katika kivinjari mbadala...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "Kivinjari mbadala hakikuweza kufunguliwa",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "Msimamizi wako wa mfumo amesanidi Chrome ili iweze kufungua kivinjari mbadala ili kufikia <strong>$url$</strong>.",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "Wasiliana na msimamizi wako wa mfumo.",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "<strong>$url$</strong> haikuweza kufunguliwa kutokana na hitilafu ya itifaki. Tafadhali wasiliana na msimamizi wako wa mfumo.",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "<a href='https://www.google.com/intl/en/chrome/business/'>Pata maelezo zaidi</a> kuhusu uwezo wa kutumia kivinjari kilichopitwa na wakati.",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

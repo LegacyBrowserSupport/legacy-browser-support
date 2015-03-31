@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP z dodatkiem SP2 lub nowszy",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Obsługa starszych przeglądarek",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Ścieżka alternatywnej przeglądarki",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Ścieżka alternatywnej przeglądarki",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Określ plik wykonywalny alternatywnej przeglądarki.\nPozwala określić program, który będzie używany jako alternatywna przeglądarka.\n\nJeśli ta zasada jest włączona, możesz podać w niej ścieżkę bezwzględną lub użyć jednej z tych zmiennych:\n\n$${ie} – domyślna lokalizacja, w której jest zainstalowany Internet Explorer.\nW tym przypadku do wskazania lokalizacji przeglądarki jest używany ten wpis w rejestrze: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE.\n$${firefox} – domyślna lokalizacja, w której jest zainstalowany Firefox.\nW tym przypadku do wskazania lokalizacji przeglądarki jest używany ten wpis w rejestrze: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE.\n$${safari} – domyślna lokalizacja, w której jest zainstalowany Safari.\nW tym przypadku do wskazania lokalizacji przeglądarki jest używany ten wpis w rejestrze:\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE.\n\nJeśli zasada nie będzie włączona lub pozostanie pusta, zostanie użyta domyślna przeglądarka alternatywna – czyli Internet Explorer przy założeniu, że podano wartość $${ie}.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Argumenty alternatywnej przeglądarki",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Argumenty alternatywnej przeglądarki",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Pozwala określić argumenty, które zostaną przekazane do pliku wykonywalnego alternatywnej przeglądarki.\n\nJeśli ta zasada będzie włączona, podane parametry zostaną użyte w momencie wywołania alternatywnej przeglądarki.\n\nMożesz też wstawić specjalny symbol zastępczy $${url}, by określić, gdzie powinien pojawić się URL w wierszu polecenia. Przykład: „--url=$${url} --kiosk”.\nNie musisz podawać tego symbolu zastępczego, jeśli ma zostać wstawiony na końcu lub ma być jedynym argumentem – zasada może wtedy pozostać pusta.\n\nJeśli ta zasada będzie wyłączona lub pusta, jedynym parametrem przekazanym do przeglądarki będzie URL.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Ścieżka Chrome",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Ścieżka Chrome",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Pozwala określić plik wykonywalny Chrome, który zostanie otwarty po powrocie z alternatywnej przeglądarki*.\n\nKiedy ta zasada jest włączona, możesz podać w niej ścieżkę bezwzględną lub użyć tej zmiennej:\n\n$${chrome} – domyślna lokalizacja, w której jest zainstalowany Chrome.\nW tym przypadku do wskazania lokalizacji przeglądarki jest używany ten wpis w rejestrze: HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE.\n\nJeśli ta zasada będzie wyłączona lub pusta, zostanie użyta domyślna instalacja Chrome – tak jakby była podana wartość $${chrome}.\n\n* Obecnie tylko Internet Explorer obsługuje automatyczny powrót do Chrome.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Argumenty Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Argumenty Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Pozwala określić argumenty, które zostaną przekazane do Chrome w momencie jego uruchomienia.\n\nJeśli ta zasada będzie włączona, podane parametry zostaną użyte w momencie wywołania Chrome.\n\nMożesz też wstawić specjalny symbol zastępczy $${url}, by określić, gdzie powinien pojawić się URL w wierszu polecenia. Przykład: „--url=$${url} --kiosk”.\nNie musisz podawać tego symbolu zastępczego, jeśli ma zostać wstawiony na końcu lub ma być jedynym argumentem – zasada może wtedy pozostać pusta.\n\nJeśli ta zasada będzie wyłączona lub pusta, jedynym parametrem przekazanym do przeglądarki będzie URL.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Hosty, które zostaną otwarte w alternatywnej przeglądarce",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Hosty, które zostaną otwarte w alternatywnej przeglądarce",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Pozwala określić listę nazw domen, które zostaną otwarte w alternatywnej przeglądarce.\n\nJeśli ta zasada jest włączona, musisz podać listę filtrów, które uruchomią przejście na alternatywną przeglądarkę. Każdy wpis powinien należeć do jednego z tych czterech typów:\n\nNazwa hosta – mogą to być pełne nazwy domen (np. „www.example.com”) lub ich fragmenty (np. „example.com”, a nawet samo „example”). Symbole wieloznaczne nie są jeszcze obsługiwane.\nPrefiks URL – można podać tylko właściwe przedrostki URL, w razie potrzeby wraz z protokołem lub portem (np. „http://login.example.com” lub „https://www.example.com:8080/login/”).\nWpis ujemny – zaczyna się od „!” i w dalszej części zawiera nazwę hosta lub prefiks URL (jak opisano wyżej). Wpisy ujemne są zawsze otwierane w Chrome. Przykład: „!example.com” lub „!file:///c:/localapp/”.\nWpis zawierający symbol wieloznaczny – zawiera tylko pojedynczy znak „*”. Pasuje do każdego URL-a. Jest przeznaczony do użycia z wpisami ujemnymi, w przypadku, gdy większość URL-i ma zostać otwarta w alternatywnej przeglądarce, a tylko niektóre z nich w Chrome.\n\nWpisy ujemne mają wyższy priorytet niż dodatnie, co pozwala dodać do białej listy duże części domeny, podczas gdy jej mniejsze części są otwierane w Chrome.\nWpis zawierający symbol wieloznaczny (jeśli jest obecny) jest używany tylko wtedy, gdy wszystkie pozostałe zasady zostały sprawdzone.\n\nOto protokoły monitorowane pod kątem przekierowania: http:, https:.\n\nJeśli ta zasada nie jest określona lub pozostaje pusta, przejście na alternatywną przeglądarkę nie zostanie uruchomione.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Hosty, które zostaną otwarte w jednej z przeglądarek",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Hosty, które zostaną otwarte w jednej z przeglądarek",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Pozwala określić listę nazw domen, które zostaną otwarte w jednej z przeglądarek.\n\nKiedy ta zasada jest włączona, domeny na tej liście będą dostępne w obu przeglądarkach i nie spowoduje to przełączenia na inną przeglądarkę.\n\nMożliwe przypadki zastosowania dotyczą domen uwierzytelniania, które są używane jednocześnie przez nowsze i starsze aplikacje z listy.\n\nNazwy hostów – mogą to być pełne nazwy domen (np. „www.example.com”) lub ich fragmenty (np. „example.com”, a nawet samo „example”). Symbole wieloznaczne nie są jeszcze obsługiwane.\nPrefiksy URL – można podać tylko właściwe prefiksy URL, w razie potrzeby wraz z protokołem lub portem (np. „http://login.example.com” lub „https://www.example.com:8080/login/”).\n\nJeśli domeny nie zostaną określone lub zasada pozostanie pusta, każda domena spoza listy „Hosty, które zostaną otwarte w alternatywnej przeglądarce” spowoduje powrót do Chrome*.\n\n* Obecnie tylko Internet Explorer obsługuje automatyczny powrót do Chrome.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Podczas przejścia zachowaj ostatnio otwartą kartę Chrome",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Podczas przejścia zachowaj ostatnio otwartą kartę Chrome",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Pozwala określić, co się stanie, gdy ostatnia karta otwarta w Chrome zostanie przekierowana do alternatywnej przeglądarki.\n\nGdy ta zasada jest włączona lub nie jest ustawiona, ostatnia karta pozostanie otwarta i po przejściu będzie się odwoływać do strony nowej karty. Jeśli ta zasada jest wyłączona, ostatnia karta zostanie zamknięta, co spowoduje zamknięcie Chrome, jeśli żadne inne okna Chrome nie są otwarte.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

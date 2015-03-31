@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 o una versió posterior",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Compatibilitat del navegador heretat",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Camí del navegador alternatiu",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Camí del navegador alternatiu",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Especifiqueu l'executable del navegador alternatiu.\nUs permet especificar el programa que s'ha d'utilitzar com a navegador alternatiu.\n\nSi està activat, podeu especificar un camí absolut a la política o bé utilitzar una de les variables següents:\n\n$${ie}: La ubicació d'instal·lació predeterminada per a Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE s'utilitza per seleccionar la ubicació del navegador en aquest cas.\n$${firefox}: La ubicació d'instal·lació predeterminada per a Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE s'utilitza per seleccionar la ubicació del navegador en aquest cas.\n$${safari}: La ubicació d'instal·lació predeterminada per a Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE s'utilitza per seleccionar la ubicació del navegador en aquest cas.\n\nSi aquesta política no està activada o bé si es deixa buida, s'utilitzarà el navegador alternatiu predeterminat, que serà Internet Explorer si s'utilitza el valor $${ie}.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Arguments per al navegador alternatiu",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Arguments per al navegador alternatiu",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Us permet especificar els arguments que s'han de passar a l'executable del navegador alternatiu.\n\nSi la política està activada, els paràmetres proporcionats s'utilitzaran quan s'hagi cridat el navegador alternatiu.\n\nTambé podeu utilitzar el marcador de posició especial $${url} per especificar on ha d'aparèixer l'URL a la línia d'ordres, com ara \"--url=$${url} --kiosk\".\nNo cal que especifiqueu el marcador de posició si s'ha d'afegir al final o bé si ha de ser l'únic argument amb què podeu deixar la política buida.\n\nSi la política està desactivada o bé es deixa buida, només es passarà l'URL com a paràmetre al navegador.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Camí de Chrome",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Camí de Chrome",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Us permet especificar l'executable de Chrome que s'ha d'iniciar en tornar del navegador alternatiu(*).\n\nQuan la política està activada podeu especificar un camí absolut a la política o bé utilitzar la variable següent:\n\n$${chrome}: La ubicació d'instal·lació predeterminada per a Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE s'utilitza per seleccionar la ubicació del navegador en aquest cas.\n\nSi aquesta política no està activada o bé si es deixa buida, s'utilitzarà la instal·lació de Chrome predeterminada si s'utilitza el valor $${chrome}.\n\n*: En aquest moment només Internet Explorer admet tornar a Chrome automàticament.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Arguments de Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Arguments de Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Us permet especificar els arguments que s'han de passar a Chrome quan s'executa.\n\nSi la política està activada, els paràmetres proporcionats s'utilitzaran quan s'hagi cridat Chrome.\n\nTambé podeu utilitzar el marcador de posició especial $${url} per especificar on ha d'aparèixer l'URL a la línia d'ordres, com ara \"--url=$${url} --kiosk\".\nNo cal que especifiqueu el marcador de posició si s'ha d'afegir al final o bé si ha de ser l'únic argument amb què podeu deixar la política buida.\n\nSi la política està desactivada o bé es deixa buida, només es passarà l'URL com a paràmetre al navegador.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Amfitrions que s'obren al navegador alternatiu",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Amfitrions que s'obren al navegador alternatiu",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Us permet especificar una llista de noms del domini d'amfitrió perquè s'obrin al navegador alternatiu.\n\nSi la política està activada, heu de proporcionar una llista dels filtres que activaran la transició al navegador alternatiu. Les entrades han de ser d'un d'aquests tipus:\n\nPart nom-amfitrió: s'han d'especificar tant els noms de domini complets (per exemple, \"www.example.com\") com les parts de noms (per exemple, \"example.com\" o, fins i tot, \"example\"). Els comodins encara no s'admeten.\nPrefix d'URL: en cas necessari, només s'han de fer coincidir amb el protocol i el port els prefixos d'URL adequats. Per exemple, \"http://login.example.com\" o \"https://www.example.com:8080/login/\".\nEntrada negativa: comença per \"!\" i continua com la part nom-amfitrió o com el prefix d'URL descrits anteriorment. Les entrades negatives sempre s'obren a Chrome. Per exemple, \"!example.com\" o \"!file:///c:/localapp/\".\nEntrada comodí: només conté un caràcter \"*\". Coincideix amb qualsevol URL. Està concebuda per utilitzar-la juntament amb entrades negatives quan la majoria d'URL s'hagin d'obrir al navegador alternatiu i només una petita selecció d'URL s'hagin d'obrir a Chrome.\n\nLes entrades negatives tenen prioritats més altes que les positives, fet que permet afegir a la llista blanca porcions més grans d'un domini i alhora estalviar seccions més petites per obrir-les a Chrome.\nL'entrada comodí, si n'hi ha una, s'aplica només després que ja s'hagin comprovat la resta de regles.\n\nAquests protocols se supervisen per a la redirecció: http:, https:.\n\nSi no s'especifica res o l'opció es deixa buida, no s'activarà cap transició al navegador alternatiu.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Amfitrions que s'obren en qualsevol navegador",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Amfitrions que s'obren en qualsevol navegador",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Us permet especificar una llista de noms del domini d'amfitrió perquè s'obrin a qualsevol navegador.\n\nQuan aquesta política està activada, els dominis d'aquesta llista estaran disponibles als dos navegadors i no activaran cap transició en qualsevol cas.\n\nUn possible cas d'ús és qualsevol domini d'autenticació que es comparteixi entre les aplicacions noves i les heretades d'aquesta llista.\n\nParts de noms d'amfitrió: s'han d'especificar els noms dels dominis complets com ara \"www.example.com\" o bé parts dels dominis com ara \"example.com\" o fins i tot \"example\". Els comodins encara no s'admeten.\nPrefixos d'URL: només els prefixos d'URL correctes fan la coincidència completa amb el protocol i el port si és necessari; p. ex. \"http://login.example.com\" o bé \"https://www.example.com:8080/login/\".\n\nSi aquest paràmetre no s'especifica o bé es deixa buit, tots els dominis que no siguin a la llista \"Amfitrions que s'obren al navegador alternatiu\" activaran una transició que faci tornar a Chrome(*).\n\n*: En aquest moment només Internet Explorer admet tornar a Chrome automàticament.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Mantenir l'última pestanya de Chrome en transició",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Mantenir l'última pestanya de Chrome en transició",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Us permet especificar què passa quan es redirigeix al navegador alternatiu l'última pestanya oberta a Chrome.\n\nQuan aquesta política estigui activada o no se n'hagi definit cap, l'última pestanya es deixarà oberta i dirigirà a la pàgina de pestanya nova després de la transició. Si està definida com a desactivada, l'última pestanya es tancarà, fet que provocarà que es tanqui Chrome si no hi ha altres finestres de Chrome obertes.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

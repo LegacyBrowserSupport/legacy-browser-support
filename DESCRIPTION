@@ -1,0 +1,9 @@
+With this browser plugin you can choose whether to open particular web pages in
+IE or bounce the navigation request to Chrome. It is meant to be a companion to
+the Chrome Legacy Browser Support Extension to allow for seamless switching
+between Chrome and IE.
+
+The implementation is split into a core library used by all browser components,
+a Chrome extension with a corresponding native plugin and an Internet Explorer
+add-in to support the transition back to Chrome. Future extensions for further
+browsers are possible including Firefox and Opera.

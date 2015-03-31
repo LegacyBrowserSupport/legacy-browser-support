@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "Ondersteuning voor oudere browsers",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "Implementeer Chrome voor uw organisatie terwijl u oudere browsers blijft ondersteunen",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "Openen in alternatieve browser...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "De alternatieve browser kan niet worden geopend",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "Uw systeembeheerder heeft in Chrome geconfigureerd dat een alternatieve browser wordt gestart om <strong>$url$</strong> te openen.",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "Neem contact op met uw systeembeheerder.",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "<strong>$url$</strong> kan niet worden geopend vanwege een protocolconfiguratiefout. Neem contact op met uw systeembeheerder.",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "<a href='https://www.google.com/intl/nl/chrome/business/'>Meer informatie</a> over ondersteuning van oudere browsers.",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

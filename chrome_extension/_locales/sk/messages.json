@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "Podpora starších prehliadačov",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "Nasaďte vo svojej organizácii prehliadač Chrome a pritom zachovajte podporu starších prehliadačov.",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "Prebieha otváranie alternatívneho prehliadača...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "Alternatívny prehliadač sa nepodarilo otvoriť",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "Správca systému nakonfiguroval prehliadač Chrome tak, aby sa pri prístupe k adrese <strong>$url$</strong> otvoril alternatívny prehliadač.",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "Kontaktujte svojho správcu systému.",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "Adresu <strong>$url$</strong> nie je možné otvoriť z dôvodu chyby konfigurácie protokolu. Kontaktujte správcu systému.",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "<a href='https://www.google.com/intl/sk/chrome/business/'>Prečítajte si viac informácií</a> o podpore starších prehliadačov.",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

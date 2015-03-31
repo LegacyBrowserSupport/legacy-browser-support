@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "Dukungan Browser Lama",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "Menerapkan Chrome untuk organisasi Anda sembari mendukung browser lama.",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "Membuka di browser alternatif...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "Browser alternatif tidak dapat dibuka",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "Administrator sistem Anda telah mengonfigurasi Chrome untuk membuka browser alternatif guna mengakses <strong>$url$</strong>.",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "Hubungi administrator sistem Anda.",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "<strong>$url$</strong> tidak dapat dibuka karena kesalahan konfigurasi protokol. Hubungi administrator sistem Anda.",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "<a href='https://www.google.com/intl/id/chrome/business/'>Pelajari lebih lanjut</a> tentang dukungan browser lama.",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

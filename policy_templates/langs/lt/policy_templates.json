@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "„Microsoft Windows XP“ SP2 arba naujesnė versija",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Pasenusių naršyklių palaikymas",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Alternatyvios naršyklės kelias",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Alternatyvios naršyklės kelias",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Nurodykite alternatyvios naršyklės vykdomąjį failą.\nLeidžiama nurodyti programą, kuri naudojama kaip alternatyvi naršyklė.\n\nJei įgalinta, galite nurodyti absoliutųjį politikos kelią arba naudoti vieną iš šių kintamųjų:\n\n„$${ie}“ – numatytoji „Internet Explorer“ įdiegimo vieta\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE šiuo atveju naudojama naršyklės vietai parinkti.\n„$${firefox}“ – numatytoji „Firefox“ įdiegimo vieta\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE šiuo atveju naudojama naršyklės vietai parinkti.\n„$${safari}“ – numatytoji „Safari“ įdiegimo vieta\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE šiuo atveju naudojama naršyklės vietai parinkti.\n\nJei politika nėra įgalinta arba jos laukas paliktas tuščias, bus naudojama numatytoji alternatyvi naršyklė (nustatyta „Internet Explorer“, lyg būtų naudojama vertė „$${ie}“).",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Alternatyvios naršyklės argumentai",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Alternatyvios naršyklės argumentai",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Leidžiama nurodyti argumentus, skirtus perduoti į alternatyvios naršyklės vykdomąjį failą.\n\nJei politika įgalinta, iškvietus alternatyvią naršyklę bus naudojami pateikti parametrai.\n\nTaip pat galite naudoti specialią rezervuotą vietą „$${url}“, jei norite nurodyti, kurioje komandos eilutės vietoje turi būti URL. Pvz., „--url=$${url} --kiosk“.\nNeprivalote nurodyti rezervuotos vietos, jei ji turėtų būti pridėta prie pabaigos. Jei ji turėtų būti vienintelis argumentas, galite palikti tą politikos lauką tuščią.\n\nJei politika neleidžiama arba jos laukas paliktas tuščias, kaip parametras naršyklei perduodamas tik URL.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "„Chrome“ kelias",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "„Chrome“ kelias",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Leidžiama nurodyti „Chrome“ vykdomąjį failą, paleidžiamą, kai grįžtama iš alternatyvios naršyklės (*).\n\nKai politika įgalinta, galite nurodyti absoliutųjį politikos kelią arba naudoti šį kintamąjį:\n\n„$${chrome}“ – numatytoji „Chrome“ įdiegimo vieta\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE šiuo atveju naudojama naršyklės vietai parinkti.\n\nJei politika neleidžiama arba jos laukas paliktas tuščias, bus naudojama numatytoji „Chrome“ įdiegimo vieta, lyg būtų naudojama vertė „$${chrome}“.\n\n* Šiuo metu tik „Internet Explorer“ palaikomas automatinis grįžimas į „Chrome“.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "„Chrome“ argumentai",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "„Chrome“ argumentai",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Leidžiama nurodyti argumentus, skirtus perduoti į „Chrome“, kai ji vykdoma.\n\nJei politika įgalinta, iškvietus „Chrome“ bus naudojami pateikti parametrai.\n\nTaip pat galite naudoti specialią rezervuotą vietą „$${url}“, jei norite nurodyti, kurioje komandos eilutės vietoje turi būti URL. Pvz., „--url=$${url} --kiosk“.\nNeprivalote nurodyti rezervuotos vietos, jei ji turėtų būti pridėta prie pabaigos. Jei ji turėtų būti vienintelis argumentas, galite palikti tą politikos lauką tuščią.\n\nJei politika neleidžiama arba jos laukas paliktas tuščias, kaip parametras naršyklei perduodamas tik URL.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Prieglobos, skirtos atidaryti alternatyvioje naršyklėje",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Prieglobos, skirtos atidaryti alternatyvioje naršyklėje",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Leidžiama nurodyti prieglobų domenų, skirtų atidaryti alternatyvioje naršyklėje, pavadinimų sąrašą.\n\nJei politika įgalinta, turite pateikti filtrų, kurie suaktyvins perėjimą į alternatyvią naršyklę, sąrašą. Kiekvienas įrašas turi būti vieno iš nurodytų keturių tipų:\n\nPrieglobos pavadinimo dalis: turėtų būti nurodyti visi domenų pavadinimai, pavyzdžiui, „www.example.com“, arba jų dalys, pavyzdžiui, „example.com“ ar net „example“. Pakaitos simboliai dar nepalaikomi..\nURL priešdėlis: tik tinkami URL priešdėliai visiškai atitinka protokolą ir prievadą, jei reikia. Pvz., „http://login.example.com“ arba „https://www.example.com:8080/login/“.\nNeigiamas įrašas: prasideda simboliu „!“ ir toliau nurodomas kaip prieglobos pavadinimo dalis ar URL priešdėlis, kaip nurodyta anksčiau. Neigiami įrašai visada atidaromi „Chrome“ naršyklėje. Pvz., „!example.com“ arba „!file:///c:/localapp/“.\nPakaitos simbolio įrašas: apima tik vieną „*“ simbolį. Atitinka bet kurį URL. Skirtas naudoti su neigiamais įrašais, jei dauguma URL turi būti atidaryti alternatyvioje naršyklėje ir tik keli atrinkti URL turi būti atidaryti „Chrome“ naršyklėje.\n\nNeigiamiems įrašams suteikiami aukštesni prioritetai nei teigiamiems įrašams, todėl į baltąjį sąrašą galima įtraukti dideles domeno dalis, išsaugant mažesnes skiltis, kad būtų atidarytos „Chrome“.\nJei nurodytas pakaitos simbolio įrašas, jis taikomas tik patikrinus visas kitas taisykles.\n\nNurodyti protokolai stebimi peradresuojant: „http:“, „https:“.\n\nJei nenurodyta arba jei laukas paliktas tuščias, nesuaktyvinamas joks perėjimas į alternatyvią naršyklę.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Prieglobos, skirtos atidaryti bet kurioje naršyklėje",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Prieglobos, skirtos atidaryti bet kurioje naršyklėje",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Leidžiama nurodyti prieglobų domenų, skirtų atidaryti bet kurioje naršyklėje, pavadinimų sąrašą.\n\nKai ši politika įgalinta, šio sąrašo domenai bus pasiekiami abiejose naršyklėse ir taip pat nesuaktyvins perėjimo.\n\nGalimas naudojimo pavyzdys – visi šio sąrašo autentifikavimo domenai, kurie bendrinami naujose ir pasenusiose programose.\n\nPrieglobų pavadinimų dalys: turėtų būti nurodyti visi domenų pavadinimai, pavyzdžiui, „www.example.com“, arba jų dalys, pavyzdžiui, „example.com“ ar net „example“. Pakaitos simboliai dar nepalaikomi.\nURL priešdėliai: tik tinkami URL priešdėliai visiškai atitinka protokolą ir prievadą, jei reikia. Pvz., „http://login.example.com“ arba „https://www.example.com:8080/login/“.\n\nJei nenurodyta arba jei laukas paliktas tuščias, visi domenai, kurių nėra sąraše „Prieglobos, skirtos atidaryti alternatyvioje naršyklėje“, suaktyvins grįžimą į „Chrome“ (*).\n\n* Šiuo metu tik „Internet Explorer“ palaikomas automatinis grįžimas į „Chrome“.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Pereinant palikti paskutinį „Chrome“ skirtuką",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Pereinant palikti paskutinį „Chrome“ skirtuką",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Leidžiama nurodyti, kas nutinka, kai paskutinio atidaryto „Chrome“ skirtuko puslapis peradresuojamas į alternatyvią naršyklę.\n\nKai ši politika įgalinta arba nenustatyta, paskutinio skirtuko puslapis paliekamas atidarytas ir perėjus nukreipiama į naujo skirtuko puslapį. Jei ši funkcija išjungta, paskutinio skirtuko puslapis uždaromas ir atitinkamai uždaroma „Chrome“, jei nėra atidarytų kitų „Chrome“ langų.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

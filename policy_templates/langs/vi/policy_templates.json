@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 hoặc mới hơn",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Hỗ trợ trình duyệt cũ",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Đường dẫn trình duyệt thay thế",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Đường dẫn trình duyệt thay thế",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Chỉ định tệp thực thi của trình duyệt thay thế.\nCho phép bạn chỉ định chương trình được sử dụng làm trình duyệt thay thế.\n\nNếu được bật, bạn có thể chỉ định đường dẫn tuyệt đối trong chính sách hoặc sử dụng một trong số những biến sau:\n\n$${ie} - Vị trí cài đặt mặc định cho Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE được sử dụng để chọn vị trí của trình duyệt trong trường hợp này.\n$${firefox} - Vị trí cài đặt mặc định cho Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE được sử dụng để chọn vị trí của trình duyệt trong trường hợp này.\n$${safari} - Vị trí cài đặt mặc định cho Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE được sử dụng để chọn vị trí của trình duyệt trong trường hợp này.\n\nNếu chính sách không được bật hoặc bị để trống thì trình duyệt thay thế mặc định sẽ được sử dụng và sẽ được xác định là Internet Explorer như thể giá trị $${ie} được sử dụng.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Các đối số của trình duyệt thay thế",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Đối số của trình duyệt thay thế",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Cho phép bạn chỉ định các đối số được truyền tới tệp thực thi trình duyệt thay thế.\n\nNếu chính sách được bật thì các tham số được cung cấp sẽ được sử dụng khi gọi trình duyệt thay thế.\n\nBạn cũng có thể sử dụng trình giữ chỗ đặc biệt $${url} để chỉ định vị trí url sẽ xuất hiện trong dòng lệnh. Ví dụ: \"--url=$${url} --kiosk\".\nBạn không phải chỉ định trình giữ chỗ nếu url được thêm vào cuối hoặc nếu url là đối số duy nhất thì bạn có thể để trống chính sách đó.\n\nNếu chính sách bị tắt hoặc bị để trống thì chỉ url được truyền làm tham số cho trình duyệt.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Đường dẫn Chrome",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Đường dẫn Chrome",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Cho phép bạn chỉ định tệp thực thi của Chrome cần chạy khi quay trở lại từ trình duyệt thay thế(*).\n\nKhi chính sách được bật, bạn có thể chỉ định đường dẫn tuyệt đối trong chính sách hoặc sử dụng biến sau:\n\n$${chrome} - Vị trí cài đặt mặc định cho Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE được sử dụng để chọn vị trí của trình duyệt trong trường hợp này.\n\nNếu chính sách bị tắt hoặc bị để trống thì cài đặt mặc định của Chrome sẽ được sử dụng như thể giá trị $${chrome} được sử dụng.\n\n*: Hiện tại chỉ Internet Explorer hỗ trợ trở về Chrome một cách tự động.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Đối số Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Các đối số Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Cho phép bạn chỉ định các đối số được truyền cho Chrome khi Chrome được thực thi.\n\nNếu chính sách được bật thì các tham số được cung cấp sẽ được sử dụng khi gọi Chrome.\n\nBạn cũng có thể sử dụng trình giữ chỗ đặc biệt $${url} để chỉ định vị trí url sẽ xuất hiện trong dòng lệnh. Ví dụ: \"--url=$${url} --kiosk\".\nBạn không phải chỉ định trình giữ chỗ nếu url được thêm vào cuối hoặc nếu url là đối số duy nhất thì bạn có thể để trống chính sách đó.\n\nNếu chính sách bị tắt hoặc bị để trống thì chỉ url được truyền làm tham số cho trình duyệt.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Các máy chủ để mở trong trình duyệt thay thế",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Các máy chủ để mở trong trình duyệt thay thế",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Cho phép bạn chỉ định danh sách tên miền lưu trữ sẽ được mở trong trình duyệt thay thế.\n\nNếu chính sách này được bật, bạn phải cung cấp danh sách các bộ lọc sẽ kích hoạt chuyển đổi sang trình duyệt thay thế. Mọi mục nhập phải thuộc một trong 4 loại sau đây:\n\nPhần tên máy chủ: Nên chỉ định tên miền hoàn chỉnh như \"www.example.com\" hoặc một phần của các tên này, chẳng hạn như \"example.com\" hoặc kể cả \"example\". Ký tự đại diện chưa được hỗ trợ.\nTiền tố URL: Chỉ các tiền tố URL phù hợp mới được đối sánh toàn bộ với giao thức và cổng nếu cần. Ví dụ: \"http://login.example.com\" hoặc \"https://www.example.com:8080/login/\".\nMục nhập âm: Bằng đầu bằng \"!\" và tiếp tục ở dạng một phần của tên máy chủ hoặc tiền tố URL như mô tả ở trên. Các mục nhập âm luôn được mở trong Chrome. Ví dụ: \"!example.com\" hoặc \"!file:///c:/localapp/\".\nMục nhập ký tự đại diện: Chỉ chứa một ký tự đơn \"*\". Khớp với mọi URL. Được dùng cùng với các mục nhập âm nếu hầu hết các URL nên được mở trong trình duyệt thay thế và chỉ nên mở một số lượng nhỏ các URL trong Chrome.\n\nCác mục nhập âm có các ưu tiên cao hơn các mục nhập dương. Điều này cho phép đưa vào danh sách cho phép các phần lớn của một miền khi lưu các mục nhỏ hơn để mở trong Chrome.\nMục nhập ký tự đại diện nếu có chỉ được áp dụng sau khi các quy tắc khác đã được kiểm tra.\n\nCác giao thức sau đây được theo dõi chuyển hướng: http:, https:.\n\nNếu không được chỉ định hoặc để trống thì quá trình chuyển đổi sang trình duyệt thay thế sẽ không được kích hoạt.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Các máy chủ cần mở trong mỗi trình duyệt",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Các máy chủ cần mở trong mỗi trình duyệt",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Cho phép bạn chỉ định một danh sách các tên miền máy chủ được mở trong cả hai trình duyệt.\n\nKhi chính sách này được bật, các miền trong danh sách này sẽ có sẵn trong cả hai trình duyệt và sẽ không kích hoạt chuyển đổi theo cả hai chiều.\n\nTrường hợp sử dụng có thể là bất cứ miền xác thực nào được chia sẻ giữa các ứng dụng cũ và mới trong danh sách này.\n\nPhần tên máy chủ: Nên chỉ định tên miền hoàn chỉnh như \"www.example.com\" hoặc một phần của các tên này, chẳng hạn như \"example.com\" hoặc kể cả \"example\". Ký tự đại diện chưa được hỗ trợ.\nTiền tố URL: Chỉ các tiền tố URL phù hợp mới được đối sánh toàn bộ với giao thức và cổng nếu cần. Ví dụ: \"http://login.example.com\" hoặc \"https://www.example.com:8080/login/\".\n\nNếu không được chỉ định hoặc bị để trống - mọi miền không có trong danh sách \"Các máy chủ sẽ mở trong trình duyệt thay thế\" đều sẽ kích hoạt quá trình chuyển đổi về Chrome(*).\n\n*: Hiện tại chỉ Internet Explorer hỗ trợ trở về Chrome một cách tự động.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Giữ tab chrome cuối cùng khi chuyển đổi",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Giữ tab chrome cuối cùng khi chuyển đổi",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Cho phép bạn chỉ định điều gì sẽ diễn ra khi tab được mở cuối cùng trong Chrome đang được chuyển hướng sang trình duyệt thay thế.\n\nKhi bật hoặc không đặt chính sách này, tab cuối cùng sẽ được mở và trỏ tới trang tab mới sau khi chuyển đổi. Nếu được đặt thành tắt thì tab cuối cùng sẽ bị đóng khiến Chrome bị đóng nếu không có cửa sổ Chrome nào khác đang mở.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

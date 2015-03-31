@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 ou posterior",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Suporte a navegadores legados",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Caminho do navegador alternativo",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Caminho do navegador alternativo",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Especifique o executável do navegador alternativo.\nPermite especificar o programa a ser usado como navegador alternativo.\n\nSe ativada, você pode especificar um caminho absoluto na política ou usar uma das seguintes variáveis:\n\n$${ie} - O local padrão de instalação para o Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE é usado para selecionar o local do navegador neste caso.\n$${firefox} - O local padrão de instalação para o Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE é usado para selecionar o local do navegador neste caso.\n$${safari} - O local padrão de instalação para o Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE é usado para selecionar o local do navegador neste caso.\n\nSe a política não estiver ativada ou estiver vazia, o navegador alternativo padrão será usado, que é o Internet Explorer determinado como se o valor $${ie} fosse usado.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Argumentos do navegador alternativo",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Argumentos do navegador alternativo",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Permite especificar os argumentos a serem informados para o executável do navegador alternativo.\n\nSe a política estiver ativada, os parâmetros fornecidos serão usados quando o navegador alternativo for chamado.\n\nVocê pode também usar o marcador de posição especial $${url} para especificar onde o URL deve aparecer na linha de comando. Por exemplo, \"--url=$${url} --kiosk\".\nNão é necessário especificar o marcador de posição se ele tiver que ser anexado ao final ou, se tiver que ser o único argumento, você pode deixar essa política vazia.\n\nSe a política estiver desativada ou vazia, apenas o URL será informado como parâmetro para o navegador.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Caminho do Google Chrome",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Caminho do Google Chrome",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Permite especificar o executável do Google Chrome a ser iniciado no momento do retorno do navegador alternativo(*).\n\nQuando a política está ativada, você pode especificar um caminho absoluto na política ou usar a seguinte variável:\n\n$${chrome} - O local padrão de instalação para o Google Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE é usado para selecionar o local do navegador neste caso.\n\nSe a política estiver desativada ou estiver vazia, a instalação padrão do Google Chrome será usada como se o valor $${chrome} fosse usado.\n\n*: atualmente, apenas o Internet Explorer suporta o retorno automático para o Google Chrome.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Argumentos do Google Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Argumentos do Google Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Permite especificar os argumentos a serem informados para o Google Chrome quando ele é executado.\n\nSe a política estiver ativada, os parâmetros fornecidos serão usados quando o Google Chrome for chamado.\n\nVocê pode também usar o marcador de posição especial $${url} para especificar onde o URL deve aparecer na linha de comando. Por exemplo, \"--url=$${url} --kiosk\".\nNão é necessário especificar o marcador de posição se ele tiver que ser anexado ao final ou, se tiver que ser o único argumento, você pode deixar essa política vazia.\n\nSe a política estiver desativada ou vazia, apenas o URL será informado como parâmetro para o navegador.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Hosts a serem abertos no navegador alternativo",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Hosts a serem abertos no navegador alternativo",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Permite especificar uma lista de nomes de domínio de host a serem abertos no navegador alternativo.\n\nSe a política estiver ativada, será necessário fornecer uma lista de filtros que acionarão a transição para o navegador alternativo. Todas as entradas devem pertencer a um dos quatro tipos a seguir:\n\nParte do nome do host: nomes completos de domínio, como \"www.exemplo.com\", devem ser especificados, ou partes dele, como \"exemplo.com\" ou mesmo \"exemplo\". Caracteres curinga ainda não são suportados.\nPrefixo de URL: somente prefixos de URL apropriados têm correspondência completa com protocolos e portas, se necessário. Por exemplo, \"http://login.exemplo.com\" ou \"https://www.exemplo.com:8080/login/\".\nEntrada negativa: começa com \"!\" e continua com a parte do nome do host ou com o prefixo do URL, conforme descrito acima. Entradas negativas sempre são abertas no Google Chrome. Por exemplo, \"!exemplo.com\" ou \"!file:///c:/localapp/\".\nEntradas de caracteres coringa: contém um único caractere \"*\". Corresponde a qualquer URL. Destinadas ao uso conjunto com entradas negativas, se a maioria dos URLs tiver que ser aberta no navegador alternativo e somente uma pequena parte dos URLs tiver que ser aberta no Google Chrome.\n\nEntradas negativas têm prioridades mais elevadas que as entradas positivas, o que permite que grandes porções de domínios sejam colocadas na lista de permissões ao salvar sessões menores para serem abertas no Google Chrome.\nA entrada do caractere curinga, se houver, é aplicada somente depois que todas as outras regras forem verificadas.\n\nOs protocolos a seguir são monitorados para redirecionamento: http:, https:.\n\nSe a política não for especificada ou se for deixada em branco, nenhuma transição para o navegador alternativo será desencadeada.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Hosts a serem abertos em qualquer navegador",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Hosts a serem abertos em qualquer navegador",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Permite especificar uma lista de nomes de domínio do host a serem abertos em um dos navegadores.\n\nSe a política estiver ativada, os domínios nesta lista estarão disponíveis em ambos os navegadores, e nenhuma transição será acionada.\n\nUm possível caso de uso são quaisquer domínios de autenticação que sejam compartilhados entre aplicativos novos e legados nesta lista.\n\nPartes do nome do host: devem ser especificados nomes completos de domínio, como \"www.exemplo.com\", ou partes deles, como \"exemplo.com:\" ou até mesmo \"exemplo\". Ainda não há suporte para caracteres curinga.\nPrefixos de URL: somente prefixos de URL corretos têm correspondência completa com o protocolo e a porta, se necessário. Por exemplo, \"http://login.exemplo.com\" ou \"https://www.example.com:8080/login/\".\n\nSe esta política não for especificada ou se for deixada em branco, qualquer domínio que não esteja na lista \"Hosts a serem abertos no navegador alternativo\" acionará a transição para o Google Chrome(*).\n\n*: Atualmente, apenas o Internet Explorer oferece retorno automático para o Google Chrome.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Manter a última guia do Google Chrome em transição",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Manter a última guia do Google Chrome em transição",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Permite especificar o que acontece quando a última guia aberta no Google Chrome está sendo redirecionada para o navegador alternativo.\n\nSe esta política for ativada ou não for definida, a última guia será deixada aberta e indicará a página \"Nova guia\" após a transição. Se ela for desativada, a última guia será fechada, o que levará ao fechamento do Google Chrome, se nenhuma outra janela do Chrome estiver aberta.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 ili noviji",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Podrška za stare preglednike",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Put zamjenskog preglednika",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Put zamjenskog preglednika",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Određuje izvršnu datoteku zamjenskog preglednika.\nTim pravilom možete odrediti koji će se program upotrebljavati kao zamjenski preglednik.\n\nAko je omogućeno, u pravilu možete navesti apsolutni put ili upotrijebiti jednu od sljedećih varijabli:\n\n$${ie} – zadana lokacija za instaliranje preglednika Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE upotrebljava se za odabir lokacije preglednika u ovom slučaju.\n$${firefox} – zadana lokacija za instaliranje preglednika Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE upotrebljava se za odabir lokacije preglednika u ovom slučaju.\n$${safari} – zadana lokacija za instalaciju preglednika Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE upotrebljava se za odabir lokacije preglednika u ovom slučaju.\n\nAko pravilo nije omogućeno ili je ostavljeno prazno, upotrijebit će se zadani zamjenski preglednik koji određuje Internet Explorer kao da je upotrijebljena vrijednost $${ie} value is used.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Argumenti zamjenskog preglednika",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Argumenti zamjenskog preglednika",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Tim pravilom možete odrediti argumente koji će se proslijediti izvršnoj datoteci zamjenskog preglednika.\n\nAko je pravilo omogućeno, pruženi parametri upotrijebit će se pri pozivanju zamjenskog preglednika.\n\nMožete također upotrijebiti posebno rezervirano mjesto $${url} da biste odredili gdje se URL treba prikazivati u naredbenom retku. Na primjer, \"--url=$${url} --kiosk\".\nNe morate odrediti rezervirano mjesto ako se nadodaje na kraj ili pravilo možete ostaviti prazno ako bi to trebao biti jedini argument.\n\nAko je pravilo onemogućeno ili ostavljeno prazno, URL će se prosljeđivati pregledniku kao parametar.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Put Chromea",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Put Chromea",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Tim pravilom možete odrediti pokretanje izvršne datoteke preglednika Chrome pri vraćanju iz zamjenskog preglednika(*).\n\nKada je pravilo omogućeno, u njemu možete odrediti apsolutnu putanju ili upotrijebiti sljedeću varijablu:\n\n$${chrome} – zadana lokacija za instaliranje preglednika Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE upotrebljava se za odabir lokacije preglednika u ovom slučaju.\n\nAko je pravilo onemogućeno ili ostavljeno prazno, upotrijebit će se zadana instalacija preglednika Chrome kao da je upotrijebljena vrijednost $${chrome}.\n\n*: trenutačno samo Internet Explorer podržava automatsko vraćanje na Chrome.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Argumenti Chromea",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Argumenti preglednika Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Tim pravilom možete odrediti argumente koji će se proslijediti pregledniku Chrome nakon izvršenja.\n\nAko je pravilo omogućeno, pruženi parametri upotrijebit će se pri pozivanju preglednika Chrome.\n\nMožete također upotrijebiti posebno rezervirano mjesto $${url} da biste odredili gdje se URL treba prikazivati u naredbenom retku. Na primjer, \"--url=$${url} --kiosk\".\nNe morate odrediti rezervirano mjesto ako se nadodaje na kraj ili pravilo možete ostaviti prazno ako bi to trebao biti jedini argument\n\nAko je pravilo onemogućeno ili ostavljeno prazno, URL će se prosljeđivati pregledniku kao parametar.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Hostovi koji se otvaraju u zamjenskom pregledniku",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Hostovi koji se otvaraju u zamjenskom pregledniku",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Tim pravilom možete odrediti popis naziva domena hostova koji se otvaraju u zamjenskom pregledniku.\n\nAko je pravilo omogućeno, trebate navesti popis filtara koji će pokrenuti prijelaz na zamjenski preglednik. Svaki unos treba pripadati nekoj od sljedeće četiri vrste:\n\nDio naziva hosta: trebaju se navesti potpuni nazivi domena, npr. \"www.example.com\", ili njihovi dijelovi, npr. \"example.com\" ili čak \"example\". Zamjenski znakovi još nisu podržani.\nPrefiks URL-a: uspoređuju se samo pravi prefiksi URL-a i po potrebi dopunjuju protokolom i priključkom. Na primjer, \"http://login.example.com\" ili \"https://www.example.com:8080/login/\".\nNegativan unos: počinje znakom \"!\" za kojim slijedi dio naziva hosta ili prefiks URL-a kako je gore opisano. Negativni unosi uvijek se otvaraju u Chromeu. Na primjer, \"!example.com\" ili \"!file:///c:/localapp/\".\nUnos zamjenskog znaka: sadrži samo jedan znak \"*\". Uspoređuje se bilo koji URL. Upotrebljava se s negativnim unosima ako se većina URL-ova treba otvarati u zamjenskom pregledniku, a samo mali dio URL-ova u Chromeu.\n\nNegativni unosi imaju viši prioritet od pozitivnih, a to omogućuje stavljanje velikih dijelova domene na popis dopuštenih, dok se manji dijelovi spremaju za otvaranje u Chromeu.\nAko je prisutan, unos sa zamjenskim znakom primjenjuje se tek nakon provjere ostalih pravila.\n\nSljedeći se protokoli prate radi preusmjeravanja: http:, https:.\n\nAko pravilo nije određeno ili je ostavljeno prazno, prijelaz na zamjenski preglednik neće se pokrenuti.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Hostovi koji se otvaraju u bilo kojem pregledniku",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Hostovi koji se otvaraju u bilo kojem pregledniku",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Tim pravilom možete odrediti popis naziva domena hostova koji se trebaju otvoriti u bilo kojem pregledniku.\n\nKad je to pravilo omogućeno, domene na tom popisu bit će dostupne u oba preglednika i neće pokrenuti prijelaz ni u jednom smjeru.\n\nMogući slučaj upotrebe su domene za autentifikaciju koje se dijele između novih i starih aplikacija na tom popisu.\n\nDijelovi naziva hostova: trebaju se navesti potpuni nazivi domena, npr. \"www.example.com\", ili njihovi dijelovi, npr. \"example.com:, ili čak \"example\". Zamjenski znakovi još nisu podržani.\nPrefiksi URL-ova: uspoređuju se samo pravi prefiksi URL-ova i po potrebi dopunjuju protokolom i priključkom. Na primjer, \"http://login.example.com\" ili \"https://www.example.com:8080/login/\".\n\nAko nije navedeno ili je ostavljeno prazno, bilo koja domena koja nije na popisu \"Hostovi koji se otvaraju u zamjenskom pregledniku\" pokrenut će vraćanje na Chrome(*).\n\n*: Trenutačno samo Internet Explorer podržava automatsko vraćanje na Chrome.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Zadržavanje posljednje Chromeove kartice po prijelazu",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Zadržavanje posljednje Chromeove kartice po prijelazu",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Tim pravilom možete odrediti što se događa kada se posljednja otvorena kartica u Chromeu preusmjeri na zamjenski preglednik.\n\nKada je to pravilo omogućeno ili nije postavljeno, posljednja kartica ostat će otvorena i po prijelazu usmjeriti na web-stranicu nove kartice. Ako je onemogućeno, posljednja će se kartica zatvoriti, čime će se zatvoriti i Chrome ako nije otvoren nijedan drugi Chromeov prozor.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

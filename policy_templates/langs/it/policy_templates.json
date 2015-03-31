@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 o versione successiva",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Supporto dei browser precedenti",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Percorso browser alternativo",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Percorso browser alternativo",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Specifica il file eseguibile del browser alternativo.\nTi consente di specificare il programma da utilizzare come browser alternativo.\n\nSe questa norma è abilitata, puoi specificare un percorso assoluto al suo interno o utilizzare una delle seguenti variabili:\n\n$${ie} - In questo caso, per scegliere il percorso del browser viene utilizzato il percorso di installazione predefinito per Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE.\n$${firefox} - In questo caso, per scegliere il percorso del browser viene utilizzato il percorso di installazione predefinito per Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE.\n$${safari} - In questo caso, per scegliere il percorso del browser viene utilizzato il percorso di installazione predefinito per Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE.\n\nSe la norma non è abilitata o viene lasciata vuota, verrà utilizzato il browser alternativo che è Internet Explorer, determinato come se venisse utilizzato il valore $${ie}. ",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Argomenti del browser alternativo",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Argomenti del browser alternativo",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Ti consente di specificare gli argomenti da passare al file eseguibile del browser alternativo.\n\nSe la norma è abilitata, verranno utilizzati i parametri forniti quando viene richiamato il browser alternativo.\n\nPuoi inoltre utilizzare il segnaposto speciale $${url} per specificare dove deve essere visualizzato l'URL nella riga di comando. Ad es. \"--url=$${url} --kiosk\".\nNon devi necessariamente specificare il segnaposto; se deve essere aggiunto alla fine o se deve essere l'unico argomento, puoi lasciare tale norma vuota.\n\nSe la norma è disabilitata o lasciata vuota, verrà passato al browser solo l'URL sotto forma di parametro.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Percorso Chrome",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Percorso Chrome",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Ti consente di specificare il file eseguibile di Chrome da avviare quando torni dal browser alternativo(*).\n\nQuando la norma è abilitata, puoi specificare un percorso assoluto al suo interno o utilizzare la seguente variabile:\n\n$${chrome} - In questo caso, per scegliere il percorso del browser viene utilizzato il percorso di installazione predefinito per Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE.\n\nSe la norma è disabilitata o lasciata vuota, verrà utilizzata l'installazione predefinita di Chrome, come se venisse utilizzato il valore $${chrome}.\n\n*. Al momento solo Internet Explorer supporta il ritorno automatico a Chrome.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Argomenti Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Argomenti Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Ti consente di specificare gli argomenti da passare a Chrome quando è in esecuzione.\n\nSe la norma è abilitata, verranno utilizzati i parametri forniti quando viene richiamato Chrome.\n\nPuoi inoltre utilizzare il segnaposto speciale $${url} per specificare dove deve essere visualizzato l'URL nella riga di comando. Ad es. \"--url=$${url} --kiosk\".\nNon devi necessariamente specificare il segnaposto; se deve essere aggiunto alla fine o se deve essere l'unico argomento, puoi lasciare tale norma vuota.\n\nSe la norma è disabilitata o lasciata vuota, verrà passato al browser solo l'URL sotto forma di parametro.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Host da aprire nel browser alternativo",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Host da aprire nel browser alternativo",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Ti consente di specificare un elenco di nomi di dominio host da aprire nel browser alternativo.\n\nSe la norma viene attivata, devi fornire un elenco di filtri che attiveranno il passaggio al browser alternativo. Ogni voce deve essere uno dei seguenti quattro tipi:\n\nParti di nomi host. Devono essere specificati nomi di dominio completi come \"www.example.com\" o parti di essi come \"example.com\" o persino \"example\". I caratteri jolly non sono ancora supportati.\nPrefisso URL. Soltanto i prefissi URL adeguati vengono associati completi di protocollo e porta, se necessario. Ad esempio, \"http://login.example.com\" o \"https://www.example.com:8080/login/\".\nVoce negativa. Inizia con \"!\" e continua con parte del nome host o prefisso URL come spiegato in precedenza. Le voci negative vengono aperte sempre in Chrome. Ad esempio, \"!example.com\" o \"!file:///c:/localapp/\".\nVoce con carattere jolly. Contiene soltanto un unico carattere \"*\". Corrisponde a qualsiasi URL. Deve essere utilizzata insieme alle voci negative, se la maggior parte degli URL deve essere aperta nel browser alternativo e soltanto una piccola parte di URL deve essere aperta in Chrome.\n\nLe voci negative hanno priorità maggiori rispetto alle voci positive che consentono di autorizzare ampie parti di un dominio lasciando parti minori da aprire in Chrome.\nLa voce con carattere jolly, se presente, viene applicata soltanto dopo avere verificato tutte le altre regole.\n\nVengono monitorati i seguenti protocolli per il reindirizzamento: http:, https:.\n\nSe la norma non viene specificata o viene lasciata vuota, non verranno attivati passaggi al browser alternativo.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Host da aprire in qualsiasi browser",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Host da aprire in qualsiasi browser",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Ti consente di specificare un elenco di nomi di dominio di host da aprire in uno dei due browser.\n\nQuando la norma è abilitata, i domini in questo elenco saranno disponibili in entrambi i browser e non attiveranno una transizione né in un caso né nell'altro.\n\nUn possibile caso di utilizzo sono i domini di autenticazione condivisi tra app nuove e precedenti in questo elenco.\n\nParti di nomi di host: devono essere specificati nomi di dominio completi come \"www.example.com\" o parti di essi come \"example.com\" o persino \"example\". I caratteri jolly non sono ancora supportati.\nPrefissi URL: sono accettati solo prefissi URL appropriati, completi di protocollo e porta, se necessari. Ad esempio \"http://login.example.com\" o \"https://www.example.com:8080/login/\".\n\nSe la norma non è specificata o è lasciata vuota, qualsiasi dominio non presente nell'elenco \"Host da aprire nel browser alternativo\" attiverà una transizione per tornare a Chrome(*).\n\n*. Al momento solo Internet Explorer supporta il ritorno automatico a Chrome.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Conserva ultima scheda di Chrome al passaggio",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Conserva ultima scheda di Chrome al passaggio",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Ti consente di specificare che cosa succede quando l'ultima scheda aperta in Chrome viene indirizzata al browser alternativo.\n\nSe questa norma viene attivata o non viene impostata, l'ultima scheda rimarrà aperta e rimanderà alla pagina Nuova scheda dopo il passaggio. Se non viene attivata, l'ultima scheda verrà chiusa e verrà chiuso anche Chrome se non ci sono altre finestre di Chrome aperte.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "లెగసీ బ్రౌజర్ మద్దతు",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "లెగసీ బ్రౌజర్‌లకు మద్దతిస్తున్నప్పుడు మీ సంస్థ కోసం Chromeను అమలు చేయండి.",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "ప్రత్యామ్నాయ బ్రౌజర్‌లో తెరుస్తోంది...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "ప్రత్యామ్నాయ బ్రౌజర్‌ను తెరవడం సాధ్యపడలేదు",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "మీ సిస్టమ్ నిర్వాహకుడు <strong>$url$</strong>ను ప్రాప్యత చేయడం కోసం ప్రత్యామ్నాయ బ్రౌజర్‌ను తెరవడానికి Chromeను కాన్ఫిగర్ చేసారు.",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "మీ సిస్టమ్ నిర్వాహకుడిని సంప్రదించండి.",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "ప్రోటోకాల్ కాన్ఫిగరేషన్ లోపం కారణంగా <strong>$url$</strong>ను తెరవడం సాధ్యపడదు. దయచేసి మీ సిస్టమ్ నిర్వాహకుడిని సంప్రదించండి.",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "లెగసీ బ్రౌజర్ మద్దతు గురించి <a href='https://www.google.com/intl/en/chrome/business/'>మరింత తెలుసుకోండి</a>.",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

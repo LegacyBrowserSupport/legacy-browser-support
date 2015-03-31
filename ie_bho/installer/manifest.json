@@ -1,0 +1,10 @@
+﻿{
+  "name": "com.google.browserswitcher",
+  "description": "Legacy Browser Support Launcher",
+  "path": "lbs_native_host.exe",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://heildphpnddilhkemkielfhnkaagiabh/",
+    "chrome-extension://ebojbgfomggiamdflnhekjfkmdbeblpb/"
+  ]
+}

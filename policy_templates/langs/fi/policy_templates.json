@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 tai uudempi",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Vanhojen selaimien tuki",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Vaihtoehtoinen selaimen polku",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Vaihtoehtoinen selaimen polku",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Määritä vaihtoehtoisen selaimen käynnistystiedoston sijainti.\nVoit määrittää vaihtoehtoisena selaimena käytettävän ohjelman.\n\nJos tämä asetus on käytössä, voit joko määrittää käytännössä absoluuttisen polun tai käyttää yhtä seuraavista muuttujista:\n\n$${ie} – Internet Explorerin asennuksen oletussijainti\nPolun HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE avulla valitaan selaimen sijainti.\n{firefox} – Firefoxin asennuksen oletussijainti\nPolun HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsCurrentVersionApp PathsFIREFOX.EXE avulla valitaan selaimen sijainti.\n$${safari} – Safarin asennuksen oletussijainti\nPolun HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE avulla valitaan selaimen sijainti.\n\nJos tämä käytäntö ei ole käytössä tai se on tyhjä, vaihtoehtoisena selaimena käytetään oletuksena Internet Exploreria, eli toimitaan aivan kuin $${ie}-arvo olisi käytössä.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Vaihtoehtoisten selaimien argumentit",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Vaihtoehtoisten selaimien argumentit",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Voit määrittää vaihtoehtoisen selaimen käynnistystiedostolle annettavat argumentit.\n\nJos tämä käytäntö on käytössä, annettuja parametrejä käytetään, kun vaihtoehtoista selainta kutsutaan.\n\nVoit myös käyttää paikkamerkkiä $${url} määrittämään, missä URL-osoitteen tulee näkyä komentorivillä. Esim. \"--url=$${url} --kiosk\".\nPaikkamerkkiä ei tarvitse määrittää, jos se lisättäisiin kohteen loppuun. Jos paikkamerkki on ainoa argumentti, voit jättää käytännön tyhjäksi.\n\nJos tämä käytäntö ei ole käytössä tai se on tyhjä, selaimelle annetaan argumenttina vain URL-osoite.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Chromen polku",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Chromen polku",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Voit määrittää, mikä Chromen käynnistystiedosto käynnistetään, kun vaihtoehtoisen selaimen käyttö lopetetaan(*).\n\nJos tämä käytäntö on käytössä, voit joko määrittää käytännössä absoluuttisen polun tai käyttää seuraavaa muuttujaa:\n\n$${chrome} – Chromen asennuksen oletussijainti\nPolun HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE avulla valitaan selaimen sijainti.\n\nJos käytäntö ei ole käytössä tai se on tyhjä, käytetään Chromen oletusasennusta, eli toimitaan aivan kuin $${chrome}-arvo olisi käytössä.\n\n*: Tällä hetkellä vain Internet Explorer tukee automaattista Chromeen palaamista.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Chromen argumentit",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Chromen argumentit",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Voit määrittää Chromen käynnistystiedostolle annettavat argumentit.\n\nJos tämä käytäntö on käytössä, annettuja parametrejä käytetään, kun Chromea kutsutaan.\n\nVoit myös käyttää paikkamerkkiä $${url} määrittämään, missä URL-osoitteen tulee näkyä komentorivillä. Esim. \"--url=$${url} --kiosk\".\nPaikkamerkkiä ei tarvitse määrittää, jos se lisättäisiin kohteen loppuun. Jos paikkamerkki on ainoa argumentti, voit jättää käytännön tyhjäksi.\n\nJos tämä käytäntö ei ole käytössä tai se on tyhjä, selaimelle annetaan argumenttina vain URL-osoite.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Vaihtoehtoisessa selaimessa avattavat verkkotunnukset",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Vaihtoehtoisessa selaimessa avattavat verkkotunnukset",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Voit määrittää luettelon verkkotunnuksista, jotka avataan vaihtoehtoisessa selaimessa.\n\nJos tämä käytäntö on käytössä, sinun on annettava luettelo suodattimista, jotka käynnistävät siirtymän vaihtoehtoiseen selaimeen. Jokaisen kohdan on oltava jokin seuraavista neljästä tyypistä:\n\nIsäntänimen osa: Anna joko kokonaiset verkkotunnuksen nimet kuten www.example.com tai niiden osat kuten example.com tai example. Jokerimerkkejä ei vielä tueta.\nURL-osoitteen etuliite: Käytä vain kelvollisia URL-osoitteiden etuliitteitä. Voit lisätä tarvittaessa protokollan ja portin. Esim. http://login.example.com tai https://www.example.com:8080/login/.\nNegatiivinen teksti: Alkaa merkillä ”!” ja seuraava osa on isäntänimen osa tai URL-osoitteen etuliite. Negatiiviset tekstit avataan aina Chromessa. Esim. !example.com tai !file:///c:/localapp/.\nJokerimerkkiteksti: Sisältää vain yhden *-merkin. Sopii mihin tahansa URL-osoitteeseen. Tarkoitettu käytettäväksi yhdessä negatiivisten tekstien kanssa, jos useimmat URL-osoitteet pitäisi avata vaihtoehtoisessa selaimessa ja vain pieni osa URL-osoitteista pitäisi avata Chromessa.\n\nNegatiivisten tekstien prioriteetti on korkeampi kuin positiivisten tekstien, minkä vuoksi verkkotunnuksen suuret osat voidaan lisätä sallittujen luetteloon ja pienemmät osat voidaan tallentaa avattavaksi Chromessa.\nJos jokerimerkkiteksti on mukana, sitä sovelletaan vasta sen jälkeen, kun kaikki muut säännöt on tarkistettu.\n\nSeuraavia protokollia seurataan uudelleenohjauksen vuoksi: http: ja https:.\n\nJos käytäntöä ei ole määritetty tai jos se on tyhjä, siirtymää tai vaihtoehtoista selainta ei käynnistetä.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Kummassa tahansa selaimessa avattavat verkkotunnukset",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Kummassa tahansa selaimessa avattavat verkkotunnukset",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Voit määrittää luettelon verkkotunnuksista, jotka voidaan avata kummassakin selaimessa.\n\nKun tämä käytäntö on käytössä, luettelossa olevat verkkotunnukset voidaan avata molemmissa selaimissa, eivätkä ne käynnistä selainsiirtymää.\n\nEsimerkki käyttötapauksesta ovat todennusverkkotunnukset, jotka jaetaan tässä luettelossa olevien uusien ja vanhojen sovelluksien välillä.\n\nIsäntänimen osat: Anna joko kokonaiset verkkotunnuksen nimet kuten www.example.com tai niiden osat kuten example.com: tai example. Jokerimerkkejä ei vielä tueta.\nURL-osoitteen etuliitteet: Käytä vain kelvollisia URL-osoitteiden etuliitteitä. Voit lisätä tarvittaessa protokollan ja portin. Esim. http://login.example.com tai https://www.example.com:8080/login/.\n\nJos käytäntöä ei ole määritetty tai jos se on tyhjä, kaikki verkkotunnukset, joita ei ole Vaihtoehtoisessa selaimessa avattavat verkkotunnukset -luettelossa, käynnistävät siirtymän takaisin Chromeen(*).\n\n*: Tällä hetkellä vain Internet Explorer tukee automaattista Chromeen palaamista.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Edellisen Chrome-välilehden säilyttäminen siirtymän aikana",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Edellisen Chrome-välilehden säilyttäminen siirtymän aikana",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Voit määrittää, mitä tapahtuu, jos Chromen viimeinen avoin välilehti uudelleenohjataan vaihtoehtoiseen selaimeen.\n\nKun käytäntö on käytössä tai käytäntöä ei ole määritetty, viimeinen välilehti jätetään auki, ja se vie uusi välilehti -sivulle siirtymän jälkeen. Jos käytäntö on poistettu käytöstä, viimeinen välilehti suljetaan, mikä johtaa Chromen sulkemiseen, jos muita Chrome-ikkunoita ei ole auki.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

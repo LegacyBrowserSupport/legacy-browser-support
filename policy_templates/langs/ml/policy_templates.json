@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 അല്ലെങ്കിൽ അതിനുശേഷമുള്ളത്",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "പഴയ ബ്രൗസർ പിന്തുണ",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "ഇതര ബ്രൗസർ പാത്ത്",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "ഇതര ബ്രൗസർ പാത്ത്",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "ഇതര ബ്രൗസറിന്റെ നിർവഹിക്കാവുന്നവ വ്യക്തമാക്കുക.\nഇതര ബ്രൗസറായി ഉപയോഗിക്കുന്നതിന് പ്രോഗ്രാം വ്യക്തമാക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു.\n\nപ്രവർത്തനക്ഷമമാണെങ്കിൽ, നിങ്ങൾക്ക് നയത്തിലെ ഒരു സമ്പൂർണ്ണ പാത്ത് വ്യക്തമാക്കാനോ ഇനിപ്പറയുന്ന വേരിയബിളുകളിലൊന്ന് ഉപയോഗിക്കാനോ കഴിയും:\n\n$${ie} - Internet Explorer-ന്റെ സ്ഥിര ഇൻസ്റ്റാൾ ലൊക്കേഷൻ ഈ സാഹചര്യത്തിൽ ബ്രൗസറിന്റെ ലൊക്കേഷൻ തിരഞ്ഞെടുക്കാൻ HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE ഉപയോഗിക്കുന്നു.\n$${firefox} - Firefox-ന്റെ സ്ഥിര ഇൻസ്റ്റാൾ ലൊക്കേഷൻ ഈ സാഹചര്യത്തിൽ ബ്രൗസറിന്റെ ലൊക്കേഷൻ തിരഞ്ഞെടുക്കാൻ HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsCurrentVersionApp PathsFIREFOX.EXE ഉപയോഗിക്കുന്നു.\n$${safari} - Safari-യുടെ സ്ഥിര ഇൻസ്റ്റാൾ ലൊക്കേഷൻ ഈ സാഹചര്യത്തിൽ ബ്രൗസറിന്റെ ലൊക്കേഷൻ തിരഞ്ഞെടുക്കാൻ HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE ഉപയോഗിക്കുന്നു.\n\nനയം പ്രവർത്തനക്ഷമമാക്കിയിട്ടില്ലെങ്കിലോ ശൂന്യമായി വിട്ടതോ ആണെങ്കിൽ, Internet Explorer നിർണ്ണയിച്ചിരിക്കുന്ന സ്ഥിര ഇതര ബ്രൗസർ {ie} മൂല്യം ഉപയോഗിച്ചിരിക്കുന്നത് പോലെ ഉപയോഗിക്കും.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "ഇതര ബ്രൗസർ ആർഗ്യുമെന്റുകൾ",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "ഇതര ബ്രൗസർ ആർഗ്യുമെന്റുകൾ",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "ഇതര ബ്രൗസറിന്റെ നിർവഹിക്കാവുന്നവയിലേക്ക് പാസുചെയ്യുന്നതിനായി ആർഗ്യുമെന്റുകൾ വ്യക്തമാക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു.\n\nനയം പ്രവർത്തനക്ഷമമാണെങ്കിൽ, ഇതര ബ്രൗസർ അഭ്യർത്ഥിക്കുമ്പോൾ നൽകപ്പെട്ട പാരാമീറ്ററുകൾ ഉപയോഗിക്കും.\n\nകമാൻഡ് വരിയിൽ url ദൃശ്യമാകേണ്ടയിടം വ്യക്തമാക്കുന്നതിന് നിങ്ങൾക്ക് പ്രത്യേക പ്ലെയ്‌സ്‌ഹോൾഡർ $${url} ഉപയോഗിക്കാനുമാകും. ഉദാ. \"--url=$${url} --kiosk\". പ്ലെയ്‌സ്‌ഹോൾഡർ അവസാനഭാഗത്ത് കൂട്ടിച്ചേർക്കണമെങ്കിലോ ആ നയത്തെ ശൂന്യമായി വിടാനുള്ള ഏക ആർഗ്യുമെന്റ് ഇതായിരിക്കണമെങ്കിലോ നിങ്ങൾ അത് വ്യക്തമാക്കേണ്ടതില്ല.\n\nനയം പ്രവർത്തനരഹിതമോ ശൂന്യമായി വിട്ടതോ ആണെങ്കിൽ url മാത്രം ബ്രൗസറിലേക്ക് ഒരു പാരാമീറ്റർ ആയി പാസുചെയ്യും.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Chrome പാത്ത്",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Chrome പാത്ത്",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "ഇതര ബ്രൗസറിൽ(*) നിന്ന് മടങ്ങുമ്പോൾ സമാരംഭിക്കുന്നതിന് Chrome-ന്റെ നിർവഹിക്കാനാകുന്നവ വ്യക്തമാക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു.\n\nനയം പ്രവർത്തനക്ഷമമാകുമ്പോൾ, നിങ്ങൾക്ക് നയത്തിലെ ഒരു പൂർണ്ണ പാത്ത് വ്യക്തമാക്കാനോ ഇനിപ്പറയുന്ന വേരിയബിൾ ഉപയോഗിക്കാനോ കഴിയും:\n\n$${chrome} - Chrome-നായുള്ള സ്ഥിര ഇൻസ്റ്റാൾ ലൊക്കേഷൻ ഈ സാഹചര്യത്തിൽ ബ്രൗസറിന്റെ ലൊക്കേഷൻ തിരഞ്ഞെടുക്കാൻ\nHKEY_LOCAL_MACHINESOFTWAREMicrosoftWindowsCurrentVersionApp PathsChrome.EXE ഉപയോഗിക്കുന്നു.\n\nനയം പ്രവർത്തനരഹിതമോ ശൂന്യമായി വിട്ടതോ ആണെങ്കിൽ, Chrome-ന്റെ സ്ഥിര ഇൻസ്റ്റാളേഷൻ $${chrome} മൂല്യം ഉപയോഗിച്ചതുപോലെ ഉപയോഗിക്കും.\n\n*: നിലവിൽ Internet Explorer മാത്രം Chrome-ലേക്ക് യാന്ത്രികമായി മടങ്ങുന്നതിനെ പിന്തുണയ്‌ക്കുന്നു.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Chrome ആർഗ്യുമെന്റുകൾ",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Chrome ആർഗ്യുമെന്റുകൾ",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "നിർവഹിക്കപ്പെടുമ്പോൾ, Chrome-ലേക്ക് പാസുചെയ്യുന്നതിന് ആർഗ്യുമെന്റുകൾ വ്യക്തമാക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു.\n\nനയം പ്രവർത്തനക്ഷമമാണെങ്കിൽ, Chrome അഭ്യർത്ഥിക്കുമ്പോൾ നൽകപ്പെട്ട പാരാമീറ്ററുകൾ ഉപയോഗിക്കും.\n\nകമാൻഡ് വരിയിൽ url ദൃശ്യമാകേണ്ടയിടം വ്യക്തമാക്കുന്നതിന് നിങ്ങൾക്ക് പ്രത്യേക പ്ലെയ്‌സ്‌ഹോൾഡർ $${url} ഉപയോഗിക്കാനുമാകും. ഉദാ. \"--url=$${url} --kiosk\". പ്ലെയ്‌സ്‌ഹോൾഡർ അവസാനഭാഗത്ത് കൂട്ടിച്ചേർക്കണമെങ്കിലോ ആ നയത്തെ ശൂന്യമായി വിടാനുള്ള ഏക ആർഗ്യുമെന്റ് ഇതായിരിക്കണമെങ്കിലോ നിങ്ങൾ അത് വ്യക്തമാക്കേണ്ടതില്ല.\n\nനയം പ്രവർത്തനരഹിതമോ ശൂന്യമായി വിട്ടതോ ആണെങ്കിൽ url മാത്രം ബ്രൗസറിലേക്ക് ഒരു പാരാമീറ്റർ ആയി പാസുചെയ്യും.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "ഇതര ബ്രൗസറിൽ തുറക്കുന്നതിനുള്ള ഹോസ്‌റ്റുകൾ",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "ഇതര ബ്രൗസറിൽ തുറക്കുന്നതിനുള്ള ഹോസ്‌റ്റുകൾ",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "ഇതര ബ്രൗസറുകളിൽ തുറക്കുന്നതിനായുള്ള ഹോസ്‌റ്റ് ഡൊമെയ്ൻ പേരുകളുടെ ലിസ്റ്റ് വ്യക്തമാക്കുന്നതിന് നിങ്ങളെ അനുവദിക്കുന്നു.\n\nനയം പ്രവർത്തനക്ഷമമാക്കുകയാണെങ്കിൽ, ഇതര ബ്രൗസറിലേക്ക് സംക്രമണം ട്രിഗർ ചെയ്യുന്ന ഫിൽട്ടറുകളുടെ ലിസ്‌റ്റ് നൽകേണ്ടതുണ്ട്. ഓരോ എൻട്രിയും ഇനിപ്പറയുന്ന നാല് തരങ്ങളിൽ ഒന്നായിരിക്കണം:\n\nഹോസ്‌റ്റ്-പേരിന്റെ ഭാഗങ്ങൾ:\"www.example.com\" പോലുള്ള പൂർണ്ണ ഡൊമെയ്ൻ പേരുകളോ അവയുടെ ഭാഗങ്ങളായ \"example.com\" എന്നതോ \"example\" എന്നതോ വ്യക്തമാക്കണം. വൈൽഡുകാർഡുകളെ ഇപ്പോഴും പിന്തുണയ്ക്കുന്നില്ല.\nURL പ്രിഫിക്‌സ്: ആവശ്യമെങ്കിൽ, ശരിയായ URL പ്രിഫിക്‌സുകൾ മാത്രം പ്രോട്ടോക്കോൾ, പോർട്ട് എന്നിവയുമായി പൂർണ്ണമായി പൊരുത്തപ്പെടുന്നു. ഉദാ. \"http://login.example.com\" അല്ലെങ്കിൽ \"https://www.example.com:8080/login/\".\nനെഗറ്റീവ് എൻട്രി: \"!\" എന്നതിൽ ആരംഭിച്ച് ഹോസ്റ്റ്-പേരിന്റെ ഭാഗമായോ മുകളിൽ വിശദീകരിച്ചതുപോലെ URL പ്രീഫിക്സായോ തുടരുന്നു. നെഗറ്റീവ് എൻട്രികൾ എപ്പോഴും Chrome-ൽ തുറക്കുന്നു. ഉദാ. \"!example.com\" അല്ലെങ്കിൽ \"!file:///c:/localapp/\".\nവൈൽഡ്‌കാർഡ് എൻട്രി: ഒരൊറ്റ \"*\" പ്രതീകം മാത്രം അടങ്ങുന്നു. എല്ലാ URL-കളുമായും പൊരുത്തപ്പെടുന്നു. നെഗറ്റീവ് എൻട്രികൾക്കൊപ്പം ഒരുമിച്ച് ഉപയോഗിക്കാൻ ഉദ്ദേശിച്ചുള്ളതാണിത്, മിക്ക URL-കളും ഇതര ബ്രൗസറുകളിൽ തുറക്കേണ്ടതാണെങ്കിൽ, URL-കളിൽ കുറച്ച് തിരഞ്ഞെടുത്തവ മാത്രം Chrome-ൽ തുറക്കണം.\n\nനെഗറ്റീവ് എൻട്രികൾക്ക് പോസിറ്റീവ് എൻട്രികളേക്കാൾ ഉയർന്ന മുൻഗണനയുണ്ട്, ഇത് Chrome-ൽ തുറക്കേണ്ട ചെറിയ വിഭാഗം URL-കൾ സംരക്ഷിക്കുമ്പോൾ ഒരു ഡൊമെയ്‌നിന്റെ വലിയ ഭാഗം വൈറ്റ്‌ലിസ്റ്റുചെയ്യാൻ അനുവദിക്കുന്നു.\nവൈൽഡ്‌കാർഡ് എൻട്രി നിലവിലുണ്ടെങ്കിൽ, മറ്റെല്ലാ റൂളുകളും പരിശോധിച്ചതിനുശേഷം മാത്രമേ ഇത് പ്രയോഗിക്കുകയുള്ളൂ.\n\nഇനിപ്പറയുന്ന പ്രോട്ടോക്കോളുകൾ റീഡയറക്ടുചെയ്യുന്നതിനായി നീരീക്ഷിക്കപ്പെടുന്നു: http:, https:.\n\nവ്യക്തമാക്കിയിട്ടില്ലെങ്കിലോ ശൂന്യമായി വിടുകയാണെങ്കിലോ - ഇതര ബ്രൗസറിലേക്ക് സംക്രമണമൊന്നും ട്രിഗർചെയ്യപ്പെടില്ല.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "രണ്ട് ബ്രൗസറിലും തുറക്കുന്നതിനുള്ള ഹോസ്‌റ്റുകൾ",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "രണ്ട് ബ്രൗസറിലും തുറക്കുന്നതിനുള്ള ഹോസ്‌റ്റുകൾ",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "രണ്ട് ബ്രൗസറിലും തുറക്കുന്നതിനായുള്ള ഹോസ്‌റ്റ് ഡൊമെയ്ൻ പേരുകളുടെ ലിസ്റ്റ് വ്യക്തമാക്കുന്നതിന് നിങ്ങളെ അനുവദിക്കുന്നു. \n\nഈ നയം പ്രവർത്തനക്ഷമമാകുമ്പോൾ, ഈ ലിസ്റ്റിലെ ഡൊമെയ്‌നുകൾ രണ്ട് ബ്രൗസറിലും ലഭ്യമാകും, ഒപ്പം ഒരു രീതിയിലും സംക്രമണം ട്രിഗർ ചെയ്യുകയുമില്ല.\n\nഒരു സാധ്യമായ ഉപയോഗമെന്നത്, ഈ ലിസ്റ്റിലെ പുതിയതും പഴയതുമായ അപ്ലിക്കേഷനുകൾക്കിടയിൽ പങ്കിടുന്ന ഏതെങ്കിലും പ്രാമാണീകരണ ഡൊമെയ്‌നുകളാണ്.\n\nഹോസ്‌റ്റ്-പേരിന്റെ ഭാഗങ്ങൾ:\"www.example.com\" പോലുള്ള പൂർണ്ണ ഡൊമെയ്ൻ പേരുകളോ അവയുടെ ഭാഗങ്ങളായ \"example.com\" എന്നതോ \"example\" എന്നതോ വ്യക്തമാക്കണം. വൈൽഡുകാർഡുകളെ ഇപ്പോഴും പിന്തുണയ്ക്കുന്നില്ല.\nURL പ്രിഫിക്‌സുകൾ: ആവശ്യമെങ്കിൽ, ശരിയായ URL പ്രിഫിക്‌സുകൾ മാത്രം പ്രോട്ടോക്കോൾ, പോർട്ട് എന്നിവയുമായി പൂർണ്ണമായി പൊരുത്തപ്പെടുന്നു. ഉദാ. \"http://login.example.com\" അല്ലെങ്കിൽ \"https://www.example.com:8080/login/\".\n\nവ്യക്തമാക്കാത്തതോ ശൂന്യമായി വിട്ടതോ ആണെങ്കിൽ - \"ഇതര ബ്രൗസറിൽ തുറക്കുന്നതിനുള്ള ഹോസ്‌റ്റുകൾ\" ലിസ്റ്റിലില്ലാത്ത ഏതെങ്കിലും ഡൊമെയ്ൻ Chrome(*)-ലേക്ക് ഒരു സംക്രമണം തിരികെ ട്രിഗർ ചെയ്യും.\n\n*: നിലവിൽ Internet Explorer മാത്രം Chrome-ലേക്ക് യാന്ത്രികമായി മടങ്ങുന്നതിനെ പിന്തുണയ്‌ക്കുന്നു.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "അവസാന Chrome ടാബ് സംക്രമണത്തിൽ നിലനിർത്തുക",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "അവസാന Chrome ടാബ് സംക്രമണത്തിൽ നിലനിർത്തുക",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Chrome-ലെ അവസാനമായി തുറന്ന ടാബ്, ഇതര ബ്രൗസറിലേക്ക് റീഡയറക്‌റ്റുചെയ്യുമ്പോൾ എന്തുസംഭവിക്കുന്നുവെന്ന് വ്യക്തമാക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു.\n\nഈ നയം പ്രവർത്തനക്ഷമമാക്കുമ്പോഴോ സജ്ജീകരിക്കാതിരിക്കുമ്പോഴോ, സംക്രമണത്തിന് ശേഷം അവസാന ടാബ് തുറന്നതായി ശേഷിച്ച് പുതിയ ടാബ് പേജിലേക്ക് പോയിന്റുചെയ്യും. അത് പ്രവർത്തനരഹിതമായി സജ്ജീകരിച്ച് അവസാന ടാബ് അടച്ചിട്ടുണ്ടെങ്കിൽ, അത് മറ്റ് Chrome വിൻഡോകൾ തുറക്കാത്തപക്ഷം Chrome അടയ്‌ക്കുന്നതിന് കാരണമാകും.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

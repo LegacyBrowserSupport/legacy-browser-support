@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "Pärandbrauseri tugi",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "Juurutage Chrome oma organisatsiooni, toetades pärandbrausereid.",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "Alternatiivses brauseris avamine ...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "Alternatiivset brauserit ei õnnestunud avada",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "Teie süsteemiülem on konfigureerinud Chrome'i avama alternatiivset brauserit, et saada juurdepääs lehele <strong>$url$</strong>.",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "Võtke ühendust oma süsteemiülemaga.",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "Lehte <strong>$url$</strong> ei saa avada protokolli konfigureerimisvea tõttu. Võtke ühendust oma süsteemiülemaga.",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "<a href='https://www.google.ee/intl/et/chrome/business/'>Lisateave</a> pärandbrauseri toe kohta.",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

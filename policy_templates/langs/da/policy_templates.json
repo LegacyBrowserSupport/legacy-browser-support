@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 eller nyere",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Understøttelse af ældre browsere",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Sti til alternativ browser",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Sti til alternativ browser",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Angiv den eksekverbare fil til den alternative browser.\nHer kan du angive det program, der skal bruges som alternativ browser.\n\nHvis funktionen er aktiveret, kan du enten angive en absolut sti i politikken eller bruge en af følgende variabler:\n\n$${ie} – Standardinstallationsplacering for Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE bruges til at vælge placeringen for browseren i dette tilfælde.\n$${firefox} – Standardinstallationsplacering for Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\firefox.exe bruges til at vælge placeringen for browseren i dette tilfælde.\n$${safari} – Standardinstallationsplacering for Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE bruges til at vælge placeringen for browseren i dette tilfælde.\n\nHvis politikken ikke er aktiveret eller tom, bruges den alternative standardbrowser, der er angivet som Internet Explorer, som hvis værdien $${ie} blev brugt.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Argumenter for alternativ browser",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Argumenter for alternativ browser",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Giver dig mulighed for at angive de argumenter, der skal sendes til den alternative browsers eksekverbare fil.\n\nHvis politikken er aktiveret, anvendes de tilgængelige parametre, når den alternative browser startes.\n\nDu kan også bruge den særlige pladsholder $${url} til at angive, hvor webadressen skal vises i kommandolinjen. F.eks. \"--url=$${url} --kiosk\".\nDu behøver ikke at specificere pladsholderen. Hvis den skal tilføjes i slutningen, eller hvis den skal være det eneste argument, kan du lade politikken være tom.\n\nHvis politikken er deaktiveret eller tom, er det kun webadressen, der bliver sendt som parameter til browseren.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Chrome-sti",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Chrome-sti",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Giver dig mulighed for at angive den eksekverbare fil til Chrome, som skal startes, når den returneres fra den alternative browser(*).\n\nNår politikken er aktiveret, kan du enten angive en absolut sti i politikken eller bruge følgende variabel:\n\n$${chrome} – Standardinstallationsplaceringen for Chrome\n\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE bruges til at vælge placeringen for browseren i dette tilfælde.\n\nHvis politikken er deaktiveret eller tom, bruges standardinstallationen af Chrome, som hvis værdien $${chrome} blev brugt.\n\n*: Det er på nuværende tidspunkt kun Internet Explorer, der understøtter automatisk returnering til Chrome.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Chrome-argumenter",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Chrome-argumenter",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Giver dig mulighed for at angive de argumenter, der skal sendes til Chrome, når browseren køres.\n\nHvis politikken er aktiveret, anvendes de tilgængelige parametre, når Chrome startes.\n\nDu kan også bruge den særlige pladsholder $${url} til at angive, hvor webadressen skal vises i kommandolinjen. F.eks. \"--url={url} --kiosk\".\nDu behøver ikke at angive pladsholderen. Hvis den skal tilføjes i slutningen, eller hvis den skal være det eneste argument, kan du lade politikken være tom.\n\nHvis politikken er deaktiveret eller tom, er det kun webadressen, der bliver sendt som parameter til browseren.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Værter, der skal åbnes i den alternative browser",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Værter, der skal åbnes i den alternative browser",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Giver dig mulighed for at angive en liste over værtsdomænenavne, der kan åbnes i den alternative browser.\n\nNår denne politik er aktiveret, skal du angive en liste over filtre, som udløser overgangen til den alternative browser. Angivelserne skal være en af følgende fire typer:\n\nDele af værtsnavne: Enten skal du angive komplette domænenavne, som \"www.eksempel.dk\", eller dele af dem, som \"eksempel.dk\" eller \"eksempel\". Jokertegn understøttes ikke endnu.\nWebadressepræfikser: Kun korrekte webadressepræfikser matches med protokol og port om nødvendigt, f.eks. \"http://login.eksempel.dk\" eller \"https://www.eksempel.dk:8080/login/\".\nNegativ angivelse: Begynder med \"!\" og fortsætter som en del af værtsnavnet eller webadressepræfiks som beskrevet ovenfor. Negativ angivelse åbnes altid i Chrome, f.eks. \"!eksempel.com\" eller \"!file:///c:/localapp/\".\nAngivelse af jokertegn: Indeholder kun et enkelt \"*\"-tegn. Matcher enhver webadresse. Er tiltænkt til brug sammen med negative angivelser, hvis de fleste webadresser skal åbnes i den alternative browser og kun en mindre andel af webadresserne skal åbnes i Chrome.\n\nNegative angivelser har højere prioritet end positive angivelser, hvilket gør det muligt at tillade store dele af et domæne, mens mindre dele åbnes i Chrome.\nAngivelsen af eventuelle jokertegn anvendes først, når alle andre regler er kontrolleret.\n\nFølgende protokoller er overvåget til omdirigering: http:, https:.\n\nHvis indstillingen ikke er angivet, udløses der ingen overgang til den alternative browser.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Værter, der skal åbnes i alle browsere",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Værter, der skal åbnes i alle browsere",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Giver dig mulighed for at angive en liste over værtsdomænenavne, der kan åbnes i alle browsere.\n\nNår denne politik er aktiveret, vil domænerne på denne liste være tilgængelige i begge browsere, og de vil ikke udløse overgange til hinanden.\n\nEt muligt tilfælde, hvor denne politik kan anvendes, er alle godkendelsesdomæner, som deles mellem nye og ældre apps på denne liste.\n\nDele af værtsnavne: Enten skal du angive komplette domænenavne, som \"www.eksempel.dk\", eller dele af dem, som \"eksempel.dk\" eller \"eksempel\". Jokertegn understøttes ikke endnu.\nWebadressepræfikser: Kun korrekte webadressepræfikser matches med protokol og port om nødvendigt, f.eks. \"http://login.eksempel.com\" eller \"https://www.eksempel.com:8080/login/\".\n\nHvis indstillingen ikke er angivet, udløser ethvert domæne, som ikke er på listen \"Værter, der skal åbnes i den alternative browser\", en overgang tilbage til Chrome(*).\n\n*: Det er på nuværende tidspunkt kun Internet Explorer, der understøtter automatisk returnering til Chrome.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Fasthold den seneste Chrome-fane i overgangen",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Fasthold den seneste Chrome-fane i overgangen",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Giver dig mulighed for at angive, hvad der sker, når den seneste åbne fane i Chrome omdirigeres til den alternative browser.\n\nNår denne politik er aktiveret eller ikke er angivet, forbliver den seneste fane åben og henviser til siden Ny fane efter overgangen. Hvis den er angivet til Deaktiveret, vil den seneste fane være lukket, hvilket vil medføre, at Chrome lukkes, såfremt der ikke er andre åbne Chrome-vinduer.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

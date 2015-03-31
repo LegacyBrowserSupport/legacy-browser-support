@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 以降",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "従来のブラウザのサポート",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "代替ブラウザのパス",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "代替ブラウザのパス",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "代替ブラウザの実行ファイルを指定します。\n代替ブラウザとして使用するプログラムを指定できます。\n\nこのポリシーが有効な場合、ポリシーで絶対パスを指定するか、以下のいずれかの変数を使用できます。\n\n$${ie} - Internet Explorer のデフォルトのインストール場所\nこの場合、ブラウザの場所の取得には HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE が使用されます。\n$${firefox} - Firefox のデフォルトのインストール場所\nこの場合、ブラウザの場所の取得には HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE が使用されます。\n$${safari} - Safari のデフォルトのインストール場所\nこの場合、ブラウザの場所の取得には HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE が使用されます。\n\nこのポリシーが有効でないか空白のままの場合、デフォルトの代替ブラウザが使用されます。デフォルトの代替ブラウザは Internet Explorer です。これは $${ie} 値が使用された場合と同じ結果になります。",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "代替ブラウザの引数",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "代替ブラウザの引数",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "代替ブラウザの実行ファイルに渡す引数を指定できます。\n\nこのポリシーが有効な場合、指定したパラメータが代替ブラウザの呼び出し時に使用されます。\n\nコマンドラインでの URL の位置を指定するために、特殊プレースホルダ $${url} を使用することもできます。たとえば、「--url={url} --kiosk」のように指定できます。\nURL が末尾に付く場合や唯一の引数の場合、このプレースホルダを指定する必要はなく、ポリシーを空白のままにできます。\n\nこのポリシーが無効または空白のままの場合、URL のみがパラメータとしてブラウザに渡されます。",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Chrome のパス",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Chrome のパス",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "代替ブラウザ（*）からの復帰時に Chrome の実行ファイルを起動するように指定できます。\n\nこのポリシーが有効な場合、ポリシーで絶対パスを指定するか、次の変数を使用できます。\n\n$${chrome} - Chrome のデフォルトのインストール場所\nこの場合、ブラウザの場所の取得には HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE が使用されます。\n\nこのポリシーが無効または空白のままの場合、Chrome のデフォルトのインストールが使用されます。これは $${chrome} 値が使用された場合と同じ結果になります。\n\n*: 現在のところ、Chrome への自動復帰がサポートされているのは Internet Explorer のみです。",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Chrome の引数",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Chrome の引数",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Chrome の実行時、Chrome に渡す引数を指定できます。\n\nこのポリシーが有効な場合、指定したパラメータが Chrome の呼び出し時に使用されます。\n\nコマンドラインでの URL の位置を指定するために、特殊プレースホルダ $${url} を使用することもできます。たとえば、「--url={url} --kiosk」のように指定できます。\nURL が末尾に付く場合や唯一の引数の場合、このプレースホルダを指定する必要はなく、ポリシーを空白のままにできます。\n\nこのポリシーが無効または空白のままの場合、URL のみがパラメータとしてブラウザに渡されます。",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "代替ブラウザで開くホスト",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "代替ブラウザで開くホスト",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "代替ブラウザで開くホストドメイン名のリストを指定できます。\n\nこのポリシーが有効な場合は、代替ブラウザへの切り替えを判定するフィルタのリストを指定する必要があります。リストの各項目は次の 4 つのうちいずれかで指定します。\n\nホスト名部分: 「www.example.com」のようなドメイン名全体、または「example.com」や「example」のようなドメイン名の一部を指定します。ワイルドカード文字はサポートされていません。\nURL プレフィックス: プロトコルとポート（必要な場合）を含む、適切な URL プレフィックスで始まるページのみが一致対象となります。たとえば、「http://login.example.com」、「https://www.example.com:8080/login/」と指定します。\n除外指定: 先頭に「!」を指定し、続けて上記のホスト名部分または URL プレフィックスを指定します。除外指定したページは常に Chrome で開かれます。たとえば、「!example.com、「!file:///c:/localapp/」と指定します。\nワイルドカード指定: 「*」文字を 1 つだけ指定します。この場合、あらゆる URL が一致対象となります。ほとんどの URL を代替ブラウザで開き、少数の URL のみを Chrome で開く場合に、除外指定と組み合わせて指定します。\n\n除外指定の場合、ドメインの大半を許可して残りの少数のセクションを Chrome で開くことになるため、除外指定は通常の指定よりも優先されます。\nワイルドカード指定がある場合は、他のすべてのルールが確認された後、最後に適用されます。\n\n次のプロトコルについてはリダイレクトの有無がチェックされます: http:、https:。\n\nこのポリシーが未指定または空白のままの場合、代替ブラウザへの切り替えは行われません。",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "どのブラウザでも開けるホスト",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "どのブラウザでも開けるホスト",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "どのブラウザでも開くことができるホストドメイン名のリストを指定できます。\n\nこのポリシーが有効な場合、このリストにあるドメインはどのブラウザでも開くことができ、ブラウザの切り替えは行われません。\n\nたとえば、新旧両方のアプリで共有される認証ドメインなどをこのリストに指定します。\n\nホスト名部分: 「www.example.com」のようなドメイン名全体、または「example.com」や「example」のようなドメイン名の一部を指定します。ワイルドカード文字はサポートされていません。\nURL プレフィックス: プロトコルとポート（必要な場合）を含む、適切な URL プレフィックスで始まるページのみが一致対象となります。たとえば、「http://login.example.com」、「https://www.example.com:8080/login/」と指定します。\n\nこのポリシーが未指定または空白のままの場合、「代替ブラウザで開くホスト」リストにないドメインは、Chrome（*）に切り替えられます。\n\n*: 現在のところ、Chrome への自動切り替えがサポートされているのは Internet Explorer のみです。",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "切り替え時に最後の Chrome タブを保持する",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "切り替え時に最後の Chrome タブを保持する",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "代替ブラウザに切り替えたときに、Chrome で最後に開いたタブをどう処理するかを指定します。\n\nこのポリシーが有効または未設定の場合は、切り替え後も最後のタブは開いたままとなり、新しいタブページが表示されます。このポリシーが無効に設定されている場合、最後のタブは閉じられ、Chrome は他に開いている Chrome ウィンドウがなければ終了します。",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

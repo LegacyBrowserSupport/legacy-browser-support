@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 sau o versiune ulterioară",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Compatibilitate pentru browsere vechi",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Calea browserului secundar",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Calea browserului secundar",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Specifică fișierul executabil al browserului secundar.\nAceastă politică îți permite să specifici programul de utilizat ca browser secundar.\n\nDacă politica este activată, poți să specifici în cadrul acesteia o cale absolută sau să folosești una dintre următoarele variabile:\n\n$${ie} - Locația de instalare prestabilită pentru Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE se folosește în acest caz pentru a alege locația browserului.\n$${firefox} - Locația de instalare prestabilită pentru Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE se folosește în acest caz pentru a alege locația browserului.\n$${safari} - Locația de instalare prestabilită pentru Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE se folosește în acest caz pentru a alege locația browserului.\n\nDacă politica nu este activată sau specificată, se va folosi browserul secundar prestabilit, și anume Internet Explorer. Acesta este determinat ca și cum ar fi utilizată valoarea $${ie}.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Argumente pentru browserul secundar",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Argumente pentru browserul secundar",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Această politică îți permite să specifici argumentele de transmis fișierului executabil al browserului secundar.\n\nDacă politic este activată, în momentul invocării browserului secundar vor fi utilizați parametrii introduși.\n\nDe asemenea, poți folosi substituentul special $${url} pentru a specifica locul în care trebuie să apară adresa URL în linia de comandă. De ex., „--url=$${url} --kiosk”.\nDacă substituentul trebuie atașat la final, nu este necesar să îl specifici; de asemenea, dacă acesta este singurul argument, poți lăsa această politică necompletată.\n\nDacă politica este dezactivată sau lăsată necompletată, numai adresa URL va fi transmisă ca parametru la browser.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Calea browserului Chrome",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Calea browserului Chrome",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Această politică îți permite să specifici fișierul executabil Chrome care va fi lansat atunci când se face returnarea de la browserul secundar(*).\n\nDacă politica este activată, poți să specifici în cadrul acesteia o cale absolută sau să folosești următoarea variabilă:\n\n$${chrome} - Locația de instalare prestabilită pentru Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE se folosește în acest caz pentru a alege locația browserului.\n\nDacă politica este dezactivată sau lăsată necompletată, va fi utilizată instalarea prestabilită a browserului Chrome, ca și când ar fi fost utilizată valoarea $${chrome}.\n\n*: În prezent, numai Internet Explorer acceptă returnarea automată la Chrome.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Argumente pentru Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Argumente pentru Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Această politică îți permite să specifici argumentele de transmis browserului Chrome la executarea acestuia.\n\nDacă această politică este activată, în momentul invocării browserului Chrome vor fi utilizați parametrii introduși.\n\nDe asemenea, poți utiliza substituentul special $${url} pentru a specifica unde trebuie să apară adresa URL în linia de comandă. De ex., „--url=$${url} --kiosk”.\nDacă substituentul trebuie atașat la final, nu este necesar să îl specifici; de asemenea, dacă acesta este singurul argument, poți lăsa această politică necompletată.\n\nDacă politica este dezactivată sau lăsată necompletată, numai adresa URL va fi transmisă ca parametru la browser.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Gazde care vor fi deschise în browserul secundar",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Gazde care vor fi deschise în browserul secundar",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Prin această politică poți să specifici o listă cu nume de domenii ale gazdelor care vor fi deschise în browserul secundar.\n\nDacă politica este activată, trebuie să specifici o listă de filtre care vor declanșa trecerea la browserul secundar. Fiecare intrare trebuie să se încadreze în unul dintre următoarele patru tipuri:\n\nParte a numelui de gazdă: trebuie să specifici fie nume de domenii complete (de ex., „www.example.com”), fie părți ale acestora (de ex., „example.com” sau chiar „example”). Metacaracterele nu sunt acceptate deocamdată.\nPrefix al adresei URL: numai prefixele corecte ale adreselor URL sunt potrivite complet cu protocolul și portul, dacă este necesar. De ex., „http://login.example.com” sau „https://www.example.com:8080/login/”.\nIntrare negativă: începe cu „!” și continuă ca parte a numelui de gazdă sau ca prefix al adresei URL, conform descrierii de mai sus. Intrările negative se deschid întotdeauna în Chrome. De ex., „!example.com” sau „!file:///c:/localapp/”.\nIntrare cu metacaracter: conține un singur caracter „*”. Se potrivește cu orice adresă URL. Este destinată utilizării împreună cu intrări negative, dacă majoritatea adreselor URL trebuie să fie deschise în browserul secundar și numai o mică parte din adresele URL trebuie să fie deschise în Chrome.\n\nIntrările negative au priorități mai mari decât intrările pozitive, ceea ce permite trecerea unor părți mari de domenii pe lista albă, păstrând părțile mai mici pentru a fi deschise în Chrome.\nIntrarea cu metacaracter, dacă este prezentă, se aplică numai după ce au fost verificate toate celelalte reguli.\n\nUrmătoarele protocoale sunt monitorizate pentru redirecționare: http:, https:.\n\nDacă politica nu este specificată sau completată, nu se va declanșa nicio trecere la browserul secundar.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Gazde de deschis în oricare dintre browsere",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Gazde de deschis în oricare dintre browsere",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Prin această politică poți să specifici o listă cu nume de domenii ale gazdelor care pot fi deschise în oricare dintre browsere.\n\nDacă politica este activată, domeniile din această listă vor fi disponibile în ambele browsere și nu vor declanșa o trecere de la unul la celălalt.\n\nUn caz posibil de utilizare a acestei politici îl reprezintă domeniile ce presupun autentificarea și la care au acces atât aplicațiile noi, cât și cele vechi din această listă.\n\nPărți ale numelor de gazdă: trebuie să specifici fie nume de domenii complete (de ex., „www.example.com”), fie părți ale acestora (de ex., „example.com” sau chiar „example”). Metacaracterele nu sunt acceptate deocamdată.\nPrefixe ale adreselor URL: numai prefixele corecte ale adreselor URL sunt potrivite complet cu protocolul și portul, dacă este necesar. De ex., „http://login.example.com” sau „https://www.example.com:8080/login/”.\n\nDacă politica nu este specificată sau completată, toate domeniile care nu se află în lista „Gazde care vor fi deschise în browserul secundar” vor declanșa revenirea la browserul Chrome(*).\n\n*: În prezent, numai Internet Explorer acceptă revenirea automată la Google Chrome.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Păstrează deschisă ultima filă din Chrome la trecere",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Păstrează deschisă ultima filă din Chrome la trecere",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Prin această politică poți să specifici ce se întâmplă când ultima filă deschisă din Chrome este redirecționată către browserul secundar.\n\nDacă politica este activată sau neconfigurată, ultima filă va rămâne deschisă și va direcționa către pagina Filă nouă după trecere. Dacă politica este dezactivată, ultima filă va fi închisă, ceea ce va duce la închiderea browserului Chrome, dacă nu mai există nicio altă fereastră Chrome deschisă.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

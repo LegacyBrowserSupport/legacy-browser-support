@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "പഴയ ബ്രൗസർ പിന്തുണ",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "പഴയ ബ്രൗസറുകളെ പിന്തുണയ്‌ക്കുമ്പോൾ നിങ്ങളുടെ ഓർഗനൈസേഷനായി Chrome വിന്യസിക്കുക.",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "ഇതര ബ്രൗസറിൽ തുറക്കുന്നു...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "ഇതര ബ്രൗസർ തുറക്കാനായില്ല",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "നിങ്ങളുടെ സിസ്‌റ്റം അഡ്‌മിനിസ്‌ട്രേറ്റർ, <strong>$url$</strong> ആക്‌സസ്സുചെയ്യുന്നതിന് ഇതര ബ്രൗസർ തുറക്കുന്നതിനായി Chrome-നെ കോൺഫിഗർ ചെയ്‌തു.",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "നിങ്ങളുടെ സിസ്‌റ്റം അഡ്‌മിനിസ്‌ട്രേറ്ററെ ബന്ധപ്പെടുക.",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "ഒരു പ്രോട്ടോക്കോൾ കോൺഫിഗറേഷൻ പിശക് കാരണം <strong>$url$</strong> തുറക്കാനായില്ല. നിങ്ങളുടെ സിസ്‌റ്റം അഡ്‌മിനിസ്‌ട്രേറ്ററെ ബന്ധപ്പെടുക.",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "പഴയ ബ്രൗസർ പിന്തുണയെക്കുറിച്ച് <a href='https://www.google.com/intl/en/chrome/business/'>കൂടുതലറിയുക</a>.",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 ወይም ከዚያ በኋላ",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "የቆየ የአሳሽ ድጋፍ",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "ተለዋጭ የአሳሽ ዱካ",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "ተለዋጭ የአሳሽ ዱካ",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "የተለዋጭ አሳሹ ተፈጻሚ ይግለጹ።\nፕሮግራሙ እንደ ተለዋጭ አሳሽ ስራ ላይ እንዲውል እንዲገልጹ ይፈቅድልዎታል።\n\nከነቃ በመመሪያው ውስጥ ፍጹም ዱካውን መግለጽ ወይም ከሚከተሉት ተለዋዋጮች ውስጥ አንዱን መጠቀም ይችላሉ፦\n\n$${ie} - የInternet Explorer ነባሪ የጭነት ቦታ\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE is used to pick the location of the browser in this case.\n$${firefox} - የFirefox ነባሪ የጭነት ቦታ\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE is used to pick the location of the browser in this case.\n$${safari} - የSafari ነባሪ የጭነት ቦታ\nበዚህ አጋጣሚ የአሳሹ ቦታ ለመምረጥ HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE ስራ ላይ ይውላል።\n\nመመሪያው ካልነቃ ወይም ባዶ ከተተወ ነባሪው ተለዋጭ አሳሽ ስራ ላይ ይውላል፣ ይህም $${ie} ከሆነ የነቃው Internet Explorer ነው የሚሆነው።",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "ተለዋጭ የአሳሽ ነጋሪ እሴቶች",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "ተለዋጭ የአሳሽ ነጋሪ እሴቶች",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "ወደ የተለዋጭ አሳሹ ተፈፃሚ የሚተላለፉትን ነጋሪ እሴቶችን እንዲገልጹ ይፈቅድልዎታል።\n\nመመሪያው ነቅቶ ከሆነ ተለዋጭ አሳሹ ሲጠራ የቀረቡት ልኬቶች ስራ ላይ ይውላሉ።\n\nእንዲሁም ዩ አር ኤሉ በማዘዢያ መስመሩ ላይ የት መምጣት እንዳለበት ለመግለጽ ልዩ ቦታ ያዢውን $${url} መጠቀምም ይችላሉ። ለምሳሌ፦ «--url={url} --kiosk»።\nቦታ ያዢውን መጨረሻ ላይ መያያዝ ካለበት እሱን መግለፅ አይኖርብዎትም፣ ወይም ደግሞ ብቸኛው ነጋሪ እሴት መሆን ካለበት ያንን መመሪያ ባዶ መተው ይችላሉ።\n\nመመሪያው ከተሰናከለ ወይም ባዶ እንደሆነ ከተተወ ዩ አር ኤሉ ብቻ ነው እንደ ልኬት ለአሳሹ የሚተላለፈው።",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "የChrome ዱካ",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "የChrome ዱካ",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "ከተለዋጭ አሳሽ(*) ሲመለሱ የChrome ተፈጻሚ እንዲጀመር እንዲገልጹ ይፈቅድልዎታል።\n\nመመሪያው ነቅቶ ከሆነ ወይም በመመሪያው ውስጥ ፍጹም ዱካውን መግለጽ ይችላሉ ወይም የሚከተለውን ተለዋዋጭ መጠቀም ይችላሉ፦\n\n$${chrome} - የChrome ነባሪ የጭነት ቦታ\nበዚህ አጋጣሚ የአሳሹ ቦታ ለመምረጥ HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE ስራ ላይ ይውላል።\n\nመመሪያው ካልነቃ ወይም ባዶ ከተተወ ነባሪው ተለዋጭ አሳሽ ስራ ላይ ይውላል፣ ይህም $${chrome} ከሆነ የነቃው Chrome ነው የሚሆነው።\n\n*: በአሁኑ ጊዜ Internet Explorer ብቻ ነው በራስ-ሰር ወደ Chrome መመለስ የሚደግፈው።",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "የChrome ነጋሪ እሴቶች",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "የChrome ነጋሪ እሴቶች",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Chrome ሲፈጸም ወደ እሱ የሚተላለፉት ነጋሪ እሴቶች እንዲገልጹ ይፈቅድልዎታል። \n\nመመሪያው ነቅቶ ከሆነ Chrome ሲጠራ የቀረቡት ልኬቶች ጥቅም ላይ ይውላሉ።\n\nእንዲሁም ዩ አር ኤሉ በማዘዢያ መስመሩ ላይ የት መምጣት እንዳለበት ለመግለጽ ልዩ ቦታ ያዢውን $${url} መጠቀምም ይችላሉ። ለምሳሌ፦ «--url={url} --kiosk»።\nቦታ ያዢውን መጨረሻ ላይ መያያዝ ካለበት እሱን መግለፅ አይኖርብዎትም፣ ወይም ደግሞ ብቸኛው ነጋሪ እሴት መሆን ካለበት ያንን መመሪያ ባዶ መተው ይችላሉ።\n\nመመሪያው ከተሰናከለ ወይም ባዶ እንደሆነ ከተተወ ዩ አር ኤሉ ብቻ ነው እንደ ልኬት ለአሳሹ የሚተላለፈው።",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "በተለዋጭ አሳሹ የሚከፈቱ አስተናጋጆች",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "በተለዋጭ አሳሹ የሚከፈቱ አስተናጋጆች",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "በተለዋጩ አሳሽ የሚከፈቱ የአስተናጋጅ ጎራ ስሞች ዝርዝር እንዲጠቅሱ ያስችልዎታል።\n\nመመሪያው ከነቃ ወደ ተለዋጭ አሳሹ የሚደረገውን ሽግግር የሚያስጀምሩ የማጣሪያዎች ዝርዝር ማቅረብ ይኖርብዎታል። እያንዳንዱ ግቤት ከሚከተሉት አራት ዓይነቶች አንዱን መሆን ይኖርበታል፦\n\nየአስተናጋጅ ስም ክፍል፦ እንደ «www.example.com» ያሉ የተሟሉ የጎራ ስሞች፣ ወይም እንደ «example.com» ያሉ የእነርሱ ክፍሎች፣ ወይም እንዲያውም «example» መጠቀስ አለባቸው። ልቅ ምልክቶች እስካሁን የተደገፉ አይደሉም።\nየዩአርኤል ቅድመ-ቅጥያ፦ ካስፈለገ ትክክለኛ የዩአርኤል ቅድመ-ቅጥያዎች ብቻ ናቸው ከፕሮቶኮሉ እና ከወደቡ ጋር የሚዛመዱት። ምሳሌ፦ «http://login.example.com»  ወይም «https://www.example.com:8080/login/»።\nአሉታዊ ግቤት፦ በ«!» ይጀምር እና ከላይ እንደተገለጸው እንደ አስተናጋጅ ስም ክፍል ወይም የዩአርኤል ቅድመ-ቅጥያ ይቀጥላል። አሉታዊ ግቤቶች ሁልጊዜ በChrome ውስጥ ነው የሚከፈቱት። ምሳሌ፦ «!example.com » ወይም «!file:///c:/localapp/»።\nየልቅ ምልክት ግቤት፦ አንዲት ነጠላ የ«*» ቁምፊ ብቻ ይይዛል። ከማንኛውም ዩአርኤል ጋር ይዛመዳል። አብዛኛዎቹ ዩአርኤሎች በተለዋጩ አሳሽ መከፈት እና ትንሽ የተመረጡ ዩአርኤሎች ብቻ በChrome ውስጥ መከፈት ካለባቸው ከአሉታዊ ግቤቶች ጋር አንድ ላይ ጥቅም ላይ እንዲውል የታሰበ ነው።\n\nጥቂት ክፍሎች በChrome ውስጥ እንዲከፈቱ በማስቀመጥ የአንድን ጎራ አብዛኛዎቹን ክፍሎች በተፈቀደላቸው ዝርዝር ላይ ማስቀመጥ ከሚያስችሉት ከአዎንታዊ ግቤቶች ይልቅ አሉታዊ ግቤቶች ከፍተኛ ተቀዳሚነት ደረጃ አላቸው።\nየልቅ ምልክት ግቤት ካለ ሌሎች ደንቦች ከተረጋገጡ በኋላ ብቻ ነው ተፈጻሚ የሚሆነው።\n\nየሚከተሉት ፕሮቶኮሎች አቅጣጫን ለማስቀየር ቁጥጥር ይደረግባቸዋል፦ http:፣ https:።\n\nሳይጠቀስ ከቀረ ወይም ባዶ ከተተወ - ወደ ተለዋጭ አሳሹ ምንም ዓይነት ሽግግር እንዲጀምር አይደረግም።",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "በየትኛውም አሳሽ የሚከፈቱ አስተናጋጆች",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "በየትኛውም አሳሽ የሚከፈቱ አስተናጋጆች",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "በየትኛውም አሳሽ የሚከፈቱትን አስተናጋጅ የጎራ ስሞች ዝርዝር እንዲጠቅሱ ያስችልዎታል።\n\nይህ መመሪያ ሲነቃ በዚህ ዝርዝር ውስጥ ያሉት ጎራዎች በሁለቱም አሳሾች ውስጥ እንዲኖር የሚደረጉ ሲሆን በሁለቱም አቅጣጫ ሽግግር አያስጀምርም።\n\nይህ ስራ ላይ ሊውልባቸው የሚችልባቸው ሁኔታዎች በዚህ ዝርዝር ውስጥ ባሉ አዳዲስ እና የቆዩ መተግበሪያዎች መካከል የሚጋሩ ማንኛውም የማረጋገጫ ጎራዎች ናቸው።\n\nየአስተናጋጅ ስም ክፍሎች፦ እንደ «www.example.com» ያሉ ሙሉ የጎራ ስሞች፣ ወይም እንደ «example.com» ያሉ የእነሱ ክፍሎች፣ ወይም እንዲያውም «example» መጠቀስ አለባቸው። ልቅ ምልክቶች ገና አይደገፉም።\nየዩአርኤል ቅድመ-ቅጥያዎች፦ አስፈላጊ ሆነው ከተገኙ ትክክለኛ የዩአርኤል ቅድመ-ቅጥያዎች ብቻ ናቸው ከፕሮቶኮል እና ወደ ጋር የሚዛመዱት። ለምሳሌ፦ «http://login.example.com\" ወይም \"https://www.example.com:8080/login/»።\n\nሳይጠቀስ ከቀረ ወይም ባዶ ከተተወ - በ«በተለዋጭ አሳሹ ውስጥ የሚከፍቱ አስተናጋጆች» በሚለው ዝርዝር ውስጥ የሌለ ማንኛውም ጎራ ወደ Chrome(*) ተመልሶ የሚደረግ ሽግግር ይጀመራል።\n\n*፦ በአሁኑ ወቅት Internet Explorer ብቻ በራስ-ሰር ወደ Chrome መመለስ ይፈቅዳል።",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "የመጨረሻውን የChrome ትር በሽግግር ላይ አቆይ",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "የመጨረሻውን የChrome ትር በሽግግር ላይ አቆይ",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "አንድ በChrome ውስጥ ለመጨረሻ ጊዜ የተከፈተ ትር ወደ ተለዋጭ አሳሽ አቅጣጫ እንዲቀይር በሚደረግበት ጊዜ ምን እንደሚፈጠር እንዲገልጹ ያስችልዎታል።\n\nይህ መመሪያ በሚነቃበት ጊዜ ወይም ባልተዋቀረበት ጊዜ የመጨረሻው ትር ክፍት ሆኖ ይተዋል፣ እና ከሽግግሩ በኋላ ወደ አዲሱ ትር ገጽ እንዲጠቁም ይደረጋል። እንዲሰናከል ሆኖ ከተዘጋጀ የመጨረሻው ትር በሚዘጋበት ጊዜ ሌሎች የተከፈቱ የChrome መስኮቶች ከሌሉ Chrome እንዲዘጋ ያደርጋል።",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

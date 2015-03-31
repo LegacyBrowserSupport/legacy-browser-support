@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "लीगेसी ब्राउज़र समर्थन",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "लीगेसी ब्राउज़र का समर्थन करते समय अपने संगठन के लिए Chrome को परिनियोजित करें.",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "वैकल्पिक ब्राउज़र में खुल रहा है...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "वैकल्पिक ब्राउज़र नहीं खोला जा सका",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "आपके सिस्टम व्यवस्थापक ने <strong>$url$</strong> को एक्सेस करने हेतु वैकल्पिक ब्राउज़र खोलने के लिए Chrome को कॉन्फ़िगर किया है.",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "अपने सिस्टम व्यवस्थापक से संपर्क करें.",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "प्रोटोकॉल कॉन्फ़िगरेशन त्रुटि के कारण <strong>$url$</strong> को नहीं खोला जा सकता. कृपया अपने सिस्टम व्यवस्थापक से संपर्क करें.",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "लीगेसी ब्राउज़र समर्थन के बारे में <a href='https://www.google.com/intl/hi/chrome/business/'>और जानें</a>.",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

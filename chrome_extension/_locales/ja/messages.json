@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "従来のブラウザのサポート",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "従来のブラウザをサポートしながら、組織で Chrome を導入していただけます。",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "代替ブラウザで開いています...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "代替ブラウザを開くことができませんでした",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "システム管理者が、<strong>$url$</strong> へのアクセスに代替ブラウザを開くよう Chrome を設定しています。",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "システム管理者にお問い合わせください。",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "プロトコル設定エラーのため <strong>$url$</strong> を開くことができません。システム管理者にお問い合わせください。",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "従来のブラウザのサポートについて詳しくは、<a href='https://www.google.com/intl/ja/chrome/business/'>こちら</a>をご覧ください。",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

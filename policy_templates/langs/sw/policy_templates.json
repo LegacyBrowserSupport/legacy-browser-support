@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 au matoleo ya baadaye",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Uwezo wa Kutumia Kivinjari Kilichopitwa na Wakati",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Njia Mbadala ya Kivinjari",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Njia Mbadala ya Kivinjari",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Bainisha utekelezaji wa kivinjari mbadala.\nHukuruhusu kubainisha programu itakayotumika kama kivinjari mbadala.\n\nKama imewashwa unaweza kubainisha njia kamili katika sera au utumie moja ya vipengele vifuatavyo:\n\n$${ie} - Eneo chaguo-msingi la kusanikisha Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE inatumika kuchagua eneo la kivinjari katika hali hii.\n$${firefox} - Eneo chaguo-msingi la kusanikisha Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE inatumika kuchagua eneo la kivinjari katika hali hii.\n$${safari} - Eneo chaguo-msingi la kusanikisha Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE inatumika kuchagua eneo la kivinjari katika hali hii.\n\nKama sera imezimwa au kuachwa tupu chaguo-msingi la kivinjari mbadala litatumika ambalo ni Internet Explorer iliyobainishwa kana kwamba thamani ya $${ie } imetumika.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Hoja Mbadala za Kivinjari",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Hoja Mbadala za Kivinjari",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Hukuruhusu kubainisha hoja zitakazopelekwa kwenye kitekelezi cha kivinjari mbadala.\n\nKama sera imewashwa vigezo vilivyotolewa vitatumika wakati wa utekelezaji wa kivinjari mbadala.\n\nUnaweza pia kutumia kishika nafasi maalum $${url} kubainisha url inapopaswa kutokea katika mstari wa amri. K.m. \"--url=$${url} --kiosk\".\nSiyo lazima ubainishe kishika nafasi ikiwa kinapaswa kuambatishwa mpaka mwisho au iwapo kinapaswa kuwa hoja pekee unaweza kuacha sera hiyo tupu.\n\nKama sera imezimwa au imeachwa tupu url pekee ndiyo itakayopitishwa kama kigezo cha kivinjari.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Njia ya Chrome",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Njia ya Chrome",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Hukuruhusu kubainisha kitekelezaji cha Chrome kitakachozinduliwa inaporejea kutoka kwenye kivinjari mbadala(*).\n\nWakati sera inapowashwa unaweza kubainisha njia kamili katika sera au utumie kipengele kifuatacho:\n\n$${chrome} - Eneo chaguo-msingi la kusanikisha Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE inatumika kuchagua eneo la kivinjari katika hali hii.\n\nKama sera imezimwa au kuachwa tupu usanikishaji chaguo-msingi wa Chrome utatumika kana kwamba $${chrome} imetumika.\n\n*: Kwa sasa ni Internet Explorer pekee inayoweza kutumiwa kurudi kwenye Chrome kiotomatiki.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Hoja za Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Hoja za Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Hukuruhusu kubainisha hoja za kupelekwa kwenye Chrome wakati inapotekelezwa.\n\nKama sera imewashwa vigezo vilivyotolewa vitatumika wakati Chrome inapotekelezwa.\n\nUnaweza pia kutumia kishika nafasi maalum $${url} kubainisha url inapopaswa kutokea katika mstari wa amri. Mf. \"--url=$${url} --kiosk\".\nSio lazima ubainishe kishika nafasi ikiwa kinapaswa kuambatishwa mpaka \nmwisho au iwapo kinapaswa kuwa hoja pekee unaweza kuacha sera hiyo tupu.\n\nKama sera imezimwa au imeachwa tupu url pekee ndiyo itakayopitishwa kama kigezo kwenye kivinjari.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Wapangishi Wafungulie Katika Kivinjari Mbadala",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Wapangishi Wafungulie Katika Kivinjari Mbadala",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Hukuruhusu kubainisha orodha ya majina ya kikoa ya wapangishi ya kufunguliwa katika kivinjari Mbadala.\n\nKama sera imewashwa lazima utoe orodha ya vichujio vitakavyoanzisha mabadiliko kwenye kivinjari mbadala. Kila uingizaji unapswa kuwa mojawapo ya aina nne zinazofuata:\n\nSehemu ya jina la mpangishi: Majina kamili ya kikoa kama \"www.example.com\" yanapaswa kubainishwa au sehemu yazo kama \"example.com\" au hata \"example\". Herufi wakilishi bado hazitumiki.\nKiambishi cha URL: Viambishi vya URL sahihi pekee ndivyo vinavyolinganishwa kikamilifu pamoja na itifaki na tundu ikihitajika. Mf. \"http://login.example.com\" au \"https://www.example.com:8080/login/\". Uingizaji hasi: Huanza kwa \"!\" na kuendelea kama sehemu ya jina la mpangishi au kiambishi cha URL kama ilivyoelezwa hapo juu. Uingizaji hasi hufunguliwa katika Chrome wakati wote. Mf. \"!example.com\" au \"!file:///c:/localapp/\".\nUingizaji wa herufi wakilishi: Huwa na herufi moja ya \"*\". Hulingana na URL yoyote. Inakusudiwa kutumiwa pamoja na uingizaji hasi, ikiwa URL nyingi zinapaswa kuwa wazi katika kivinjari mbadala na uchaguzi mdogo pekee wa URL unapaswa kufunguliwa katika Chrome.\n\nUingizaji hasi una vipaumbele vya juu zaidi kuliko uingizaji chanya unaoruhusu kutoa idhini mafungu makubwa ya kikoa huku ukihifadhi sehemu ndogo zaidi za kufunguliwa katika Chrome.\nUingizaji wa herufi wakilishi kama upo unatumika baada ya sheria nyingine zote kuangaliwa.\n\nItifaki zinazofuata zinafuatiliwa kwa kuelekeza kwingine: http:, https:.\n\nUsipobainishwa au kuachwa tupu - hakuna kuanzisha mabadiliko kwenye kivinjari mbadala.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Wapangishi Wafungulie Katika Kivinjari Chochote",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Wapangishi Wafungulie Katika Kivinjari Chochote",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Hukuruhusu kubainisha orodha ya majina ya kikoa yatakayofunguliwa katika kivinjari mojawapo.\n\nSera hii inapowashwa, vikoa katika orodha hii vitapatikana katika vivinjari vyote viwili na havitaanzisha mabadiliko kwa njia yoyote.\n\nHali inayowezekana ya matumizi ni vikoa vyovyote vya uthibitishaji ambavyo vinashirikiwa kati ya programu mpya na zilizopitwa na wakati katika orodha hii.\n\nSehemu za Majina ya Mpangishi: Ama majina ya kikoa kamili kama \"www.example.com\" yanapaswa kubainishwa au sehemu zake kama \"example.com: au hata \"example\". Herufi wakilishi bado hazitumiwi. Viambishi vya URL: Viambishi vya URL sahihi pekee ndivyo vinalinganishwa kikamilifu na itifaki na mlango ikihitajika. Kwa mfano \"http://login.example.com\" au \"https://www.example.com:8080/login/\".\n\n\nKama haijabainishwa ama imeachwa tupu - kikoa chochote ambacho hakipo kwenye orodha ya \"Wapangishi Wafungulie Katika Kivinjari Mbadala\" kitaanzisha mabadiliko ya kurudi kwenye Chrome(*).\n\n*: Kwa sasa ni Internet Explorer pekee inayoweza kutumiwa kwa kuleta kwenye Chrome kiotomatiki.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Badilisha Kichupo cha Mwisho cha Chrome",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Badilisha Kichupo cha Mwisho cha Chrome",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Hukuruhusu kubainisha kinachotendeka kichupo cha mwisho kilicho wazi katika Chrome kinapoelekezwa kwenye kivinjari mbadala.\n\nSera hii inapowashwa au kutowekwa kichupo cha mwisho kitaachwa wazi na kuelekezwa kwenye ukurasa mpya wa kichupo baada ya mabadiliko. Ikizimwa basi kichupo cha mwisho kitafungwa na kusababisha kufunga Chrome ikiwa hakuna madirisha mengine kwenye Chrome yaliyo wazi.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

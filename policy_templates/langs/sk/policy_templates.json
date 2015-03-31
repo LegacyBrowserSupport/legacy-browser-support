@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 alebo novší",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Podpora starších prehliadačov",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Cesta k alternatívnemu prehliadaču",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Cesta k alternatívnemu prehliadaču",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Zadajte spustiteľný súbor alternatívneho prehliadača.\nUmožňuje zadať program, ktorý sa má použiť ako alternatívny prehliadač.\n\nAk je toto pravidlo povolené, môžete zadať absolútnu cestu súboru alebo použiť niektorú z nasledujúcich premenných:\n\n$${ie} – v tomto prípade sa použije predvolené umiestnenie inštalácie prehliadača Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE.\n$${firefox} – v tomto prípade sa použije predvolené umiestnenie inštalácie prehliadača Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE.\n$${safari} – v tomto prípade sa použije predvolené umiestnenie inštalácie prehliadača Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE.\n\nAk toto pravidlo nie je povolené alebo je ponechané prázdne, použije sa predvolený alternatívny prehliadač, čo je Internet Explorer v tom istom umiestnení (presne tak, ako keby bola použitá hodnota $${ie}).",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Argumenty alternatívneho prehliadača",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Argumenty alternatívneho prehliadača",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Umožňuje zadať argumenty, ktoré sa odovzdajú spustiteľnému súboru alternatívneho prehliadača.\n\nAk je toto pravidlo povolené, použijú sa pri spustení alternatívneho prehliadača zadané parametre.\n\nPomocou špeciálneho zástupného symbolu $${url} môžete tiež určiť, kam sa má v príkazovom riadku vložiť adresa URL. Príklad: \"--url=$${url} --kiosk\".\nAk sa má vložiť adresa URL na koniec, tento zástupný symbol nemusíte zadávať. Ak je adresa URL jediným argumentom, môžete toto pravidlo ponechať prázdne.\n\nAk je toto pravidlo zakázané alebo je ponechané prázdne, odovzdá sa prehliadaču ako parameter iba adresa URL.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Cesta k prehliadaču Chrome",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Cesta k prehliadaču Chrome",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Umožňuje zadať spustiteľný súbor prehliadača Chrome, ktorý sa má spustiť pri návrate z alternatívneho prehliadača(*).\n\nAk je toto pravidlo povolené, môžete zadať absolútnu cestu súboru alebo použiť nasledujúcu premennú:\n\n$${chrome} – v tomto prípade sa použije predvolené umiestnenie inštalácie prehliadača Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE.\n\nAk je toto pravidlo zakázané alebo je ponechané prázdne, použije sa predvolené umiestnenie inštalácie prehliadača Chrome (presne tak, ako keby bola použitá hodnota $${chrome}).\n\n*: V súčasnosti podporuje automatický návrat do prehliadača Chrome iba prehliadač Internet Explorer.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Argumenty prehliadača Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Argumenty prehliadača Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Umožňuje zadať argumenty, ktoré sa pri spustení odovzdajú prehliadaču Chrome.\n\nAk je toto pravidlo povolené, použijú sa pri spustení prehliadača Chrome zadané argumenty.\n\nPomocou špeciálneho zástupného symbolu $${url} môžete tiež určiť, kam sa má v príkazovom riadku vložiť adresa URL. Príklad: \"--url=$${url} --kiosk\".\nAk sa má URL vložiť na koniec, tento zástupný symbol nemusíte zadávať. Ak je adresa URL jediným jediným argumentom, môžete toto pravidlo ponechať prázdne.\n\nAk je toto pravidlo zakázané alebo je ponechané prázdne, odovzdá sa prehliadaču ako parameter iba adresa URL.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Hostiteľské servery, ktoré sa majú otvoriť v alternatívnom prehliadači",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Hostiteľské servery, ktoré sa majú otvoriť v alternatívnom prehliadači",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Umožňuje zadať zoznam názvov hostiteľských domén, ktoré sa majú otvoriť v alternatívnom prehliadači.\n\nAk toto pravidlo povolíte, musíte zadať zoznam filtrov, ktoré spustia prechod do alternatívneho prehliadača. Každý vstup by mal byť jeden z nasledujúcich štyroch typov:\nČasť názvu hostiteľa: mali by ste zadať buď celé názvy domén (napríklad www.example.com), alebo ich časti (napríklad example.com alebo example). Zástupné znaky nie sú zatiaľ podporované.\nPredpona webovej adresy: je možné použiť iba platné predpony webových adries. V prípade potreby je možné uviesť aj protokol a port. Príklad: „http://login.example.com“ alebo „https://www.example.com:8080/login/“.\nVylučujúci reťazec: začína sa znakom výkričníka (!), za ktorým nasleduje časť názvu hostiteľa alebo predpona webovej adresy tak, ako je to uvedené vyššie. Vylučujúce vstupy sa vždy otvárajú v prehliadači Chrome. Príklad: „!example.com“ alebo „!file:///c:/localapp/“.\nZástupný znak: obsahuje iba jediný znak hviezdičky (*). Zodpovedá akejkoľvek webovej adrese. Je určený na použitie spolu s vylučujúcimi reťazcami v prípade, že väčšina webových adries sa má otvoriť v alternatívnom prehliadači a iba malá časť webových adries by sa mala otvoriť v prehliadači Chrome.\n\nVylučujúce reťazce majú vyššiu prioritu ako zahŕňajúce. Umožňuje to pridať na bielu listinu časti domény a zároveň uložiť menšie sekcie, aby sa otvorili v prehliadači Chrome.\nAk použijete zástupný znak, uplatní sa až potom, čo sa skontrolujú všetky ostatné pravidlá.\n\nNa ciele presmerovania sa monitorujú iba protokoly http: a https:.\n\nAk toto pravidlo nezadáte alebo pole ponecháte prázdne, nespustí sa žiadny prechod do alternatívneho prehliadača.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Hostiteľské servery, ktoré sa majú otvoriť v ktoromkoľvek prehliadači",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Hostiteľské servery, ktoré sa majú otvoriť v ktoromkoľvek prehliadači",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Umožňuje zadať zoznam názvov hostiteľských domén, ktoré sa môžu otvoriť v ktoromkoľvek prehliadači.\n\nKeď je toto pravidlo povolené, domény uvedené v zozname budú dostupné v ktoromkoľvek prehliadači a nebudú spúšťať prechod medzi prehliadačmi.\n\nTento zoznam je možné použiť napríklad na uvedenie domén overovania totožnosti, ktoré sa zdieľajú medzi novými a starými aplikáciami.\n\nČasti názvov hostiteľov: treba zadať úplné názvy domén, napríklad www.example.com, alebo ich časti, napríklad example.com, alebo dokonca len example. Zástupné znaky zatiaľ nie sú podporované.\nPredpony webových adries: je možné použiť iba platné predpony webových adries. V prípade potreby je možné uviesť aj protokol a port. Príklad: http://login.example.com alebo https://www.example.com:8080/login/.\n\nAk toto pravidlo nezadáte alebo zoznam ponecháte prázdny, každá doména, ktorá nie je uvedená v zozname „Hostiteľské servery, ktoré sa majú otvoriť v alternatívnom prehliadači“ spustí prechod späť do prehliadača Chrome(*).\n\n*: V súčasnosti podporuje automatický návrat do prehliadača Chrome iba prehliadač Internet Explorer.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Nastavenie akcie, ktorú má posledná karta prehliadača Chrome vykonať po prechode",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Nastavenie akcie, ktorú má posledná karta prehliadača Chrome vykonať po prechode",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Umožňuje vám určiť akciu, ktorú má vykonať posledná otvorená karta v prehliadači Chrome presmerovávaná do alternatívneho prehliadača.\n\nKeď toto pravidlo povolíte, prípadne ak ho nenastavíte, posledná karta zostane po prechode otvorená a bude odkazovať na stránku na novej karte. Ak ho zakážete, posledná karta sa zatvorí a ak nie sú otvorené žiadne ďalšie okná prehliadača Chrome, zatvorí sa aj celý prehliadač.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

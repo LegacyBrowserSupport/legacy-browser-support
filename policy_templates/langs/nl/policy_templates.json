@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 of hoger",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Ondersteuning voor oudere browsers",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Alternatief browserpad",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Alternatief browserpad",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Het uitvoerbare bestand van de alternatieve browser specificeren.\nHiermee kunt u het programma specificeren dat moet worden gebruikt als alternatieve browser.\n\nIndien ingeschakeld, kunt u een absoluut pad in het beleid specificeren of een van de volgende variabelen gebruiken:\n\n$${ie} - De standaardinstallatielocatie voor Internet Explorer.\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE wordt gebruikt om de locatie van de browser te kiezen in dit geval.\n$${firefox} - De standaardinstallatielocatie voor Firefox.\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE wordt gebruikt om de locatie van de browser te kiezen in dit geval.\n$${safari} - De standaardinstallatielocatie voor Safari.\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE wordt gebruikt om de locatie van de browser te kiezen in dit geval.\n\nAls het beleid niet is ingeschakeld of leeg wordt gelaten, wordt de standaard alternatieve browser gebruikt. Dit is Internet Explorer, alsof de waarde $${ie} is gebruikt.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Argumenten voor alternatieve browser",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Argumenten voor alternatieve browser",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Hiermee kunt u de argumenten specificeren die worden doorgegeven aan het uitvoerbare bestand van de alternatieve browser.\n\nAls het beleid is ingeschakeld, worden de opgegeven parameters gebruikt wanneer de alternatieve browser wordt aangeroepen.\n\nU kunt ook de speciale placeholder $${url} gebruiken om te specificeren waar de URL moet worden weergegeven in de opdrachtregel. Bijvoorbeeld '--url=$${url} --kiosk'.\nU hoeft de speciale placeholder niet te specificeren als deze aan het eind moet worden bijgevoegd of als dit het enige argument is. In dit geval kunt u dat beleid leeg laten.\n\nAls het beleid is uitgeschakeld of leeg wordt gelaten, wordt alleen de URL als parameter doorgegeven aan de browser.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Chrome-pad",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Chrome-pad",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Hiermee kunt u het uitvoerbare bestand van Chrome specificeren dat moet worden gestart wanneer u terugkeert uit de alternatieve browser(*).\n\nWanneer het beleid is ingeschakeld, kunt u een absoluut pad in het beleid specificeren of de volgende variabele gebruiken:\n\n$${chrome} - De standaardinstallatielocatie voor Chrome.\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE wordt gebruikt om de locatie van de browser te kiezen in dit geval.\n\nAls het beleid is uitgeschakeld of leeg wordt gelaten, wordt de standaardinstallatie van Chrome gebruikt alsof de waarde $${chrome} is gebruikt.\n\n*: Momenteel ondersteunt alleen Internet Explorer automatisch terugkeren naar Chrome.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Chrome-argumenten",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Chrome-argumenten",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Hiermee kunt u de argumenten specificeren die worden doorgegeven aan Chrome wanneer het programma wordt uitgevoerd.\n\nAls het beleid is ingeschakeld, worden de opgegeven parameters gebruikt wanneer Chrome wordt aangeroepen.\n\nU kunt ook de speciale placeholder $${url} gebruiken om te specificeren waar de URL moet worden weergegeven op de opdrachtregel. Bijvoorbeeld '--url=$${url} --kiosk'.\nU hoeft de speciale placeholder niet te specificeren als deze aan het eind moet worden bijgevoegd of als dit het enige argument is. In dit geval kunt u dat beleid leeg laten.\n\nAls het beleid is uitgeschakeld of leeg wordt gelaten, wordt alleen de URL als parameter doorgegeven aan de browser.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Hosts die worden geopend in de alternatieve browser",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Hosts die worden geopend in de alternatieve browser",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Hiermee kunt u een lijst met hostdomeinnamen specificeren die in de alternatieve browser moeten worden geopend.\n\nAls het beleid is ingeschakeld, moet u een lijst met filters leveren waarvoor de overgang naar de alternatieve browser wordt geactiveerd. Elke vermelding moet een van de volgende vier typen zijn:\n\nHostnaamfragmenten: volledige domeinnamen (zoals 'www.example.com') moeten worden gespecificeerd, of gedeelten hiervan (zoals 'example.com' of zelfs 'example'). Jokertekens worden nog niet ondersteund.\nURL-voorvoegsels: alleen correcte URL-voorvoegsels worden volledig gekoppeld aan protocol en poort wanneer dat nodig is. Bijvoorbeeld 'http://login.example.com' of 'https://www.example.com:8080/login/'.\nNegatieve vermeldingen: beginnen met '!' en gaan verder als hostnaamfragmenten of URL-voorvoegsels zoals hierboven beschreven. Negatieve vermeldingen worden altijd geopend in Chrome. Bijvoorbeeld '!example.com' of '!file:///c:/localapp/'.\nVermeldingen met jokerteken: kunnen slechts één teken '*' bevatten. Komen overeen met elke URL. Bedoeld voor gebruik in combinatie met negatieve vermeldingen, als de meeste URL's moeten worden geopend in de alternatieve browser en slechts een klein aantal URL's moet worden geopend in Chrome.\n\nNegatieve vermeldingen hebben een hogere prioriteit dan positieve vermeldingen. Zo kunnen grote delen van een domein op een witte lijst worden gezet terwijl kleinere delen worden opgeslagen om te worden geopend in Chrome.\nVermeldingen met jokerteken, indien aanwezig, worden pas toegepast nadat alle andere regels zijn gecontroleerd.\n\nDe volgende protocollen worden gecontroleerd op omleidingen: http:, https:.\n\nAls het beleid niet is gespecificeerd of leeg wordt gelaten, wordt er geen overgang naar de alternatieve browser geactiveerd.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Hosts die in beide browsers kunnen worden geopend",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Hosts die in beide browsers kunnen worden geopend",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Hiermee kunt u een lijst met hostdomeinnamen specificeren die in beide browsers kunnen worden geopend.\n\nWanneer dit beleid is ingeschakeld, zijn de domeinen in deze lijst beschikbaar in beide browsers en activeren ze geen overgang.\n\nEen mogelijke gebruikssituatie is een verificatiedomein dat wordt gedeeld tussen nieuwe en oudere apps in deze lijst.\n\nHostnaamfragmenten: volledige domeinnamen (zoals 'www.example.com') moeten worden gespecificeerd, of gedeelten hiervan (zoals 'example.com' of zelfs 'example'). Jokertekens worden nog niet ondersteund.\nURL-voorvoegsels: alleen correcte URL-voorvoegsels worden volledig gekoppeld aan protocol en poort wanneer dat nodig is. Bijvoorbeeld 'http://login.example.com' of 'https://www.example.com:8080/login/'.\n\nAls dit beleid niet wordt gespecificeerd of leeg wordt gelaten, activeert elk domein dat niet in de lijst 'Hosts die worden geopend in de alternatieve browser' staat, een overgang terug naar Chrome(*).\n\n*: Momenteel ondersteunt alleen Internet Explorer automatisch terugkeren naar Chrome.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Laatste Chrome-tabblad behouden bij overgang",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Laatste Chrome-tabblad behouden bij overgang",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Hiermee kunt u specificeren wat er gebeurt wanneer het laatste geopende tabblad in Chrome wordt omgeleid naar de alternatieve browser.\n\nWanneer dit beleid is ingeschakeld of niet wordt ingesteld, blijft het laatste tabblad open en verwijst dit naar de nieuwe tabbladpagina na de overgang. Als het beleid is uitgeschakeld, wordt het laatste tabblad gesloten, wat ertoe leidt dat Chrome wordt gesloten als er geen andere Chrome-vensters zijn geopend.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

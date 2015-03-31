@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 ან უფრო ახალი ვერსია",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "მემკვიდრეობითი ბრაუზერის მხარდაჭერა",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "ალტერნატიული ბრაუზერის გზა",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "ალტერნატიული ბრაუზერის გზა",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "მიუთითეთ ალტერნატიული ბრაუზერის გამშვები.\nსაშუალებას გაძლევთ განსაზღვროთ პროგრამა, რომელიც გამოყენებული იქნება როგორც ალტერნატიული ბრაუზერი.\n\nთუ გააქტიურებულია, შეგიძლიათ პოლიტიკაში მიუთითოთ მისი სრული გზა ან ისარგებლოთ შემდეგი ცვლადებით:\n\n$$ {ი} - სისტემურად განსაზღვრული ინსტალაციის ძირითადი ადგილმდებარეობა Internet Explorer-სათვის \nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE ამ შემთხვევაში გამოიყენება ბრაუზერის ადგილმდებარეობის შესარჩევად.\n$$ {Firefox} - სისტემურად განსაზღვრული ინსტალაციის ადგილმდებარეობა Firefox-თვის\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE ამ შემთხვევაში გამოიყენება ბრაუზერის ადგილმდებარეობის შესარჩევად.\n$$ {Safari} - სისტემურად განსაზღვრული ინსტალაციის ადგილმდებარეობა Safari-სათვის.\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE ამ შემთხვევაში გამოიყენება ბრაუზერის ადგილმდებარეობის შესარჩევად.\n\nთუ პოლიტიკა არ არის გააქტიურებული ან რჩება ცარიელი, გამოყენებული იქნება ნაგულისხმები ალტერნატიული ბრაუზერი, რომელსაც Internet Explorer-ი წარმოადგენს, როგორც იმ შემთხვევაში, თუ მოხდება $${ie} ღირებულების გამოიყენება.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "ალტერნატიული ბრაუზერის არგუმენტები",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "ალტერნატიული ბრაუზერის არგუმენტები",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "საშუალებას გაძლევთ განსაზღვროთ არგუმენტები, რომელიც გადაეცემა ალტერნატიული ბრაუზერის გამშვებს.\n\nთუ პოლიტიკა გააქტიურებულია, მიწოდებული პარამეტრების გამოყენება მოხდება, ალტერნატიული ბრაუზერის გამოძახებისას.\n\nთქვენ ასევე შეგიძლიათ გამოიყენოთ სპეციალური ჩანაცვლების ველი $$ {url}, რათა განსაზრვროთ, თუ სად გამოჩნდეს url ბრძანების ხაზზე. მაგალითად, \"--url = $$ {url} --კიოსკი\".\nთქვენ არ გჭირდებათ განსაზღვროთ, დაემატოს ჩანაცვლების ველი ბოლოში, თუ იყოს ერთადერთი არგუმენტი, რომელიც შეგიძლიათ დატოვოთ პოლიტიკაში ცარიელი.\n\nთუ პოლიტიკა გამორთულია ან დატოვებულია ცარიელი, ბრაუზერის პარამეტრად მოხდება მხოლოდ url-ის გადაცემა.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Chrome-ის გზა",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Chrome-ის გზა",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "გაძლევთ საშუალებას განსაზღვროთ Chrome-ის გამშვები, როცა ხდება ალტერნატიული ბრაუზერიდან დაბრუნება (*).\n\nროდესაც პოლიტიკა გააქტიურებულია, მასში შეგიძლიათ მიუთითოთ სრული გზა ან გამოიყენოთ შემდეგი ცვლადები:\n\n$$ {chrome} - ნაგულისხმევი მდებარეობა Chrome-ის ინსტალაციისთვის.\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE ამ შემთხვევაში გამოიყენება ბრაუზერის ადგილმდებარეობის შესარჩევად.\n\nთუ პოლიტიკა გამორთულია ან დატოვებულია ცარიელი, Chrome-ის ნაგულისხმევი ინსტალაციის გამოყენება მოხდება, როგორც მოხდებოდა $$ {chrome} ღირებულების გამოიყენება.\n\n*: ამჟამად მხოლოდ Internet Explorer-ს აქვს Chrome-ზე ავტომატურად დაბრუნების ტექნიკური მხარდაჭერა.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Chrome-ის არგუმენტები",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Chrome-ის არგუმენტები",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "საშუალებას გაძლევთ მოხდეს არგუმენტების Chrome-სათვის გადაცემა, როდესაც ის გაშვებულია.\n\nთუ პოლიტიკა გააქტიურებულია, მოხდება მოწოდებული პარამეტრების გამოყენება Chrome-ით სარგებლობის შემთხვევაში.\n\nთქვენ შეგიძლიათ გამოიყენოთ სპეციალური ჩანაცვლების ველი $$ {url} , სადაც მიუთითებთ, თუ სად გამოჩნდეს url ბრძანების ხაზში. მაგალითად, \"--url = $$ {url} --კიოსკი\".\nთქვენ არ გჭირდებათ განსაზღვროთ, დაემატოს ჩანაცვლების ველი ბოლოში, თუ იყოს ერთადერთი არგუმენტი, რომელიც შეგიძლიათ დატოვოთ პოლიტიკაში ცარიელი.\n\nთუ პოლიტიკა გამორთულია ან დატოვებულია ცარიელი, ბრაუზერის პარამეტრად მოხდება მხოლოდ url-ის გადაცემა.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "ჰოსტების გახსნა ალტერნატიულ ბრაუზერში",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "ჰოსტების გახსნა ალტერნატიული ბრაუზერში",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "საშუალებას გაძლევთ განსაზღვროთ იმ მასპინძელი დომენის სახელები, რომელიც უნდა გაიხსნას ალტერნატიულ ბრაუზერში.\n\nთუ პოლიტიკა გააქტიურებულია, თქვენ უნდა უზრუნველყოთ იმ ფილტრების ჩამონათვალი, რომელიც იქნება გადასვლის დროს ალტერნატიულ ბრაუზერთან დამაკავშირებელი. ყველა ჩანაწერი უნდა იყოს შემდეგი ოთხი ტიპიდან ერთ-ერთი:\n\nჰოსტის სახელის ნაწილი: დომენის სახელი მითითებული უნდა იყოს სრულად, როგორც \"www.example.com\" ან მხოლოდ მისი ნაწილი, როგორც მაგალითად \"example.com\" ან თუნდაც მხოლოდ \"example\". ჩანაცვლების ტექნიკური მხარდაჭერა ჯერ-ჯერობით არ ხორციელდება.\nURL ინდექსი: მხოლოდ სწორი URL პრეფიქსები მოდის პროტოკოლთან და საჭიროების შემთხვევაში პორტთან სრულ შესაბამისობაში. მაგალითად, \"http://login.example.com\" ან \"https://www.example.com:8080/login/\".\nნეგატიური ჩანაწერი: იწყება \"!\"-ით და გრძელდება ჰოსტის სახელის ნაწილით ან URL-ს პრეფიქსით, როგორც აღწერილია ზემოთ. \nნეგატიური ჩანაწერი ყოველთვის ღიაა Chrome-ში. მაგალითად, \"!example.com\" ან \"!file:///c:/localapp/\".\nჩანაცვლების ჩანაწერი: შეიცავს მხოლოდ \"*\" სიმბოლოს. ესადაგება ნებისმიერი URL-ს. გამოიყენება ნეგატიურ ჩანაწერებთან, იმ შემთხვევაში თუ უმეტესი URL-ს გახსნა ხდება ალტერნატიული ბრაუზერით და მხოლოდ მვირე შერჩეული მისამართების გახსნა ხდება Chrome-ში.\n\nნეგატიურ ჩანაწერებს აქვს უფრო მაღალი პრიორიტეტი, ვიდრე პოზიტიურ ჩანაწერებს, რაც საშუალებას იძლევა მოხდეს დომენის დიდი ნაწილების გადახარისხება, მაშინ როცა ხდება პატარა ნაწილების შენახვა Chrome-ში გასახსნელად.\nჩანაცვლებული ჩანაწერების გამოიყენება, ასეთის არსებობის შემთხვევაში ხდება მხოლოდ მას შემდეგ, რაც მოხდება ყველა სხვა წესის გადამოწმება.\n\nგადამისამართებისას ხორციელდება შემდეგი პროტოკოლების მონიტორინგი: http :, https:\n\nთუ არ არის მითითებული, ან დატოვებულია ცარიელი, არ მოხდება არც ერთ ალტერნატიულ ბრაუზერზე გადასვლა.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "ჰოსტის გახსნა ნებისმიერ ბრაუზერში",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "ჰოსტის გახსნა ნებისმიერ ბრაუზერში",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "საშუალებას გაძლევთ უზრუნველყოთ იმ მასპინძელი დომენის სახელების ჩამონათვალით, რომელიც უნდა გაიხსნას ბრაუზერში.\n\nროდესაც ეს პოლიტიკა აქტიურია, ჩამონათვალში მოცემული დომენები ხელმისაწვდომია ორივე ბრაუზერში და არ საჭიროებს რომელიმე მხრიდან გადასვლის ტრიგერებს.\n\nგამოყენების შესაძლო შემთხვევაა ნებისმიერი ავტორიზებული დომენი, რომელიც გაზიარებულია ახალი და არსებული აპპ-ების სიაში.\n\nჰოსტის სახელის ნაწილი: დომენის სახელი მითითებული უნდა იყოს სრულად, როგორც მაგალითად: \"www.example.com\" ან მხოლოდ მისი ნაწილი, როგორც \"example.com\" ან თუნდაც მხოლოდ \"example\". ჩანაცვლების ტექნიკური მხარდაჭერა ჯერ-ჯერობით არ ხორციელდება.\nURL ინდექსი: მხოლოდ სწორი URL პრეფიქსები მოდის პროტოკოლთან და საჭიროების შემთხვევაში პორტთან სრულ შესაბამისობაში. მაგალითად, \"http://login.example.com\" ან \"https://www.example.com:8080/login/\".\n\nთუ არ არის მითითებული, ან დატოვებულია ცარიელი - ნებისმიერი დომენი, რომელიც არ არის მოცემული \"ალტერნატიულ ბრაუზერში გასახსნელი ჰოსტების\" ჩამონათვალში, გადავა უკან Chrome-ში(*).\n\n*: ამჟამად მხოლოდ Internet Explorer-ს აქვს Chrome-ზე ავტომატურად დაბრუნების ტექნიკური მხარდაჭერა.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "გადასვლის დროს, ბოლოს გახსნილი Chrome-ის ჩანართის შენახვა",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "გადასვლის დროს, ბოლოს გახსნილი Chrome-ის ჩანართის შენახვა",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "საშუალებას გაძლევთ მიუთითოთ, თუ რა ხდება, როდესაც მიმდინარეობს ბოლოს გახსნილი Chrome-ის ჩანართის გადამისამართება ალტერნატიულ ბრაუზერზე.\n\nროდესაც პოლიტიკა აქტიურია ან არ არის ფორმულირებული, მოხდება ბოლოს გახსნილი ჩანართის ღიად დატოვება და გადასვლის შედეგ ახალი ჩანართის გვერდზე მითითება. თუ ის გამორთულია, მაშინ დაიხურება ბოლოს გახსნილი ჩანართი, რომელიც ასევე გამოიწვევს Chrome-ის დახურვას, თუ სხვა რომელიმე Chrome-ის ფანჯარა არ არის ღია.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

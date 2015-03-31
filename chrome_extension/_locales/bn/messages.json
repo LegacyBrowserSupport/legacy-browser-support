@@ -1,0 +1,46 @@
+{
+  "extension_name": {
+    "message": "লেগাসি ব্রাউজার সমর্থন",
+    "description": "Name of the extension."
+  },
+  "extension_description": {
+    "message": "যখন লেগাসি ব্রাউজার সমর্থন করে, আপনার সংসঠনের জন্য Chrome স্থাপন করুন৷",
+    "description": "Description of the extension."
+  },
+  "redirect_title": {
+    "message": "বিকল্প ব্রাউজারে খুলছে...",
+    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+  },
+  "error_title": {
+    "message": "বিকল্প ব্রাউজারটি খোলা যাবে না৷",
+    "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
+  },
+  "redirect_message": {
+    "message": "<strong>$url$</strong> অ্যাক্সেস করার জন্য একটি বিকল্প ব্রাউজার খুলতে, আপনার সিস্টেমের প্রশাসক Chrome কনফিগার করেছে৷",
+    "description": "Text shown on the redirection page while the alternative browser is started.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "browser_error": {
+    "message": "আপনার সিস্টেম প্রশাসকের সাথে যোগাযোগ করুন৷",
+    "description": "Error mesage shown if the redirection has failed."
+  },
+  "wrong_protocol_error": {
+    "message": "প্রোটোকল কনফিগারেশন ত্রুটির কারনে <strong>$url$</strong> খোলা যাবে না৷ দয়া করে আপনার সিস্টেম প্রশাসকের সাথে যোগাযোগ করুন৷",
+    "description": "This error is whown when the action page is invoke with a hash tag specifying an address that is not in the http/https protocols.",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "http://google.com/"
+      }
+    }
+  },
+  "learn_more_message": {
+    "message": "লেগাসি ব্রাউজার সমর্থনের বিষয়ে <a href='https://www.google.com/intl/en/chrome/business/'>আরো জানুন</a>৷",
+    "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
+  }
+}

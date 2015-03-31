@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 eller nyere",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Støtte for eldre nettlesere",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Alternativ nettleserbane",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Alternativ nettleserbane",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Angi den kjørbare banen for den alternative nettleseren.\nGjør det mulig å angi programmet som skal brukes som alternativ nettleser.\n\nHvis den er aktivert, kan du enten angi en absolutt bane for innstillingen eller bruke en av følgende variabler:\n\n$${ie} – standardplasseringen for Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE brukes for å velge nettleserens plassering i dette tilfellet.\n$${firefox} – standardplasseringen for Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE brukes for å velge nettleserens plassering i dette tilfellet.\n$${safari} – standardplasseringen for Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE brukes for å velge nettleserens plassering i dette tilfellet.\n\nHvis innstillingen ikke er aktivert eller er tom, er det standardnettleseren som brukes – Internet Explorer – som om verdien for $${ie} er valgt.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Alternative nettleserargumenter",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Alternative nettleserargumenter",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Gjør det mulig å angi argumentene som skal sendes til den kjørbare banen for den alternative nettleseren.\n\nHvis innstillingen aktiveres, brukes parametrene som oppgis når den alternative nettleseren startes.\n\nDu kan også bruke den spesielle plassholderen $${url} for å spesifisere at nettadressen skal vises i kommandolinjen. Eksempel: «--url=$${url} --kiosk».\nDu trenger ikke å spesifisere plassholderen hvis den skal legges til på slutten eller hvis den skal være det eneste argumentet – da kan du la innstillingen stå tom.\n\nHvis innstillingen er deaktivert eller tom, er det bare nettadressen som sendes som parameter til nettleseren.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Chrome-bane",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Chrome-bane",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Gjør det mulig å angi den kjørbare filen for Chrome som skal startes når brukeren kommer tilbake fra den alternative nettleseren(*).\n\nNår innstillingen er aktivert, kan du enten angi en absolutt bane i innstillingene eller bruke følgende variabel:\n\n$${chrome} – standardplasseringen av Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE brukes for å velge plasseringen av nettelseren i dette tilfellet.\n\nHvis innstillingen er deaktivert eller tom, brukes standardinstallasjonen av Chrome – som om verdien $${chrome} hadde vært brukt.\n\n*: For øyeblikket er det bare Internet Explorer som støtter automatisk retur til Chrome.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Chrome-argumenter",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Chrome-argumenter",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Gjør det mulig å angi argumenter som skal sendes til Chrome når den kjøres.\n\nHvis innstillingen er aktivert, brukes de angitte parametrene når Chrome startes.\n\nDu kan også bruke den spesielle plassholderen $${url} for å angi hvor nettadressen skal vises i kommandolinjen. Eksempel: «--url=$${url} --kiosk».\nDu trenger ikke å angi plassholderen hvis den skal legges til på slutten eller hvis den skal være det eneste argumentet – da kan du la den innstillingen stå tom.\n\nHvis innstillingen er deaktivert eller tom, er det bare nettadressen som sendes som parameter til nettleseren.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Verter som skal åpnes i den alternative nettleseren",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Verter som skal åpnes i den alternative nettleseren",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Gjør det mulig å angi en liste over domenenavn for verter som skal åpnes i den alternative nettleseren.\n\nHvis innstillingen er aktivert, må du oppgi en liste over filtre som utløser overgangen til den alternative nettleseren. Hver oppføring skal være én av følgende fire typer:\n\nDeler av vertsnavn: Enten skal fullstendige domenenavn, som f.eks. «www.example.com», angis, eller deler av dem, som f.eks. «example.com» eller bare «example». Jokertegn støttes foreløpig ikke.\nPrefikser for nettadresser: Kun nøyaktige prefikser for nettadresser samsvares fullstendig med protokollen og porten, hvis det er nødvendig. For eksempel «http://login.example.com» eller «https://www.example.com:8080/login/».\nNegative oppføringer: Begynner med «!» og fortsetter som vertsnavndeler eller prefikser for nettadresser, som beskrevet ovenfor. Negative oppføringer åpnes alltid i Chrome. For eksempel «example.com» eller «file:///c/localapp/».\nJokertegnoppføring: inneholder kun ett enkelt «*»-tegn. De samsvarer med alle nettadresser. De er ment til å brukes sammen med negative oppføringer, hvis de fleste nettadressene skal åpnes i den alternative nettleseren, og bare et lite utvalg av nettadressene skal åpnes i Chrome.\n\nNegative oppføringer har høyere prioritet enn positive oppføringer, noe som gjør det mulig å godkjenne store deler av et domene, mens et mindre utvalg skal åpnes i Chrome.\nEventuelle jokertegnoppføringer brukes bare etter at alle andre regler er kontrollert.\n\nFølgende protokoller overvåkes for omdirigering: http:, https:.\n\nHvis innstillingen ikke er spesifisert eller den er tom, utløses ikke overgang til den alternative nettleseren.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Verter som kan åpnes i begge nettleserne",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Verter som kan åpnes i begge nettleserne",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Gjør det mulig å angi en liste over domenenavn for verter som kan åpnes i begge nettleserne.\n\nNår denne innstillingen aktiveres, blir domenene i listen tilgjengelige i begge nettleserne, og utløser ingen overføring i noen retning.\n\nEt typisk eksempel er autentiseringsdomener som deles mellom nye og eldre apper i denne listen.\n\nVertnavndeler: Enten skal fullstendige domenenavn, som f.eks. «www.example.com», angis eller deler av dem, som f.eks. «example.com» eller bare «example». Jokertegn støttes foreløpig ikke.\nPrefikser for nettadresser: Bare nøyaktige prefikser for nettadresser samsvares fullstendig med protokollen og porten, hvis det er nødvendig. For eksempel «http://login.example.com» eller «https://www.example.com:8080/login/».\n\nHvis innstillingen ikke er angitt eller den er tom, utløser alle domener som ikke står på «Verter som skal åpnes i den alternative nettleseren»-listen, en overgang tilbake til Chrome(*).\n\n*: Foreløpig er det bare Internet Explorer som støtter automatisk retur til Chrome.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Behold den siste Chrome-fanen under overgang",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Behold den siste Chrome-fanen under overgang",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Gjør det mulig å angi hva som skjer når den siste åpne fanen i Chrome blir omdirigert til den alternative nettleseren.\n\nNår disse innstillingene er aktivert eller ikke valgt, blir den siste fanen stående åpen og peker på den nye fanesiden etter overgangen. Hvis den er deaktivert, blir den siste fanen lukket, noe som fører til at Chrome lukkes hvis det ikke finnes andre åpne Chrome-vinduer.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

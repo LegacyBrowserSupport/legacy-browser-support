@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "description": "States the fact that this policy is only supported on XP SP2 and above",
+    "message": "Microsoft Windows XP SP2 or later"
+  },
+  "Cat_Google": {
+    "description": "The general category in the Group Policy Editor",
+    "message": "Google"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "description": "The specific category in the Group Policy Editor",
+    "message": "Legacy Browser Support"
+  },
+  "AlternativeBrowserPath": {
+    "description": "Name of the AlternativeBrowserPath policy",
+    "message": "Alternative Browser Path"
+  },
+  "AlternativeBrowserPath_Part": {
+    "description": "Name of the AlternativeBrowserPath policy part",
+    "message": "Alternative Browser Path"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too.",
+    "message": "Specify the executable of the alternative browser.\nAllows you to specify the program to be used as an alternative browser.\n\nIf enabled you can either specify an absolute path in the policy or use one of the following variables:\n\n$${ie} - The default install location for Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE is used to pick the location of the browser in this case.\n$${firefox} - The default install location for Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE is used to pick the location of the browser in this case.\n$${safari} - The default install location for Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE is used to pick the location of the browser in this case.\n\nIf the policy is not enabled or left empty the default alternative browser will be used which is Internet Explorer determined as if the $${ie} value is used."
+  },
+  "AlternativeBrowserArguments": {
+    "description": "Name of the AlternativeBrowserArguments policy",
+    "message": "Alternative Browser Arguments"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "description": "Name of the AlternativeBrowserArguments policy part",
+    "message": "Alternative Browser Arguments"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too.",
+    "message": "Allows you to specify the arguments to be passed to the executable of the alternative browser.\n\nIf the policy is enabled the provided paramters will be used when the alternative browser is invoked.\n\nYou can also use the special placeholder $${url} to specify where the url should appear in the command line. E.g. \"--url=$${url} --kiosk\".\nYou don't have to specify the placeholder if it should be appended to the end or if it should be the only argument you can leave that policy empty.\n\nIf the policy is disabled or left empty only the url will be passed as a parameter to the browser."
+  },
+  "ChromePath": {
+    "description": "Name of the ChromePath policy",
+    "message": "Chrome Path"
+  },
+  "ChromePath_Part": {
+    "description": "Name of the ChromePath policy part",
+    "message": "Chrome Path"
+  },
+  "ChromePath_Explain": {
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too.",
+    "message": "Allows you to specify the executable of Chrome to be lauched when returning from the alternative browser(*).\n\nWhen the policy is enabled you can either specify an absolute path in the policy or use the following variable:\n\n$${chrome} - The default install location for Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE is used to pick the location of the browser in this case.\n\nIf the policy is disabled or left empty the default installation of Chrome will be used as if the $${chrome} value has been used.\n\n*: Presently only Internet Explorer supports returning to Chrome automatically."
+  },
+  "ChromeArguments": {
+    "description": "Name of the ChromeArguments policy",
+    "message": "Chrome Arguments"
+  },
+  "ChromeArguments_Part": {
+    "description": "Name of the ChromeArguments policy part",
+    "message": "Chrome Arguments"
+  },
+  "ChromeArguments_Explain": {
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too.",
+    "message": "Allows you to specify the arguments to be passed to the Chrome when it is executed.\n\nIf the policy is enabled the provided paramters will be used when Chrome is invoked.\n\nYou can also use the special placeholder $${url} to specify where the url should appear in the command line. E.g. \"--url=$${url} --kiosk\".\nYou don't have to specify the placeholder if it should be appended to the end or if it should be the only argument you can leave that policy empty.\n\nIf the policy is disabled or left empty only the url will be passed as a parameter to the browser."
+  },
+  "URLList_Policy": {
+    "description": "Name of the URLList policy",
+    "message": "Hosts to Open In the Alternative Browser"
+  },
+  "URLList_Part": {
+    "description": "Name of the URLList policy part",
+    "message": "Hosts to Open In the Alternative Browser"
+  },
+  "URLList_Explain": {
+    "description": "Explanation of the URLList policy",
+    "message": "Allows you to specify a list of host domain names to be opened in the Alternative browser.\n\nIf the policy is enabled you have to provide a list of filters which will trigger the transition to the alternative browser. Every entry should be one of the following four types:\n\nHost-name part: Either complete domain names like \"www.example.com\" should be specified or parts of them like \"example.com\" or even \"example\". Wildcards are not supported yet.\nURL prefix: Only proper URL prefixes are matched complete with protocol and port if needed. E.g. \"http://login.example.com\" or \"https://www.example.com:8080/login/\".\nNegative entry: Starts with \"!\" and continues as host-name part or URL prefix as described above. Negative entries are always opened in Chrome. E.g. \"!example.com\" or \"!file:///c:/localapp/\".\nWildcard entry: Contains only a single \"*\" character. Matches any URL. Intended to be used together with negative entries, if most URLs should be open in the alternative browser and only a small selection of URLs should be opened in Chrome.\n\nNegative entries have higher priorities than positive entries which allows to whitelist large portions of a domain while saving smaller sections to be opened in Chrome.\nThe wildcard entry if present is applied only after all other rules have been checked.\n\nThe following protocols are monitored for redirecting: http:, https:.\n\nIf not specified or left empty - no transition to the alternative browser will be triggered."
+  },
+  "URLGreyList_Policy": {
+    "description": "Name of the URLGreyList policy",
+    "message": "Hosts to Open In Either Browser"
+  },
+  "URLGreyList_Part": {
+    "description": "Name of the URLGreyList policy part",
+    "message": "Hosts to Open In Either Browser"
+  },
+  "URLGreyList_Explain": {
+    "description": "Explanation of the URLGreyList policy",
+    "message": "Allows you to specify a list of host domain names to be opened in either browser.\n\nWhen this policy is enabled, the domains in this list will be available in both browsers and will not triggera transition either way.\n\nA possible use case are any authentication domains that are shared between new and legacy apps in this list.\n\nHost-name parts: Either complete domain names like \"www.example.com\" should be specified or parts of them like \"example.com: or even \"example\". Wildcards are not supported yet.\nURL prefixes: Only proper URL prefixes are matched complete with protocol and port if needed. E.g. \"http://login.example.com\" or \"https://www.example.com:8080/login/\".\n\nIf not specified or left empty - any domain not in the \"Hosts to Open In the Alternative Browser\" list will trigger a transition back to Chrome(*).\n\n*: Presently only Internet Explorer supports returning to Chrome automatically."
+  },
+  "KeepLastChromeTab_Policy": {
+    "description": "Name of the KeepLastChromeTab policy",
+    "message": "Keep Last Chrome Tab On Transition"
+  },
+  "KeepLastChromeTab_Part": {
+    "description": "Name of the KeepLastChromeTab part",
+    "message": "Keep Last Chrome Tab On Transition"
+  },
+  "KeepLastChromeTab_Explain": {
+    "description": "Explanation of the KeepLastChromeTab policy",
+    "message": "Allows you to specify what happens when the last open tab in Chrome is being redirected to the alternative browser.\n\nWhen this policy is enabled or not set the last tab will be left open and point to the new tab page after the transition. If it is set to disabled then the last tab will be closed which will lead to closing Chrome if there are no other Chrome windows open."
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "إصدار Microsoft Windows XP SP2 أو الإصدارات الأحدث",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "دعم المتصفحات القديمة",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "مسار المتصفح البديل",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "مسار المتصفح البديل",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "تحديد الملف التنفيذي للمتصفح البديل.\nيتيح لك تحديد البرنامج المطلوب استخدامه بصفته متصفحًا بديلاً.\n\nعند تمكين ذلك ستتمكن من تحديد مسار مطلق في السياسة أو استخدام أحد المتغيرات التالية:\n\n$${ie} - يتم استخدام موقع التثبيت الافتراضي في Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE لتحديد موقع المتصفح في هذه الحالة.\n$${firefox} - يتم استخدام موقع التثبيت الافتراضي في Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE لتحديد موقع المتصفح في هذه الحالة.\n$${safari} - موقع التثبيت الافتراضي في Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE لتحديد موقع المتصفح في هذه الحالة.\n\nإذا لم يتم تمكين السياسة أو تُركت القيمة فارغة، فسيتم استخدام المتصفح الافتراضي البديل وهو Internet Explorer الذي يتم تحديده إذا تم استخدام القيمة $${ie}.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "وسيطات المتصفح البديل",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "وسيطات المتصفح البديل",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "تتيح لك تحديد الوسيطات التي سيتم تمريرها إلى الملف التنفيذي للمتصفح البديل القابل للتنفيذ. وفي حالة تمكين هذه السياسة، سيتم استخدام المعلّمات المقدمة عند استدعاء المتصفح البديل. كما يُمكنك استخدام العنصر النائب الخاص $${url} لتحديد مكان ظهور عنوان url في سطر الأوامر. على سبيل المثال، \"--url=$${url} --kiosk\". لا يلزمك تحديد العنصر النائب في حالة إضافته في النهاية، وإذا كان يُمثّل الوسيطة الوحيدة فيُمكنك ترك السياسة فارغة. وفي حالة تعطيل السياسة أو تركها فارغة، فسيتم تمرير عنوان url فقط كمعلّمة إلى المتصفح.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "مسار Chrome",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "مسار Chrome",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "تتيح لك تحديد الملف التنفيذي لـ Chrome المطلوب تشغيله عند الرجوع من المتصفح البديل(*).\n\nعندما يتم تمكين السياسة، يمكنك تحديد مسار مطلق في السياسة أو استخدام المتغير التالي:\n\n$${chrome} - يتم استخدام موقع التثبيت الافتراضي لـ Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE لتحديد موقع المتصفح في هذه الحالة.\n\nإذا تم تعطيل السياسة أو تُركت القيمة فارغة، فسيتم استخدام التثبيت الافتراضي لـ Chrome كما لو كان قد تم استخدام القيمة $${chrome}.\n\n*: في الوقت الحالي لا تتوفر إمكانية الرجوع إلى Chrome تلقائيًا إلا في Internet Explorer.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "وسيطات Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "وسيطات Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "تتيح لك تحديد الوسيطات التي سيتم تمريرها إلى Chrome في حالة تنفيذه. وفي حالة تمكين هذه\nالسياسة، سيتم استخدام المعلّمات المقدمة عند استدعاء Chrome. كما يُمكنك استخدام العنصر النائب الخاص $${url} لتحديد مكان ظهور عنوان url في سطر الأوامر. على سبيل المثال، \"--url=$${url} --kiosk\". لا يلزمك تحديد العنصر النائب في حالة إضافته في النهاية، وإذا كان يُمثّل الوسيطة الوحيدة فيُمكنك ترك السياسة فارغة. وفي حالة تعطيل السياسة أو تركها فارغة، فسيتم تمرير عنوان url فقط كمعلّمة إلى المتصفح.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "المضيفات المراد فتحها في المتصفح البديل",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "المضيفات المراد فتحها في المتصفح البديل",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "تسمح لك بتحديد قائمة من أسماء النطاقات المستضافة المراد فتحها في المتصفح البديل.\n\nإذا تم تمكين السياسة، يتعين عليك تقديم قائمة من الفلاتر التي ستعمل على الانتقال إلى المتصفح البديل. يجب أن يمثل كل إدخال أحد الأنواع الأربعة التالية:\n\nجزء من اسم المضيف: يجب تحديد إما أسماء النطاقات الكاملة، مثل \"www.example.com\" أو أجزاء منها، مثل \"example.com\" أو حتى \"example\". لا يتم دعم حروف البدل‬‏‫ حتى الآن.\n‏‫بادئة عنوان URL: لا تتم مطابقة إلا بادئات عناوين URL الصحيحة بالكامل مع البروتوكول والمنفذ إذا لزم الأمر. على سبيل المثال، \"http://login.example.com\" أو \"https://www.example.com:8080/login/\".\nالإدخال السلبي: يبدأ بـ \"!\" ويستمر كجزء من اسم المضيف‬ أو ‏‫بادئة عنوان URL كما هو موضح أعلاه. ويتم غالبًا فتح الإدخالات السلبية في Chrome. على سبيل المثال، \"!example.com\" أو \"!file:///c:/localapp/\".\nإدخال الأحرف البديلة: يحتوي على حرف واحد \"*\". ويتوافق مع أي عنوان URL. ويهدف إلى استخدامه مع الإدخالات السلبية إذا كان ينبغي فتح معظم عناوين URL في المتصفح البديل، ويجب فتح مجموعة صغيرة من عناوين URL في Chrome.\n\nتتضمن الإدخالات السلبية أولويات أعلى من الإدخالات الإيجابية التي تسمح بإدراج أجزاء كبيرة من أي نطاق في القائمة البيضاء أثناء حفظ أقسام أصغر ليتم فتحها في Chrome.\nلا يتم تطبيق إدخال الأحرف البديلة - إن وجدت - إلا بعد أن يتم التحقق من كل القواعد الأخرى.\n\nتتم مراقبة البروتوكولات التالية لإعادة التوجيه: http:, https:.\n\nفي حالة عدم التحديد أو تركها فارغة، لن يتم تشغيل أي انتقال إلى المتصفح البديل.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "المضيفات المراد فتحها في أي من المتصفحين",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "المضيفات المراد فتحها في أي من المتصفحين",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "تتيح لك تحديد قائمة بأسماء النطاقات المضيفة التي سيتم فتحها في أي متصفح. وفي حالة تمكين السياسة، يلزمك تقديم قائمة بأجزاء الأسماء المضيفة أو بادئة عنوان URL والتي ستتولّى عملية النقل إلى المتصفح البديل. ومن المحتمل وجود أي من نطاقات المصادقة المشتركة بين التطبيقين الجديد والقديم في القائمة.\nأجزاء الأسماء المضيفة: إما أسماء نطاقات كاملة مثل \"www.example.com\" يجب تحديدها، أو أجزاء منها مثل \"example.com: or even \"example\". ولم يتم اعتماد حروف البدل إلى الآن.\nبادئات URL: تتوافق بادئات URL الملائمة فقط تمامًا مع البروتوكول والمنفذ إذا لزم الأمر. على سبيل المثال \"http://login.example.com\" or \"https://www.example.com:8080/login/\". \nوفي حالة عدم تحديدها أو تركها فارغة، فسيتولى أي نطاق غير مدرج بقائمة \"المضيفات المراد فتحها في المتصفح البديل\" عملية العودة إلى Chrome(*). \n*: في الوقت الحالي، لا يوجد سوى Internet Explorer الذي يتوافق مع العودة إلى Chrome تلقائيًا.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "الاحتفاظ بآخر علامة تبويب في Chrome عند الانتقال",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "الاحتفاظ بآخر علامة تبويب في Chrome عند الانتقال",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "تسمح لك بتحديد ما يحدث عند إعادة توجيه آخر علامة تبويب مفتوحة في Chrome إلى المتصفح البديل.\n\nعند تمكين هذه السياسة أو عدم تمكينها، سيتم ترك آخر علامة تبويب مفتوحة، وستشير إلى صفحة علامة التبويب الجديدة. وإذا تم تعيينها على معطل، فحينئذٍ، سيتم إغلاق آخر علامة تبويب التي ستؤدي إلى إغلاق المتصفح Chrome إذا لم يكن هناك أي نوافذ Chrome أخرى مفتوحة.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

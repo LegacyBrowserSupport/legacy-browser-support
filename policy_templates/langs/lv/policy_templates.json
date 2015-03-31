@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 vai jaunāka versija",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Mantoto pārlūku atbalsts",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Papildu pārlūka ceļš",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Papildu pārlūka ceļš",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Norādiet papildu pārlūka izpildāmo failu.\nĻauj norādīt programmu, kas tiks izmantota kā papildu pārlūks.\n\nJa politika ir iespējota, varat tajā norādīt absolūto ceļu vai izmantot vienu no tālāk norādītajiem mainīgajiem:\n\n$${ie} — noklusējuma instalēšanas vieta pārlūkam Internet Explorer\nLai šajā gadījumā izvēlētos pārlūka atrašanās vietu, tiek izmantots izpildāmais fails HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE.\n$${firefox} — noklusējuma instalēšanas vieta pārlūkam Firefox\nLai šajā gadījumā izvēlētos pārlūka atrašanās vietu, tiek izmantots izpildāmais fails HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE.\n$${safari} — noklusējuma instalēšanas vieta pārlūkam Safari\nLai šajā gadījumā izvēlētos pārlūka atrašanās vietu, tiek izmantots izpildāmais fails HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE.\n\nJa politika nav iespējota vai ir atstāta tukša, tiks izmantots noklusējuma pārlūks (Internet Explorer), kas noteikts, pieņemot, ka tika lietota vērtība $${ie}.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Papildu pārlūka argumenti",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Papildu pārlūka argumenti",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Atļauj norādīt argumentus, kurus pārsūtīt papildu pārlūka izpildāmajam failam.\n\nJa politika ir iespējota, sniegtie parametri tiks izmantoti papildu pārlūka atvēršanas brīdī.\n\nVarat izmantot arī īpašo vietturi $${url}, lai norādītu, kur komandrindā jātiek parādītam vietrādim URL. Piemērs: “--url=$${url} --kiosk”.\nVietturis nav jānorāda gadījumos, kad tas ir jāpievieno argumenta beigās; ja tas ir vienīgais arguments, politiku var atstāt tukšu.\n\nJa politika ir atspējota vai atstāta tukša, pārlūkam kā parametrs tiks pārsūtīts tikai vietrādis URL.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Chrome ceļš",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Chrome ceļš",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Atļauj norādīt Chrome izpildāmo failu, kas tiks palaists, atgriežoties no papildu pārlūka*.\n\nKad politika ir iespējota, varat tajā norādīt absolūto ceļu vai izmantot šādu mainīgo:\n\n$${chrome} — noklusējuma instalēšanas vieta pārlūkam Chrome\nLai šajā gadījumā izvēlētos pārlūka atrašanās vietu, tiek izmantots izpildāmais fails HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE.\n\nJa politika ir atspējota vai atstāta tukša, tiks izmantota Chrome noklusējuma instalācija, pieņemot, ka ir izmantota vērtība $${chrome}.\n\n* Pašlaik automātiska atgriešanās uz pārlūku Chrome tiek atbalstīta tikai pārlūkā Internet Explorer.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Chrome argumenti",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Chrome argumenti",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Atļauj norādīt argumentus, kurus pārsūtīt pārlūkam Chrome, kad tas tiek atvērts.\n\nJa politika ir iespējota, sniegtie parametri tiks izmantoti Chrome atvēršanas brīdī.\n\nVarat izmantot arī īpašo vietturi $${url}, lai norādītu, kur komandrindā jātiek parādītam vietrādim URL. Piemērs: “--url=$${url} --kiosk”.\nVietturis nav jānorāda gadījumos, kad tas ir jāpievieno argumenta beigās; ja tas ir vienīgais arguments, politiku var atstāt tukšu.\n\nJa politika ir atspējota vai atstāta tukša, pārlūkam kā parametrs tiks pārsūtīts tikai vietrādis URL.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Vietnes, kas jāatver papildu pārlūkā",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Vietnes, kas jāatver papildu pārlūkā",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Atļauj norādīt papildu pārlūkā atveramo vietņu domēnu nosaukumu sarakstu.\n\nJa politika ir iespējota, jums ir jānorāda to filtru saraksts, kuri aktivizēs pāreju uz papildu pārlūku. Katram ierakstam ir jāatbilst kādam no tālāk norādītajiem četriem veidiem.\n\nVietnes nosaukuma daļa: jānorāda pilns domēna nosaukums, piemēram, “www.example.com”, vai tā daļa, piemēram, “example.com” vai tikai “example”. Aizstājējzīmes pagaidām netiek atbalstītas.\nURL prefikss: tikai atbilstoši URL prefiksi tiek pilnībā saskaņoti ar protokolu un portu, ja nepieciešams. Piemērs: “http://login.example.com” vai “https://www.example.com:8080/login/”.\nNegatīvs ieraksts: sākas ar “!”, pēc tam ir vietnes nosaukuma daļa vai URL prefikss, kā aprakstīts iepriekš. Negatīvie ieraksti vienmēr tiek atvērti pārlūkā Chrome. Piemērs: “!example.com” vai “!file:///c:/localapp/”.\nAizstājējzīmes ieraksts: ir ietverta tikai rakstzīme “*”. Atbilst jebkuram vietrādim URL. Paredzēts izmantošanai kopā ar negatīvajiem ierakstiem, ja lielākā daļa vietrāžu URL ir jāatver papildu pārlūkā, bet pārlūkā Chrome ir jāatver tikai maza daļa vietrāžu URL.\n\nNegatīvajiem ierakstiem ir augstāka prioritāte nekā pozitīvajiem ierakstiem, kuri ļauj baltajā sarakstā iekļaut lielas domēna daļas, vienlaikus saglabājot mazākas sadaļas atvēršanai pārlūkā Chrome.\nJa pastāv aizstājējzīmes ieraksts, tas tiek izmantots tikai pēc tam, kad ir pārbaudītas visas pārējās kārtulas.\n\nNovirzīšanai tiek pārraudzīti šādi protokoli: http:, https:\n\nJa politika nav norādīta vai tās vērtība ir atstāta tukša, pāreja uz papildu pārlūku netiks aktivizēta.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Vietnes, kas jāatver jebkurā pārlūkā",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Vietnes, kas jāatver jebkurā pārlūkā",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Atļauj norādīt sarakstu ar to vietņu domēnu nosaukumiem, kuras var atvērt abos pārlūkos.\n\nJa šī politika ir iespējota, sarakstā norādītos domēnus var atvērt abos pārlūkos un pāreja netiek aktivizēta.\n\nŠī iespēja ir noderīga gadījumos, kad šajā sarakstā esošie autentifikācijas domēni tiek vienlaicīgi izmantoti gan jaunajās, gan mantotajās lietotnēs.\n\nVietņu nosaukumu daļas: jānorāda pilns domēna nosaukums, piemēram, “www.example.com”, vai tā daļa, piemēram, “example.com” vai tikai “example”. Aizstājējzīmes pagaidām netiek atbalstītas.\nURL prefiksi: tikai atbilstoši URL prefiksi tiek pilnībā saskaņoti ar protokolu un portu, ja nepieciešams. Piemērs: “http://login.example.com” vai “https://www.example.com:8080/login/”.\n\nJa politika netiek norādīta vai tās vērtība ir atstāta tukša, visi domēnu nosaukumi, kas nav iekļauti sarakstā “Vietnes, kas jāatver papildu pārlūkā”, aktivizē pāreju uz Chrome*.\n\n* Pašlaik automātiska atgriešanās uz pārlūku Chrome tiek atbalstīta tikai pārlūkā Internet Explorer.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Veicot pāreju, saglabāt pēdējo Chrome cilni",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Veicot pāreju, saglabāt pēdējo Chrome cilni",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Ļauj norādīt, kas notiek, kad uz papildu pārlūku tiek novirzīta pēdējā pārlūkā Chrome atvērtā cilne.\n\nJa šī politika ir iespējota vai nav iestatīta, pēdējā cilne pēc pārejas paliks atvērta un norādīs uz jaunās cilnes lapu. Ja politika ir atspējota, pēdējā cilne tiks aizvērta, kā rezultātā tiks aizvērts arī pārlūks Chrome (ja nebūs atvērts neviens cits Chrome logs).",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

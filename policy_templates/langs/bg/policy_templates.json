@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 или по-нова версия",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Поддръжка на наследени браузъри",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Път към алтернативния браузър",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Път към алтернативния браузър",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Посочете изпълнимия файл на алтернативния браузър.\nДава възможност да укажете коя програма да се използва като алтернативен браузър.\n\nАко правилото е активирано, можете или да посочите абсолютен път, или да ползвате някоя от следните променливи:\n\n$${ie} – Стандартното място на инсталацията на Internet Explorer\nВ този случай за определяне на местоположението на браузъра се ползва HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE\n$${firefox} – Стандартното място на инсталацията на Firefox\nВ този случай за определяне на местоположението на браузъра се ползва HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE\n$${safari} – Стандартното място на инсталацията на Safari\nВ този случай за определяне на местоположението на браузъра се ползва HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE\n\nАко правилото не е активирано или е празно, ще се използва алтернативният браузър по подразбиране, който е Internet Explorer – все едно е зададена стойността $${ie}.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Аргументи на алтернативния браузър",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Аргументи на алтернативния браузър",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Дава възможност да посочите аргументите, които да се предадат на изпълнимия файл на алтернативния браузър.\n\nАко правилото е активирано, параметрите ще се използват при стартирането на алтернативния браузър.\n\nМожете също да ползвате специалния заместител $${url}, за да укажете къде в командния ред трябва да се показва URL адресът. Напр. „--url=$${url} --kiosk“.\nНе е необходимо да посочвате заместителя, ако URL адресът трябва да се добави в края. В случай че трябва да е единственият аргумент, можете да оставите правилото празно.\n\nАко то е деактивирано или не е попълнено, като параметър към браузъра ще се подаде само URL адресът.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Път на Chrome",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Път на Chrome",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Дава възможност да посочите изпълнимия файл на Chrome, който да се стартира при връщане от алтернативния браузър(*).\n\nКогато правилото е активирано, можете или да посочите абсолютен път, или да ползвате следната променлива:\n\n$${chrome} – Стандартното място на инсталацията на Chrome\nВ този случай за определяне на местоположението на браузъра се ползва HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE\n\nАко правилото е деактивирано или празно, ще се използва стандартната инсталация на Chrome – все едно е зададена стойността $${chrome}.\n\n* Понастоящем само Internet Explorer поддържа автоматично връщане към Chrome.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Аргументи на Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Аргументи на Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Дава възможност да посочите аргументите, които да се предадат на Chrome, когато се изпълнява.\n\nАко правилото е активирано, параметрите ще се използват при стартирането на Chrome.\n\nМожете също да ползвате специалния заместител $${url}, за да укажете къде в командния ред трябва да се показва URL адресът. Напр. „--url=$${url} --kiosk“.\nНе е необходимо да посочвате заместителя, ако URL адресът трябва да се добави в края. В случай че трябва да е единственият аргумент, можете да оставите правилото празно.\n\nАко то е деактивирано или не е попълнено, като параметър към браузъра ще се подаде само URL адресът.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Хостове за отваряне в алтернативния браузър",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Хостове за отваряне в алтернативния браузър",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Дава възможност да посочите списък с имена на домейни, които да се отварят в алтернативния браузър.\n\nАко правилото е активирано, трябва да предоставите списък с филтри, които ще задействат прехода към алтернативния браузър. Всеки запис трябва да е някой от следните четири типа:\n\nЧаст от име на хост: Трябва да се посочат цели имена на домейни, като „www.example.com“, или части от тях, като „example.com“ или дори „example“. Още не се поддържат заместващи знаци.\nПрефикс на URL адрес: Намира се съответствие само с правилни префикси на URL адреси, включващи протокол и порт, ако е необходимо. Напр. „http://login.example.com“ или „https://www.example.com:8080/login/“.\nОтрицателен запис: Започва с „!“ и продължава като част от име на хост или префикс на URL адрес, както е описано по-горе. Отрицателните записи, напр. „!example.com“ или „!file:///c:/localapp/“, винаги се отварят в Chrome.\nЗаместващ запис: Съдържа само един знак „*“ и съответства на всеки URL адрес. Предназначен е за използване заедно с отрицателни записи, ако повечето URL адреси трябва да се отварят в алтернативния браузър и само малка част от тях – в Chrome.\n\nОтрицателните записи са с по-висок приоритет от положителните, което дава възможност големите части от домейните да се поставят в белия списък, а по-малките да се запазват за отваряне в Chrome.\nАко е налице заместващ запис, той се прилага само след като всички други правила бъдат проверени.\n\nСледните протоколи се наблюдават за пренасочване: http:, https:.\n\nАко няма посочен списък или правилото е празно, няма да се задейства преход към алтернативния браузър.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Хостове за отваряне във всеки от двата браузъра",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Хостове за отваряне във всеки от двата браузъра",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Дава възможност да посочите списък с имена на домейни, които да се отварят във всеки от двата браузъра.\n\nКогато правилото е активирано, домейните от списъка ще бъдат налице и в двата браузъра и няма да задействат преход нито в едната, нито в другата посока.\n\nТова може да се ползва например за домейни за удостоверяване, с които работят и новите, и наследените приложения в този списък.\n\nЧасти от имена на хостове: Трябва да се посочат цели имена на домейни, като „www.example.com“, или части от тях, като „example.com“ или дори „example“. Още не се поддържат заместващи знаци.\nПрефикси на URL адреси: Намира се съответствие само с правилни префикси на URL адреси, включващи протокол и порт, ако е необходимо. Напр. „http://login.example.com“ или „https://www.example.com:8080/login/“.\n\nАко няма посочен списък или правилото е празно, всеки домейн, който не е в списъка „Хостове за отваряне в алтернативния браузър“, ще задейства връщане към Chrome(*).\n\n* Понастоящем само Internet Explorer поддържа автоматично връщане към Chrome.",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Запазване на последния раздел в Chrome при преход",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Запазване на последния раздел в Chrome при преход",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Дава възможност да посочите какво да се случва, когато последният отворен раздел в Chrome бъде пренасочен към алтернативния браузър.\n\nКогато това правило е активирано или не е зададено, последният раздел ще остане отворен и след прехода ще се изведе новият раздел в браузъра. Ако правилото е деактивирано, последният раздел ще се затвори, което ще доведе до затварянето на Chrome, в случай че не са отворени други прозорци на браузъра.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}

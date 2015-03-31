@@ -1,0 +1,98 @@
+{
+  "SUPPORTED_WINXPSP2": {
+    "message": "Microsoft Windows XP SP2 o mas bago",
+    "description": "States the fact that this policy is only supported on XP SP2 and above"
+  },
+  "Cat_Google": {
+    "message": "Google",
+    "description": "The general category in the Group Policy Editor"
+  },
+  "Cat_LegacyBrowserSupport": {
+    "message": "Suporta sa Legacy Browser",
+    "description": "The specific category in the Group Policy Editor"
+  },
+  "AlternativeBrowserPath": {
+    "message": "Path ng Alternatibong Browser",
+    "description": "Name of the AlternativeBrowserPath policy"
+  },
+  "AlternativeBrowserPath_Part": {
+    "message": "Path ng Kahaliling Browser",
+    "description": "Name of the AlternativeBrowserPath policy part"
+  },
+  "AlternativeBrowserPath_Explain": {
+    "message": "Tukuyin ang executable ng kahaliling browser.\nNagbibigay-daan sa iyong tukuyin ang gagamiting program bilang isang kahaliling browser. \n\nKung pinagana, maaari mong tukuyin ang isang ganap na path sa patakaran o gamitin ang isa sa mga sumusunod na variable:\n\n$${ie} -  Ang default na lokasyon sa pag-install para sa Internet Explorer\nGinagamit ang HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE upang piliin ang lokasyon ng browser sa sitwasyong ito.\n$${firefox} - Ang default na lokasyon sa pag-install para sa Firefox\nGinagamit ang HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE upang piliin ang lokasyon ng browser sa sitwasyong ito.\n$${safari} -  Ang default na lokasyon sa pag-install para sa Safari\nGinagamit ang HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE upang piliin ang lokasyon ng browser sa sitwasyong ito.\n\nKung hindi na-enable ang patakaran o kung hinayaan itong walang laman, magagamit ang default na kahaliling browser na Internet Explorer na nakaayos na para bang ginamit ang $${ie} na halaga.",
+    "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "AlternativeBrowserArguments": {
+    "message": "Mga Argument ng Alternatibong Browser",
+    "description": "Name of the AlternativeBrowserArguments policy"
+  },
+  "AlternativeBrowserArguments_Part": {
+    "message": "Mga Argument ng Alternatibong Browser",
+    "description": "Name of the AlternativeBrowserArguments policy part"
+  },
+  "AlternativeBrowserArguments_Explain": {
+    "message": "Nagbibigay-daan sa iyong tukuyin ang mga argument na ipapasa sa executable ng kahaliling browser.\n\nKung na-enable ang patakaran, gagamitin ang mga ibinigay na parameter kapag ginamit ang kahaliling browser.\n\nMaaari mo ring gamitin ang espesyal na placeholder na $${url} upang tukuyin kung saan dapat lumabas ang url sa linya ng command. Hal. \"--url=$${url} --kiosk\".\nHindi mo kailangang tukuyin ang placeholder kung dapat itong idagdag sa dulo o kung ito lang dapat ang argument kung saan maaari mong hayaang walang laman ang patakarang iyon.\n\nKung hindi pinagana ang patakaran o kung hinayaan itong walang laman, ang url lang ang ipapasa bilang isang parameter sa browser.",
+    "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromePath": {
+    "message": "Path ng Chrome",
+    "description": "Name of the ChromePath policy"
+  },
+  "ChromePath_Part": {
+    "message": "Path ng Chrome",
+    "description": "Name of the ChromePath policy part"
+  },
+  "ChromePath_Explain": {
+    "message": "Nagbibigay-daan sa iyong tukuyin ang ilulunsad na executable ng Chrome kapag bumabalik mula sa kahaliling browser(*).\n\nKapag pinagana ang patakaran, maaari mong tukuyin ang isang ganap na path sa patakaran o gamitin ang sumusunod na variable:\n\n$${chrome} - Ang default na lokasyon sa pag-install para sa Chrome\nGinagamit ang HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE upang piliin ang lokasyon ng browser sa sitwasyong ito.\n\nKung hindi pinagana ang patakaran o kung hinayaan itong walang laman, gagamitin ang default na pag-install ng Chrome na para bang nagamit na ang halagang $${chrome}.\n\n*: Sa kasalukuyan, ang Internet Explorer lang ang sumusuporta sa awtomatikong pagbalik sa Chrome.",
+    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "ChromeArguments": {
+    "message": "Mga Argument sa Chrome",
+    "description": "Name of the ChromeArguments policy"
+  },
+  "ChromeArguments_Part": {
+    "message": "Mga Argument sa Chrome",
+    "description": "Name of the ChromeArguments policy part"
+  },
+  "ChromeArguments_Explain": {
+    "message": "Nagbibigay-daan sa iyong tukuyin ang mga argument na ipapasa sa Chrome kapag pinagana ito. \n\nKapag pinagana ang patakaran, magagamit ang mga ibinigay na parameter kapag ginamit ang Chrome.\n\nMaaari mo ring gamitin ang espesyal na placeholder na $${url} upang tukuyin kung saan dapat lumabas ang url sa linya ng command. Hal. \"--url=$${url} --kiosk\".\nHindi mo kailangang tukuyin ang placeholder kung dapat itong idagdag sa dulo o kung ito lang dapat ang argument kung saan maaari mong hayaang walang laman ang patakarang iyon.\n\nKung hindi pinagana ang patakaran o kung hinayaan itong walang laman, ang url lang ang ipapasa bilang isang parameter sa browser.",
+    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  },
+  "URLList_Policy": {
+    "message": "Mga Host na Bubuksan sa Alternatibong Browser",
+    "description": "Name of the URLList policy"
+  },
+  "URLList_Part": {
+    "message": "Mga Host na Bubuksan sa Kahaliling Browser",
+    "description": "Name of the URLList policy part"
+  },
+  "URLList_Explain": {
+    "message": "Nagbibigay-daan sa iyong tukuyin ang isang listahan ng mga host domain name na bubuksan sa Alternatibong browser.\n\nKung naka-enable ang patakaran, kailangan mong magbigay ng listahan ng mga filter na magti-trigger sa paglipat sa alternatibong browser. Ang bawat entry ay dapat na isa sa apat na sumusunod na uri:\n\nBahagi ng host-name: Dapat tumukoy ng kumpletong mga domain name tulad ng \"www.example.com\" o mga bahagi ng mga ito tulad ng \"example.com\" o kahit \"example\". Hindi pa sinusuportahan ang mga wildcard.\nPrefix ng URL: Mga wastong prefix ng URL lang ang itinutugma nang kumpleto sa protocol at sa port kung kinakailangan. Hal. \"http://login.example.com\" o \"https://www.example.com:8080/login/\".\nNegatibong entry: Nagsisimula sa \"!\" at nagpapatuloy bilang  bahagi ng host-name o prefix ng URL tulad ng inilarawan sa itaas. Palaging binubuksan sa Chrome ang mga negatibong entry. Hal. \"!example.com\" o \"!file:///c:/localapp/\".\nWildcard na entry: Naglalaman lang ng isang character na \"*\". Tumutugma sa anumang URL. Sadyang ginagamit kasama ng mga negatibong entry kung ang karamihan ng mga URL ay dapat nakabukas sa alternatibong browser at maliit na seleksyon lang ng URL ang dapat nakabukas sa Chrome.\n\nBinibigyan ng mas mataas na priyoridad ang mga negatibong entry kaysa sa mga positibong entry na nagbibigay-daan sa pag-whitelist ng malalaking bahagi ng domain habang naglalaan ng mas maliliit na seksyong bubuksan sa Chrome.\nKung naroon ang wildcard na entry, mailalapat lang ito kung nasuri na ang lahat ng iba pang mga panuntunan.\n\nSinusubaybayan ang mga sumusunod na protocol para sa pagre-redirect: http:, https:.\n\nKung hindi tinukoy o kung hinayaang walang laman - walang paglipat sa alternatibog browser ang mati-trigger.",
+    "description": "Explanation of the URLList policy"
+  },
+  "URLGreyList_Policy": {
+    "message": "Mga Host na Bubuksan Sa Alinmang Browser",
+    "description": "Name of the URLGreyList policy"
+  },
+  "URLGreyList_Part": {
+    "message": "Mga Host na Bubuksan Sa Alinmang Browser",
+    "description": "Name of the URLGreyList policy part"
+  },
+  "URLGreyList_Explain": {
+    "message": "Nagbibigay-daan sa iyong tukuyin ang isang listahan ng mga domain name na bubuksan sa alinmang browser.\n\nKapag naka-enable ang patakarang ito, magiging available ang mga domain sa listahang ito sa parehong browser at hindi magti-trigger ng paglipat sa alinmang paraan.\n\nIsang posibleng sitwasyon ng paggamit ay ang anumang mga domain sa pagpapatotoo na nakabahagi sa bago at sa legacy na mga app sa listahang ito. \n\nMga bahagi ng host-name: Dapat tumukoy ng mga kumpletong domain name tulad ng \"www.example.com\" o mga bahagi nito tulad ng \"example.com: o kahit na \"example\". Hindi pa sinusuportahan ang mga wildcard.\nMga prefix ng URL: Mga wastong prefix ng URL lang ang itinutugma nang kumpleto sa protocol at sa port kung kinakailangan. Hal. \"http://login.example.com\" o \"https://www.example.com:8080/login/\".\n\nKung hindi tinukoy o kung hinayaang walang laman - ang anumang domain na wala sa listahan ng \"Mga Host na Bubuksan sa Alternatibong Browser\" ay magti-trigger ng paglipat pabalik sa Chrome(*)\n\n*: Sa kasalukuyan, ang Internet Explorer lang ang sumusuporta sa awtomatikong pagbalik sa Chrome. ",
+    "description": "Explanation of the URLGreyList policy"
+  },
+  "KeepLastChromeTab_Policy": {
+    "message": "Panatilihin Sa Paglipat ang Huling Tab ng Chrome",
+    "description": "Name of the KeepLastChromeTab policy"
+  },
+  "KeepLastChromeTab_Part": {
+    "message": "Panatilihin Sa Paglipat ang Huling Tab ng Chrome",
+    "description": "Name of the KeepLastChromeTab part"
+  },
+  "KeepLastChromeTab_Explain": {
+    "message": "Nagbibigay-daan sa iyong tukuyin kung anong nangyayari kapag nare-redirect ang huling nakabukas na tab sa Chrome patungo sa alternatibong browser.\n\nKapag naka-enable ang patakarang ito o hindi naitakda mahahayaang nakabukas ang huling tab at maituturo sa bagong page ng tab pagkatapos ng paglipat. Kung nakatakda ito na naka-disable, magsasara ang huling tab na hahantong sa pagsasara ng Chrome kung walang iba pang window ng Chrome na nakabukas.",
+    "description": "Explanation of the KeepLastChromeTab policy"
+  }
+}
