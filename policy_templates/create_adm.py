@@ -25,6 +25,7 @@ def doswrite(f, text):
   t2 = text.replace("\n", "\r\n")
   f.write(t2)
 
+
 output_json = json.load(open("policy_templates.json"))
 
 adm_file = codecs.open("LegacyBrowserSupport.adm", encoding="utf-16", mode="w")
@@ -116,6 +117,27 @@ doswrite(adm_file, """CLASS MACHINE
         VALUEON NUMERIC 1
         VALUEOFF NUMERIC 0
       END POLICY
+
+      POLICY !!ShowTransitionScreen_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ShowTransitionScreen_Explain
+        PART !!ShowTransitionScreen_Part  NUMERIC
+          VALUENAME "show_transition_screen"
+          MIN 0 MAX 60
+        END PART
+      END POLICY
+
+      POLICY !!UseIeSiteList_Policy
+        #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!UseIeSiteList_Explain
+        VALUENAME "use_ie_site_list"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
     END CATEGORY
   END CATEGORY
 
@@ -127,9 +149,8 @@ for majorkey, subdict in output_json.iteritems():
   if majorkey == "PolicySchema":
     continue
 
-  adm_file.write(majorkey + "=\"" +
-                 subdict["message"].replace("$$", "$").replace("\\\\", "\\")
-                 .replace("\n", "\\n") + "\"\r\n")
+  adm_file.write(majorkey + "=\"" + subdict["message"].replace("$$", "$")
+                 .replace("\\\\", "\\").replace("\n", "\\n") + "\"\r\n")
 
   doswrite(adml_file,
            "      <string id=\"" + majorkey.encode("utf-8") + "\">" +
@@ -141,9 +162,8 @@ doswrite(adml_file, """</stringTable>
     <presentation id="AlternativeBrowserPath">
       <textBox refId="AlternativeBrowserPath_Part">
         <label>""")
-doswrite(adml_file,
-         output_json["AlternativeBrowserPath"]["message"].replace("$$", "$")
-         .replace("\\\\", "\\").encode("utf-8"))
+doswrite(adml_file, output_json["AlternativeBrowserPath"]["message"].replace(
+    "$$", "$").replace("\\\\", "\\").encode("utf-8"))
 doswrite(adml_file, """</label>
         <defaultValue></defaultValue>
       </textBox>
@@ -169,8 +189,8 @@ doswrite(adml_file, """</label>
     <presentation id="ChromeArguments">
       <textBox refId="ChromeArguments_Part">
         <label>""")
-doswrite(adml_file, output_json["ChromeArguments"]["message"]
-         .replace("$$", "$").replace("\\\\", "\\").encode("utf-8"))
+doswrite(adml_file, output_json["ChromeArguments"]["message"].replace(
+    "$$", "$").replace("\\\\", "\\").encode("utf-8"))
 doswrite(adml_file, """</label>
         <defaultValue></defaultValue>
       </textBox>
@@ -183,11 +203,18 @@ doswrite(adml_file, """</listBox>
     </presentation>
     <presentation id="URLGreyList_Policy">
       <listBox refId="URLGreyList_Part">""")
-doswrite(adml_file, output_json["URLGreyList_Policy"]["message"]
-         .replace("$$", "$").replace("\\\\", "\\").encode("utf-8"))
+doswrite(adml_file, output_json["URLGreyList_Policy"]["message"].replace(
+    "$$", "$").replace("\\\\", "\\").encode("utf-8"))
 doswrite(adml_file, """</listBox>
     </presentation>
     <presentation id="KeepLastChromeTab_Policy"/>
+    <presentation id="ShowTransitionScreen_Policy">
+      <decimalTextBox refId="ShowTransitionScreen_Part">""")
+doswrite(adml_file, output_json["ShowTransitionScreen_Policy"]["message"]
+         .replace("$$", "$").replace("\\\\", "\\").encode("utf-8"))
+doswrite(adml_file, """</decimalTextBox>
+    </presentation>
+    <presentation id="UseIeSiteList_Policy"/>
   </presentationTable>
 </resources>
 </policyDefinitionResources>

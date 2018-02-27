@@ -21,6 +21,8 @@
 #include "core/browser_switcher_core.h"
 #include "core/logging.h"
 
+#include "core/ieem_site_list_parser.h"
+
 class BrowserSwitcherCoreTest : public ::testing::Test {
  protected:
   virtual void SetUp() {
@@ -40,6 +42,10 @@ class BrowserSwitcherCoreTest : public ::testing::Test {
     core_instance_.SetConfigFileLocationForTest(path);
   }
 
+  void SetIESiteListCacheLocation(const std::wstring& path) {
+    core_instance_.SetIESiteListCacheLocationForTest(path);
+  }
+
   std::wstring CompileCommandLine(const std::wstring& raw_command_line,
                                   const std::wstring& url) {
     return core_instance_.CompileCommandLine(raw_command_line, url);
@@ -47,6 +53,10 @@ class BrowserSwitcherCoreTest : public ::testing::Test {
 
   std::wstring SanitizeUrl(const std::wstring& url) {
     return core_instance_.SanitizeUrl(url);
+  }
+
+  bool DownloadIESiteList() {
+    return core_instance_.DownloadIESiteList();
   }
 
   // Creates a temp file for tests that need to mock the config.
@@ -357,6 +367,58 @@ TEST_F(BrowserSwitcherCoreTest, ShouldInvokeAlternativeBrowser) {
       L"http://account.google.com"));
 }
 
+TEST_F(BrowserSwitcherCoreTest, WithIESiteList) {
+  SetConfigFileLocation(temp_file_);
+  WriteStringToFile(temp_file_,
+      L"1\ntest_browser\n\nchrome_browser\n\n0\n0\n");
+  ASSERT_TRUE(core_instance_.LoadConfigFile());
+  SetIESiteListCacheLocation(temp_file_);
+  WriteStringToFile(temp_file_, L"1\n2\n!google.com\nyahoo.com");
+  EXPECT_TRUE(core_instance_.LoadIESiteListCache());
+  std::vector<std::wstring> list;
+  ASSERT_TRUE(core_instance_.GetIESiteList(&list));
+  EXPECT_EQ(2, list.size());
+  EXPECT_TRUE(core_instance_.ShouldOpenInAlternativeBrowser(
+    L"http://yahoo.com/"));
+  EXPECT_FALSE(core_instance_.ShouldOpenInAlternativeBrowser(
+    L"http://account.google.com"));
+}
+
+TEST_F(BrowserSwitcherCoreTest, InternaListAndIESiteList) {
+  SetConfigFileLocation(temp_file_);
+  WriteStringToFile(temp_file_,
+    L"1\ntest_browser\n\nchrome_browser\n\n2\n!yahoo\ngoogle\n0\n");
+  ASSERT_TRUE(core_instance_.LoadConfigFile());
+  SetIESiteListCacheLocation(temp_file_);
+  WriteStringToFile(temp_file_, L"1\n2\n!google.com\nyahoo.com");
+  EXPECT_TRUE(core_instance_.LoadIESiteListCache());
+  std::vector<std::wstring> list;
+  ASSERT_TRUE(core_instance_.GetIESiteList(&list));
+  EXPECT_EQ(2, list.size());
+  // Internal list always wins!
+  EXPECT_FALSE(core_instance_.ShouldOpenInAlternativeBrowser(
+    L"http://yahoo.com/"));
+  EXPECT_TRUE(core_instance_.ShouldOpenInAlternativeBrowser(
+    L"http://account.google.com"));
+}
+
+TEST_F(BrowserSwitcherCoreTest, GreyListAndIESiteList) {
+  SetConfigFileLocation(temp_file_);
+  WriteStringToFile(temp_file_,
+    L"1\ntest_browser\n\nchrome_browser\n\n0\n2\nwww.yahoo.com\ngoogle\n");
+  ASSERT_TRUE(core_instance_.LoadConfigFile());
+  SetIESiteListCacheLocation(temp_file_);
+  WriteStringToFile(temp_file_, L"1\n2\ngoogle.com\n!yahoo.com");
+  EXPECT_TRUE(core_instance_.LoadIESiteListCache());
+  std::vector<std::wstring> list;
+  ASSERT_TRUE(core_instance_.GetIESiteList(&list));
+  EXPECT_EQ(2, list.size());
+  // Regular rule ofr more precise wins is used.
+  EXPECT_TRUE(core_instance_.ShouldOpenInAlternativeBrowser(
+    L"http://www.yahoo.com/"));
+  EXPECT_TRUE(core_instance_.ShouldOpenInAlternativeBrowser(
+    L"http://account.google.com"));
+}
 TEST_F(BrowserSwitcherCoreTest, InvokeAlternativeBrowser) {
   // For IE we can check if the executable is there for the rest only if the
   // substitution took place as we might not have them installed.
@@ -393,6 +455,148 @@ TEST_F(BrowserSwitcherCoreTest, InvokeChrome) {
   ::Sleep(500);
   notepad_window = ::FindWindow(L"Notepad", NULL);
   ASSERT_FALSE(notepad_window);
+}
+
+class IEEMSiteListParserTest : public ::testing::Test {
+protected:
+  virtual void SetUp() {
+    ASSERT_TRUE(CreateTempFile(&temp_file_));
+  }
+
+  virtual void TearDown() {
+    ::DeleteFile(temp_file_.c_str());
+  }
+
+  // Delegates calls to a the methods of the class.
+  bool ParseIEFileVersionOne() {
+    return parser_.ParseIEFileVersionOne();
+  }
+
+  bool ParseIEFileVersionTwo() {
+    return parser_.ParseIEFileVersionTwo();
+  }
+
+  void SetXmlReader(std::auto_ptr<XmlReader> reader) {
+    parser_.reader_.reset(reader.release());
+  }
+
+  void SetXmlString(const std::string& xml) {
+    xml_ = xml;
+    std::auto_ptr<XmlReader> reader(new XmlReader);
+    // The XMLReader class does not fail on bad XML so this will work ever.
+    reader->Load(xml_);
+    reader->SkipToElement();
+    SetXmlReader(reader);
+  }
+
+  // Creates a temp file for tests that need to mock the config.
+  bool CreateTempFile(std::wstring* path) {
+    wchar_t temp_dir[MAX_PATH + 1];
+    wchar_t temp_file[MAX_PATH + 1];
+    if (!::GetTempPath(MAX_PATH + 1, temp_dir))
+      return false;
+    if (!::GetTempFileName(temp_dir, L"core_test", 0, temp_file))
+      return false;
+    *path = std::wstring(temp_file);
+    return true;
+  }
+
+  std::wstring temp_file_;
+  IEEMSiteListParser parser_;
+  std::string xml_;
+};
+
+TEST_F(IEEMSiteListParserTest, XMLParseBadXml) {
+  SetXmlString("thisisnotxml");
+  EXPECT_FALSE(ParseIEFileVersionOne());
+}
+
+TEST_F(IEEMSiteListParserTest, XMLParseBadXmlParsed) {
+  // Very subtle issue in the closing element for rules.
+  SetXmlString("<rules version=\"424\"><unknown></unknown><rules>");
+  EXPECT_TRUE(ParseIEFileVersionOne());
+  EXPECT_EQ(0, parser_.GetList().size());
+}
+
+TEST_F(IEEMSiteListParserTest, XMLParseV1OnlyBogusElements) {
+  SetXmlString("<rules version=\"424\">"
+      "<unknown><more><docMode><domain>ignore.com</domain></docMode>"
+      "</more><emie><domain>ignoretoo.com<path>/ignored_path</path>"
+      "</domain></emie><domain>onemoreingored.com</domain>"
+      "<path>/ignore_outside_of_domain></path></unknown></rules>");
+  EXPECT_TRUE(ParseIEFileVersionOne());
+  EXPECT_EQ(0, parser_.GetList().size());
+}
+
+TEST_F(IEEMSiteListParserTest, XMLParseV1Full) {
+  SetXmlString("<rules version=\"424\"><unknown><more><docMode><domain>ignore"
+      "</domain></docMode></more><emie><domain>ignoretoo.com<path>/ignored_path"
+      "</path></domain></emie><domain>onemoreingored.com</domain><path>"
+      "/ignore_outside_of_domain></path></unknown><emie><other><more><docMode>"
+      "<domain>ignore.com</domain></docMode></more><emie><domain>ignoretoo.com"
+      "<path>/ignored_path</path></domain></emie><domain>onemoreingored.com"
+      "</domain><path>/ignore_outside_of_domain></path></other><!--<domain "
+      "exclude=\"false\">hotscanacc.dbch.b-source.net<path exclude=\"false\">"
+      "/HotScan/</path></domain>--><domain>inside.com<more><docMode><domain>"
+      "ignore.com</domain></docMode></more><emie><domain>ignoretoo.com<path>"
+      "/ignored_path</path></domain></emie><domain>onemoreingored.com</domain>"
+      "<path>/in_domain<more><docMode><domain>ignore.com</domain></docMode>"
+      "</more><emie><domain>ignoretoo.com<path>/ignored_path</path></domain>"
+      "</emie><domain>onemoreingored.com</domain><path>/ignore_nested_path>"
+      "</path></path></domain><domain>google.com</domain><domain "
+      "exclude=\"true\">good.com</domain><domain exclude=\"false\">more.com"
+      "</domain><domain>e100.com<path>/path1</path><path exclude=\"true\">/pa2"
+      "</path><path exclude=\"false\">/path3</path></domain><domain "
+      "exclude=\"true\">e200.com<path>/path1</path><path exclude=\"true\">/pth2"
+      "</path><path exclude=\"false\">/path3</path></domain><domain "
+      "exclude=\"false\">e300.com<path>/path1</path><path exclude=\"true\">/pt2"
+      "</path><path exclude=\"false\">/path3</path></domain><domain "
+      "exclude=\"true\">random.com<path exclude=\"true\">/path1/</path><path "
+      "exclude=\"false\" forceCompatView=\"true\">/path2<path exclude=\"true\">"
+      "/TEST</path></path></domain></emie><docMode><domain docMode=\"8\">"
+      "moredomains.com</domain><domain docMode=\"5\">evenmore.com<path "
+      "docMode=\"5\">/r1</path><path docMode=\"5\">/r2</path></domain><domain "
+      "docMode=\"5\" exclude=\"true\">domainz.com<path docMode=\"5\">/r2</path>"
+      "<path docMode=\"5\" exclude=\"true\">/r5</path><path docMode=\"5\" "
+      "exclude=\"false\">/r6</path></domain><domain docMode=\"5\" "
+      "exclude=\"false\">howmanydomainz.com<path docMode=\"5\">/r8</path><path "
+      "docMode=\"5\" exclude=\"true\">/r9</path><path docMode=\"5\" "
+      "exclude=\"false\">/r10</path></domain></docMode></rules>");
+  EXPECT_TRUE(ParseIEFileVersionOne());
+  auto list = parser_.GetList();
+  EXPECT_EQ(32, list.size());
+  for (auto element : list) {
+    EXPECT_TRUE(element.find(L"ignore") == element.npos);
+  }
+}
+
+TEST_F(IEEMSiteListParserTest, XMLParseV2Full) {
+  // Very subtle issue in the closing element for rules.
+  SetXmlString("<site-list version=\"205\"><!-- File creation header -->"
+      "<created-by><tool>EnterpriseSitelistManager</tool><version>10240"
+      "</version><date-created>20150728.135021</date-created></created-by>"
+      "<!-- unknown tags --><unknown><test><mest>test</mest></test>"
+      "<!-- comments --></unknown><!-- no url attrib --><site><open-in>none"
+      "</open-in></site><!-- nested site list --><site-list><site "
+      "url=\"ignore!\"/></site-list><!-- nested site --><site "
+      "url=\"google.com\"><site url=\"nested ignore!\"></site></site><!-- "
+      "unknown tags in a site on multiple levels --><site url=\"good.site\">"
+      "<!-- nested comments --><somethings>klj<other some=\"none\"/>jkh"
+      "</somethings></site><!-- good sites --> <site url=\"www.cpandl.com\">"
+      "<compat-mode>IE8Enterprise</compat-mode><open-in>MSEdge</open-in></site>"
+      "<site url=\"contoso.com\"><compat-mode>default</compat-mode><open-in>"
+      "none</open-in></site><site url=\"relecloud.com\"/><site "
+      "url=\"relecloud.com/about\"><compat-mode>IE8Enterprise</compat-mode>"
+      "</site></site-list><!-- trailing gibberish <trailing><site "
+      "url=\"ignore after site list!\">  <compat-mode>IE8Enterprise\""
+      "</compat-mode></site><gibberish>Lorem ipsum sit...</gibberish>"
+      "</trailing>-->");
+  EXPECT_TRUE(ParseIEFileVersionTwo());
+  auto list = parser_.GetList();
+  EXPECT_EQ(6, list.size());
+  for (auto element : list) {
+    EXPECT_TRUE(element.find(L"ignore") == element.npos);
+  }
 }
 
 int main(int argc, wchar_t* argv[]) {

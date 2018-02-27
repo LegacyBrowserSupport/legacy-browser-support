@@ -15,6 +15,10 @@ HKCR {
         val ThreadingModel = s 'Apartment'
       }
       'TypeLib' = s '{E042FD04-3D7E-4A3A-9B9E-D4D9C70B4484}'
+      'Implemented Categories' = s '' {
+        {59fb2056-d625-48d0-a944-1a85b5ab2640} = s '' {
+        }
+      }
     }
   }
 }

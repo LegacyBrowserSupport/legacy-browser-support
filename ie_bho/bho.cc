@@ -15,10 +15,17 @@
 #include "bho.h"
 
 #include <atlstr.h>
+#include <initguid.h>
 #include <time.h>
 #include <wininet.h>
 
 #include "core/logging.h"
+
+// Declare this GUID for Windows 8 Enhanced Protected Mode Compatibility.
+// This is defined in newer SDK versions but since we need XP support we can't
+// use them.
+DEFINE_GUID(CATID_AppContainerCompatible,
+    0x59fb2056, 0xd625, 0x48d0, 0xa9, 0x44, 0x1a, 0x85, 0xb5, 0xab, 0x26, 0x40);
 
 namespace {
 const wchar_t kHttpPrefix[] = L"http://";

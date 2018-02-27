@@ -176,3 +176,25 @@ Port.prototype.saveSettings = function(callback) {
   this.port.postMessage({id: this.registerCallback(callback),
                          command: 'saveSettings'});
 };
+
+/**
+ * Calls the "downloadIESiteList" method of the native host.
+ * @param {function} callback to be called when the call has finished.
+ */
+Port.prototype.downloadIESiteList = function(callback) {
+  if (!this.checkPortState(callback))
+    return;
+  this.port.postMessage({id: this.registerCallback(callback),
+                         command: 'downloadIESiteList'});
+};
+
+/**
+ * Calls the "getIESiteList" method of the native host.
+ * @param {function} callback to be called when the call has finished.
+ */
+Port.prototype.getIESiteList = function(callback) {
+  if (!this.checkPortState(callback))
+    return;
+  this.port.postMessage({id: this.registerCallback(callback),
+                         command: 'getIESiteList'});
+};

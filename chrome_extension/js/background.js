@@ -17,8 +17,5 @@
  */
 
 
-// Killswitch for the declarative API.
-var USE_DECLARATIVE_API = false;
-
 // The singleton extension instance.
-var extension = new ExtensionLogic(USE_DECLARATIVE_API);
+var extension = new ExtensionLogic();

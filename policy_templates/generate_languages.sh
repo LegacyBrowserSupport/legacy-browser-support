@@ -17,12 +17,22 @@
 cd langs
 for dir in *; do
   cd $dir
-  rm *.adm *.adml
   python ../../create_adm.py
-  cp LegacyBrowserSupport.adml ../../admx/$dir/
-  cp LegacyBrowserSupport.adm ../../adm/$dir/
+  mkdir -p ../../output/admx/$dir
+  cp LegacyBrowserSupport.adml ../../output/admx/$dir/
+  cp ../../admx/google.adml ../../output/admx/$dir/
+  unix2dos ../../output/admx/$dir/google.adml
+  mkdir -p ../../output/adm/$dir
+  cp LegacyBrowserSupport.adm ../../output/adm/$dir/
   echo "Done $dir"
   cd -
 done
+cd ..
+rm -fr ./langs
+# Zip up the output.
+cd output
+cp ../admx/*.admx ./admx/
+unix2dos ./admx/*.admx
+zip -Dr policy_templates.zip *
 cd ..
 echo "All done!"

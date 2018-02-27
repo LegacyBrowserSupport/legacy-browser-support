@@ -19,16 +19,16 @@
 
 /**
  * Encapsulates the logic of the extension.
- * @param {boolean} use_declarative_api Whether the old school webRequest API
- * should be used or the new and still borked declarativeWebRequest API.
  * @constructor
  */
-ExtensionLogic = function(use_declarative_api) {
-  this.use_declarative_api = use_declarative_api;
+ExtensionLogic = function() {
   this.url_list_info = [];
   this.url_greylist_info = [];
+  this.ie_site_list_info = [];
   this.url_list_loaded = false;
   this.keep_last_chrome_tab = true;
+  this.show_transition_screen = 0;
+  this.use_ie_site_list = false;
   this.port = null;
 
   // We have to be able to remove this listener so keep the bound function.
@@ -58,7 +58,9 @@ ExtensionLogic = function(use_declarative_api) {
     ALTERNATIVE_BROWSER_ARGUMENTS: 'alternative_browser_arguments',
     CHROME_PATH: 'chrome_path',
     CHROME_ARGUMENTS: 'chrome_arguments',
-    KEEP_LAST_CHROME_TAB: 'keep_last_chrome_tab'
+    KEEP_LAST_CHROME_TAB: 'keep_last_chrome_tab',
+    SHOW_TRANSITION_SCREEN: 'show_transition_screen',
+    USE_IE_SITE_LIST: 'use_ie_site_list'
   };
 
   this.initialize();
@@ -77,8 +79,7 @@ ExtensionLogic.prototype.hasFinishedLoading = function() {
  * or it has failed but the NPAPI plugin has been successfully instantiated.
  */
 ExtensionLogic.prototype.finalizeInitialization = function() {
-  if (!this.use_declarative_api)
-    this.updateConfiguration('', 'managed');
+  this.updateConfiguration('', 'managed');
 
   // Populate initial rules on installation or update.
   chrome.runtime.onInstalled.addListener(
@@ -114,14 +115,15 @@ ExtensionLogic.prototype.portDisconnected = function() {
  * on the given |url_list|. Returns those item of the |url_list| which forced
  * the redirection, or null if no need to redirect.
  * @param {string} url The url to be checked.
+ * @param {array<string>} list The list to check into.
  * @return {string} reason The pattern in |url_list| which force to redirect.
  */
-ExtensionLogic.prototype.urlListForceRedirection = function(url) {
+ExtensionLogic.prototype.urlListForceRedirection = function(url, list) {
   var anchor = document.createElement('a');
   anchor.href = url;
 
   var reason = null;
-  this.url_list_info.some(function(item) {
+  list.some(function(item) {
     switch (item.type) {
       case this.UrlPatternType.WILDCARD:
         reason = item.url;
@@ -209,16 +211,22 @@ ExtensionLogic.prototype.urlNeedsRedirect = function(url) {
     return false;
   }
 
-  var reason_to_go = this.urlListForceRedirection(url);
+  var reason_to_go = this.urlListForceRedirection(url, this.url_list_info);
+  var reason_to_go_sitelist =
+      this.urlListForceRedirection(url, this.ie_site_list_info);
   var reason_to_stay = this.urlGreyListForceStaying(url);
   // Always prefer the more specific entry of the two lists.
   if (reason_to_stay !== null) {
-     if (reason_to_go === '*')
-       return true;
-     if (reason_to_go !== null && reason_to_go.length < reason_to_stay.length)
-       return false;
+    if (reason_to_go === '*')
+      return false;
+    if (reason_to_go !== null && reason_to_go.length < reason_to_stay.length)
+      return false;
+    if (reason_to_go_sitelist !== null &&
+        reason_to_go_sitelist.length < reason_to_stay.length) {
+      return false;
+    }
   }
-  return (reason_to_go !== null);
+  return (reason_to_go !== null || reason_to_go_sitelist !== null);
 };
 
 /**
@@ -277,32 +285,7 @@ ExtensionLogic.prototype.normalizeUrl = function(item) {
 };
 
 /**
- * Creates a matcher for the declarativeWebRequest API from an entry in the URL
- * list.
- * We apply a simple rule here to decide what the admin wants. If the string
- * contains at least one forward slash it is assumed to be a proper url prefix
- * otherwise it is assumed to be host name piece.
- * @param {string} item The item to base the rule on.
- * @return {Object} matcher The matcher object based on the input url pattern.
- */
-ExtensionLogic.prototype.createRequestMatcher = function(item) {
-  var matcher = null;
-  if (item.indexOf('/') === -1) {
-    matcher = new chrome.declarativeWebRequest.RequestMatcher({
-      url: { hostContains: item },
-      resourceType: ['main_frame']
-    });
-  } else {
-    matcher = new chrome.declarativeWebRequest.RequestMatcher({
-      url: { urlPrefix: item },
-      resourceType: ['main_frame']
-    });
-  }
-  return matcher;
-};
-
-/**
- * Creates the set of rules for the declarative WebRequest api using the list of
+ * Creates the set of rules for the WebRequest api using the list of
  * urls specified in the managed storage under the "url_list" key. Then it sets
  * up the browser redirection parameters and saves the settings in the plugin.
  * If any item is missing it will be reset to the default by setting it to an
@@ -342,15 +325,8 @@ ExtensionLogic.prototype.createRules = function(items) {
       items[this.Policies.URL_GREYLIST].forEach(function(item) {
         item = self.normalizeUrl(item);
 
-        if (item.indexOf('!') !== 0) {
-          if (self.use_declarative_api) {
-            var matcher = self.createRequestMatcher(item);
-            if (matcher) {
-              greylist_condition_list.push(matcher);
-            }
-          }
+        if (item.indexOf('!') !== 0)
           url_greylist.push(item);
-        }
       });
     }
   }
@@ -360,91 +336,11 @@ ExtensionLogic.prototype.createRules = function(items) {
       items[this.Policies.URL_LIST] instanceof Array) {
     items[this.Policies.URL_LIST].forEach(function(item) {
       item = self.normalizeUrl(item);
-      if (self.use_declarative_api) {
-        // If the url is prefixed with a '!' then it should be considered
-        // negated and a single '*' means all urls.
-        if (item === '*') {
-          url_list_has_wildcard = true;
-        } else if (item.indexOf('!') === 0) {
-          var matcher = self.createRequestMatcher(item.substring(1));
-          if (matcher)
-            negative_condition_list.push(matcher);
-        } else {
-          var matcher = self.createRequestMatcher(item);
-          if (matcher)
-            positive_condition_list.push(matcher);
-        }
-      }
-      if (item !== '*' || !url_greylist_has_wildcard) {
+      if (item !== '*' || !url_greylist_has_wildcard)
         url_list.push(item);
-      }
     });
   }
   properties.push({name: 'urls_to_redirect', value: url_list});
-
-
-  if (self.use_declarative_api) {
-    var rules = [];
-    // Create the rules based on the lists. The negative list has highest prio-
-    // rity, then the positive list followed by the greylist. Finally the
-    // catch-all list if required.
-    if (negative_condition_list.length) {
-      var negative_rule = {
-        conditions: negative_condition_list,
-        priority: 300,
-        actions: [new chrome.declarativeWebRequest.IgnoreRules({
-            lowerPriorityThan: 300
-          })]
-      };
-      rules.push(negative_rule);
-    }
-    if (positive_condition_list.length) {
-      var positive_rule = {
-        conditions: positive_condition_list,
-        priority: 200,
-        actions: [new chrome.declarativeWebRequest.RedirectByRegEx({
-          from: '(.*)',
-          to: 'chrome-extension://' + chrome.i18n.getMessage('@@extension_id') +
-              '/action.html#$1'
-          }),
-          new chrome.declarativeWebRequest.IgnoreRules({
-            lowerPriorityThan: 200
-          })]
-      };
-      rules.push(positive_rule);
-    }
-    if (greylist_condition_list.length) {
-      var greylist_rule = {
-        conditions: greylist_condition_list,
-        priority: 150,
-        actions: [new chrome.declarativeWebRequest.IgnoreRules({
-            lowerPriorityThan: 150
-          })]
-      };
-      rules.push(greylist_rule);
-    }
-    // When both wildcards are set then greylist takes preference.
-    if (!url_greylist_has_wildcard && url_list_has_wildcard) {
-      var catch_all_rule = {
-        conditions: [ new chrome.declarativeWebRequest.RequestMatcher({
-            url: {schemes: ["http", "https", "file"] },
-            resourceType: ['main_frame'],
-          })],
-        priority: 100,
-        actions: [new chrome.declarativeWebRequest.RedirectByRegEx({
-          from: '(.*)',
-          to: 'chrome-extension://' + chrome.i18n.getMessage('@@extension_id') +
-              '/action.html#$1'
-          })]
-      };
-      rules.push(catch_all_rule);
-    }
-    // Clear old and apply new rules if any.
-    chrome.declarativeWebRequest.onRequest.removeRules(undefined, function () {
-      if (rules.length)
-        chrome.declarativeWebRequest.onRequest.addRules(rules);
-    });
-  }
 
   if (items[this.Policies.ALTERNATIVE_BROWSER_PATH]) {
     properties.push({name: 'alternative_browser',
@@ -480,6 +376,24 @@ ExtensionLogic.prototype.createRules = function(items) {
 
   if (items[this.Policies.KEEP_LAST_CHROME_TAB] !== undefined) {
     self.keep_last_chrome_tab = items[this.Policies.KEEP_LAST_CHROME_TAB];
+  } else {
+    self.keep_last_chrome_tab = false;
+  }
+
+  if (items[this.Policies.SHOW_TRANSITION_SCREEN] !== undefined) {
+    self.show_transition_screen = items[this.Policies.SHOW_TRANSITION_SCREEN];
+  } else {
+    self.show_transition_screen = false;
+  }
+
+  if (items[this.Policies.USE_IE_SITE_LIST] !== undefined) {
+    self.use_ie_site_list = items[this.Policies.USE_IE_SITE_LIST];
+    properties.push({name: this.Policies.USE_IE_SITE_LIST,
+                     value: self.use_ie_site_list});
+  } else {
+    self.use_ie_site_list = false;
+    self.ie_site_list_info = [];
+    properties.push({name: this.Policies.USE_IE_SITE_LIST, value: false});
   }
 
   self.port.setProperties(properties, function(msg) {
@@ -487,22 +401,71 @@ ExtensionLogic.prototype.createRules = function(items) {
       self.port.saveSettings();
   });
 
-  if (!self.use_declarative_api) {
-    // Sorting the list ensures higher priority for the negative entries.
-    url_list.sort();
-    self.url_list_info = self.processUrlList(url_list);
-    self.url_greylist_info = self.processUrlList(url_greylist);
-    self.url_list_loaded = true;
-    setTimeout(function() {
-      // Make sure also the already loaded tabs are scrutinized in this case.
-      // Give it a second to make sure everything is really initialized.
-      chrome.tabs.query({}, function(tabs) {
-        tabs.forEach(function(tab) {
-          if (self.urlNeedsRedirect(tab.url))
-            chrome.tabs.reload(tab.id, {bypassCache: true});
-        });
+  url_list.sort();
+  url_greylist.sort();
+
+  self.url_list_info = self.processUrlList(url_list);
+  self.url_greylist_info = self.processUrlList(url_greylist);
+  self.url_list_loaded = true;
+  self.checkExistingTabs();
+
+  // Request the currently cached version of the site list and trigger a refresh
+  // on a separate thread.
+  if (self.use_ie_site_list) {
+    this.port.downloadIESiteList(this.scheduleSiteListDownload.bind(this));
+    this.port.getIESiteList(this.parseSiteList.bind(this));
+  } else {
+    self.ie_site_list_info = [];
+  }
+};
+
+/**
+ * Checks if any tabs that exist at the moment need transtion.
+ */
+ExtensionLogic.prototype.checkExistingTabs = function() {
+  var self = this;
+  setTimeout(function() {
+    // Make sure also the already loaded tabs are scrutinized in this case.
+    // Give it a second to make sure everything is really initialized.
+    chrome.tabs.query({}, function(tabs) {
+      tabs.forEach(function(tab) {
+        if (self.urlNeedsRedirect(tab.url))
+          chrome.tabs.reload(tab.id, {bypassCache: true});
       });
-    }, 1000);
+    });
+  }, 1000);
+};
+
+/**
+ * Shedules Site List refresh every 30 minutes to keep the list up to date and
+ * shedules a fetch one minute after download has started to give it enough time
+ * to finish first.
+ * @param {Object} message The result of the download call to the native host.
+ */
+ExtensionLogic.prototype.scheduleSiteListDownload = function(message) {
+  if (message.success) {
+    // If the download started right try to fetch the new list a minute later.
+    setTimeout(this.port.getIESiteList.bind(this.port,
+        this.parseSiteList.bind(this)), 60000);
+  }
+  // Schedule update for half an hour later to make sure the list keeps fresh.
+  setTimeout(this.port.downloadIESiteList.bind(
+      this.port, this.scheduleSiteListDownload.bind(this)), 30 * 60000);
+};
+
+/**
+ * Parses the IE Site List and prepares it for use inside the extension.
+ * @param {Object} message The message delivered from the native host.
+ */
+ExtensionLogic.prototype.parseSiteList = function(message) {
+  if (!message.success) {
+    this.port.logError("Getting site list failed. Will retry in 10s.");
+    setTimeout(this.port.getIESiteList.bind(
+        this.port, this.parseSiteList.bind(this)), 10000);
+  } else {
+    message.items.sort();
+    this.ie_site_list_info = this.processUrlList(message.items);
+    this.checkExistingTabs();
   }
 };
 
@@ -521,15 +484,15 @@ ExtensionLogic.prototype.updateConfiguration = function(change, area) {
                                 this.Policies.ALTERNATIVE_BROWSER_ARGUMENTS,
                                 this.Policies.CHROME_PATH,
                                 this.Policies.CHROME_ARGUMENTS,
-                                this.Policies.KEEP_LAST_CHROME_TAB],
+                                this.Policies.KEEP_LAST_CHROME_TAB,
+                                this.Policies.SHOW_TRANSITION_SCREEN,
+                                this.Policies.USE_IE_SITE_LIST],
                                this.createRules.bind(this));
   }
 };
 
 /**
- * Callback for the chrome.webRequest.onBeforeRequest event. If the
- * declarativeWebRequest API is not available (as in Chrome 27) the extension
- * will use the old and somewhat slower blocking webRequest API instead.
+ * Callback for the chrome.webRequest.onBeforeRequest event.
  * @param {Object} details Parameters of the request. Most importantly the url.
  * @return {Object} The action to be performed for this request.
  */
@@ -570,16 +533,13 @@ ExtensionLogic.prototype.invokeAlternativeBrowser = function(url, callback) {
  * Initializes the ExtensionLogic object and installs the listeners.
  */
 ExtensionLogic.prototype.initialize = function() {
-  // This extension only works for windows.
-  if (/Win/.test(window.navigator.platform)) {
-    // A temporary measure until the bug infesting the declarativeWebRequest
-    // API is fixed. Meanwhile we use the good ol' webRequest API and suffer.
-    if (!this.use_declarative_api) {
-      chrome.webRequest.onBeforeRequest.addListener(
-          this.request_listener,
-          {urls: ['http://*/*', 'https://*/*'], types: ['main_frame']},
-          ['blocking']);
-    }
+  // This extension only works for Windows in non-incognito instances.
+  if (/Win/.test(window.navigator.platform) &&
+      !chrome.extension.inIncognitoContext) {
+    chrome.webRequest.onBeforeRequest.addListener(
+        this.request_listener,
+        {urls: ['http://*/*', 'https://*/*'], types: ['main_frame']},
+        ['blocking']);
 
     this.port = new Port(this.portConnected.bind(this),
                          this.portDisconnected.bind(this));

@@ -31,6 +31,8 @@
 #include <Windows.h>
 #include <ShellAPI.h>
 #include <ShlObj.h>
+#include <fcntl.h>
+#include <io.h>
 
 #include <core/browser_switcher_core.h>
 #include <core/logging.h>
@@ -46,6 +48,8 @@ const int kInitialBufferLength = 4 * 1024;  // Suffices for most cases.
 const char kInvokeAlternativeBrowser[] = "invokeAlternativeBrowser";
 const char kSetProperties[] = "setProperties";
 const char kSaveSettings[] = "saveSettings";
+const char kDownloadIESiteList[] = "downloadIESiteList";
+const char kGetIESiteList[] = "getIESiteList";
 const char kLogError[] = "logError";
 
 const char kAlternativeBrowserProperty[] = "alternative_browser";
@@ -54,6 +58,7 @@ const char kChromeBrowserProperty[] = "chrome_browser";
 const char kChromeParametersProperty[] = "chrome_arguments";
 const char kUrlListProperty[] = "urls_to_redirect";
 const char kUrlGreyListProperty[] = "url_greylist";
+const char kUseIESiteList[] = "use_ie_site_list";
 
 // The singleton core object. Created later after we have set up logging to not
 // smear stdout and cause our channel to Chrome to be closed.
@@ -115,6 +120,12 @@ void SetProperties(const Json::Value& input, Json::Value* output) {
     } else if (name == kUrlGreyListProperty) {
       browser_switcher->SetUrlGreylist(
         GetPropertyValueAsWideStringArray(properties[i]));
+    } else if (name == kUseIESiteList) {
+      if (!properties[i]["value"].asBool()) {
+        // If disabled by policy clear the list if present.
+        browser_switcher->SetIESiteList(BrowserSwitcherCore::UrlList());
+        browser_switcher->SaveIESiteListCache();
+      }
     } else {
       (*output)["error"] = "W:Unknown property present. Skipping " + name;
     }
@@ -124,6 +135,30 @@ void SetProperties(const Json::Value& input, Json::Value* output) {
 
 void SaveSettings(const Json::Value& input, Json::Value* output) {
   (*output)["success"] = browser_switcher->SaveConfigFile();
+}
+
+void DownloadIESiteList(const Json::Value& input, Json::Value* output) {
+  (*output)["success"] = browser_switcher->StartIESiteListDownload();
+}
+
+void GetIESiteList(const Json::Value& input, Json::Value* output) {
+  BrowserSwitcherCore::UrlList list;
+  bool success = browser_switcher->GetIESiteList(&list);
+  (*output)["success"] = success;
+  if (!success)
+    return;
+
+  Json::Value json_list(Json::arrayValue);
+  for (const auto& item : list) {
+    int len = ::WideCharToMultiByte(
+        CP_UTF8, 0, item.data(), item.length(), NULL, 0, NULL, NULL);
+    std::auto_ptr<char> buffer(new char[len]);
+    len = ::WideCharToMultiByte(
+        CP_UTF8, 0, item.data(), item.length(), buffer.get(), len, NULL, NULL);
+    std::string url(buffer.get(), buffer.get() + len);
+    json_list.append(Json::Value(url));
+  }
+  (*output)["items"] = json_list;
 }
 
 void LogError(const Json::Value& input, Json::Value* output) {
@@ -151,6 +186,9 @@ int _tmain(int argc, _TCHAR* argv[]) {
     LOG(ERR) << "Not enough free memory to initialize host!" << std::endl;
     return 1;
   }
+
+  // Change stdio mode to binary to avoid converting 0x10 into 0x10+0x13.
+  _setmode(_fileno(stdin), _O_BINARY);
 
   while (true) {
     int len = 0;
@@ -188,6 +226,10 @@ int _tmain(int argc, _TCHAR* argv[]) {
         SetProperties(input, &output);
       } else if (input["command"] == kSaveSettings) {
         SaveSettings(input, &output);
+      } else if (input["command"] == kDownloadIESiteList) {
+        DownloadIESiteList(input, &output);
+      } else if (input["command"] == kGetIESiteList) {
+        GetIESiteList(input, &output);
       } else if (input["command"] == kLogError) {
         LogError(input, &output);
       } else {

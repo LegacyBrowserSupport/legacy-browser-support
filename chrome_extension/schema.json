@@ -30,7 +30,7 @@
       }
     },
     "url_greylist": {
-      "title": "Hosts to Open In Either Browser",
+      "title": "Hosts that Should Not Trigger a Transition in Either Browser",
       "description": "Allows you to specify a list of host domain names to be opened in either browser.\n\nWhen this policy is enabled, the domains in this list will be available in both browsers and will not trigger a transition either way.\n\nA possible use case are any authentication domains that are shared between new and legacy apps in this list.\n\nHost-name parts: Either complete domain names like \"www.example.com\" should be specified or parts of them like \"example.com\" or even \"example\". Wildcards are not supported yet.\nURL prefixes: Only proper URL prefixes are matched complete with protocol and port if needed. E.g. \"http://login.example.com\" or \"https://www.example.com:8080/login/\".\n\nIf not specified or left empty - any domain not in the \"Hosts to Open In the Alternative Browser\" list will trigger a transition back to Chrome(*).\n\n*: Presently only Internet Explorer supports returning to Chrome automatically.",
       "type": "array",
       "items": {
@@ -40,6 +40,16 @@
     "keep_last_chrome_tab": {
       "title": "Keep Last Tab Open In Chrome",
       "description": "Allows you to specify what happens when the last open tab in Chrome is being redirected to the alternative browser.\n\nWhen this policy is enabled or not set the last tab will be left open and point to the new tab page after the transition. If it is set to disabled then the last tab will be closed which will lead to closing Chrome if there are no other Chrome windows open.",
+      "type": "boolean"
+    },
+    "show_transition_screen": {
+      "title": "Show Transition Screen in Chrome For Some Time",
+      "description": "Allows you to specify how long the transition message in the tab will be visible in Chrome before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed.",
+      "type": "integer"
+    },
+    "use_ie_site_list": {
+      "title": "Use IE Enterprise Mode Site List Policy",
+      "description": "When enabled transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used.",
       "type": "boolean"
     }
   }

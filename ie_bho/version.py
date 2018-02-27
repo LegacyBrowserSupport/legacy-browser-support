@@ -15,8 +15,8 @@
 
 """Defines constants representing the current version number."""
 
-MAJOR = 3
-MINOR = 3
+MAJOR = 5
+MINOR = 1
 BUILD = 0
 PATCH = 0
 

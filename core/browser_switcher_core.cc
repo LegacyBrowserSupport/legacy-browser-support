@@ -22,6 +22,7 @@
 #include <vector>
 
 #include "core/logging.h"
+#include "core/ieem_site_list_parser.h"
 
 namespace {
 const wchar_t kIExploreKey[] =
@@ -35,6 +36,8 @@ const wchar_t kSafariKey[] =
     L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\safari.exe";
 const wchar_t kChromeKey[] =
     L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\chrome.exe";
+
+const wchar_t kIExploreDdeHost[] = L"IExplore";
 
 const wchar_t kChromeVarName[] = L"${chrome}";
 const wchar_t kIEVarName[] = L"${ie}";
@@ -52,6 +55,13 @@ const wchar_t* kBrowsersToKeysMapping[][2] = {
     {kOperaVarName, kOperaKey},
     {kSafariVarName, kSafariKey}};
 
+const wchar_t* kBrowsersToDdeHostsMapping[][2] = {
+    { kChromeVarName, L"" },
+    { kIEVarName, kIExploreDdeHost },
+    { kFirefoxVarName, L"" },  // Firefox claims to support this but why bother.
+    { kOperaVarName, L"" },    // Opera claims to support this but why bother.
+    { kSafariVarName, L"" } };
+
 const int kMinSupportedFileVersion = 1;
 const int kCurrentFileVersion = 1;
 
@@ -67,6 +77,18 @@ bool ReadLineFromFile(std::wifstream* stream, std::wstring* line) {
   return true;
 }
 
+// DDE Callback function which is not used in our case at all.
+HDDEDATA CALLBACK DdeCallback(
+    UINT type, UINT format, HCONV handle, HSZ string1, HSZ string2,
+    HDDEDATA data, ULONG_PTR data1, ULONG_PTR data2) {
+  return NULL;
+}
+
+DWORD WINAPI DownloadThreadMain(LPVOID param) {
+  BrowserSwitcherCore* core = reinterpret_cast<BrowserSwitcherCore*>(param);
+  return core->DownloadIESiteList();
+}
+
 }  // namespace
 
 BrowserSwitcherCore::BrowserSwitcherCore() {
@@ -74,9 +96,75 @@ BrowserSwitcherCore::BrowserSwitcherCore() {
 }
 
 BrowserSwitcherCore::~BrowserSwitcherCore() {
+  ::CloseHandle(site_list_mutex_);
 }
 
-bool BrowserSwitcherCore::InvokeAlternativeBrowser(const std::wstring& url) {
+bool BrowserSwitcherCore::InvokeAlternativeBrowser(
+    const std::wstring& url) const {
+  // Use DDE if possible in order to respect IE's tab settings for apps. This
+  // will only work if there is a running instance of the respective browser
+  // otherwise it will fail but in this case a new tab or a new window is the
+  // same.
+  bool dde_success = false;
+  if (!alt_browser_dde_host_.empty()) {
+    DWORD dde_instance = 0;
+    if (DdeInitialize(&dde_instance, DdeCallback, CBF_FAIL_ALLSVRXACTIONS, 0) ==
+        DMLERR_NO_ERROR) {
+      HSZ service;
+      HSZ openurl_topic;
+      HSZ activate_topic;
+      HCONV openurl_service_instance;
+      HCONV activate_service_instance;
+
+      service = DdeCreateStringHandle(
+          dde_instance, alt_browser_dde_host_.c_str(), CP_WINUNICODE);
+      openurl_topic = DdeCreateStringHandle(
+          dde_instance, L"WWW_OpenURL", CP_WINUNICODE);
+      activate_topic = DdeCreateStringHandle(
+          dde_instance, L"WWW_Activate", CP_WINUNICODE);
+      openurl_service_instance = DdeConnect(dde_instance, service, openurl_topic, NULL);
+      activate_service_instance = DdeConnect(dde_instance, service, activate_topic, NULL);
+      DdeFreeStringHandle(dde_instance, service);
+      DdeFreeStringHandle(dde_instance, openurl_topic);
+      DdeFreeStringHandle(dde_instance, activate_topic);
+
+      if (openurl_service_instance) {
+        // Percent-encode commas and spaces because those mean something else
+        // for the WWW_OpenURL verb and the url is trimmed on the first one.
+        std::wstring encoded_url(url);
+        size_t pos = encoded_url.find(L",");
+        while (pos != std::wstring::npos) {
+           encoded_url.replace(pos, 1, L"%2C");
+           pos = encoded_url.find(L",", pos);
+        }
+        pos = encoded_url.find(L" ");
+        while (pos != std::wstring::npos) {
+           encoded_url.replace(pos, 1, L"%20");
+           pos = encoded_url.find(L" ", pos);
+        }
+        dde_success = DdeClientTransaction(
+            reinterpret_cast<LPBYTE>(const_cast<wchar_t*>(encoded_url.data())),
+            encoded_url.size() * sizeof(wchar_t), openurl_service_instance, 0,
+            0, XTYP_EXECUTE, TIMEOUT_ASYNC, NULL) != 0;
+        DdeDisconnect(openurl_service_instance);
+        if (activate_service_instance) {
+          if (dde_success) {
+            wchar_t cmd[] = L"0xFFFFFFFF,0x0";
+            DdeClientTransaction(
+                reinterpret_cast<LPBYTE>(cmd), sizeof(cmd),
+                activate_service_instance, 0, 0, XTYP_EXECUTE, TIMEOUT_ASYNC,
+                NULL);
+          }
+          DdeDisconnect(activate_service_instance);
+        }
+      }
+      DdeUninitialize(dde_instance);
+    }
+  }
+
+  if (dde_success)
+    return true;
+
   std::wstring command_line =
       CompileCommandLine(GetAlternativeBrowserParameters(), url);
   HINSTANCE browser_instance =
@@ -90,7 +178,7 @@ bool BrowserSwitcherCore::InvokeAlternativeBrowser(const std::wstring& url) {
   return true;
 }
 
-bool BrowserSwitcherCore::InvokeChrome(const std::wstring& url) {
+bool BrowserSwitcherCore::InvokeChrome(const std::wstring& url) const {
   std::wstring command_line = CompileCommandLine(GetChromeParameters(), url);
   HINSTANCE browser_instance =
       ::ShellExecute(NULL, NULL, chrome_path_.c_str(),
@@ -105,20 +193,23 @@ bool BrowserSwitcherCore::InvokeChrome(const std::wstring& url) {
 
 void BrowserSwitcherCore::SetAlternativeBrowserPath(const std::wstring& path) {
   alt_browser_path_ = path;
+  alt_browser_dde_host_.clear();
   if (alt_browser_path_.empty()) {
     alt_browser_path_ = GetBrowserLocation(kIExploreKey);
+    alt_browser_dde_host_ = kIExploreDdeHost;
     return;
   }
   for (size_t i = 0;i < _ARRAYSIZE(kBrowsersToKeysMapping); ++i) {
     if (alt_browser_path_.compare(kBrowsersToKeysMapping[i][0]) == 0) {
       alt_browser_path_ = GetBrowserLocation(kBrowsersToKeysMapping[i][1]);
+      alt_browser_dde_host_ = kBrowsersToDdeHostsMapping[i][1];
       break;
     }
   }
   alt_browser_path_ = ExpandEnvironmentVariables(alt_browser_path_);
 }
 
-const std::wstring& BrowserSwitcherCore::GetAlternativeBrowserPath() {
+const std::wstring& BrowserSwitcherCore::GetAlternativeBrowserPath() const {
   return alt_browser_path_;
 }
 
@@ -128,7 +219,8 @@ void BrowserSwitcherCore::SetAlternativeBrowserParameters(
   alt_browser_parameters_ = ExpandEnvironmentVariables(alt_browser_parameters_);
 }
 
-const std::wstring& BrowserSwitcherCore::GetAlternativeBrowserParameters() {
+const std::wstring&
+BrowserSwitcherCore::GetAlternativeBrowserParameters() const {
   return alt_browser_parameters_;
 }
 
@@ -139,7 +231,7 @@ void BrowserSwitcherCore::SetChromePath(const std::wstring& path) {
   alt_browser_path_ = ExpandEnvironmentVariables(alt_browser_path_);
 }
 
-const std::wstring& BrowserSwitcherCore::GetChromePath() {
+const std::wstring& BrowserSwitcherCore::GetChromePath() const {
   return chrome_path_;
 }
 
@@ -148,49 +240,65 @@ void BrowserSwitcherCore::SetChromeParameters(const std::wstring& parameters) {
   chrome_parameters_ = ExpandEnvironmentVariables(chrome_parameters_);
 }
 
-const std::wstring& BrowserSwitcherCore::GetChromeParameters() {
+const std::wstring& BrowserSwitcherCore::GetChromeParameters() const {
   return chrome_parameters_;
 }
 
-const BrowserSwitcherCore::UrlList& BrowserSwitcherCore::GetUrlsToRedirect() {
+const BrowserSwitcherCore::UrlList& 
+BrowserSwitcherCore::GetUrlsToRedirect() const {
   return urls_to_redirect_;
 }
 
 void BrowserSwitcherCore::SetUrlsToRedirect(const UrlList& urls) {
   urls_to_redirect_ = urls;
-  // Sort will push negative entries first because those should have higher
-  // priority.
-  std::sort(urls_to_redirect_.begin(), urls_to_redirect_.end());
-  ProcessUrlList(urls_to_redirect_, &urls_to_redirect_type_);
+  ProcessUrlList(&urls_to_redirect_, &urls_to_redirect_type_);
 }
 
-const BrowserSwitcherCore::UrlList& BrowserSwitcherCore::GetUrlGreylist() {
+const BrowserSwitcherCore::UrlList&
+BrowserSwitcherCore::GetUrlGreylist() const {
   return url_greylist_;
 }
 
 void BrowserSwitcherCore::SetUrlGreylist(const UrlList& urls) {
   url_greylist_ = urls;
-  // Sort will push negative entries first because those should have higher
-  // priority.
-  std::sort(url_greylist_.begin(), url_greylist_.end());
-  ProcessUrlList(url_greylist_, &url_greylist_type_);
+  ProcessUrlList(&url_greylist_, &url_greylist_type_);
 }
 
-void BrowserSwitcherCore::ProcessUrlList(const UrlList& list,
+bool BrowserSwitcherCore::GetIESiteList(
+    BrowserSwitcherCore::UrlList* list) const {
+  // Wait for max 1s to avoid blocking the caller indefinetely.
+  if (site_list_mutex_ &&
+      ::WaitForSingleObject(site_list_mutex_, 1000) == WAIT_OBJECT_0) {
+    *list = urls_from_site_list_;
+    ::ReleaseMutex(site_list_mutex_);
+    return true;
+  }
+  return false;
+}
+
+void BrowserSwitcherCore::SetIESiteList(const UrlList& urls) {
+  urls_from_site_list_ = urls;
+  ProcessUrlList(&urls_from_site_list_, &urls_from_site_list_type_);
+}
+
+void BrowserSwitcherCore::ProcessUrlList(UrlList* list,
                                          UrlListTypes* types) {
-  types->resize(list.size());
-  for (size_t i = 0; i < list.size(); ++i) {
-    if (list[i].compare(kWildcardUrl) == 0) {
+  // Sort will push negative entries first because those should have higher
+  // priority.
+  std::sort(list->begin(), list->end());
+  types->resize(list->size());
+  for (size_t i = 0; i < list->size(); ++i) {
+    if ((*list)[i].compare(kWildcardUrl) == 0) {
       (*types)[i] = WILDCARD;
       continue;
     }
 
-    if (list[i].find('/') != urls_to_redirect_[i].npos)
+    if ((*list)[i].find('/') != (*list)[i].npos)
       (*types)[i] = PREFIX;
     else
       (*types)[i] = HOST;
 
-    if (list[i].find('!') == 0)
+    if ((*list)[i].find('!') == 0)
       (*types)[i] = ((*types)[i] == HOST ? NEGATED_HOST : NEGATED_PREFIX);
   }
 }
@@ -199,7 +307,6 @@ bool BrowserSwitcherCore::ShouldOpenInAlternativeBrowser(
     const std::wstring& url) {
   enum TransitionDecision { NONE, CHROME, ALT_BROWSER };
   TransitionDecision decision = NONE;
-  int decision_idx = -1;
 
   // Since we can not decide in this case we should assume it is ok to use the
   // alternative browser.
@@ -221,6 +328,7 @@ bool BrowserSwitcherCore::ShouldOpenInAlternativeBrowser(
     LOG(ERR) << "URL Parsing failed!" << std::endl;
 
   bool all_in_alternative_browser = false;
+  std::wstring decision_rule;
   for (size_t i = 0; i < urls_to_redirect_.size(); ++i) {
     // Employ a simple, yet powerful heuristic on the entries in the list:
     // If the entry has no slashes it is assumed to be a host name or substring
@@ -253,14 +361,51 @@ bool BrowserSwitcherCore::ShouldOpenInAlternativeBrowser(
         break;
     }
     if (decision != NONE) {
-      decision_idx = i;
+      decision_rule = urls_to_redirect_[i];
       break;
     }
   }
-  // Since the gray list can only contribute to staying in the alt. browser
-  // if this is already the decision exit early.
+
+  // Since the gray list can only contribute to staying in the alt and the
+  // internal list is higher prio than site list, if there is a decision exit.
   if (decision == ALT_BROWSER || all_in_alternative_browser)
     return true;
+
+  if (decision == NONE && site_list_mutex_) {
+    if (::WaitForSingleObject(site_list_mutex_, 500) == WAIT_OBJECT_0) {
+      for (size_t i = 0; i < urls_from_site_list_.size(); ++i) {
+        switch (urls_from_site_list_type_[i]) {
+        case HOST:
+          if (hostname.find(urls_from_site_list_[i]) != hostname.npos)
+            decision = ALT_BROWSER;
+          break;
+        case PREFIX:
+          if (url.find(urls_from_site_list_[i]) == 0)
+            decision = ALT_BROWSER;
+          break;
+        case NEGATED_HOST:
+          if (hostname.find(urls_from_site_list_[i].substr(1)) != hostname.npos)
+            decision = CHROME;
+          break;
+        case NEGATED_PREFIX:
+          if (url.find(urls_from_site_list_[i].substr(1)) == 0)
+            decision = CHROME;
+          break;
+        case WILDCARD:
+          all_in_alternative_browser = true;
+          break;
+        }
+        if (decision != NONE) {
+          decision_rule = urls_from_site_list_[i];
+          break;
+        }
+      }
+      ::ReleaseMutex(site_list_mutex_);
+
+      if (decision == ALT_BROWSER)
+        return true;
+    }
+  }
 
   for (size_t i = 0; i < url_greylist_.size(); ++i) {
     // See comments on the matching behavior above.
@@ -268,8 +413,8 @@ bool BrowserSwitcherCore::ShouldOpenInAlternativeBrowser(
       case HOST:
         // Pick the greylist decision over the other one if it is more precise.
         if (hostname.find(url_greylist_[i]) != hostname.npos) {
-          if (decision == NONE || url_greylist_[i].length() >
-                  urls_to_redirect_[decision_idx].length()) {
+          if (decision == NONE ||
+              url_greylist_[i].length() > decision_rule.length()) {
             return true;
           }
         }
@@ -277,8 +422,8 @@ bool BrowserSwitcherCore::ShouldOpenInAlternativeBrowser(
       case PREFIX:
         // Pick the greylist decision over the other one if it is more precise.
         if (url.find(url_greylist_[i]) == 0) {
-          if (decision == NONE || url_greylist_[i].length() >
-                  urls_to_redirect_[decision_idx].length()) {
+          if (decision == NONE ||
+              url_greylist_[i].length() > decision_rule.length()) {
             return true;
           }
         }
@@ -304,6 +449,15 @@ void BrowserSwitcherCore::Initialize() {
   configuration_valid_ = false;
   if (!LoadConfigFile())
     LOG(ERR) << "Confing file could not be loaded!" << std::endl;
+  if (!LoadIESiteListCache())
+    LOG(INFO) << "No IE Site List found or file can't be read." << std::endl;
+
+  site_list_mutex_ = ::CreateMutex(NULL, FALSE, NULL);
+  if (!site_list_mutex_) {
+    LOG(ERR) << "Could not create mutex object for IE Site List thread. "
+             << "Site list will not get updated at this run." << std::endl;
+  }
+
   LOG(INFO) << "BrowserSwitcherCore::Initialize "
             << alt_browser_path_.c_str() << std::endl;
 }
@@ -441,7 +595,93 @@ bool BrowserSwitcherCore::SaveConfigFile() {
   return true;
 }
 
-bool BrowserSwitcherCore::HasValidConfiguration() {
+
+bool BrowserSwitcherCore::LoadIESiteListCache() {
+  std::wstring path_string(GetIESiteListCacheLocation());
+  // Protect against failed config file location retrieval.
+  if (path_string.empty())
+    return false;
+
+  LOG(INFO) << "Loading IE Site List cache from : " << path_string.c_str()
+            << std::endl;
+
+  std::wifstream config_file(path_string);
+  if (config_file.bad()) {
+    LOG(ERR) << "Can't open config file : " << ::GetLastError() << std::endl;
+    return false;
+  }
+
+  int file_version = 0;
+  config_file >> file_version;
+  if (config_file.fail())
+    return false;
+  LOG(INFO) << "file_version : '" << file_version << "'" << std::endl;
+  if (file_version < kMinSupportedFileVersion ||
+    file_version > kCurrentFileVersion) {
+    return false;
+  }
+  std::wstring skip_to_eol;
+  std::getline(config_file, skip_to_eol);
+
+  size_t urls_to_load = 0;
+  config_file >> urls_to_load;
+  if (config_file.fail())
+    return false;
+  LOG(INFO) << "url list size : '" << urls_to_load << "'" << std::endl;
+  if (urls_to_load > kMaxUrlFilterSize) {
+    return false;
+  }
+  std::getline(config_file, skip_to_eol);
+
+  UrlList urls_to_redirect;
+  std::wstring url;
+  for (size_t i = 0; i < urls_to_load; ++i) {
+    if (!ReadLineFromFile(&config_file, &url))
+      return false;
+    LOG(INFO) << "url : '" << url << "'" << std::endl;
+    urls_to_redirect.push_back(url);
+  }
+
+  SetIESiteList(urls_to_redirect);
+  return true;
+}
+
+bool BrowserSwitcherCore::SaveIESiteListCache() {
+  std::wstring config_path(GetIESiteListCacheLocation());
+  // Protect against failed config file location retrieval.
+  if (config_path.empty())
+    return false;
+
+  LOG(INFO) << "Saving IE Site List cache to : " << config_path.c_str()
+            << std::endl;
+
+  std::wstring temp_config_path(config_path);
+  temp_config_path.append(L".tmp");
+  std::wofstream config_file(temp_config_path);
+  if (config_file.bad()) {
+    LOG(ERR) << "Can't open temp config file : "
+      << ::GetLastError() << std::endl;
+    return false;
+  }
+
+  config_file << kCurrentFileVersion << std::endl;
+  config_file << urls_from_site_list_.size() << std::endl;
+  for (size_t i = 0; i < urls_from_site_list_.size(); ++i)
+    config_file << urls_from_site_list_[i] << std::endl;
+  config_file.close();
+
+  if (!::MoveFileEx(temp_config_path.c_str(), config_path.c_str(),
+    MOVEFILE_COPY_ALLOWED |
+    MOVEFILE_REPLACE_EXISTING |
+    MOVEFILE_WRITE_THROUGH)) {
+    LOG(ERR) << "Could not move temp config file in place! "
+      << ::GetLastError() << std::endl;
+    return false;
+  }
+  return true;
+}
+
+bool BrowserSwitcherCore::HasValidConfiguration() const {
   return configuration_valid_;
 }
 
@@ -451,9 +691,14 @@ void BrowserSwitcherCore::SetConfigFileLocationForTest(
   configuration_valid_ = false;
 }
 
+void BrowserSwitcherCore::SetIESiteListCacheLocationForTest(
+    const std::wstring& path) {
+  site_list_cache_file_path_ = path;
+}
+
 std::wstring BrowserSwitcherCore::CompileCommandLine(
     const std::wstring& raw_command_line,
-    const std::wstring& url) {
+    const std::wstring& url) const {
   std::wstring sanitized_url;
   // In almost every case should this be enough for the sanitization because
   // any ASCII char will expand to at most 3 chars - %[0-9A-F][0-9A-F].
@@ -494,7 +739,7 @@ std::wstring BrowserSwitcherCore::CompileCommandLine(
   return command_line;
 }
 
-std::wstring BrowserSwitcherCore::SanitizeUrl(const std::wstring url) {
+std::wstring BrowserSwitcherCore::SanitizeUrl(const std::wstring url) const {
   // In almost every case should this be enough for the sanitization because
   // any ASCII char will expand to at most 3 chars - %[0-9A-F][0-9A-F].
   std::wstring::const_iterator it = url.begin();
@@ -521,25 +766,39 @@ std::wstring BrowserSwitcherCore::SanitizeUrl(const std::wstring url) {
   return std::wstring(sanitized_url.get());
 }
 
+const std::wstring BrowserSwitcherCore::GetConfigPath() const {
+  std::wstring config_path;
+  wchar_t path[MAX_PATH];
+  if (!::SHGetSpecialFolderPath(0, path, CSIDL_LOCAL_APPDATA, false)) {
+    LOG(ERR) << "Error locating %LOCAL_APPDATA%!" << std::endl;
+    NOTREACHED();
+    return config_path;
+  }
+  config_path.assign(path);
+  ::CreateDirectory(config_path.append(L"\\Google").c_str(), NULL);
+  ::CreateDirectory(config_path.append(L"\\BrowserSwitcher").c_str(),
+                    NULL);
+  return config_path;
+}
+
 const std::wstring& BrowserSwitcherCore::GetConfigFileLocation() {
   if (config_file_path_.empty()) {
-    wchar_t path[MAX_PATH];
-    if (!::SHGetSpecialFolderPath(0, path, CSIDL_LOCAL_APPDATA, false)) {
-      LOG(ERR) << "Error locating %LOCAL_APPDATA%!" << std::endl;
-      NOTREACHED();
-      return config_file_path_;
-    }
-    config_file_path_.assign(path);
-    ::CreateDirectory(config_file_path_.append(L"\\Google").c_str(), NULL);
-    ::CreateDirectory(config_file_path_.append(L"\\BrowserSwitcher").c_str(),
-                      NULL);
+    config_file_path_ = GetConfigPath();
     config_file_path_.append(L"\\cache.dat");
   }
-
   return config_file_path_;
 }
 
-std::wstring BrowserSwitcherCore::GetBrowserLocation(const wchar_t* key_name) {
+const std::wstring& BrowserSwitcherCore::GetIESiteListCacheLocation() {
+  if (site_list_cache_file_path_.empty()) {
+    site_list_cache_file_path_ = GetConfigPath();
+    site_list_cache_file_path_.append(L"\\sitelistcache.dat");
+  }
+  return site_list_cache_file_path_;
+}
+
+std::wstring BrowserSwitcherCore::GetBrowserLocation(
+    const wchar_t* key_name) const {
   HKEY key;
   if (ERROR_SUCCESS != ::RegOpenKey(HKEY_LOCAL_MACHINE, key_name, &key) &&
       ERROR_SUCCESS != ::RegOpenKey(HKEY_CURRENT_USER, key_name, &key)) {
@@ -547,23 +806,24 @@ std::wstring BrowserSwitcherCore::GetBrowserLocation(const wchar_t* key_name) {
              << ::GetLastError() << std::endl;
     return std::wstring();
   }
-  return ReadDefaultRegValue(key);
+  return ReadRegValue(key, NULL);
 }
 
-std::wstring BrowserSwitcherCore::ReadDefaultRegValue(HKEY key) {
+std::wstring BrowserSwitcherCore::ReadRegValue(
+    HKEY key, const wchar_t* name) const {
   DWORD length = 0;
   if (ERROR_SUCCESS !=
-      ::RegQueryValueEx(key, NULL, NULL, NULL, NULL, &length)) {
-    LOG(ERR) << "Could not get size of the default value!"
+      ::RegQueryValueEx(key, name, NULL, NULL, NULL, &length)) {
+    LOG(ERR) << "Could not get size of the value!"
              << ::GetLastError() << std::endl;
     return std::wstring();
   }
   std::auto_ptr<wchar_t> browser_path(new wchar_t[length]);
   if (ERROR_SUCCESS !=
-      ::RegQueryValueEx(key, NULL, NULL, NULL,
+      ::RegQueryValueEx(key, name, NULL, NULL,
                         reinterpret_cast<LPBYTE>(browser_path.get()),
                         &length)) {
-    LOG(ERR) << "Could not get the default value!"
+    LOG(ERR) << "Could not get the value!"
              << ::GetLastError() << std::endl;
     return std::wstring();
   }
@@ -572,7 +832,7 @@ std::wstring BrowserSwitcherCore::ReadDefaultRegValue(HKEY key) {
 }
 
 std::wstring BrowserSwitcherCore::ExpandEnvironmentVariables(
-  const std::wstring& str) {
+    const std::wstring& str) const {
   std::wstring output = str;
   DWORD expanded_size = 0;
   expanded_size = ::ExpandEnvironmentStrings(str.c_str(), NULL, expanded_size);
@@ -586,4 +846,53 @@ std::wstring BrowserSwitcherCore::ExpandEnvironmentVariables(
       output = expanded_path.get();
   }
   return output;
+}
+
+bool BrowserSwitcherCore::StartIESiteListDownload() {
+  // No mutex, no thread!
+  if (!site_list_mutex_)
+    return false;
+
+  DWORD thread_id;
+  HANDLE thread_handle =
+      ::CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)DownloadThreadMain,
+                     reinterpret_cast<void*>(this), 0, &thread_id);
+  return thread_handle != NULL;
+}
+
+bool BrowserSwitcherCore::DownloadIESiteList() {
+  HKEY key;
+  std::wstring name(L"SOFTWARE\\Policies\\Microsoft\\Internet Explorer\\Main\\"
+                    L"EnterpriseMode");
+  if (ERROR_SUCCESS != ::RegOpenKey(HKEY_LOCAL_MACHINE, name.c_str(), &key) &&
+      ERROR_SUCCESS != ::RegOpenKey(HKEY_CURRENT_USER, name.c_str(), &key)) {
+    LOG(INFO) << "Could not open registry key " << name << "! Error Code:"
+              << ::GetLastError() << std::endl;
+    return false;
+  }
+  std::wstring value(L"SiteList");
+  std::wstring site_list_location = ReadRegValue(key, value.c_str());
+
+  wchar_t local_file[MAX_PATH];
+  if (S_OK != ::URLDownloadToCacheFile(NULL, site_list_location.c_str(),
+                                       local_file, MAX_PATH, 0, NULL)) {
+    LOG(ERR) << "Could not download IE Site List file from :"
+             << site_list_location << " error: " << ::GetLastError()
+             << std::endl;
+    return false;
+  }
+
+  IEEMSiteListParser parser;
+  if (!parser.LoadFile(std::wstring(local_file))) {
+    LOG(ERR) << "Could not parse IE Site List file." << std::endl;
+    return false;
+  }
+
+  if (::WaitForSingleObject(site_list_mutex_, INFINITE) == WAIT_OBJECT_0) {
+    SetIESiteList(parser.GetList());
+    SaveIESiteListCache();
+    ::ReleaseMutex(site_list_mutex_);
+    LOG(INFO) << "Site List successfully updated." << std::endl;
+  }
+  return true;
 }

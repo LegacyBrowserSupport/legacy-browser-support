@@ -73,11 +73,11 @@
   },
   "URLGreyList_Policy": {
     "description": "Name of the URLGreyList policy",
-    "message": "Hosts to Open In Either Browser"
+    "message": "Hosts that Should Not Trigger a Transition in Either Browser"
   },
   "URLGreyList_Part": {
     "description": "Name of the URLGreyList policy part",
-    "message": "Hosts to Open In Either Browser"
+    "message": "Hosts that Should Not Trigger a Transition in Either Browser"
   },
   "URLGreyList_Explain": {
     "description": "Explanation of the URLGreyList policy",
@@ -94,5 +94,29 @@
   "KeepLastChromeTab_Explain": {
     "description": "Explanation of the KeepLastChromeTab policy",
     "message": "Allows you to specify what happens when the last open tab in Chrome is being redirected to the alternative browser.\n\nWhen this policy is enabled or not set the last tab will be left open and point to the new tab page after the transition. If it is set to disabled then the last tab will be closed which will lead to closing Chrome if there are no other Chrome windows open."
-  }
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Chrome For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Chrome For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Chrome before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
+  }  
 }

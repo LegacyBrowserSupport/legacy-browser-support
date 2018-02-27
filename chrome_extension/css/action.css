@@ -55,7 +55,6 @@ span {
   -webkit-padding-end: 24px;
   -webkit-user-select: none;
   color: black;
-  display: block;
   font-family: 'Segoe UI', Tahoma, sans-serif;
   font-size: 0.8em;
   font-weight: normal;
@@ -63,6 +62,10 @@ span {
   margin: 0;
   padding: 0px 0px 20px;
   max-width: 450px;
+}
+
+.block {
+  display: block;
 }
 
 #message-frame {
