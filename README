@@ -1,3 +1,7 @@
+This repo is a port of the Chrome legacy browser extension and plug-in to Firefox
+
+---
+
 *Goal*
 Bounce the navigation back to Chrome whenever the user is trying to open a web
 page that is meant to be opened in Chrome. It is meant to be a companion to the
