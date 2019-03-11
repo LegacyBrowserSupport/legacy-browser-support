@@ -543,3 +543,44 @@ ExtensionLogic.prototype.initialize = function() {
                          this.portDisconnected.bind(this));
   }
 };
+
+function handleMessage(request, sender, sendResponse) {
+  switch (request.msg) {
+    case "urlNeedsRedirect":
+      let urlNeedsRedirect = extension.urlNeedsRedirect(request.url);
+      sendResponse({urlNeedsRedirect, show_transition_screen: extension.show_transition_screen});
+      break;
+    case "invokeAlternativeBrowser":
+      extension.invokeAlternativeBrowser(request.url, function(msg) {
+        if (msg.success) {
+          // Check if this is the last tab in this window or not and close it if it is
+          // not the last one or point it to the newtab page otherwise. Only keep the
+          // last tab of the last window and don't keep popup windows open ever.
+          chrome.windows.get(chrome.windows.WINDOW_ID_CURRENT, { populate: true },
+              function(window) {
+                // Popup windows always get closed. See crbug.com/643234.
+                if (window.type === "popup") {
+                  chrome.windows.remove(window.id);
+                }
+                chrome.tabs.query({active: true}, function(tabs) {
+                  let tab = tabs[0];
+                  chrome.windows.getAll(function(windows) {
+                    if (!extension.keep_last_chrome_tab || window.tabs.length > 1
+                        || windows.filter(isNormalWindow).length > 1) {
+                      chrome.tabs.remove(tab.id);
+                    } else {
+                      chrome.tabs.update(tab.id, {url: 'about:newtab'});
+                    }
+                  });
+                });
+              });
+        } else {
+          console.error(msg.error);
+        }
+        sendResponse({success: msg.success});
+      });
+      return true;
+  }
+}
+
+browser.runtime.onMessage.addListener(handleMessage);
