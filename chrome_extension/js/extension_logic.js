@@ -510,13 +510,11 @@ ExtensionLogic.prototype.requestFilter = function(details) {
   // real network request. However this might not catch all cases therefore the
   // tab enumeration on after setting this flag is done.
   if (!this.url_list_loaded) {
-    return {redirectUrl: 'chrome-extension://' +
-      chrome.i18n.getMessage('@@extension_id') +
-      '/loading.html#' + details.url};
+    return {redirectUrl: chrome.runtime.getURL("loading.html") +
+      '#' + details.url};
   } else if (this.urlNeedsRedirect(details.url)) {
-    return {redirectUrl: 'chrome-extension://' +
-      chrome.i18n.getMessage('@@extension_id') +
-      '/action.html#' + details.url};
+    return {redirectUrl: chrome.runtime.getURL("action.html") +
+      '#' + details.url};
   }
 };
 
