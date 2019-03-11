@@ -32,5 +32,9 @@
   "storage": {
     "managed_schema": "schema.json"
   },
-  "incognito": "split"
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "legacy-browser-support@mozilla.com"
+    }
+  }
 }
