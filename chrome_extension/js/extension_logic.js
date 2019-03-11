@@ -296,7 +296,7 @@ ExtensionLogic.prototype.createRules = function(items) {
   if (chrome.runtime.lastError) {
     // Avoid wiping the current policy if there was an error reading the new
     // values. The cache should stay active until the situation is resolved.
-    port.logError('background.js:createRules() : ' +
+    this.port.logError('background.js:createRules() : ' +
       chrome.runtime.lastError.message);
     return;
   }
