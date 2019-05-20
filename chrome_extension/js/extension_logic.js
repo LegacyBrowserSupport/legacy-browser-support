@@ -26,7 +26,7 @@ ExtensionLogic = function() {
   this.url_greylist_info = [];
   this.ie_site_list_info = [];
   this.url_list_loaded = false;
-  this.keep_last_chrome_tab = true;
+  this.keep_last_firefox_tab = true;
   this.show_transition_screen = 0;
   this.use_ie_site_list = false;
   this.port = null;
@@ -56,9 +56,9 @@ ExtensionLogic = function() {
     URL_GREYLIST: 'url_greylist',
     ALTERNATIVE_BROWSER_PATH: 'alternative_browser_path',
     ALTERNATIVE_BROWSER_ARGUMENTS: 'alternative_browser_arguments',
-    CHROME_PATH: 'chrome_path',
-    CHROME_ARGUMENTS: 'chrome_arguments',
-    KEEP_LAST_CHROME_TAB: 'keep_last_chrome_tab',
+    FIREFOX_PATH: 'firefox_path',
+    FIREFOX_ARGUMENTS: 'firefox_arguments',
+    KEEP_LAST_FIREFOX_TAB: 'keep_last_firefox_tab',
     SHOW_TRANSITION_SCREEN: 'show_transition_screen',
     USE_IE_SITE_LIST: 'use_ie_site_list'
   };
@@ -198,7 +198,7 @@ ExtensionLogic.prototype.urlGreyListForceStaying = function(url) {
 /**
  * Verifies if a given url has to be opened in the alternative browser. Returns
  * true if the url should be redirected and false if loading should continue in
- * Chrome.
+ * Firefox.
  * @param {string} url The url to be checked.
  * @return {boolean} True iff the url should be opened in the alt. browser.
  */
@@ -300,6 +300,10 @@ ExtensionLogic.prototype.createRules = function(items) {
       chrome.runtime.lastError.message);
     return;
   }
+  if (!items) {
+    // Workaround Firefox 67 bug
+    items = {};
+  }
 
   var self = this;
 
@@ -361,23 +365,23 @@ ExtensionLogic.prototype.createRules = function(items) {
                      value: ''});
   }
 
-  if (items[this.Policies.CHROME_PATH])
-    properties.push({name: 'chrome_browser',
-                     value: items[this.Policies.CHROME_PATH]});
+  if (items[this.Policies.FIREFOX_PATH])
+    properties.push({name: 'firefox_browser',
+                     value: items[this.Policies.FIREFOX_PATH]});
   else
-    properties.push({name: 'chrome_browser', value: ''});
+    properties.push({name: 'firefox_browser', value: ''});
 
-  if (items[this.Policies.CHROME_ARGUMENTS]) {
-    properties.push({name: this.Policies.CHROME_ARGUMENTS,
-                     value: items[this.Policies.CHROME_ARGUMENTS]});
+  if (items[this.Policies.FIREFOX_ARGUMENTS]) {
+    properties.push({name: this.Policies.FIREFOX_ARGUMENTS,
+                     value: items[this.Policies.FIREFOX_ARGUMENTS]});
   } else {
-    properties.push({name: this.Policies.CHROME_ARGUMENTS, value: ''});
+    properties.push({name: this.Policies.FIREFOX_ARGUMENTS, value: ''});
   }
 
-  if (items[this.Policies.KEEP_LAST_CHROME_TAB] !== undefined) {
-    self.keep_last_chrome_tab = items[this.Policies.KEEP_LAST_CHROME_TAB];
+  if (items[this.Policies.KEEP_LAST_FIREFOX_TAB] !== undefined) {
+    self.keep_last_firefox_tab = items[this.Policies.KEEP_LAST_FIREFOX_TAB];
   } else {
-    self.keep_last_chrome_tab = false;
+    self.keep_last_firefox_tab = false;
   }
 
   if (items[this.Policies.SHOW_TRANSITION_SCREEN] !== undefined) {
@@ -482,9 +486,9 @@ ExtensionLogic.prototype.updateConfiguration = function(change, area) {
                                 this.Policies.URL_GREYLIST,
                                 this.Policies.ALTERNATIVE_BROWSER_PATH,
                                 this.Policies.ALTERNATIVE_BROWSER_ARGUMENTS,
-                                this.Policies.CHROME_PATH,
-                                this.Policies.CHROME_ARGUMENTS,
-                                this.Policies.KEEP_LAST_CHROME_TAB,
+                                this.Policies.FIREFOX_PATH,
+                                this.Policies.FIREFOX_ARGUMENTS,
+                                this.Policies.KEEP_LAST_FIREFOX_TAB,
                                 this.Policies.SHOW_TRANSITION_SCREEN,
                                 this.Policies.USE_IE_SITE_LIST],
                                this.createRules.bind(this));
@@ -546,6 +550,10 @@ ExtensionLogic.prototype.initialize = function() {
 
 function handleMessage(request, sender, sendResponse) {
   switch (request.msg) {
+    case "hasFinishedLoading":
+      let hasFinishedLoading = extension.hasFinishedLoading();
+      sendResponse({hasFinishedLoading});
+      break;
     case "urlNeedsRedirect":
       let urlNeedsRedirect = extension.urlNeedsRedirect(request.url);
       sendResponse({urlNeedsRedirect, show_transition_screen: extension.show_transition_screen});
@@ -565,7 +573,7 @@ function handleMessage(request, sender, sendResponse) {
                 chrome.tabs.query({active: true}, function(tabs) {
                   let tab = tabs[0];
                   chrome.windows.getAll(function(windows) {
-                    if (!extension.keep_last_chrome_tab || window.tabs.length > 1
+                    if (!extension.keep_last_firefox_tab || window.tabs.length > 1
                         || windows.filter(isNormalWindow).length > 1) {
                       chrome.tabs.remove(tab.id);
                     } else {

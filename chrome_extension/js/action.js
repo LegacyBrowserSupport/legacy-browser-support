@@ -76,7 +76,7 @@ function invokeFinished(msg) {
       setTimeout((async() => {
         let innerResponse = await browser.runtime.sendMessage({msg: "invokeAlternativeBrowser", url});
         invokeFinished(innerResponse);
-      })(), response.show_transition_screen * 1000);
+      }), response.show_transition_screen * 1000);
       // Start the countdown timer in the UI if needed.
       if (response.show_transition_screen > 0) {
         var timer_countdown = response.show_transition_screen;

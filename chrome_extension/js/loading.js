@@ -21,8 +21,9 @@
 
 var url = window.location.hash.substring(1);
 
-function waitForStorageToLoad() {
-  if (chrome.extension.getBackgroundPage().extension.hasFinishedLoading()) {
+async function waitForStorageToLoad() {
+  let response = await browser.runtime.sendMessage({msg: "hasFinishedLoading", url});
+  if (response.hasFinishedLoading) {
     window.location.href = url;
     return;
   }
