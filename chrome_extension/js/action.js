@@ -35,13 +35,6 @@ function showError(error) {
 }
 
 /**
- * Returns true if the window is a normal window.
- * @param {Window} window The window to test.
- * @returns {Boolean} True if the window is normal and false otherwise.
- */
-function isNormalWindow(window) { return window.type === "normal"; }
-
-/**
  * Callback that is called when the native component has completed the request
  * to start the alternative browser.
  * @param {Object} msg The message from the native component.

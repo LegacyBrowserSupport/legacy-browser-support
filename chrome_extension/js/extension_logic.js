@@ -381,7 +381,7 @@ ExtensionLogic.prototype.createRules = function(items) {
   if (items[this.Policies.KEEP_LAST_FIREFOX_TAB] !== undefined) {
     self.keep_last_firefox_tab = items[this.Policies.KEEP_LAST_FIREFOX_TAB];
   } else {
-    self.keep_last_firefox_tab = false;
+    self.keep_last_firefox_tab = true;
   }
 
   if (items[this.Policies.SHOW_TRANSITION_SCREEN] !== undefined) {
@@ -547,6 +547,13 @@ ExtensionLogic.prototype.initialize = function() {
                          this.portDisconnected.bind(this));
   }
 };
+
+/**
+ * Returns true if the window is a normal window.
+ * @param {Window} window The window to test.
+ * @returns {Boolean} True if the window is normal and false otherwise.
+ */
+function isNormalWindow(window) { return window.type === "normal"; }
 
 function handleMessage(request, sender, sendResponse) {
   switch (request.msg) {
