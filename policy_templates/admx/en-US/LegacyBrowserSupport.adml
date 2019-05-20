@@ -6,23 +6,23 @@
   </description>
   <resources>
     <stringTable>
-      <string id="KeepLastChromeTab_Policy">Keep Last Chrome Tab On Transition</string>
-      <string id="ChromeArguments_Explain">Allows you to specify the arguments to be passed to the Chrome when it is executed.
+      <string id="KeepLastFirefoxTab_Policy">Keep Last Firefox Tab On Transition</string>
+      <string id="FirefoxArguments_Explain">Allows you to specify the arguments to be passed to the Firefox when it is executed.
 
-If the policy is enabled the provided paramters will be used when Chrome is invoked.
+If the policy is enabled the provided paramters will be used when Firefox is invoked.
 
 You can also use the special placeholder ${url} to specify where the url should appear in the command line. E.g. "--url=${url} --kiosk".
 You don't have to specify the placeholder if it should be appended to the end or if it should be the only argument you can leave that policy empty.
 
 If the policy is disabled or left empty only the url will be passed as a parameter to the browser.</string>
       <string id="AlternativeBrowserArguments">Alternative Browser Arguments</string>
-      <string id="ChromeArguments">Chrome Arguments</string>
-      <string id="Cat_Google">Google</string>
+      <string id="FirefoxArguments">Firefox Arguments</string>
+      <string id="Cat_Mozilla">Mozilla</string>
       <string id="AlternativeBrowserPath_Part">Alternative Browser Path</string>
       <string id="URLList_Part">Hosts to Open In the Alternative Browser</string>
-      <string id="KeepLastChromeTab_Explain">Allows you to specify what happens when the last open tab in Chrome is being redirected to the alternative browser.
+      <string id="KeepLastFirefoxTab_Explain">Allows you to specify what happens when the last open tab in Firefox is being redirected to the alternative browser.
 
-When this policy is enabled or not set the last tab will be left open and point to the new tab page after the transition. If it is set to disabled then the last tab will be closed which will lead to closing Chrome if there are no other Chrome windows open.</string>
+When this policy is enabled or not set the last tab will be left open and point to the new tab page after the transition. If it is set to disabled then the last tab will be closed which will lead to closing Firefox if there are no other Firefox windows open.</string>
       <string id="SUPPORTED_WINXPSP2">Microsoft Windows XP SP2 or later</string>
       <string id="AlternativeBrowserPath">Alternative Browser Path</string>
       <string id="AlternativeBrowserPath_Explain">Specify the executable of the alternative browser.
@@ -32,8 +32,8 @@ If enabled you can either specify an absolute path in the policy or use one of t
 
 ${ie} - The default install location for Internet Explorer
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\IEXPLORE.EXE is used to pick the location of the browser in this case.
-${firefox} - The default install location for Firefox
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\FIREFOX.EXE is used to pick the location of the browser in this case.
+${chrome} - The default install location for Chrome
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\CHROME.EXE is used to pick the location of the browser in this case.
 ${safari} - The default install location for Safari
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\SAFARI.EXE is used to pick the location of the browser in this case.
 
@@ -44,33 +44,33 @@ If the policy is enabled you have to provide a list of filters which will trigge
 
 Host-name part: Either complete domain names like "www.example.com" should be specified or parts of them like "example.com" or even "example". Wildcards are not supported yet.
 URL prefix: Only proper URL prefixes are matched complete with protocol and port if needed. E.g. "http://login.example.com" or "https://www.example.com:8080/login/".
-Negative entry: Starts with "!" and continues as host-name part or URL prefix as described above. Negative entries are always opened in Chrome. E.g. "!example.com" or "!file:///c:/localapp/".
-Wildcard entry: Contains only a single "*" character. Matches any URL. Intended to be used together with negative entries, if most URLs should be open in the alternative browser and only a small selection of URLs should be opened in Chrome.
+Negative entry: Starts with "!" and continues as host-name part or URL prefix as described above. Negative entries are always opened in Firefox. E.g. "!example.com" or "!file:///c:/localapp/".
+Wildcard entry: Contains only a single "*" character. Matches any URL. Intended to be used together with negative entries, if most URLs should be open in the alternative browser and only a small selection of URLs should be opened in Firefox.
 
-Negative entries have higher priorities than positive entries which allows to whitelist large portions of a domain while saving smaller sections to be opened in Chrome.
+Negative entries have higher priorities than positive entries which allows to whitelist large portions of a domain while saving smaller sections to be opened in Firefox.
 The wildcard entry if present is applied only after all other rules have been checked.
 
 The following protocols are monitored for redirecting: http:, https:.
 
 If not specified or left empty - no transition to the alternative browser will be triggered.</string>
-      <string id="ChromePath_Explain">Allows you to specify the executable of Chrome to be lauched when returning from the alternative browser(*).
+      <string id="FirefoxPath_Explain">Allows you to specify the executable of Firefox to be launched when returning from the alternative browser(*).
 
 When the policy is enabled you can either specify an absolute path in the policy or use the following variable:
 
-${chrome} - The default install location for Chrome
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\Chrome.EXE is used to pick the location of the browser in this case.
+${firefox} - The default install location for Firefox
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\Firefox.EXE is used to pick the location of the browser in this case. // TODO TODO TODO
 
-If the policy is disabled or left empty the default installation of Chrome will be used as if the ${chrome} value has been used.
+If the policy is disabled or left empty the default installation of Firefox will be used as if the ${firefox} value has been used.
 
-*: Presently only Internet Explorer supports returning to Chrome automatically.</string>
+*: Presently only Internet Explorer supports returning to Firefox automatically.</string>
       <string id="Cat_LegacyBrowserSupport">Legacy Browser Support</string>
       <string id="AlternativeBrowserArguments_Part">Alternative Browser Arguments</string>
       <string id="URLGreyList_Part">Hosts to Open In Either Browser</string>
       <string id="URLGreyList_Policy">Hosts to Open In Either Browser</string>
       <string id="URLList_Policy">Hosts to Open In the Alternative Browser</string>
-      <string id="ChromePath">Chrome Path</string>
-      <string id="ChromeArguments_Part">Chrome Arguments</string>
-      <string id="KeepLastChromeTab_Part">Keep Last Chrome Tab On Transition</string>
+      <string id="FirefoxPath">Firefox Path</string>
+      <string id="FirefoxArguments_Part">Firefox Arguments</string>
+      <string id="KeepLastFirefoxTab_Part">Keep Last Firefox Tab On Transition</string>
       <string id="AlternativeBrowserArguments_Explain">Allows you to specify the arguments to be passed to the executable of the alternative browser.
 
 If the policy is enabled the provided paramters will be used when the alternative browser is invoked.
@@ -88,10 +88,10 @@ A possible use case are any authentication domains that are shared between new a
 Host-name parts: Either complete domain names like "www.example.com" should be specified or parts of them like "example.com: or even "example". Wildcards are not supported yet.
 URL prefixes: Only proper URL prefixes are matched complete with protocol and port if needed. E.g. "http://login.example.com" or "https://www.example.com:8080/login/".
 
-If not specified or left empty - any domain not in the "Hosts to Open In the Alternative Browser" list will trigger a transition back to Chrome(*).
+If not specified or left empty - any domain not in the "Hosts to Open In the Alternative Browser" list will trigger a transition back to Firefox(*).
 
-*: Presently only Internet Explorer supports returning to Chrome automatically.</string>
-      <string id="ChromePath_Part">Chrome Path</string>
+*: Presently only Internet Explorer supports returning to Firefox automatically.</string>
+      <string id="FirefoxPath_Part">Firefox Path</string>
 </stringTable>
   <presentationTable>
     <presentation id="AlternativeBrowserPath">
@@ -106,15 +106,15 @@ If not specified or left empty - any domain not in the "Hosts to Open In the Alt
         <defaultValue></defaultValue>
       </textBox>
     </presentation>
-    <presentation id="ChromePath">
-      <textBox refId="ChromePath_Part">
-        <label>Chrome Path</label>
+    <presentation id="FirefoxPath">
+      <textBox refId="FirefoxPath_Part">
+        <label>Firefox Path</label>
         <defaultValue></defaultValue>
       </textBox>
     </presentation>
-    <presentation id="ChromeArguments">
-      <textBox refId="ChromeArguments_Part">
-        <label>Chrome Arguments</label>
+    <presentation id="FirefoxArguments">
+      <textBox refId="FirefoxArguments_Part">
+        <label>Firefox Arguments</label>
         <defaultValue></defaultValue>
       </textBox>
     </presentation>
@@ -124,7 +124,7 @@ If not specified or left empty - any domain not in the "Hosts to Open In the Alt
     <presentation id="URLGreyList_Policy">
       <listBox refId="URLGreyList_Part">Hosts to Open In Either Browser</listBox>
     </presentation>
-    <presentation id="KeepLastChromeTab_Policy"/>
+    <presentation id="KeepLastFirefoxTab_Policy"/>
   </presentationTable>
 </resources>
 </policyDefinitionResources>
