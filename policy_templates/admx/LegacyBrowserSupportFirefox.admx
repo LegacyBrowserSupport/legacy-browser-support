@@ -1,7 +1,7 @@
 <policyDefinitions revision="1.0" schemaVersion="1.0">
   <policyNamespaces>
-    <target prefix="fullarmor" namespace="FullArmor.Policies.5261D7E5_C4B3_4AF0_932A_F58A143447B3"/>
-    <using prefix="windows" namespace="Microsoft.Policies.Windows"/>
+    <target prefix="LBSFirefox" namespace="Mozilla.Policies.Firefox.LegacyBrowserSupport"/>
+    <using prefix="Mozilla" namespace="Mozilla.Policies"/>
   </policyNamespaces>
   <resources minRequiredRevision="1.0"/>
   <supportedOn>
@@ -12,7 +12,7 @@
   <categories>
     <category name="Cat_Mozilla" displayName="$(string.Cat_Mozilla)"/>
     <category name="Cat_LegacyBrowserSupport" displayName="$(string.Cat_LegacyBrowserSupport)">
-      <parentCategory ref="Cat_Mozilla"/>
+      <parentCategory ref="Mozilla:Cat_Mozilla"/>
     </category>
   </categories>
   <policies>
@@ -68,14 +68,14 @@
         <decimal value="0" />
       </disabledValue>
     </policy>
-    <policy name="ShowTransitionScreen_Policy" class="Machine" displayName="$(string.ShowTransitionScreen_Policy)" explainText="$(string.ShowTransitionScreen_Explain)" presentation="$(presentation.ShowTransitionScreen_Policy)" key="Software\Policies\Mozilla\Firefox\3rdparty\Extensions\legacy-browser-support@mozilla.com">
+    <policy name="ShowTransitionScreen_Policy" class="Machine" displayName="$(string.ShowTransitionScreen_Policy)" explainText="$(string.ShowTransitionScreen_Explain)" presentation="$(presentation.ShowTransitionScreen_Policy)" key="Software\Policies\Google\Chrome\3rdparty\Extensions\heildphpnddilhkemkielfhnkaagiabh\policy">
       <parentCategory ref="Cat_LegacyBrowserSupport"/>
       <supportedOn ref="SUPPORTED_WINXPSP2"/>
       <elements>
         <decimal id="ShowTransitionScreen_Part" maxValue="60" valueName="show_transition_screen"/>
       </elements>
     </policy>
-    <policy name="UseIeSiteList_Policy" class="Machine" displayName="$(string.UseIeSiteList_Policy)" explainText="$(string.UseIeSiteList_Explain)" presentation="$(presentation.UseIeSiteList_Policy)" key="Software\Policies\Mozilla\Firefox\3rdparty\Extensions\legacy-browser-support@mozilla.com" valueName="use_ie_site_list">
+    <policy name="UseIeSiteList_Policy" class="Machine" displayName="$(string.UseIeSiteList_Policy)" explainText="$(string.UseIeSiteList_Explain)" presentation="$(presentation.UseIeSiteList_Policy)" key="Software\Policies\Google\Chrome\3rdparty\Extensions\heildphpnddilhkemkielfhnkaagiabh\policy" valueName="use_ie_site_list">
       <parentCategory ref="Cat_LegacyBrowserSupport"/>
       <supportedOn ref="SUPPORTED_WINXPSP2"/>
       <enabledValue>
