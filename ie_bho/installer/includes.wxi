@@ -20,8 +20,8 @@
 
 <Include>
   <!-- Text valid for all languages, ALREADY_UPGRADED is not normally visible. -->
-  <?define COMPANY_NAME="Google" ?>
-  <?define COMPANY_FULLNAME="Google Inc" ?>
+  <?define COMPANY_NAME="Mozilla" ?>
+  <?define COMPANY_FULLNAME="Mozilla" ?>
   <?define INSTALL_DIR="Legacy Browser Support" ?>
   <?define ALREADY_UPGRADED="This product has already been installed." ?>
   <?define URL="http://www.google.com/intl/en/chrome/business/" ?>

@@ -41,11 +41,11 @@
            CompressionLevel="high" />
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder" Name="ProgsDir">
-        <Directory Id="Google" Name="Google">
+        <Directory Id="Mozilla" Name="Mozilla">
           <Directory Id="INSTALLDIR" Name="$(var.INSTALL_DIR)">
             <Component Id="BrowserSwitcherLibrary" Guid="$(var.GUID_COMPONENT)">
               <AppId Description="LegacyBrowserSupport" Id="$(var.GUID_LIBRARY)" />
-              <File Id="browser_switcher_bho.dll"
+<!--              <File Id="browser_switcher_bho.dll"
                     Name="browser_switcher_bho.dll"
                     DiskId="1"
                     Source="$(var.SrcLibrary)"
@@ -77,27 +77,11 @@
                  Root="HKLM"
                  Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\$(var.GUID_BHO)"
                  Name="NoExplorer" Value="1" Type="integer" Action="write" />
+-->
               <RegistryValue
                  Root="HKLM"
-                 Key="SOFTWARE\Google\LegacyBrowserSupport"
+                 Key="SOFTWARE\Mozilla\LegacyBrowserSupport"
                  Name="Active" Value="1" Type="integer" Action="write" />
-
-              <!-- Omaha registration -->
-              <RegistryValue
-                 Root="HKLM"
-                 Key="Software\Google\Update\Clients\$(var.GUID_OMAHA)"
-                 Name="pv" Value="$(var.Version)"
-                 Action="write" Type="string" />
-              <RegistryValue
-                 Root="HKLM"
-                 Key="Software\Google\Update\Clients\$(var.GUID_OMAHA)"
-                 Name="name" Value="!(loc.PRODUCT_NAME)"
-                 Action="write" Type="string" />
-              <RegistryValue
-                 Root="HKLM"
-                 Key="Software\Google\Update\Clients\$(var.GUID_OMAHA)"
-                 Name="lang" Value="!(loc.LANG)"
-                 Action="write" Type="string" />
 
               <!-- Native Messaging Host Registration -->
               <File Id="lbs_native_host.exe"
@@ -114,13 +98,13 @@
               </File>
               <RegistryValue
                  Root="HKLM"
-                 Key="SOFTWARE\Google\Chrome\NativeMessagingHosts\com.google.browserswitcher"
-                 Value="[ProgramFilesFolder]Google\$(var.INSTALL_DIR)\manifest.json" Type="string" Action="write" />
+                 Key="SOFTWARE\Mozilla\NativeMessagingHosts\com.mozilla.browserswitcher"
+                 Value="[ProgramFilesFolder]Mozilla\$(var.INSTALL_DIR)\manifest.json" Type="string" Action="write" />
             </Component>
           </Directory>
         </Directory>
       </Directory>
-
+<!--
       <?if $(var.PLATFORM) = x64 ?>
         <Directory Id="ProgramFiles64Folder" Name="ProgsDir">
           <Directory Id="Google64" Name="Google">
@@ -168,7 +152,7 @@
           </Directory>
         </Directory>
       <?endif ?>
-
+-->
     </Directory>
 
     <Feature Id="Complete" Level="1">
