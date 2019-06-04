@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 või uuem",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "Määrake alternatiivse brauseri täitmisfail.\nVõimaldab määrata alternatiivse brauserina kasutatava programmi.\n\nKui see on lubatud, saate reeglis määrata absoluutse tee või kasutada ühte järgmistest muutujatest.\n\n$${ie} – sel juhul kasutatakse brauseri asukoha valimiseks Internet Exploreri installi vaikeasukohta\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE.\n$${firefox} – sel juhul kasutatakse brauseri asukoha valimiseks Firefoxi installi vaikeasukohta\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE.\n$${safari} – sel juhul kasutatakse brauseri asukoha valimiseks Safari installi vaikeasukohta\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE.\n\nKui reegel pole lubatud või on jäetud tühjaks, kasutatakse alternatiivset vaikebrauserit, mis määratakse Internet Exploreris, nagu oleks kasutatud väärtust $${ie}.",
+    "message": "Määrake alternatiivse brauseri täitmisfail.\nVõimaldab määrata alternatiivse brauserina kasutatava programmi.\n\nKui see on lubatud, saate reeglis määrata absoluutse tee või kasutada ühte järgmistest muutujatest.\n\n$${ie} – sel juhul kasutatakse brauseri asukoha valimiseks Internet Exploreri installi vaikeasukohta\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE.\n$${chrome} – sel juhul kasutatakse brauseri asukoha valimiseks Chrome installi vaikeasukohta\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE.\n$${safari} – sel juhul kasutatakse brauseri asukoha valimiseks Safari installi vaikeasukohta\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE.\n\nKui reegel pole lubatud või on jäetud tühjaks, kasutatakse alternatiivset vaikebrauserit, mis määratakse Internet Exploreris, nagu oleks kasutatud väärtust $${ie}.",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "Võimaldab teil määrata muutujad, mis tuleb edastada alternatiivse brauseri täitmisfaili.\n\nKui reegel on lubatud, kasutatakse alternatiivse brauseri avamisel antud parameetreid.\n\nSamuti saate kasutada erikohahoidjat $${url}, et määrata, kus URL käsureal peaks ilmuma. Nt „--url=$${url} --kiosk”.\nTe ei pea kohahoidjat määrama, kui see lisatakse lõppu, või kui kohahoidja on ainus muutuja, võite selle reegli tühjaks jätta.\n\nKui reegel on keelatud või tühjaks jäetud, edastatakse brauserile parameetrina ainult URL.",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "Chrome'i tee",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "Firefox'i tee",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "Chrome'i tee",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "Firefox'i tee",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "Võimaldab teil määrata Chrome'i täitmisfaili, mis tuleb käivitada naasmisel alternatiivsest brauserist(*).\n\nKui reegel on lubatud, saate seal määrata absoluutse tee või kasutada järgmist muutujat.\n\n$${chrome} – sel juhul kasutatakse brauseri asukoha valimiseks Chrome'i installi vaikeasukohta HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE.\n\nKui reegel pole lubatud või on jäetud tühjaks, kasutatakse Chrome'i vaikeinstalli, nagu oleks kasutatud väärtust $${chrome}.\n\n*: praegu toetab automaatselt Chrome'i naasmist ainult Internet Explorer.",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "Võimaldab teil määrata Firefox'i täitmisfaili, mis tuleb käivitada naasmisel alternatiivsest brauserist(*).\n\nKui reegel on lubatud, saate seal määrata absoluutse tee või kasutada järgmist muutujat.\n\n$${firefox} – sel juhul kasutatakse brauseri asukoha valimiseks Firefox'i installi vaikeasukohta HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE.\n\nKui reegel pole lubatud või on jäetud tühjaks, kasutatakse Firefox'i vaikeinstalli, nagu oleks kasutatud väärtust $${firefox}.\n\n*: praegu toetab automaatselt Firefox'i naasmist ainult Internet Explorer.",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "Chrome'i muutujad",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "Firefox'i muutujad",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "Chrome'i muutujad",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "Firefox'i muutujad",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "Võimaldab teil määrata muutujad, mis edastatakse Chrome'i, kui see täidetakse.\n\nKui reegel on lubatud, kasutatakse Chrome'i avamisel antud parameetreid.\n\nSaate kasutada ka erikohahoidjat $${url}, et määrata, kus URL käsureal peaks ilmuma. Nt „--url=$${url} --kiosk”.\nTe ei pea kohahoidjat määrama, kui see lisatakse lõppu. Kui kohahoidja on ainus muutuja, võite selle reegli tühjaks jätta.\n\nKui reegel on keelatud või tühjaks jäetud, edastatakse brauserile parameetrina ainult URL.",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "Võimaldab teil määrata muutujad, mis edastatakse Firefox'i, kui see täidetakse.\n\nKui reegel on lubatud, kasutatakse Firefox'i avamisel antud parameetreid.\n\nSaate kasutada ka erikohahoidjat $${url}, et määrata, kus URL käsureal peaks ilmuma. Nt „--url=$${url} --kiosk”.\nTe ei pea kohahoidjat määrama, kui see lisatakse lõppu. Kui kohahoidja on ainus muutuja, võite selle reegli tühjaks jätta.\n\nKui reegel on keelatud või tühjaks jäetud, edastatakse brauserile parameetrina ainult URL.",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "Alternatiivses brauseris avatavad hostid",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "Võimaldab määrata loendi hostide domeeninimedest, mis avatakse alternatiivses brauseris.\n\nKui reegel on lubatud, tuleb teil sisestada filtrite loend, mis käivitab ülemineku alternatiivsele brauserile. Iga kirje tüüp peab olema üks järgmistest.\n\nHostinime osa: sisestada tuleb domeenide täisnimed, näiteks „www.example.com”, või nimede osad, näiteks „example.com” või isegi „example”. Metamärke veel ei toetata.\nURL-i eesliide: vajaduse korral vastendatakse protokolli ja pordiga ainult kehtivad URL-i eesliited, nt „http://login.example.com” või „https://www.example.com:8080/login/”.\nNegatiivne kirje: kirje alguses on „!”, sellele järgneb ülalkirjeldatud hostinime osa või URL-i eesliide. Negatiivsed kirjed avatakse alati Chrome'is. Nt „!example.com” või „!file:///c:/localapp/”.\nMetamärgiga kirje: sisaldab ainult üht märki „*” ja vastendab mis tahes URL-i. See on mõeldud kasutamiseks koos negatiivsete kirjetega, kui enamik URL-e tuleb avada alternatiivses brauseris ja vaid teatud URL-id Chrome'is.\n\nNegatiivsete kirjete prioriteet on positiivsetest suurem, mis võimaldab kanda lubatud loendisse domeeni suured osad ja avada väiksemad jaotised Chrome'is.\nKui metamärgiga kirje on lisatud, kehtib see vaid pärast kõikide muude reeglite kontrollimist.\n\nÜmbersuunamiseks jälgitakse järgmiseid protokolle: http:, https:.\n\nKui reegel on määramata või jäetakse tühjaks, ei käivitata üleminekut alternatiivsele brauserile.",
+    "message": "Võimaldab määrata loendi hostide domeeninimedest, mis avatakse alternatiivses brauseris.\n\nKui reegel on lubatud, tuleb teil sisestada filtrite loend, mis käivitab ülemineku alternatiivsele brauserile. Iga kirje tüüp peab olema üks järgmistest.\n\nHostinime osa: sisestada tuleb domeenide täisnimed, näiteks „www.example.com”, või nimede osad, näiteks „example.com” või isegi „example”. Metamärke veel ei toetata.\nURL-i eesliide: vajaduse korral vastendatakse protokolli ja pordiga ainult kehtivad URL-i eesliited, nt „http://login.example.com” või „https://www.example.com:8080/login/”.\nNegatiivne kirje: kirje alguses on „!”, sellele järgneb ülalkirjeldatud hostinime osa või URL-i eesliide. Negatiivsed kirjed avatakse alati Firefox'is. Nt „!example.com” või „!file:///c:/localapp/”.\nMetamärgiga kirje: sisaldab ainult üht märki „*” ja vastendab mis tahes URL-i. See on mõeldud kasutamiseks koos negatiivsete kirjetega, kui enamik URL-e tuleb avada alternatiivses brauseris ja vaid teatud URL-id Firefox'is.\n\nNegatiivsete kirjete prioriteet on positiivsetest suurem, mis võimaldab kanda lubatud loendisse domeeni suured osad ja avada väiksemad jaotised Firefox'is.\nKui metamärgiga kirje on lisatud, kehtib see vaid pärast kõikide muude reeglite kontrollimist.\n\nÜmbersuunamiseks jälgitakse järgmiseid protokolle: http:, https:.\n\nKui reegel on määramata või jäetakse tühjaks, ei käivitata üleminekut alternatiivsele brauserile.",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "Võimaldab teil määrata loendi hostide domeeninimedest, mis avatakse emmas-kummas brauseris.\n\nKui see reegel on lubatud, on selle loendi domeenid saadaval mõlemas brauseris ja üleminekut ei käivitata kummalgi juhul.\n\nVõimalikud kasutusjuhtumid on mis tahes autentimisdomeenid, mis jagatakse loendis olevate uute ja pärandrakenduste vahel.\n\nHostinimede osad: sisestada tuleb täielikud domeeninimed, nagu „www.example.com”, või nimede osad, nagu „example.com:” või isegi „example”. Metamärke veel ei toetata.\nURL-i eesliited: vajaduse korral vastendatakse protokolli ja pordiga ainult kehtivad URL-i eesliited. Nt „http://login.example.com” või „https://www.example.com:8080/login/”.\n\nKui see ei ole määratud või on jäetud tühjaks, siis käivitavad ülemineku tagasi Chrome'i kõik domeenid, mida ei ole loendis „Alternatiivses brauseris avatavad hostid”(*).\n\n*: praegu toetab automaatselt Chrome'i naasmist ainult Internet Explorer.",
+    "message": "Võimaldab teil määrata loendi hostide domeeninimedest, mis avatakse emmas-kummas brauseris.\n\nKui see reegel on lubatud, on selle loendi domeenid saadaval mõlemas brauseris ja üleminekut ei käivitata kummalgi juhul.\n\nVõimalikud kasutusjuhtumid on mis tahes autentimisdomeenid, mis jagatakse loendis olevate uute ja pärandrakenduste vahel.\n\nHostinimede osad: sisestada tuleb täielikud domeeninimed, nagu „www.example.com”, või nimede osad, nagu „example.com:” või isegi „example”. Metamärke veel ei toetata.\nURL-i eesliited: vajaduse korral vastendatakse protokolli ja pordiga ainult kehtivad URL-i eesliited. Nt „http://login.example.com” või „https://www.example.com:8080/login/”.\n\nKui see ei ole määratud või on jäetud tühjaks, siis käivitavad ülemineku tagasi Firefox'i kõik domeenid, mida ei ole loendis „Alternatiivses brauseris avatavad hostid”(*).\n\n*: praegu toetab automaatselt Firefox'i naasmist ainult Internet Explorer.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "Üleminekul Chrome'i viimase vahelehe säilitamine",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "Üleminekul Firefox'i viimase vahelehe säilitamine",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "Üleminekul Chrome'i viimase vahelehe säilitamine",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "Üleminekul Firefox'i viimase vahelehe säilitamine",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "Võimaldab määrata, mis juhtub juhul, kui Chrome'i viimane vaheleht suunatakse ümber alternatiivsesse brauserisse.\n\nKui reegel on lubatud või määramata, jäetakse viimane vaheleht avatuks ja see suunatakse pärast üleminekut uuele vahelehele. Kui reegel on keelatud, suletakse viimane vaheleht. Kui see on ainus avatud Chrome'i aken, sulgub ka Chrome.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "Võimaldab määrata, mis juhtub juhul, kui Firefox'i viimane vaheleht suunatakse ümber alternatiivsesse brauserisse.\n\nKui reegel on lubatud või määramata, jäetakse viimane vaheleht avatuks ja see suunatakse pärast üleminekut uuele vahelehele. Kui reegel on keelatud, suletakse viimane vaheleht. Kui see on ainus avatud Firefox'i aken, sulgub ka Firefox.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

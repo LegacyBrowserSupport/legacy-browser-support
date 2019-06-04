@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 ali novejši",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "Določite izvedljivo datoteko nadomestnega brskalnika.\nOmogoča izbiro programa, ki se uporabi kot nadomestni brskalnik.\n\nČe je pravilnik omogočen, lahko v njem določite absolutno pot ali uporabite eno od teh spremenljivk:\n\n$${ie} – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Internet Explorerja\n(HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE).\n$${firefox}  – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Firefoxa (HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE).\n$${safari}  – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Safarija (HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE).\n\nČe ta pravilnik ni omogočen ali je prazen, se uporabi privzeti nadomestni brskalnik Internet Explorer, ki je določen, kot da bi bila uporabljena vrednost $${ie}.",
+    "message": "Določite izvedljivo datoteko nadomestnega brskalnika.\nOmogoča izbiro programa, ki se uporabi kot nadomestni brskalnik.\n\nČe je pravilnik omogočen, lahko v njem določite absolutno pot ali uporabite eno od teh spremenljivk:\n\n$${ie} – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Internet Explorerja\n(HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE).\n$${chrome}  – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Chroma (HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE).\n$${safari}  – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Safarija (HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE).\n\nČe ta pravilnik ni omogočen ali je prazen, se uporabi privzeti nadomestni brskalnik Internet Explorer, ki je določen, kot da bi bila uporabljena vrednost $${ie}.",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "Omogoča, da določite argumente, ki se pošljejo izvedljivi datoteki nadomestnega brskalnika.\n\nČe je pravilnik omogočen, se navedeni parametri uporabijo, kadar se zažene nadomestni brskalnik.\n\nUporabite lahko tudi posebni nadomestni znak $${url}, da določite, kje v ukazni vrstici naj se pojavi URL. Primer: »--url=$${url} --kiosk«.\nČe je nadomestni znak dodan na konec ali če je edini argument, vam ga ni treba določiti in lahko pravilnik pustite prazen.\n\nČe je pravilnik onemogočen ali prazen, se brskalniku kot parameter pošlje samo URL.",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
+  "FirefoxPath": {
     "message": "Pot do Chroma",
-    "description": "Name of the ChromePath policy"
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
+  "FirefoxPath_Part": {
     "message": "Pot do Chroma",
-    "description": "Name of the ChromePath policy part"
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "Omogoča izbiro Chromove izvedljive datoteke, ki se zažene pri vrnitvi iz nadomestnega brskalnika (*).\n\nČe je pravilnik omogočen, lahko v njem določite absolutno pot ali uporabite to spremenljivko:\n\n$${chrome} – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Chroma (HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE).\n\nČe je pravilnik onemogočen ali prazen, se uporabi privzeta namestitev Chroma, kot da bi bila uporabljena vrednost $${chrome}.\n\n*: Trenutno podpira samodejno vrnitev v Chrome samo Internet Explorer.",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "Omogoča izbiro Chromove izvedljive datoteke, ki se zažene pri vrnitvi iz nadomestnega brskalnika (*).\n\nČe je pravilnik omogočen, lahko v njem določite absolutno pot ali uporabite to spremenljivko:\n\n$${firefox} – v tem primeru se za izbiro brskalnika uporabi privzeto mesto namestitve Chroma (HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE).\n\nČe je pravilnik onemogočen ali prazen, se uporabi privzeta namestitev Chroma, kot da bi bila uporabljena vrednost $${firefox}.\n\n*: Trenutno podpira samodejno vrnitev v Firefox samo Internet Explorer.",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "Argumenti za Chrome",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "Argumenti za Firefox",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "Argumenti za Chrome",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "Argumenti za Firefox",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "Omogoča, da določite argumente, ki se posredujejo Chromu, kadar se zažene.\n\nČe je pravilnik omogočen, se navedeni parametri uporabijo, kadar se zažene Chrome.\n\nUporabite lahko tudi posebni nadomestni znak $${url}, da določite, kje v ukazni vrstici naj se pojavi URL. Primer: »--url=$${url} --kiosk«.\nČe je nadomestni znak dodan na konec ali če je edini argument, vam ga ni treba določiti in lahko pravilnik pustite prazen.\n\nČe je pravilnik onemogočen ali prazen, se brskalniku kot parameter pošlje samo URL.",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "Omogoča, da določite argumente, ki se posredujejo Chromu, kadar se zažene.\n\nČe je pravilnik omogočen, se navedeni parametri uporabijo, kadar se zažene Firefox.\n\nUporabite lahko tudi posebni nadomestni znak $${url}, da določite, kje v ukazni vrstici naj se pojavi URL. Primer: »--url=$${url} --kiosk«.\nČe je nadomestni znak dodan na konec ali če je edini argument, vam ga ni treba določiti in lahko pravilnik pustite prazen.\n\nČe je pravilnik onemogočen ali prazen, se brskalniku kot parameter pošlje samo URL.",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "Gostitelji za odpiranje v nadomestnem brskalniku",
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "Omogoča, da določite seznam z imeni domen gostiteljev, ki se odprejo v obeh brskalnikih.\n\nČe je pravilnik omogočen, so domene na seznamu na voljo obema brskalnikoma in ne sprožijo prehoda v nobeno smer.\n\nUporablja se lahko za domene za preverjanje pristnosti, ki jih skupaj uporabljajo nove in starejše aplikacije s tega seznama.\n\nDeli imen gostiteljev: določiti je treba celotna imena domen, na primer »www.example.com«, oziroma njihove dele, na primer »example.com« ali celo »example«. Nadomestni znaki še niso podprti.\nPredpone URL-jev: samo pravilne predpone URL-jev se v celoti ujemajo s protokolom in vrati, če je treba. Na primer »http://login.example.com« ali »https://www.example.com:8080/login/«.\n\nČe pravilnik ni določen ali je prazen, sprožijo domene, ki niso na seznamu »Gostitelji za odpiranje v nadomestnem brskalniku«, prehod na Chrome (*).\n\n(*) Samodejno vrnitev v Chrome trenutno podpira samo Internet Explorer.",
+    "message": "Omogoča, da določite seznam z imeni domen gostiteljev, ki se odprejo v obeh brskalnikih.\n\nČe je pravilnik omogočen, so domene na seznamu na voljo obema brskalnikoma in ne sprožijo prehoda v nobeno smer.\n\nUporablja se lahko za domene za preverjanje pristnosti, ki jih skupaj uporabljajo nove in starejše aplikacije s tega seznama.\n\nDeli imen gostiteljev: določiti je treba celotna imena domen, na primer »www.example.com«, oziroma njihove dele, na primer »example.com« ali celo »example«. Nadomestni znaki še niso podprti.\nPredpone URL-jev: samo pravilne predpone URL-jev se v celoti ujemajo s protokolom in vrati, če je treba. Na primer »http://login.example.com« ali »https://www.example.com:8080/login/«.\n\nČe pravilnik ni določen ali je prazen, sprožijo domene, ki niso na seznamu »Gostitelji za odpiranje v nadomestnem brskalniku«, prehod na Firefox (*).\n\n(*) Samodejno vrnitev v Firefox trenutno podpira samo Internet Explorer.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
+  "KeepLastFirefoxTab_Policy": {
     "message": "Ohranjanje zadnjega Chromovega zavihka pri prehodu",
-    "description": "Name of the KeepLastChromeTab policy"
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
+  "KeepLastFirefoxTab_Part": {
     "message": "Ohranjanje zadnjega Chromovega zavihka pri prehodu",
-    "description": "Name of the KeepLastChromeTab part"
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "Omogoča, da določite, kaj se zgodi, ko se zadnji zavihek, odprt v Chromu, preusmerja na nadomestni brskalnik.\n\nČe je ta pravilnik omogočen ali ni nastavljen, zadnji zavihek ostane odprt in po prehodu kaže na stran za nov zavihek. Če je onemogočen, se zapre zadnji zavihek, kar pomeni, da se zapre tudi Chrome, če ni odprtih nobenih drugih Chromovih oken.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "Omogoča, da določite, kaj se zgodi, ko se zadnji zavihek, odprt v Chromu, preusmerja na nadomestni brskalnik.\n\nČe je ta pravilnik omogočen ali ni nastavljen, zadnji zavihek ostane odprt in po prehodu kaže na stran za nov zavihek. Če je onemogočen, se zapre zadnji zavihek, kar pomeni, da se zapre tudi Firefox, če ni odprtih nobenih drugih Chromovih oken.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

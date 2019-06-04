@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 vagy újabb",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "A másik böngésző végrehajtható fájljának megadása.\nLehetővé teszi az alternatív böngészőként használni kívánt program megadását.\n\nHa engedélyezi, akkor a házirendben megadhatja az abszolút elérési utat, illetve használhatja a következő változók valamelyikét:\n\n$${ie} - Az Internet Explorer alapértelmezett telepítési helye\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE szolgál a böngésző helyének kiválasztására ebben az esetben.\n$${firefox} - A Firefox alapértelmezett telepítési helye\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE szolgál a böngésző helyének kiválasztására ebben az esetben.\n$${safari} - A Safari alapértelmezett telepítési helye\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE szolgál a böngésző helyének kiválasztására ebben az esetben.\n\nHa a házirend nincs engedélyezve vagy üres, az alapértelmezett alternatív böngésző lesz használva; ez az Internet Explorer, amely úgy van meghatározva, mintha a(z) $${ie} érték lenne használatban.",
+    "message": "A másik böngésző végrehajtható fájljának megadása.\nLehetővé teszi az alternatív böngészőként használni kívánt program megadását.\n\nHa engedélyezi, akkor a házirendben megadhatja az abszolút elérési utat, illetve használhatja a következő változók valamelyikét:\n\n$${ie} - Az Internet Explorer alapértelmezett telepítési helye\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE szolgál a böngésző helyének kiválasztására ebben az esetben.\n$${chrome} - A Chrome alapértelmezett telepítési helye\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE szolgál a böngésző helyének kiválasztására ebben az esetben.\n$${safari} - A Safari alapértelmezett telepítési helye\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE szolgál a böngésző helyének kiválasztására ebben az esetben.\n\nHa a házirend nincs engedélyezve vagy üres, az alapértelmezett alternatív böngésző lesz használva; ez az Internet Explorer, amely úgy van meghatározva, mintha a(z) $${ie} érték lenne használatban.",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "Lehetővé teszi az alternatív böngésző végrehajtható fájljának átadandó argumentumok megadását.\n\nHa a házirend engedélyezve van, akkor a másik böngésző meghívásakor a rendszer a megadott paramétereket használja.\n\nHasználhatja a következő speciális helyőrzőt is: $${url}, hogy megadja az URL megjelenési helyét a parancssorban – például: „--url=$${url} --kiosk”.\nA helyőrzőt nem kell megadnia, ha azt a végéhez kell hozzáfűzni, illetve üresen hagyhatja a házirendet, ha ez lenne az egyetlen argumentum.\n\nHa a házirend le van tiltva vagy üres, akkor csak az URL lesz átadva paraméterként a böngészőnek.",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "A Chrome elérési útja",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "A Firefox elérési útja",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "A Chrome elérési útja",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "A Firefox elérési útja",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "Lehetővé teszi a Chrome végrehajtható fájljának megadását, amelyet az alternatív böngészőtől való visszatéréskor kell elindítani(*).\n\nHa engedélyezi a házirendet, megadhat benne egy abszolút elérési utat, vagy használhatja a következő változót:\n\n$${chrome} - A Chrome alapértelmezett telepítési helye\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE szolgál a böngésző helyének kiválasztására ebben az esetben.\n\nHa a házirendy le van tiltva vagy üres, a Chrome alapértelmezett telepítése lesz használva, mintha a(z) $${chrome} érték lenne használatban.\n\n*: Jelenleg csak az Internet Explorer támogatja az automatikus visszatérést a Chrome-hoz.",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "Lehetővé teszi a Firefox végrehajtható fájljának megadását, amelyet az alternatív böngészőtől való visszatéréskor kell elindítani(*).\n\nHa engedélyezi a házirendet, megadhat benne egy abszolút elérési utat, vagy használhatja a következő változót:\n\n$${firefox} - A Firefox alapértelmezett telepítési helye\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE szolgál a böngésző helyének kiválasztására ebben az esetben.\n\nHa a házirendy le van tiltva vagy üres, a Firefox alapértelmezett telepítése lesz használva, mintha a(z) $${firefox} érték lenne használatban.\n\n*: Jelenleg csak az Internet Explorer támogatja az automatikus visszatérést a Firefox-hoz.",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "A Chrome argumentumai",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "A Firefox argumentumai",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "A Chrome argumentumai",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "A Firefox argumentumai",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "Lehetővé teszi a Chrome-nak átadandó argumentumok megadását annak elindításakor.\n\nHa a házirend engedélyezve van, akkor a Chrome meghívásakor a rendszer a megadott paramétereket használja.\n\nHasználhatja a következő speciális helyőrzőt is $${url}, hogy megadja az URL megjelenési helyét a parancssorban – például: „--url=$${url} --kiosk”.\nA helyőrzőt nem kell megadnia, ha azt a végéhez kell hozzáfűzni, illetve üresen hagyhatja a házirendet, ha ez lenne az egyetlen argumentum.\n\nHa a házirend le van tiltva vagy üres, akkor csak az URL lesz átadva paraméterként a böngészőnek.",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "Lehetővé teszi a Firefox-nak átadandó argumentumok megadását annak elindításakor.\n\nHa a házirend engedélyezve van, akkor a Firefox meghívásakor a rendszer a megadott paramétereket használja.\n\nHasználhatja a következő speciális helyőrzőt is $${url}, hogy megadja az URL megjelenési helyét a parancssorban – például: „--url=$${url} --kiosk”.\nA helyőrzőt nem kell megadnia, ha azt a végéhez kell hozzáfűzni, illetve üresen hagyhatja a házirendet, ha ez lenne az egyetlen argumentum.\n\nHa a házirend le van tiltva vagy üres, akkor csak az URL lesz átadva paraméterként a böngészőnek.",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "A másik böngészőben megnyitni kívánt szerverek",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "Lehetővé teszi a másik böngészőben megnyitni kívánt domainnevek listájának megadását.\n\nHa a házirend engedélyezve van, akkor meg kell adnia a másik böngészőre való átállást kiváltó szűrők listáját. Minden bejegyzésnek a következő négy típus egyikének kell lennie:\n\nSzervernévrészek: Vagy teljes domainneveket (például „www.example.com”), vagy azok egy részét (például „example.com” vagy akár „example”) kell megadni. A helyettesítő karaktereket a házirend még nem támogatja.\nURL-előtagok: Csak a helyesen megadott URL-előtagokat figyeli a rendszer, szükség esetén protokollal és porttal kiegészítve. Például: „http://login.example.com” vagy „https://www.example.com:8080/login/”.\nNegatív bejegyzés: „!” karakterrel kezdődik, majd szervernévrésszel vagy URL-előtaggal folytatódik (a fent leírtak szerint). A negatív bejegyzések mindig a Chrome-ban nyílnak meg. Például: „!example.com” vagy „!file:///c:/localapp/”.\nHelyettesítő karakter bejegyzés: Egyetlen „*” karaktert tartalmaz. Bármilyen URL lehet. A negatív bejegyzésekkel együtt célszerű használni, amennyiben a legtöbb URL-t a másik böngészőben kell megnyitni, és csak az URL-ek egy kis részét kell a Chrome-ban megjeleníteni.\n\nA negatív bejegyzések magasabb prioritásúak, mint a pozitívak, ami lehetővé teszi, hogy egy domain nagy részét engedélyezőlistára tegye, míg a maradék oldalak a Chrome-ban nyílnak meg.\nHa a helyettesítő karakter bejegyzés van megadva, akkor azt csak az összes többi szabály ellenőrzése után veszi figyelembe a böngésző.\n\nA következő protokollok átirányítása áll felügyelet alatt: http:, https:.\n\nHa nincs megadva, vagy ha üresen marad, akkor nem történik meg az alternatív böngészőre való átváltás.",
+    "message": "Lehetővé teszi a másik böngészőben megnyitni kívánt domainnevek listájának megadását.\n\nHa a házirend engedélyezve van, akkor meg kell adnia a másik böngészőre való átállást kiváltó szűrők listáját. Minden bejegyzésnek a következő négy típus egyikének kell lennie:\n\nSzervernévrészek: Vagy teljes domainneveket (például „www.example.com”), vagy azok egy részét (például „example.com” vagy akár „example”) kell megadni. A helyettesítő karaktereket a házirend még nem támogatja.\nURL-előtagok: Csak a helyesen megadott URL-előtagokat figyeli a rendszer, szükség esetén protokollal és porttal kiegészítve. Például: „http://login.example.com” vagy „https://www.example.com:8080/login/”.\nNegatív bejegyzés: „!” karakterrel kezdődik, majd szervernévrésszel vagy URL-előtaggal folytatódik (a fent leírtak szerint). A negatív bejegyzések mindig a Firefox-ban nyílnak meg. Például: „!example.com” vagy „!file:///c:/localapp/”.\nHelyettesítő karakter bejegyzés: Egyetlen „*” karaktert tartalmaz. Bármilyen URL lehet. A negatív bejegyzésekkel együtt célszerű használni, amennyiben a legtöbb URL-t a másik böngészőben kell megnyitni, és csak az URL-ek egy kis részét kell a Firefox-ban megjeleníteni.\n\nA negatív bejegyzések magasabb prioritásúak, mint a pozitívak, ami lehetővé teszi, hogy egy domain nagy részét engedélyezőlistára tegye, míg a maradék oldalak a Firefox-ban nyílnak meg.\nHa a helyettesítő karakter bejegyzés van megadva, akkor azt csak az összes többi szabály ellenőrzése után veszi figyelembe a böngésző.\n\nA következő protokollok átirányítása áll felügyelet alatt: http:, https:.\n\nHa nincs megadva, vagy ha üresen marad, akkor nem történik meg az alternatív böngészőre való átváltás.",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "Lehetővé teszi olyan szerverdomainnevek listájának a megadását, amelyeket bármelyik böngészőben meg lehet nyitni.\n\nHa engedélyezve van ez a házirend, akkor a listán szereplő domainek mindkét böngésző számára elérhetők lesznek, és a házirend egyik esetében sem vált ki átváltást.\n\nLehetséges felhasználási eset bármely olyan hitelesítő domain, amely közös a listában szereplő új és régi alkalmazások esetében.\n\nSzervernévrészek: Vagy teljes domainneveket (például „www.example.com”), vagy azok egy részét (például „example.com” vagy akár „example”) kell megadni. A helyettesítő karaktereket a házirend még nem támogatja.\nURL-előtagok: Csak a helyesen megadott URL-előtagokat figyeli a rendszer, szükség esetén protokollal és porttal kiegészítve. Például: „http://login.example.com” vagy „https://www.example.com:8080/login/”.\n\nHa nincs megadva, vagy ha üres, akkor „A másik böngészőben megnyitni kívánt szerverek” listában nem szereplő összes domain megnyitása kiváltja a visszaváltást a Chrome-ra(*).\n\n*: Jelenleg csak az Internet Explorer támogatja az automatikus visszatérést a Chrome-hoz.",
+    "message": "Lehetővé teszi olyan szerverdomainnevek listájának a megadását, amelyeket bármelyik böngészőben meg lehet nyitni.\n\nHa engedélyezve van ez a házirend, akkor a listán szereplő domainek mindkét böngésző számára elérhetők lesznek, és a házirend egyik esetében sem vált ki átváltást.\n\nLehetséges felhasználási eset bármely olyan hitelesítő domain, amely közös a listában szereplő új és régi alkalmazások esetében.\n\nSzervernévrészek: Vagy teljes domainneveket (például „www.example.com”), vagy azok egy részét (például „example.com” vagy akár „example”) kell megadni. A helyettesítő karaktereket a házirend még nem támogatja.\nURL-előtagok: Csak a helyesen megadott URL-előtagokat figyeli a rendszer, szükség esetén protokollal és porttal kiegészítve. Például: „http://login.example.com” vagy „https://www.example.com:8080/login/”.\n\nHa nincs megadva, vagy ha üres, akkor „A másik böngészőben megnyitni kívánt szerverek” listában nem szereplő összes domain megnyitása kiváltja a visszaváltást a Firefox-ra(*).\n\n*: Jelenleg csak az Internet Explorer támogatja az automatikus visszatérést a Firefox-hoz.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "A Chrome utolsó lapjának megtartása átváltáskor",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "A Firefox utolsó lapjának megtartása átváltáskor",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "A Chrome utolsó lapjának megtartása átváltáskor",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "A Firefox utolsó lapjának megtartása átváltáskor",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "Lehetővé teszi annak megadását, mi történjen, ha a házirend átirányítja a Chrome utolsó lapját a másik böngészőbe.\n\nHa a házirend engedélyezve van, vagy ha nincs beállítva, akkor az átváltás után az utolsó lapon megnyitva marad az új lap oldal. Ha ki van kapcsolva, akkor az utolsó lap, és ezzel együtt a Chrome is bezáródik, ha nincs megnyitva több Chrome-ablak.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "Lehetővé teszi annak megadását, mi történjen, ha a házirend átirányítja a Firefox utolsó lapját a másik böngészőbe.\n\nHa a házirend engedélyezve van, vagy ha nincs beállítva, akkor az átváltás után az utolsó lapon megnyitva marad az új lap oldal. Ha ki van kapcsolva, akkor az utolsó lap, és ezzel együtt a Firefox is bezáródik, ha nincs megnyitva több Firefox-ablak.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

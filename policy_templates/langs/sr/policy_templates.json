@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 или новији",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "Навођење извршне датотеке алтернативног прегледача.\nОмогућавају вам да наведете програм који ће се користити као алтернативни прегледач.\n\nАко су омогућене, можете да наведете апсолутну путању у смерницама или да користите једну од следећих променљивих:\n\n$${ie} – Подразумевана локација за инсталацију за Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE користи се за избор локације прегледача у овом случају.\n$${firefox} – Подразумевана локација за инсталацију за Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE користи се за избор локације прегледача у овом случају.\n$${safari} – Подразумевана локација за инсталацију за Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE користи се за избор локације прегледача у овом случају.\n\nАко се смернице не омогуће или остану празне, користиће се подразумевани алтернативни прегледач Internet Explorer, као када би се користила вредност $${ie}.",
+    "message": "Навођење извршне датотеке алтернативног прегледача.\nОмогућавају вам да наведете програм који ће се користити као алтернативни прегледач.\n\nАко су омогућене, можете да наведете апсолутну путању у смерницама или да користите једну од следећих променљивих:\n\n$${ie} – Подразумевана локација за инсталацију за Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE користи се за избор локације прегледача у овом случају.\n$${chrome} – Подразумевана локација за инсталацију за Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE користи се за избор локације прегледача у овом случају.\n$${safari} – Подразумевана локација за инсталацију за Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE користи се за избор локације прегледача у овом случају.\n\nАко се смернице не омогуће или остану празне, користиће се подразумевани алтернативни прегледач Internet Explorer, као када би се користила вредност $${ie}.",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "Омогућавају вам да наведете аргументе који ће бити прослеђени до извршне датотеке алтернативног прегледача.\n\nАко се смернице омогуће, наведени параметри ће се користити при покретању алтернативног прегледача.\n\nМожете да користите и посебни чувар места $${url} да бисте навели где URL треба да се појави у командној линији. Нпр. „--url=$${url} --kiosk“.\nНе морате да наводите чувар места ако га треба додати на крај, а ако он треба да буде једини аргумент, можете да оставите те смернице празне.\n\nАко се смернице онемогуће или остану празне, прегледачу ће бити прослеђен само URL као параметар.",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "Путања за Chrome",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "Путања за Firefox",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "Путања за Chrome",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "Путања за Firefox",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "Омогућавају вам да наведете извршну датотеку за Chrome коју треба покренути при повратку из алтернативног прегледача(*).\n\nКада су ове смернице омогућене, можете да наведете апсолутну путању у смерницама или да користите следећу променљиву:\n\n$${chrome} – Подразумевана локација за инсталацију за Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE користи се за избор локације прегледача у овом случају.\n\nАко се смернице онемогуће или остану празне, користиће се подразумевана инсталација Chrome-а како када би се користила вредност $${chrome}.\n\n*: Тренутно само Internet Explorer подржава аутоматски повратак на Chrome.",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "Омогућавају вам да наведете извршну датотеку за Firefox коју треба покренути при повратку из алтернативног прегледача(*).\n\nКада су ове смернице омогућене, можете да наведете апсолутну путању у смерницама или да користите следећу променљиву:\n\n$${firefox} – Подразумевана локација за инсталацију за Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE користи се за избор локације прегледача у овом случају.\n\nАко се смернице онемогуће или остану празне, користиће се подразумевана инсталација Firefox-а како када би се користила вредност $${firefox}.\n\n*: Тренутно само Internet Explorer подржава аутоматски повратак на Firefox.",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "Аргументи за Chrome",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "Аргументи за Firefox",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "Аргументи за Chrome",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "Аргументи за Firefox",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "Омогућавају вам да наведете аргументе који ће бити прослеђени Chrome-у када буде покренут.\n\nАко се смернице омогуће, наведени параметри ће се користити при покретању Chrome-а.\n\nМожете да користите и посебни чувар места $${url} да бисте навели где URL треба да се појави у командној линији. Нпр. „--url=$${url} --kiosk“.\nНе морате да наводите чувар места ако га треба додати на крај, а ако он треба да буде једини аргумент, можете да оставите те смернице празне.\n\nАко се смернице онемогуће или остану празне, прегледачу ће бити прослеђен само URL као параметар.",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "Омогућавају вам да наведете аргументе који ће бити прослеђени Firefox-у када буде покренут.\n\nАко се смернице омогуће, наведени параметри ће се користити при покретању Firefox-а.\n\nМожете да користите и посебни чувар места $${url} да бисте навели где URL треба да се појави у командној линији. Нпр. „--url=$${url} --kiosk“.\nНе морате да наводите чувар места ако га треба додати на крај, а ако он треба да буде једини аргумент, можете да оставите те смернице празне.\n\nАко се смернице онемогуће или остану празне, прегледачу ће бити прослеђен само URL као параметар.",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "Хостови за отварање у алтернативном прегледачу",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "Омогућавају вам да наведете листу назива домена хостова за отварање у алтернативном прегледачу.\n\nАко су смернице омогућене, треба да наведете листу филтера који ће покренути прелазак на алтернативни прегледач. Сваки унос треба да буде један од следећа четири типа:\n\nДео назива хоста: Потребно је навести целе називе домена, као што је „www.example.com“, или њихове делове, као што је „example.com“ или чак „example“. Џокерски знакови још увек нису подржани.\nПрефикс URL-а: Подударање се заснива на тачним префиксима URL-ова заједно са протоколом или портом ако је то потребно. Нпр. „http://login.example.com“ или „https://www.example.com:8080/login/“.\nНегативни унос: Почиње знаком „!“ и наставља се као део назива хоста или префикс URL-а као што је претходно наведено. Негативни уноси се увек отварају у Chrome-у. Нпр. „!example.com“ или „!file:///c:/localapp/“.\nУнос џокерског знака: Садржи само један знак „*“. Подудара се са било којим URL-ом. Намењен је да се користи заједно са негативним уносима ако већина URL-ова треба да се отвара у алтернативном прегледачу, а само мали део URL-ова треба да се отвара у Chrome-у.\n\nНегативни уноси имају већи приоритет у односу на позитивне уносе чиме се омогућава да се већи делови домена ставе на белу листу, док се мањи делови чувају да би се отварали у Chrome-у.\nАко унос џокерског знака постоји, примењује се само када се сва друга правила провере.\n\nСледећи протоколи се надгледају за преусмеравање: http:, https:.\n\nАко се смернице не наведу или остану празне, неће се покренути прелазак на алтернативни прегледач.",
+    "message": "Омогућавају вам да наведете листу назива домена хостова за отварање у алтернативном прегледачу.\n\nАко су смернице омогућене, треба да наведете листу филтера који ће покренути прелазак на алтернативни прегледач. Сваки унос треба да буде један од следећа четири типа:\n\nДео назива хоста: Потребно је навести целе називе домена, као што је „www.example.com“, или њихове делове, као што је „example.com“ или чак „example“. Џокерски знакови још увек нису подржани.\nПрефикс URL-а: Подударање се заснива на тачним префиксима URL-ова заједно са протоколом или портом ако је то потребно. Нпр. „http://login.example.com“ или „https://www.example.com:8080/login/“.\nНегативни унос: Почиње знаком „!“ и наставља се као део назива хоста или префикс URL-а као што је претходно наведено. Негативни уноси се увек отварају у Firefox-у. Нпр. „!example.com“ или „!file:///c:/localapp/“.\nУнос џокерског знака: Садржи само један знак „*“. Подудара се са било којим URL-ом. Намењен је да се користи заједно са негативним уносима ако већина URL-ова треба да се отвара у алтернативном прегледачу, а само мали део URL-ова треба да се отвара у Firefox-у.\n\nНегативни уноси имају већи приоритет у односу на позитивне уносе чиме се омогућава да се већи делови домена ставе на белу листу, док се мањи делови чувају да би се отварали у Firefox-у.\nАко унос џокерског знака постоји, примењује се само када се сва друга правила провере.\n\nСледећи протоколи се надгледају за преусмеравање: http:, https:.\n\nАко се смернице не наведу или остану празне, неће се покренути прелазак на алтернативни прегледач.",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "Омогућавају вам да наведете листу назива домена хостова за отварање у оба прегледача.\n\nКада су ове смернице омогућене, домени из ове листе ће бити доступни у оба прегледача и неће активирати прелазак у било ком случају.\n\nМогући случај када се користе је за домене за потврду аутентичности које деле нове и застареле апликације са ове листе.\n\nДелови назива хостова: Потребно је навести целе називе домена, као што је „www.example.com“, или њихове делове, као што је „example.com“ или чак „example“. Џокерски знакови још увек нису подржани.\nПрефикси URL-ова: Подударање се заснива на тачним префиксима URL-ова заједно са протоколом или портом ако је то потребно. Нпр. „http://login.example.com“ или „https://www.example.com:8080/login/“.\n\nАко се смернице не наведу или остану празне, сваки домен који није на листи „Хостови за отварање у алтернативном прегледачу“ ће активирати повратак на Chrome(*).\n\n*: Тренутно само Internet Explorer подржава аутоматски повратак на Chrome.",
+    "message": "Омогућавају вам да наведете листу назива домена хостова за отварање у оба прегледача.\n\nКада су ове смернице омогућене, домени из ове листе ће бити доступни у оба прегледача и неће активирати прелазак у било ком случају.\n\nМогући случај када се користе је за домене за потврду аутентичности које деле нове и застареле апликације са ове листе.\n\nДелови назива хостова: Потребно је навести целе називе домена, као што је „www.example.com“, или њихове делове, као што је „example.com“ или чак „example“. Џокерски знакови још увек нису подржани.\nПрефикси URL-ова: Подударање се заснива на тачним префиксима URL-ова заједно са протоколом или портом ако је то потребно. Нпр. „http://login.example.com“ или „https://www.example.com:8080/login/“.\n\nАко се смернице не наведу или остану празне, сваки домен који није на листи „Хостови за отварање у алтернативном прегледачу“ ће активирати повратак на Firefox(*).\n\n*: Тренутно само Internet Explorer подржава аутоматски повратак на Firefox.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "Задржавање последње Chrome картице при преласку",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "Задржавање последње Firefox картице при преласку",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "Задржавање последње Chrome картице при преласку",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "Задржавање последње Firefox картице при преласку",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "Омогућавају вам да одредите шта ће да се деси када се последња отворена картица у Chrome-у преусмерава у алтернативни прегледач.\n\nКада су ове смернице омогућене или нису подешене, последња картица ће остати отворена и усмераваће ка страници нове картице после преласка. Ако су онемогућене, последња картица ће се затворити што ће довести и до затварања Chrome-а ако није отворен ниједан Chrome прозор.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "Омогућавају вам да одредите шта ће да се деси када се последња отворена картица у Firefox-у преусмерава у алтернативни прегледач.\n\nКада су ове смернице омогућене или нису подешене, последња картица ће остати отворена и усмераваће ка страници нове картице после преласка. Ако су онемогућене, последња картица ће се затворити што ће довести и до затварања Firefox-а ако није отворен ниједан Firefox прозор.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

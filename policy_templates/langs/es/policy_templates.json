@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 o posterior",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "Especifica el ejecutable del navegador alternativo.\nPermite especificar el programa que se utilizará como navegador alternativo.\n\nSi se habilita esta política, puedes especificar una ruta absoluta en la política o utilizar una de las siguientes variables:\n\n$${ie}: la ubicación de instalación predeterminada de Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE se utiliza para seleccionar la ubicación del navegador en este caso.\n$${firefox}: la ubicación de instalación predeterminada de Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE se utiliza para seleccionar la ubicación del navegador en este caso.\n$${safari}: la ubicación de instalación predeterminada de Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE se utiliza para seleccionar la ubicación del navegador en este caso.\n\nSi no se habilita la política o si de deja en blanco, se utilizará Internet Explorer, el navegador alternativo predeterminado, como si se hubiera utilizado el valor $${ie}.",
+    "message": "Especifica el ejecutable del navegador alternativo.\nPermite especificar el programa que se utilizará como navegador alternativo.\n\nSi se habilita esta política, puedes especificar una ruta absoluta en la política o utilizar una de las siguientes variables:\n\n$${ie}: la ubicación de instalación predeterminada de Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE se utiliza para seleccionar la ubicación del navegador en este caso.\n$${chrome}: la ubicación de instalación predeterminada de Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE se utiliza para seleccionar la ubicación del navegador en este caso.\n$${safari}: la ubicación de instalación predeterminada de Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE se utiliza para seleccionar la ubicación del navegador en este caso.\n\nSi no se habilita la política o si de deja en blanco, se utilizará Internet Explorer, el navegador alternativo predeterminado, como si se hubiera utilizado el valor $${ie}.",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "Permite especificar los argumentos que se van a transmitir al ejecutable del navegador alternativo.\n\nSi se habilita esta política, los parámetros proporcionados se utilizarán cuando se ejecute el navegador alternativo.\n\nTambién puedes utilizar el marcador especial $${url} para especificar dónde debe aparecer la URL en la línea de comandos. Por ejemplo: \"--url=$${url} --kiosk\".\nNo tienes que especificar el marcador, ni si se debe añadir al final o si debe ser el único argumento. Puedes dejar esta política vacía.\n\nSi se inhabilita la política o si se deja en blanco, solo se transmitirá la URL como parámetro al navegador.",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "Ruta de Chrome",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "Ruta de Firefox",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "Ruta de Chrome",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "Ruta de Firefox",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "Permite especificar qué ejecutable de Chrome se va a iniciar al volver del navegador alternativo(*).\n\nSi se habilita esta política, puedes especificar una ruta absoluta en la política o utilizar la siguiente variable:\n$${chrome}: la ubicación de instalación predeterminada de Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE se utiliza para seleccionar la ubicación del navegador en este caso.\n\nSi no se habilita la política o si de deja en blanco, se utilizará la instalación predeterminada de Chrome, como si se hubiera utilizado el valor $${chrome}.\n\n* En este momento, solo Internet Explorer permite volver a Chrome automáticamente.",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "Permite especificar qué ejecutable de Firefox se va a iniciar al volver del navegador alternativo(*).\n\nSi se habilita esta política, puedes especificar una ruta absoluta en la política o utilizar la siguiente variable:\n$${firefox}: la ubicación de instalación predeterminada de Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE se utiliza para seleccionar la ubicación del navegador en este caso.\n\nSi no se habilita la política o si de deja en blanco, se utilizará la instalación predeterminada de Firefox, como si se hubiera utilizado el valor $${firefox}.\n\n* En este momento, solo Internet Explorer permite volver a Firefox automáticamente.",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "Argumentos de Chrome",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "Argumentos de Firefox",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "Argumentos de Chrome",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "Argumentos de Firefox",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "Permite especificar los argumentos que se transmitirán a Chrome cuando se ejecute.\n\nSi se habilita esta política, los parámetros proporcionados se utilizarán cuando se ejecute Chrome.\n\nTambién puedes utilizar el marcador especial $${url} para especificar dónde debe aparecer la URL en la línea de comandos. Por ejemplo: \"--url=$${url} --kiosk\".\nNo tienes que especificar el marcador (si se debe añadir al final o si debe ser el único argumento). Puedes dejar esta política en blanco.\n\nSi se inhabilita la política o si se deja en blanco, solo se transmitirá la URL como parámetro al navegador.",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "Permite especificar los argumentos que se transmitirán a Firefox cuando se ejecute.\n\nSi se habilita esta política, los parámetros proporcionados se utilizarán cuando se ejecute Firefox.\n\nTambién puedes utilizar el marcador especial $${url} para especificar dónde debe aparecer la URL en la línea de comandos. Por ejemplo: \"--url=$${url} --kiosk\".\nNo tienes que especificar el marcador (si se debe añadir al final o si debe ser el único argumento). Puedes dejar esta política en blanco.\n\nSi se inhabilita la política o si se deja en blanco, solo se transmitirá la URL como parámetro al navegador.",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "Hosts que se abrirán en el navegador alternativo",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "Permite especificar una lista de nombres de dominio de host que se abrirán en el navegador alternativo.\n\nSi se habilita esta política, tendrás que proporcionar una lista de partes de nombre de host o prefijos de URL, los cuales activarán la transición al navegador alternativo. Cada entrada debe ser uno de los cuatro tipos que se indican a continuación:\n\nPartes de nombre de host: se deben especificar nombres de dominio completos, como \"www.example.com\", o parciales, como \"example.com\" o incluso solo \"example\". El uso de comodines aún no está permitido.\nPrefijos de URL: solo los prefijos de URL adecuados se corresponden completamente con el protocolo y el puerto, si fuera necesario. Por ejemplo, \"http://login.example.com\" o \"https://www.example.com:8080/login/\".\nEntrada negativa: empieza con \"!\" y continúa como parte del nombre de host o el prefijo de URL como se describa anteriormente. Las entradas negativas siempre se abren en Chrome. Por ejemplo, \"!example.com\" o \"!file:///c:/localapp/\".\nEntrada de comodines: solo contiene un único carácter \"*\". Corresponde a cualquier URL. Está destinada a utilizarse junto con entradas negativas, si la mayoría de URLs se deben abrir en el navegador alternativo y solo una pequeña selección de URLs se debe abrir en Chrome.\n\nLas entradas negativas tienen más prioridad que las entradas positivas, lo que permite incluir en la lista blanca gran parte de un dominio mientras se guardan pequeñas secciones para abrirlas en Chrome.\nLa entrada de comodín, si está presente, solo se aplica después de haber comprobado el resto de reglas.\n\nLos siguientes protocolos se supervisan para redireccionarlos: http:, https:.\n\nSi no se especifica la política o se deja en blanco, no se activará la transición al navegador alternativo.",
+    "message": "Permite especificar una lista de nombres de dominio de host que se abrirán en el navegador alternativo.\n\nSi se habilita esta política, tendrás que proporcionar una lista de partes de nombre de host o prefijos de URL, los cuales activarán la transición al navegador alternativo. Cada entrada debe ser uno de los cuatro tipos que se indican a continuación:\n\nPartes de nombre de host: se deben especificar nombres de dominio completos, como \"www.example.com\", o parciales, como \"example.com\" o incluso solo \"example\". El uso de comodines aún no está permitido.\nPrefijos de URL: solo los prefijos de URL adecuados se corresponden completamente con el protocolo y el puerto, si fuera necesario. Por ejemplo, \"http://login.example.com\" o \"https://www.example.com:8080/login/\".\nEntrada negativa: empieza con \"!\" y continúa como parte del nombre de host o el prefijo de URL como se describa anteriormente. Las entradas negativas siempre se abren en Firefox. Por ejemplo, \"!example.com\" o \"!file:///c:/localapp/\".\nEntrada de comodines: solo contiene un único carácter \"*\". Corresponde a cualquier URL. Está destinada a utilizarse junto con entradas negativas, si la mayoría de URLs se deben abrir en el navegador alternativo y solo una pequeña selección de URLs se debe abrir en Firefox.\n\nLas entradas negativas tienen más prioridad que las entradas positivas, lo que permite incluir en la lista blanca gran parte de un dominio mientras se guardan pequeñas secciones para abrirlas en Firefox.\nLa entrada de comodín, si está presente, solo se aplica después de haber comprobado el resto de reglas.\n\nLos siguientes protocolos se supervisan para redireccionarlos: http:, https:.\n\nSi no se especifica la política o se deja en blanco, no se activará la transición al navegador alternativo.",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "Permite especificar una lista de nombres de dominio de host que se abrirán en cualquiera de los dos navegadores.\n\nSi se habilita esta política, los dominios incluidos en esta lista estarán disponibles en ambos navegadores y no se activará una transición a ninguno de ellos.\n\nUn posible caso de uso sería cualquier dominio de autenticación compartido entre aplicaciones nuevas y heredadas de la lista.\n\nPartes de nombre de host: se deben especificar nombres de dominio completos, como \"www.example.com\", o parciales, como \"example.com\" o incluso solo \"example\". El uso de comodines aún no está permitido.\nPrefijos de URL: solo los prefijos de URL adecuados se corresponden completamente con el protocolo y el puerto, si fuera necesario. Por ejemplo, \"http://login.example.com\" o \"https://www.example.com:8080/login/\".\n\nSi no se especifica o se deja en blanco, cualquier dominio no incluido en en la lista \"Hosts que se abrirán en el navegador alternativo\" activará una transición a Chrome(*).\n\n*: En este momento, solo Internet Explorer permite volver a Chrome automáticamente.",
+    "message": "Permite especificar una lista de nombres de dominio de host que se abrirán en cualquiera de los dos navegadores.\n\nSi se habilita esta política, los dominios incluidos en esta lista estarán disponibles en ambos navegadores y no se activará una transición a ninguno de ellos.\n\nUn posible caso de uso sería cualquier dominio de autenticación compartido entre aplicaciones nuevas y heredadas de la lista.\n\nPartes de nombre de host: se deben especificar nombres de dominio completos, como \"www.example.com\", o parciales, como \"example.com\" o incluso solo \"example\". El uso de comodines aún no está permitido.\nPrefijos de URL: solo los prefijos de URL adecuados se corresponden completamente con el protocolo y el puerto, si fuera necesario. Por ejemplo, \"http://login.example.com\" o \"https://www.example.com:8080/login/\".\n\nSi no se especifica o se deja en blanco, cualquier dominio no incluido en en la lista \"Hosts que se abrirán en el navegador alternativo\" activará una transición a Firefox(*).\n\n*: En este momento, solo Internet Explorer permite volver a Firefox automáticamente.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "Mantener última pestaña de Chrome en transición",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "Mantener última pestaña de Firefox en transición",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "Mantener última pestaña de Chrome en transición",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "Mantener última pestaña de Firefox en transición",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "Permite especificar lo que ocurre cuando la última pestaña abierta en Chrome se redirecciona al navegador alternativo.\n\nSi se habilita esta política o no se establece, la última pestaña se quedará abierta y dirigirá a la página Nueva pestaña después de la transición. Si se inhabilita esta política, la última pestaña se cerrará. Como resultado, Chrome se cerrará si no hay más ventanas de Chrome abiertas.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "Permite especificar lo que ocurre cuando la última pestaña abierta en Firefox se redirecciona al navegador alternativo.\n\nSi se habilita esta política o no se establece, la última pestaña se quedará abierta y dirigirá a la página Nueva pestaña después de la transición. Si se inhabilita esta política, la última pestaña se cerrará. Como resultado, Firefox se cerrará si no hay más ventanas de Firefox abiertas.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

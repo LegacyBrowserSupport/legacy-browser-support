@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 ወይም ከዚያ በኋላ",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "የተለዋጭ አሳሹ ተፈጻሚ ይግለጹ።\nፕሮግራሙ እንደ ተለዋጭ አሳሽ ስራ ላይ እንዲውል እንዲገልጹ ይፈቅድልዎታል።\n\nከነቃ በመመሪያው ውስጥ ፍጹም ዱካውን መግለጽ ወይም ከሚከተሉት ተለዋዋጮች ውስጥ አንዱን መጠቀም ይችላሉ፦\n\n$${ie} - የInternet Explorer ነባሪ የጭነት ቦታ\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE is used to pick the location of the browser in this case.\n$${firefox} - የFirefox ነባሪ የጭነት ቦታ\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE is used to pick the location of the browser in this case.\n$${safari} - የSafari ነባሪ የጭነት ቦታ\nበዚህ አጋጣሚ የአሳሹ ቦታ ለመምረጥ HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE ስራ ላይ ይውላል።\n\nመመሪያው ካልነቃ ወይም ባዶ ከተተወ ነባሪው ተለዋጭ አሳሽ ስራ ላይ ይውላል፣ ይህም $${ie} ከሆነ የነቃው Internet Explorer ነው የሚሆነው።",
+    "message": "የተለዋጭ አሳሹ ተፈጻሚ ይግለጹ።\nፕሮግራሙ እንደ ተለዋጭ አሳሽ ስራ ላይ እንዲውል እንዲገልጹ ይፈቅድልዎታል።\n\nከነቃ በመመሪያው ውስጥ ፍጹም ዱካውን መግለጽ ወይም ከሚከተሉት ተለዋዋጮች ውስጥ አንዱን መጠቀም ይችላሉ፦\n\n$${ie} - የInternet Explorer ነባሪ የጭነት ቦታ\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE is used to pick the location of the browser in this case.\n$${chrome} - Chrome ነባሪ የጭነት ቦታ\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE is used to pick the location of the browser in this case.\n$${safari} - የSafari ነባሪ የጭነት ቦታ\nበዚህ አጋጣሚ የአሳሹ ቦታ ለመምረጥ HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE ስራ ላይ ይውላል።\n\nመመሪያው ካልነቃ ወይም ባዶ ከተተወ ነባሪው ተለዋጭ አሳሽ ስራ ላይ ይውላል፣ ይህም $${ie} ከሆነ የነቃው Internet Explorer ነው የሚሆነው።",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "ወደ የተለዋጭ አሳሹ ተፈፃሚ የሚተላለፉትን ነጋሪ እሴቶችን እንዲገልጹ ይፈቅድልዎታል።\n\nመመሪያው ነቅቶ ከሆነ ተለዋጭ አሳሹ ሲጠራ የቀረቡት ልኬቶች ስራ ላይ ይውላሉ።\n\nእንዲሁም ዩ አር ኤሉ በማዘዢያ መስመሩ ላይ የት መምጣት እንዳለበት ለመግለጽ ልዩ ቦታ ያዢውን $${url} መጠቀምም ይችላሉ። ለምሳሌ፦ «--url={url} --kiosk»።\nቦታ ያዢውን መጨረሻ ላይ መያያዝ ካለበት እሱን መግለፅ አይኖርብዎትም፣ ወይም ደግሞ ብቸኛው ነጋሪ እሴት መሆን ካለበት ያንን መመሪያ ባዶ መተው ይችላሉ።\n\nመመሪያው ከተሰናከለ ወይም ባዶ እንደሆነ ከተተወ ዩ አር ኤሉ ብቻ ነው እንደ ልኬት ለአሳሹ የሚተላለፈው።",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "የChrome ዱካ",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "የFirefox ዱካ",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "የChrome ዱካ",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "የFirefox ዱካ",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "ከተለዋጭ አሳሽ(*) ሲመለሱ የChrome ተፈጻሚ እንዲጀመር እንዲገልጹ ይፈቅድልዎታል።\n\nመመሪያው ነቅቶ ከሆነ ወይም በመመሪያው ውስጥ ፍጹም ዱካውን መግለጽ ይችላሉ ወይም የሚከተለውን ተለዋዋጭ መጠቀም ይችላሉ፦\n\n$${chrome} - የChrome ነባሪ የጭነት ቦታ\nበዚህ አጋጣሚ የአሳሹ ቦታ ለመምረጥ HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE ስራ ላይ ይውላል።\n\nመመሪያው ካልነቃ ወይም ባዶ ከተተወ ነባሪው ተለዋጭ አሳሽ ስራ ላይ ይውላል፣ ይህም $${chrome} ከሆነ የነቃው Chrome ነው የሚሆነው።\n\n*: በአሁኑ ጊዜ Internet Explorer ብቻ ነው በራስ-ሰር ወደ Chrome መመለስ የሚደግፈው።",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "ከተለዋጭ አሳሽ(*) ሲመለሱ የFirefox ተፈጻሚ እንዲጀመር እንዲገልጹ ይፈቅድልዎታል።\n\nመመሪያው ነቅቶ ከሆነ ወይም በመመሪያው ውስጥ ፍጹም ዱካውን መግለጽ ይችላሉ ወይም የሚከተለውን ተለዋዋጭ መጠቀም ይችላሉ፦\n\n$${firefox} - የFirefox ነባሪ የጭነት ቦታ\nበዚህ አጋጣሚ የአሳሹ ቦታ ለመምረጥ HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE ስራ ላይ ይውላል።\n\nመመሪያው ካልነቃ ወይም ባዶ ከተተወ ነባሪው ተለዋጭ አሳሽ ስራ ላይ ይውላል፣ ይህም $${firefox} ከሆነ የነቃው Firefox ነው የሚሆነው።\n\n*: በአሁኑ ጊዜ Internet Explorer ብቻ ነው በራስ-ሰር ወደ Firefox መመለስ የሚደግፈው።",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "የChrome ነጋሪ እሴቶች",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "የFirefox ነጋሪ እሴቶች",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "የChrome ነጋሪ እሴቶች",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "የFirefox ነጋሪ እሴቶች",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "Chrome ሲፈጸም ወደ እሱ የሚተላለፉት ነጋሪ እሴቶች እንዲገልጹ ይፈቅድልዎታል። \n\nመመሪያው ነቅቶ ከሆነ Chrome ሲጠራ የቀረቡት ልኬቶች ጥቅም ላይ ይውላሉ።\n\nእንዲሁም ዩ አር ኤሉ በማዘዢያ መስመሩ ላይ የት መምጣት እንዳለበት ለመግለጽ ልዩ ቦታ ያዢውን $${url} መጠቀምም ይችላሉ። ለምሳሌ፦ «--url={url} --kiosk»።\nቦታ ያዢውን መጨረሻ ላይ መያያዝ ካለበት እሱን መግለፅ አይኖርብዎትም፣ ወይም ደግሞ ብቸኛው ነጋሪ እሴት መሆን ካለበት ያንን መመሪያ ባዶ መተው ይችላሉ።\n\nመመሪያው ከተሰናከለ ወይም ባዶ እንደሆነ ከተተወ ዩ አር ኤሉ ብቻ ነው እንደ ልኬት ለአሳሹ የሚተላለፈው።",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "Firefox ሲፈጸም ወደ እሱ የሚተላለፉት ነጋሪ እሴቶች እንዲገልጹ ይፈቅድልዎታል። \n\nመመሪያው ነቅቶ ከሆነ Firefox ሲጠራ የቀረቡት ልኬቶች ጥቅም ላይ ይውላሉ።\n\nእንዲሁም ዩ አር ኤሉ በማዘዢያ መስመሩ ላይ የት መምጣት እንዳለበት ለመግለጽ ልዩ ቦታ ያዢውን $${url} መጠቀምም ይችላሉ። ለምሳሌ፦ «--url={url} --kiosk»።\nቦታ ያዢውን መጨረሻ ላይ መያያዝ ካለበት እሱን መግለፅ አይኖርብዎትም፣ ወይም ደግሞ ብቸኛው ነጋሪ እሴት መሆን ካለበት ያንን መመሪያ ባዶ መተው ይችላሉ።\n\nመመሪያው ከተሰናከለ ወይም ባዶ እንደሆነ ከተተወ ዩ አር ኤሉ ብቻ ነው እንደ ልኬት ለአሳሹ የሚተላለፈው።",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "በተለዋጭ አሳሹ የሚከፈቱ አስተናጋጆች",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "በተለዋጩ አሳሽ የሚከፈቱ የአስተናጋጅ ጎራ ስሞች ዝርዝር እንዲጠቅሱ ያስችልዎታል።\n\nመመሪያው ከነቃ ወደ ተለዋጭ አሳሹ የሚደረገውን ሽግግር የሚያስጀምሩ የማጣሪያዎች ዝርዝር ማቅረብ ይኖርብዎታል። እያንዳንዱ ግቤት ከሚከተሉት አራት ዓይነቶች አንዱን መሆን ይኖርበታል፦\n\nየአስተናጋጅ ስም ክፍል፦ እንደ «www.example.com» ያሉ የተሟሉ የጎራ ስሞች፣ ወይም እንደ «example.com» ያሉ የእነርሱ ክፍሎች፣ ወይም እንዲያውም «example» መጠቀስ አለባቸው። ልቅ ምልክቶች እስካሁን የተደገፉ አይደሉም።\nየዩአርኤል ቅድመ-ቅጥያ፦ ካስፈለገ ትክክለኛ የዩአርኤል ቅድመ-ቅጥያዎች ብቻ ናቸው ከፕሮቶኮሉ እና ከወደቡ ጋር የሚዛመዱት። ምሳሌ፦ «http://login.example.com»  ወይም «https://www.example.com:8080/login/»።\nአሉታዊ ግቤት፦ በ«!» ይጀምር እና ከላይ እንደተገለጸው እንደ አስተናጋጅ ስም ክፍል ወይም የዩአርኤል ቅድመ-ቅጥያ ይቀጥላል። አሉታዊ ግቤቶች ሁልጊዜ በChrome ውስጥ ነው የሚከፈቱት። ምሳሌ፦ «!example.com » ወይም «!file:///c:/localapp/»።\nየልቅ ምልክት ግቤት፦ አንዲት ነጠላ የ«*» ቁምፊ ብቻ ይይዛል። ከማንኛውም ዩአርኤል ጋር ይዛመዳል። አብዛኛዎቹ ዩአርኤሎች በተለዋጩ አሳሽ መከፈት እና ትንሽ የተመረጡ ዩአርኤሎች ብቻ በChrome ውስጥ መከፈት ካለባቸው ከአሉታዊ ግቤቶች ጋር አንድ ላይ ጥቅም ላይ እንዲውል የታሰበ ነው።\n\nጥቂት ክፍሎች በChrome ውስጥ እንዲከፈቱ በማስቀመጥ የአንድን ጎራ አብዛኛዎቹን ክፍሎች በተፈቀደላቸው ዝርዝር ላይ ማስቀመጥ ከሚያስችሉት ከአዎንታዊ ግቤቶች ይልቅ አሉታዊ ግቤቶች ከፍተኛ ተቀዳሚነት ደረጃ አላቸው።\nየልቅ ምልክት ግቤት ካለ ሌሎች ደንቦች ከተረጋገጡ በኋላ ብቻ ነው ተፈጻሚ የሚሆነው።\n\nየሚከተሉት ፕሮቶኮሎች አቅጣጫን ለማስቀየር ቁጥጥር ይደረግባቸዋል፦ http:፣ https:።\n\nሳይጠቀስ ከቀረ ወይም ባዶ ከተተወ - ወደ ተለዋጭ አሳሹ ምንም ዓይነት ሽግግር እንዲጀምር አይደረግም።",
+    "message": "በተለዋጩ አሳሽ የሚከፈቱ የአስተናጋጅ ጎራ ስሞች ዝርዝር እንዲጠቅሱ ያስችልዎታል።\n\nመመሪያው ከነቃ ወደ ተለዋጭ አሳሹ የሚደረገውን ሽግግር የሚያስጀምሩ የማጣሪያዎች ዝርዝር ማቅረብ ይኖርብዎታል። እያንዳንዱ ግቤት ከሚከተሉት አራት ዓይነቶች አንዱን መሆን ይኖርበታል፦\n\nየአስተናጋጅ ስም ክፍል፦ እንደ «www.example.com» ያሉ የተሟሉ የጎራ ስሞች፣ ወይም እንደ «example.com» ያሉ የእነርሱ ክፍሎች፣ ወይም እንዲያውም «example» መጠቀስ አለባቸው። ልቅ ምልክቶች እስካሁን የተደገፉ አይደሉም።\nየዩአርኤል ቅድመ-ቅጥያ፦ ካስፈለገ ትክክለኛ የዩአርኤል ቅድመ-ቅጥያዎች ብቻ ናቸው ከፕሮቶኮሉ እና ከወደቡ ጋር የሚዛመዱት። ምሳሌ፦ «http://login.example.com»  ወይም «https://www.example.com:8080/login/»።\nአሉታዊ ግቤት፦ በ«!» ይጀምር እና ከላይ እንደተገለጸው እንደ አስተናጋጅ ስም ክፍል ወይም የዩአርኤል ቅድመ-ቅጥያ ይቀጥላል። አሉታዊ ግቤቶች ሁልጊዜ በFirefox ውስጥ ነው የሚከፈቱት። ምሳሌ፦ «!example.com » ወይም «!file:///c:/localapp/»።\nየልቅ ምልክት ግቤት፦ አንዲት ነጠላ የ«*» ቁምፊ ብቻ ይይዛል። ከማንኛውም ዩአርኤል ጋር ይዛመዳል። አብዛኛዎቹ ዩአርኤሎች በተለዋጩ አሳሽ መከፈት እና ትንሽ የተመረጡ ዩአርኤሎች ብቻ በFirefox ውስጥ መከፈት ካለባቸው ከአሉታዊ ግቤቶች ጋር አንድ ላይ ጥቅም ላይ እንዲውል የታሰበ ነው።\n\nጥቂት ክፍሎች በFirefox ውስጥ እንዲከፈቱ በማስቀመጥ የአንድን ጎራ አብዛኛዎቹን ክፍሎች በተፈቀደላቸው ዝርዝር ላይ ማስቀመጥ ከሚያስችሉት ከአዎንታዊ ግቤቶች ይልቅ አሉታዊ ግቤቶች ከፍተኛ ተቀዳሚነት ደረጃ አላቸው።\nየልቅ ምልክት ግቤት ካለ ሌሎች ደንቦች ከተረጋገጡ በኋላ ብቻ ነው ተፈጻሚ የሚሆነው።\n\nየሚከተሉት ፕሮቶኮሎች አቅጣጫን ለማስቀየር ቁጥጥር ይደረግባቸዋል፦ http:፣ https:።\n\nሳይጠቀስ ከቀረ ወይም ባዶ ከተተወ - ወደ ተለዋጭ አሳሹ ምንም ዓይነት ሽግግር እንዲጀምር አይደረግም።",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "በየትኛውም አሳሽ የሚከፈቱትን አስተናጋጅ የጎራ ስሞች ዝርዝር እንዲጠቅሱ ያስችልዎታል።\n\nይህ መመሪያ ሲነቃ በዚህ ዝርዝር ውስጥ ያሉት ጎራዎች በሁለቱም አሳሾች ውስጥ እንዲኖር የሚደረጉ ሲሆን በሁለቱም አቅጣጫ ሽግግር አያስጀምርም።\n\nይህ ስራ ላይ ሊውልባቸው የሚችልባቸው ሁኔታዎች በዚህ ዝርዝር ውስጥ ባሉ አዳዲስ እና የቆዩ መተግበሪያዎች መካከል የሚጋሩ ማንኛውም የማረጋገጫ ጎራዎች ናቸው።\n\nየአስተናጋጅ ስም ክፍሎች፦ እንደ «www.example.com» ያሉ ሙሉ የጎራ ስሞች፣ ወይም እንደ «example.com» ያሉ የእነሱ ክፍሎች፣ ወይም እንዲያውም «example» መጠቀስ አለባቸው። ልቅ ምልክቶች ገና አይደገፉም።\nየዩአርኤል ቅድመ-ቅጥያዎች፦ አስፈላጊ ሆነው ከተገኙ ትክክለኛ የዩአርኤል ቅድመ-ቅጥያዎች ብቻ ናቸው ከፕሮቶኮል እና ወደ ጋር የሚዛመዱት። ለምሳሌ፦ «http://login.example.com\" ወይም \"https://www.example.com:8080/login/»።\n\nሳይጠቀስ ከቀረ ወይም ባዶ ከተተወ - በ«በተለዋጭ አሳሹ ውስጥ የሚከፍቱ አስተናጋጆች» በሚለው ዝርዝር ውስጥ የሌለ ማንኛውም ጎራ ወደ Chrome(*) ተመልሶ የሚደረግ ሽግግር ይጀመራል።\n\n*፦ በአሁኑ ወቅት Internet Explorer ብቻ በራስ-ሰር ወደ Chrome መመለስ ይፈቅዳል።",
+    "message": "በየትኛውም አሳሽ የሚከፈቱትን አስተናጋጅ የጎራ ስሞች ዝርዝር እንዲጠቅሱ ያስችልዎታል።\n\nይህ መመሪያ ሲነቃ በዚህ ዝርዝር ውስጥ ያሉት ጎራዎች በሁለቱም አሳሾች ውስጥ እንዲኖር የሚደረጉ ሲሆን በሁለቱም አቅጣጫ ሽግግር አያስጀምርም።\n\nይህ ስራ ላይ ሊውልባቸው የሚችልባቸው ሁኔታዎች በዚህ ዝርዝር ውስጥ ባሉ አዳዲስ እና የቆዩ መተግበሪያዎች መካከል የሚጋሩ ማንኛውም የማረጋገጫ ጎራዎች ናቸው።\n\nየአስተናጋጅ ስም ክፍሎች፦ እንደ «www.example.com» ያሉ ሙሉ የጎራ ስሞች፣ ወይም እንደ «example.com» ያሉ የእነሱ ክፍሎች፣ ወይም እንዲያውም «example» መጠቀስ አለባቸው። ልቅ ምልክቶች ገና አይደገፉም።\nየዩአርኤል ቅድመ-ቅጥያዎች፦ አስፈላጊ ሆነው ከተገኙ ትክክለኛ የዩአርኤል ቅድመ-ቅጥያዎች ብቻ ናቸው ከፕሮቶኮል እና ወደ ጋር የሚዛመዱት። ለምሳሌ፦ «http://login.example.com\" ወይም \"https://www.example.com:8080/login/»።\n\nሳይጠቀስ ከቀረ ወይም ባዶ ከተተወ - በ«በተለዋጭ አሳሹ ውስጥ የሚከፍቱ አስተናጋጆች» በሚለው ዝርዝር ውስጥ የሌለ ማንኛውም ጎራ ወደ Firefox(*) ተመልሶ የሚደረግ ሽግግር ይጀመራል።\n\n*፦ በአሁኑ ወቅት Internet Explorer ብቻ በራስ-ሰር ወደ Firefox መመለስ ይፈቅዳል።",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "የመጨረሻውን የChrome ትር በሽግግር ላይ አቆይ",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "የመጨረሻውን የFirefox ትር በሽግግር ላይ አቆይ",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "የመጨረሻውን የChrome ትር በሽግግር ላይ አቆይ",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "የመጨረሻውን የFirefox ትር በሽግግር ላይ አቆይ",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "አንድ በChrome ውስጥ ለመጨረሻ ጊዜ የተከፈተ ትር ወደ ተለዋጭ አሳሽ አቅጣጫ እንዲቀይር በሚደረግበት ጊዜ ምን እንደሚፈጠር እንዲገልጹ ያስችልዎታል።\n\nይህ መመሪያ በሚነቃበት ጊዜ ወይም ባልተዋቀረበት ጊዜ የመጨረሻው ትር ክፍት ሆኖ ይተዋል፣ እና ከሽግግሩ በኋላ ወደ አዲሱ ትር ገጽ እንዲጠቁም ይደረጋል። እንዲሰናከል ሆኖ ከተዘጋጀ የመጨረሻው ትር በሚዘጋበት ጊዜ ሌሎች የተከፈቱ የChrome መስኮቶች ከሌሉ Chrome እንዲዘጋ ያደርጋል።",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "አንድ በFirefox ውስጥ ለመጨረሻ ጊዜ የተከፈተ ትር ወደ ተለዋጭ አሳሽ አቅጣጫ እንዲቀይር በሚደረግበት ጊዜ ምን እንደሚፈጠር እንዲገልጹ ያስችልዎታል።\n\nይህ መመሪያ በሚነቃበት ጊዜ ወይም ባልተዋቀረበት ጊዜ የመጨረሻው ትር ክፍት ሆኖ ይተዋል፣ እና ከሽግግሩ በኋላ ወደ አዲሱ ትር ገጽ እንዲጠቁም ይደረጋል። እንዲሰናከል ሆኖ ከተዘጋጀ የመጨረሻው ትር በሚዘጋበት ጊዜ ሌሎች የተከፈቱ የFirefox መስኮቶች ከሌሉ Firefox እንዲዘጋ ያደርጋል።",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

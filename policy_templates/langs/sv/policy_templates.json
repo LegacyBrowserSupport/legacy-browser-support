@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 eller senare",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "Ange sökvägen till den alternativa webbläsarens körbara fil.\nHär kan du ange vilket program som ska användas som alternativ webbläsare.\n\nNär principen är aktiverad kan du antingen ange en absolut sökväg eller använda en av variablerna nedan:\n\n$${ie} – Standardinstallationsplatsen för Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE används för att ange var webbläsaren finns i det här fallet.\n$${firefox} – Standardinstallationsplatsen för Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE används för att ange var webbläsaren finns i det här fallet.\n$${safari} – Standardinstallationsplatsen för Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE används för att ange var webbläsaren finns i det här fallet.\n\nOm principen inaktiveras eller lämnas tom används standardvalet för alternativ webbläsare, vilket är Internet Explorer. Sökvägen bestäms då som om värdet $${ie} hade angetts.",
+    "message": "Ange sökvägen till den alternativa webbläsarens körbara fil.\nHär kan du ange vilket program som ska användas som alternativ webbläsare.\n\nNär principen är aktiverad kan du antingen ange en absolut sökväg eller använda en av variablerna nedan:\n\n$${ie} – Standardinstallationsplatsen för Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE används för att ange var webbläsaren finns i det här fallet.\n$${chrome} – Standardinstallationsplatsen för Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE används för att ange var webbläsaren finns i det här fallet.\n$${safari} – Standardinstallationsplatsen för Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE används för att ange var webbläsaren finns i det här fallet.\n\nOm principen inaktiveras eller lämnas tom används standardvalet för alternativ webbläsare, vilket är Internet Explorer. Sökvägen bestäms då som om värdet $${ie} hade angetts.",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "Här kan du ange vilka argument som ska skickas till den alternativa webbläsarens körbara fil.\n\nOm principen är aktiverad används de angivna parametrarna när den alternativa webbläsaren anropas.\n\nDu kan också ange webbadressens position i kommandoraden med den särskilda platshållaren $${url}. Exempel:\"--url=$${url} --kiosk.\nDu behöver inte ange platshållaren om den ska läggas till sist eller om den ska vara det enda argumentet. Då kan du lämna den principen tom.\n\nOm principen inaktiveras eller lämnas tom skickas endast webbadressen som parameter till webbläsaren.",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "Sökväg till Chrome",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "Sökväg till Firefox",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "Sökväg till Chrome",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "Sökväg till Firefox",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "Här kan du ange sökvägen till den körbara fil för Chrome som startas vid överlämning från den alternativa webbläsaren(*).\n\nNär policyn är aktiverad kan du antingen ange en absolut sökväg i principen eller använda följande variabel:\n\n$${chrome} – Standardinstallationsplatsen för Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE används för att ange var webbläsaren finns i det här fallet.\n\nOm principen inaktiveras eller lämnas tom används standardinstallationsplatsen för Chrome som om värdet $${chrome} hade angetts.\n\n* För närvarande är det bara Internet Explorer som stöder automatisk överlämning till Chrome.",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "Här kan du ange sökvägen till den körbara fil för Firefox som startas vid överlämning från den alternativa webbläsaren(*).\n\nNär policyn är aktiverad kan du antingen ange en absolut sökväg i principen eller använda följande variabel:\n\n$${firefox} – Standardinstallationsplatsen för Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE används för att ange var webbläsaren finns i det här fallet.\n\nOm principen inaktiveras eller lämnas tom används standardinstallationsplatsen för Firefox som om värdet $${firefox} hade angetts.\n\n* För närvarande är det bara Internet Explorer som stöder automatisk överlämning till Firefox.",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "Argument för Chrome",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "Argument för Firefox",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "Argument för Chrome",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "Argument för Firefox",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "Här kan du ange vilka argument som ska skickas till Chrome när programmet startas.\n\nOm principen är aktiverad används de angivna parametrarna när Chrome anropas.\n\nDu kan också ange webbadressens position i kommandoraden med den särskilda platshållaren $${url}. Exempel:\"--url=$${url} --kiosk.\nDu behöver inte ange platshållaren om den ska läggas till sist eller om den ska vara det enda argumentet. Då kan du lämna den principen tom.\n\nOm principen inaktiveras eller lämnas tom skickas endast webbadressen som parameter till webbläsaren.\n",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "Här kan du ange vilka argument som ska skickas till Firefox när programmet startas.\n\nOm principen är aktiverad används de angivna parametrarna när Firefox anropas.\n\nDu kan också ange webbadressens position i kommandoraden med den särskilda platshållaren $${url}. Exempel:\"--url=$${url} --kiosk.\nDu behöver inte ange platshållaren om den ska läggas till sist eller om den ska vara det enda argumentet. Då kan du lämna den principen tom.\n\nOm principen inaktiveras eller lämnas tom skickas endast webbadressen som parameter till webbläsaren.\n",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "Värdadresser som ska öppnas i den alternativa webbläsaren",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "Här kan du ange en lista med värddomännamn som ska öppnas i den alternativa webbläsaren.\n\nOm principen är aktiverad måste du tillhandahålla en lista med filter som ska utlösa omkopplingen till den alternativa webbläsaren. I varje post i listan ska någon av följande fyra typer anges:\n\nDel av värdnamn: Ange antingen fullständiga domännamn som www.example.com eller delar, som example.com eller till och med example. Jokertecken stöds inte ännu.\nWebbadressprefix: Endast korrekt utformade webbadressprefix matchas, med protokoll och port vid behov. Exempel: http://login.example.com eller https://www.example.com:8080/login/.\nNegativ post: Börjar med ett utropstecken (!) och fortsätter med en del av ett värdnamn eller ett webbadressprefix enligt ovan. Negativa poster öppnas alltid i Chrome. Exempel: !example.com eller !file:///c:/localapp/.\nPost med jokertecken: Innehåller bara tecknet *. Matchar alla webbadresser. Tänkt att användas tillsammans med negativa poster ifall de flesta webbadresser ska öppnas i den alternativa webbläsaren och endast ett fåtal webbadresser ska öppnas i Chrome.\n\nNegativa poster har högre prioritet än positiva, vilket gör det möjligt att tillåta stora delar av en domän samtidigt som mindre delar av den ska öppnas i Chrome.\nOm det finns en post med jokertecken tillämpas den sist, när alla andra regler har kontrollerats.\n\nFöljande protokoll övervakas för omdirigeringen: http:, https:.\n\nOm principen inte anges eller om den lämnas tom aktiveras ingen omkoppling till den alternativa webbläsaren.\n",
+    "message": "Här kan du ange en lista med värddomännamn som ska öppnas i den alternativa webbläsaren.\n\nOm principen är aktiverad måste du tillhandahålla en lista med filter som ska utlösa omkopplingen till den alternativa webbläsaren. I varje post i listan ska någon av följande fyra typer anges:\n\nDel av värdnamn: Ange antingen fullständiga domännamn som www.example.com eller delar, som example.com eller till och med example. Jokertecken stöds inte ännu.\nWebbadressprefix: Endast korrekt utformade webbadressprefix matchas, med protokoll och port vid behov. Exempel: http://login.example.com eller https://www.example.com:8080/login/.\nNegativ post: Börjar med ett utropstecken (!) och fortsätter med en del av ett värdnamn eller ett webbadressprefix enligt ovan. Negativa poster öppnas alltid i Firefox. Exempel: !example.com eller !file:///c:/localapp/.\nPost med jokertecken: Innehåller bara tecknet *. Matchar alla webbadresser. Tänkt att användas tillsammans med negativa poster ifall de flesta webbadresser ska öppnas i den alternativa webbläsaren och endast ett fåtal webbadresser ska öppnas i Firefox.\n\nNegativa poster har högre prioritet än positiva, vilket gör det möjligt att tillåta stora delar av en domän samtidigt som mindre delar av den ska öppnas i Firefox.\nOm det finns en post med jokertecken tillämpas den sist, när alla andra regler har kontrollerats.\n\nFöljande protokoll övervakas för omdirigeringen: http:, https:.\n\nOm principen inte anges eller om den lämnas tom aktiveras ingen omkoppling till den alternativa webbläsaren.\n",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "Här kan du ange en lista över värddomännamn som kan öppnas i endera webbläsaren.\n\nNär den här principen är aktiverad blir domänerna i listan tillgängliga i båda webbläsarna och ingen omkoppling sker åt något håll. \n\nDetta kan vara bra till exempel för autentiseringsdomäner som är gemensamma för nya och äldre appar i den här listan.\n\nDelar av värdnamn: Ange antingen fullständiga domännamn som www.example.com eller delar, som example.com eller till och med example. Jokertecken stöds inte ännu.\nWebbadressprefix:. Endast korrekt utformade webbadressprefix matchas med protokoll och port vid behov. Exempel: http://login.example.com eller https://www.example.com:8080/login/.\n\nOm principen inte anges eller listan lämnas tom kopplas alla domäner som inte står med i listan \"Värdadresser som ska öppnas i den alternativa webbläsaren\" om till Chrome.(*)\n\n* För närvarande är det bara Internet Explorer som stöder automatisk överlämning till Chrome.",
+    "message": "Här kan du ange en lista över värddomännamn som kan öppnas i endera webbläsaren.\n\nNär den här principen är aktiverad blir domänerna i listan tillgängliga i båda webbläsarna och ingen omkoppling sker åt något håll. \n\nDetta kan vara bra till exempel för autentiseringsdomäner som är gemensamma för nya och äldre appar i den här listan.\n\nDelar av värdnamn: Ange antingen fullständiga domännamn som www.example.com eller delar, som example.com eller till och med example. Jokertecken stöds inte ännu.\nWebbadressprefix:. Endast korrekt utformade webbadressprefix matchas med protokoll och port vid behov. Exempel: http://login.example.com eller https://www.example.com:8080/login/.\n\nOm principen inte anges eller listan lämnas tom kopplas alla domäner som inte står med i listan \"Värdadresser som ska öppnas i den alternativa webbläsaren\" om till Firefox.(*)\n\n* För närvarande är det bara Internet Explorer som stöder automatisk överlämning till Firefox.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "Behåll den sista fliken i Chrome vid omkoppling",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "Behåll den sista fliken i Firefox vid omkoppling",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "Behåll den sista fliken i Chrome vid omkoppling",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "Behåll den sista fliken i Firefox vid omkoppling",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "Här kan du ange vad som ska hända när den sista öppna fliken i Chrome omdirigeras till den alternativa webbläsaren.\n\nNär den här principen är aktiverad eller om den inte anges lämnas den sista fliken öppen och pekar mot sidan ny flik efter omkopplingen. Om principen är inaktiverad stängs den sista fliken, vilket leder till att Chrome stängs om inga andra fönster är öppna i Chrome.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "Här kan du ange vad som ska hända när den sista öppna fliken i Firefox omdirigeras till den alternativa webbläsaren.\n\nNär den här principen är aktiverad eller om den inte anges lämnas den sista fliken öppen och pekar mot sidan ny flik efter omkopplingen. Om principen är inaktiverad stängs den sista fliken, vilket leder till att Firefox stängs om inga andra fönster är öppna i Firefox.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

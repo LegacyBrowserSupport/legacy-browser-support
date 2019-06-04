@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP з пакетом SP2 або новішої версії",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "Указати виконуваний файл альтернативного веб-переглядача.\nДозволяє вказати програму, яка має використовуватись як альтернативний веб-переглядач.\n\nЯкщо це правило ввімкнено, у ньому можна вказати повний шлях або скористатися однією зі змінних нижче.\n\n$${ie} – місце встановлення Internet Explorer за умовчанням\nУ цьому випадку HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE використовується для вибору розташування веб-переглядача.\n$${firefox} – місце встановлення Firefox за умовчанням\nУ цьому випадку HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE використовується для вибору розташування веб-переглядача.\n$${safari} – місце встановлення Safari за умовчанням\nУ цьому випадку HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE використовується для вибору розташування веб-переглядача.\n\nЯкщо це правило вимкнено чи залишено порожнім, використовується альтернативний веб-переглядач, яким призначається Internet Explorer (ніби використовується значення $${ie}).",
+    "message": "Указати виконуваний файл альтернативного веб-переглядача.\nДозволяє вказати програму, яка має використовуватись як альтернативний веб-переглядач.\n\nЯкщо це правило ввімкнено, у ньому можна вказати повний шлях або скористатися однією зі змінних нижче.\n\n$${ie} – місце встановлення Internet Explorer за умовчанням\nУ цьому випадку HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE використовується для вибору розташування веб-переглядача.\n$${chrome} – місце встановлення Chrome за умовчанням\nУ цьому випадку HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE використовується для вибору розташування веб-переглядача.\n$${safari} – місце встановлення Safari за умовчанням\nУ цьому випадку HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE використовується для вибору розташування веб-переглядача.\n\nЯкщо це правило вимкнено чи залишено порожнім, використовується альтернативний веб-переглядач, яким призначається Internet Explorer (ніби використовується значення $${ie}).",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "Дозволяє вказати аргументи, які передаватимуться виконуваному файлу альтернативного веб-переглядача.\n\nЯкщо це правило ввімкнено, указані параметри використовуються під час виклику альтернативного веб-переглядача.\n\nМожна також скористатися спеціальним заповнювачем $${url}, щоб указати місце відображення URL-адреси в командному рядку. Наприклад, \"--url=$${url} --kiosk\".\nНе потрібно вказувати заповнювач, якщо він додається в кінці. Якщо заповнювач буде єдиним аргументом, можна також залишити це правило порожнім.\n\nЯкщо це правило вимкнено чи залишено порожнім, веб-переглядачу як параметр передається лише URL-адреса.",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "Шлях до Chrome",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "Шлях до Firefox",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "Шлях до Chrome",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "Шлях до Firefox",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "Дозволяє вказати виконуваний файл Chrome, який має запускатися під час повернення з альтернативного веб-переглядача(*).\n\nЯкщо це правило ввімкнено, у ньому можна вказати повний шлях або скористатися поданою нижче змінною.\n\n$${chrome} – місце встановлення Chrome за умовчанням\nУ цьому випадку HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE використовується для вибору розташування веб-переглядача.\n\nЯкщо це правило вимкнено чи залишено порожнім, використовується місце встановлення Chrome за умовчанням (ніби використовується значення {chrome}).\n\n* Зараз лише Internet Explorer підтримує автоматичне повернення в Chrome.",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "Дозволяє вказати виконуваний файл Firefox, який має запускатися під час повернення з альтернативного веб-переглядача(*).\n\nЯкщо це правило ввімкнено, у ньому можна вказати повний шлях або скористатися поданою нижче змінною.\n\n$${firefox} – місце встановлення Firefox за умовчанням\nУ цьому випадку HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE використовується для вибору розташування веб-переглядача.\n\nЯкщо це правило вимкнено чи залишено порожнім, використовується місце встановлення Firefox за умовчанням (ніби використовується значення {firefox}).\n\n* Зараз лише Internet Explorer підтримує автоматичне повернення в Firefox.",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "Аргументи Chrome",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "Аргументи Firefox",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "Аргументи Chrome",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "Аргументи Firefox",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "Дозволяє вказати аргументи, які передаватимуться Chrome під час його виконання.\n\nЯкщо це правило ввімкнено, указані параметри використовуються під час виклику Chrome.\n\nМожна також скористатися спеціальним заповнювачем $${url}, щоб указати місце відображення URL-адреси в командному рядку. Наприклад, \"--url=$${url} --kiosk\".\nНе потрібно вказувати заповнювач, якщо він додається в кінці. Якщо заповнювач буде єдиним аргументом, можна також залишити це правило порожнім.\n\nЯкщо це правило вимкнено чи залишено порожнім, веб-переглядачу як параметр передається лише URL-адреса.",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "Дозволяє вказати аргументи, які передаватимуться Firefox під час його виконання.\n\nЯкщо це правило ввімкнено, указані параметри використовуються під час виклику Firefox.\n\nМожна також скористатися спеціальним заповнювачем $${url}, щоб указати місце відображення URL-адреси в командному рядку. Наприклад, \"--url=$${url} --kiosk\".\nНе потрібно вказувати заповнювач, якщо він додається в кінці. Якщо заповнювач буде єдиним аргументом, можна також залишити це правило порожнім.\n\nЯкщо це правило вимкнено чи залишено порожнім, веб-переглядачу як параметр передається лише URL-адреса.",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "Хости, які мають відкриватися в альтернативному веб-переглядачі",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "Дозволяє вказати перелік доменних імен хостів, які мають відкриватися в альтернативному веб-переглядачі.\n\nЯкщо це правило ввімкнено, потрібно вказати перелік фільтрів, які ініціюватимуть перехід в альтернативний веб-переглядач. Нижче наведено чотири типи можливих фільтрів.\n\nІмена хостів: потрібно вказати повні доменні імена, як-от \"www.example.com\", або їх частини, як-от \"example.com\" чи навіть \"example\". Символи підстановки поки що не підтримуються.\nПрефікси URL-адрес: порівнюються лише дійсні префікси URL-адрес, у яких указано протокол і порт, якщо потрібно. Приклад: \"http://login.example.com\" або \"https://www.example.com:8080/login/\".\nНегативні записи: на початку вводиться \"!\", а потім – ім’я хосту або префікс URL-адреси, як описано вище. Негативні записи завжди відкриваються у веб-переглядачі Chrome. Приклад: \"!example.com\" або \"!file:///c:/localapp/\".\nЗаписи підстановки: містять лише один символ \"*\". Відповідають будь-якій URL-адресі. Якщо більшість URL-адрес мають відкриватися в альтернативному веб-переглядачі або лише незначна частина URL-адрес має відкриватися в Chrome, записи підстановки потрібно використовувати разом із негативними записами.\n\nНегативні записи мають вищий пріоритет, ніж позитивні. Це дає змогу вносити в список дозволених більшу частину ресурсів домену, а решту відкривати в Chrome.\nЗаписи підстановки (якщо такі є) застосовуються лише після перевірки всіх інших правил.\n\nДля переспрямування відстежуються такі протоколи: http:, https:.\n\nЯкщо це правило вимкнено чи залишено порожнім, перехід в альтернативний веб-переглядач не ініціюється.",
+    "message": "Дозволяє вказати перелік доменних імен хостів, які мають відкриватися в альтернативному веб-переглядачі.\n\nЯкщо це правило ввімкнено, потрібно вказати перелік фільтрів, які ініціюватимуть перехід в альтернативний веб-переглядач. Нижче наведено чотири типи можливих фільтрів.\n\nІмена хостів: потрібно вказати повні доменні імена, як-от \"www.example.com\", або їх частини, як-от \"example.com\" чи навіть \"example\". Символи підстановки поки що не підтримуються.\nПрефікси URL-адрес: порівнюються лише дійсні префікси URL-адрес, у яких указано протокол і порт, якщо потрібно. Приклад: \"http://login.example.com\" або \"https://www.example.com:8080/login/\".\nНегативні записи: на початку вводиться \"!\", а потім – ім’я хосту або префікс URL-адреси, як описано вище. Негативні записи завжди відкриваються у веб-переглядачі Firefox. Приклад: \"!example.com\" або \"!file:///c:/localapp/\".\nЗаписи підстановки: містять лише один символ \"*\". Відповідають будь-якій URL-адресі. Якщо більшість URL-адрес мають відкриватися в альтернативному веб-переглядачі або лише незначна частина URL-адрес має відкриватися в Firefox, записи підстановки потрібно використовувати разом із негативними записами.\n\nНегативні записи мають вищий пріоритет, ніж позитивні. Це дає змогу вносити в список дозволених більшу частину ресурсів домену, а решту відкривати в Firefox.\nЗаписи підстановки (якщо такі є) застосовуються лише після перевірки всіх інших правил.\n\nДля переспрямування відстежуються такі протоколи: http:, https:.\n\nЯкщо це правило вимкнено чи залишено порожнім, перехід в альтернативний веб-переглядач не ініціюється.",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "Дозволяє вказувати перелік доменних імен хостів, які мають відкриватися в обох веб-переглядачах.\n\nЯкщо це правило ввімкнено, домени з цього переліку відкриватимуться в обох веб-переглядачах і не ініціюватимуть перехід з одного веб-переглядача в інший.\n\nМожливий випадок застосування – будь-які домени автентифікації, що спільно використовуються новими та застарілими додатками з цього переліку.\n\nІмена хостів: потрібно вказати повні доменні імена, як-от \"www.example.com\", або їх частини, як-от \"example.com\" чи навіть \"example\". Символи підстановки поки що не підтримуються.\nПрефікси URL-адрес: порівнюються лише дійсні префікси URL-адрес, у яких указано протокол і порт, якщо потрібно. Приклад: \"http://login.example.com\" або \"https://www.example.com:8080/login/\".\n\nЯкщо це правило вимкнено чи залишено порожнім, будь-який домен, не вказаний у переліку \"Хости, які мають відкриватися в альтернативному веб-переглядачі\", ініціює перехід у Chrome(*).\n\n* Зараз лише Internet Explorer підтримує автоматичне повернення в Chrome.",
+    "message": "Дозволяє вказувати перелік доменних імен хостів, які мають відкриватися в обох веб-переглядачах.\n\nЯкщо це правило ввімкнено, домени з цього переліку відкриватимуться в обох веб-переглядачах і не ініціюватимуть перехід з одного веб-переглядача в інший.\n\nМожливий випадок застосування – будь-які домени автентифікації, що спільно використовуються новими та застарілими додатками з цього переліку.\n\nІмена хостів: потрібно вказати повні доменні імена, як-от \"www.example.com\", або їх частини, як-от \"example.com\" чи навіть \"example\". Символи підстановки поки що не підтримуються.\nПрефікси URL-адрес: порівнюються лише дійсні префікси URL-адрес, у яких указано протокол і порт, якщо потрібно. Приклад: \"http://login.example.com\" або \"https://www.example.com:8080/login/\".\n\nЯкщо це правило вимкнено чи залишено порожнім, будь-який домен, не вказаний у переліку \"Хости, які мають відкриватися в альтернативному веб-переглядачі\", ініціює перехід у Firefox(*).\n\n* Зараз лише Internet Explorer підтримує автоматичне повернення в Firefox.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "Підтримка переходу на останню вкладку Chrome",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "Підтримка переходу на останню вкладку Firefox",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "Підтримка переходу на останню вкладку Chrome",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "Підтримка переходу на останню вкладку Firefox",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "Дозволяє вказати, що відбувається, коли остання відкрита в Chrome вкладка переспрямовується в альтернативний веб-переглядач.\n\nЯкщо це правило ввімкнено або не встановлено, остання вкладка залишатиметься відкритою, а в альтернативному веб-переглядачі відкриється сторінка нової вкладки. Якщо це правило вимкнено, остання вкладка закриватиметься, і, відповідно, закриється Chrome, якщо його відкрито лише в одному вікні.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "Дозволяє вказати, що відбувається, коли остання відкрита в Firefox вкладка переспрямовується в альтернативний веб-переглядач.\n\nЯкщо це правило ввімкнено або не встановлено, остання вкладка залишатиметься відкритою, а в альтернативному веб-переглядачі відкриється сторінка нової вкладки. Якщо це правило вимкнено, остання вкладка закриватиметься, і, відповідно, закриється Firefox, якщо його відкрито лише в одному вікні.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

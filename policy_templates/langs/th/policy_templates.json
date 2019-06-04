@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 หรือใหม่กว่า",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "ระบุไฟล์สั่งการของเบราว์เซอร์สำรอง\nช่วยให้คุณสามารถระบุโปรแกรมที่จะใช้เป็นเบราว์เซอร์สำรอง\n\nหากเปิดใช้งานแล้ว คุณสามารถเลือกระบุเส้นทางที่แน่นอนในนโยบาย หรือใช้ตัวแปรใดตัวแปรหนึ่งต่อไปนี้\n\n$${ie} - ตำแหน่งติดตั้งเริ่มต้นสำหรับ Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE ใช้เพื่อเลือกตำแหน่งของเบราว์เซอร์ในกรณีนี้\n$${firefox} - ตำแหน่งติดตั้งเริ่มต้นสำหรับ Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE ใช้เพื่อเลือกตำแหน่งของเบราว์เซอร์ในกรณีนี้\n$${safari} - ตำแหน่งติดตั้งเริ่มต้นสำหรับ Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE ใช้เพื่อเลือกตำแหน่งของเบราว์เซอร์ในกรณีนี้\n\nหากนโยบายไม่ได้เปิดใช้งานหรือปล่อยให้ว่าง เบราว์เซอร์สำรองเริ่มต้นจะถูกใช้งาน ซึ่งก็คือ Internet Explorer หากใช้ค่า $${ie}",
+    "message": "ระบุไฟล์สั่งการของเบราว์เซอร์สำรอง\nช่วยให้คุณสามารถระบุโปรแกรมที่จะใช้เป็นเบราว์เซอร์สำรอง\n\nหากเปิดใช้งานแล้ว คุณสามารถเลือกระบุเส้นทางที่แน่นอนในนโยบาย หรือใช้ตัวแปรใดตัวแปรหนึ่งต่อไปนี้\n\n$${ie} - ตำแหน่งติดตั้งเริ่มต้นสำหรับ Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE ใช้เพื่อเลือกตำแหน่งของเบราว์เซอร์ในกรณีนี้\n$${chrome} - ตำแหน่งติดตั้งเริ่มต้นสำหรับ Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE ใช้เพื่อเลือกตำแหน่งของเบราว์เซอร์ในกรณีนี้\n$${safari} - ตำแหน่งติดตั้งเริ่มต้นสำหรับ Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE ใช้เพื่อเลือกตำแหน่งของเบราว์เซอร์ในกรณีนี้\n\nหากนโยบายไม่ได้เปิดใช้งานหรือปล่อยให้ว่าง เบราว์เซอร์สำรองเริ่มต้นจะถูกใช้งาน ซึ่งก็คือ Internet Explorer หากใช้ค่า $${ie}",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "ช่วยให้คุณสามารถระบุอาร์กิวเมนต์ที่จะส่งไปยังไฟล์สั่งการของเบราว์เซอร์สำรอง\n\nหากเปิดใช้งานนโยบาย พารามิเตอร์ที่ให้มาจะถูกใช้เมื่อมีการเรียกใช้เบราว์เซอร์สำรอง\n\nนอกจากนี้ คุณสามารถใช้ตัวยึดตำแหน่งพิเศษ $${url} เพื่อระบุตำแหน่งที่ url ควรปรากฏในบรรทัดคำสั่ง เช่น \"--url=$${url} --kiosk\"\nคุณไม่จำเป็นต้องระบุตัวยึดตำแหน่ง หาก url ต้องต่อท้ายที่ด้านหลัง หรือหาก url นั้นเป็นเพียงอาร์กิวเมนต์เดียว คุณสามารถเว้นว่างนโยบายได้\n\nหากปิดใช้งานหรือเว้นว่างนโยบาย เฉพาะ url เท่านั้นที่จะถูกส่งไปยังเบราว์เซอร์ในฐานะพารามิเตอร์",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "เส้นทางของ Chrome",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "เส้นทางของ Firefox",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "เส้นทางของ Chrome",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "เส้นทางของ Firefox",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "ช่วยให้คุณสามารถระบุไฟล์สั่งการของ Chrome ที่จะเรียกใช้เมื่อกลับจากเบราว์เซอร์สำรอง(*)\n\nเมื่อเปิดใช้งานนโยบาย คุณสามารถเลือกระบุเส้นทางที่แน่นอนในนโยบาย หรือใช้ตัวแปรต่อไปนี้\n\n$${chrome} - ตำแหน่งติดตั้งเริ่มต้นสำหรับ Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE ถูกใช้เพื่อเลือกตำแหน่งของเบราว์เซอร์ในกรณีนี้\n\nหากปิดใช้งานหรือเว้นว่างนโยบาย การติดตั้งเริ่มต้นของ Chrome จะถูกใช้ในลักษณะเดียวกับที่ใช้ค่า $${chrome}\n\n*: ในปัจจุบัน เฉพาะ Internet Explorer เท่านั้นที่สนับสนุนการกลับมาที่ Chrome โดยอัตโนมัติ",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "ช่วยให้คุณสามารถระบุไฟล์สั่งการของ Firefox ที่จะเรียกใช้เมื่อกลับจากเบราว์เซอร์สำรอง(*)\n\nเมื่อเปิดใช้งานนโยบาย คุณสามารถเลือกระบุเส้นทางที่แน่นอนในนโยบาย หรือใช้ตัวแปรต่อไปนี้\n\n$${firefox} - ตำแหน่งติดตั้งเริ่มต้นสำหรับ Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE ถูกใช้เพื่อเลือกตำแหน่งของเบราว์เซอร์ในกรณีนี้\n\nหากปิดใช้งานหรือเว้นว่างนโยบาย การติดตั้งเริ่มต้นของ Firefox จะถูกใช้ในลักษณะเดียวกับที่ใช้ค่า $${firefox}\n\n*: ในปัจจุบัน เฉพาะ Internet Explorer เท่านั้นที่สนับสนุนการกลับมาที่ Firefox โดยอัตโนมัติ",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "อาร์กิวเมนต์ของ Chrome",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "อาร์กิวเมนต์ของ Firefox",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "อาร์กิวเมนต์ของ Chrome",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "อาร์กิวเมนต์ของ Firefox",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "ช่วยให้คุณสามารถระบุอาร์กิวเมนต์ที่จะส่งไปยัง Chrome เมื่อถูกเรียกใช้\n\nหากเปิดใช้งานนโยบาย พารามิเตอร์ที่ให้มาจะถูกใช้เมื่อมีการเรียกใช้ Chrome\n\nนอกจากนี้ คุณสามารถใช้ตัวยึดตำแหน่งพิเศษ $${url} เพื่อระบุตำแหน่งที่ url ควรปรากฏในบรรทัดคำสั่ง เช่น \"--url=$${url} --kiosk\"\nคุณไม่จำเป็นต้องระบุตัวยึดตำแหน่ง หาก url ต้องต่อท้ายที่ด้านหลัง หรือหาก url นั้นเป็นเพียงอาร์กิวเมนต์เดียว คุณสามารถเว้นว่างนโยบายได้\n\nหากปิดใช้งานหรือเว้นว่างนโยบาย เฉพาะ url เท่านั้นที่จะถูกส่งไปยังเบราว์เซอร์ในฐานะพารามิเตอร์",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "ช่วยให้คุณสามารถระบุอาร์กิวเมนต์ที่จะส่งไปยัง Firefox เมื่อถูกเรียกใช้\n\nหากเปิดใช้งานนโยบาย พารามิเตอร์ที่ให้มาจะถูกใช้เมื่อมีการเรียกใช้ Firefox\n\nนอกจากนี้ คุณสามารถใช้ตัวยึดตำแหน่งพิเศษ $${url} เพื่อระบุตำแหน่งที่ url ควรปรากฏในบรรทัดคำสั่ง เช่น \"--url=$${url} --kiosk\"\nคุณไม่จำเป็นต้องระบุตัวยึดตำแหน่ง หาก url ต้องต่อท้ายที่ด้านหลัง หรือหาก url นั้นเป็นเพียงอาร์กิวเมนต์เดียว คุณสามารถเว้นว่างนโยบายได้\n\nหากปิดใช้งานหรือเว้นว่างนโยบาย เฉพาะ url เท่านั้นที่จะถูกส่งไปยังเบราว์เซอร์ในฐานะพารามิเตอร์",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "โฮสต์ที่จะเปิดในเบราว์เซอร์สำรอง",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "ช่วยให้คุณสามารถระบุรายการชื่อโดเมนของโฮสต์ที่จะเปิดในเบราว์เซอร์สำรอง\n\nหากเปิดใช้นโยบายนี้ คุณต้องระบุรายการตัวกรองซึ่งจะทำให้เกิดการเปลี่ยนไปใช้เบราว์เซอร์สำรอง ตัวกรองแต่ละตัวควรเป็นประเภทใดประเภทหนึ่งใน 4 ประเภทต่อไปนี้:\n\nส่วนชื่อโฮสต์: ควรระบุชื่อโดเมนที่สมบูรณ์ เช่น \"www.example.com\" หรือบางส่วนของชื่อ เช่น \"example.com\" หรือแม้กระทั่ง \"example\" ทั้งนี้ ยังไม่มีการสนับสนุนสัญลักษณ์แทน\nอักษรนำหน้า URL: เฉพาะอักษรนำหน้า URL ที่ถูกต้องเท่านั้นที่จะจับคู่ได้อย่างสมบูรณ์กับโปรโตคอลและพอร์ตในกรณีที่จำเป็น เช่น \"http://login.example.com\" หรือ \"https://www.example.com:8080/login/\"\nรายการปฏิเสธ: ขึ้นต้นด้วย \"!\" และเป็นส่วนของชื่อโฮสต์หรือคำนำหน้า URL ดังที่อธิบายด้านบน รายการปฏิเสธจะเปิดใน Chrome เสมอ เช่น \"!example.com\" หรือ \"!file:///c:/localapp/\"\nรายการสัญลักษณ์แทน: มีเฉพาะอักขระ \"*\" ตัวเดียวเท่านั้น จะจับคู่กับ URL ได้ทั้งหมด ควรใช้ร่วมกับรายการปฏิเสธในกรณีที่ URL ส่วนใหญ่ควรเปิดในเบราว์เซอร์สำรองและเฉพาะ URL จำนวนไม่มากที่เลือกไว้ควรเปิดใน Chrome\n\nรายการปฏิเสธมีลำดับความสำคัญสูงกว่ารายการยอมรับ ซึ่งทำให้สามารถอนุญาตโดเมนส่วนใหญ่ได้ ขณะที่ให้โดเมนส่วนน้อยส่วนเปิดใน Chrome\nระบบจะนำรายการสัญลักษณ์แทน (ถ้ามี) ไปใช้หลังจากตรวจสอบกฎอื่นๆ ทั้งหมดแล้ว\n\nระบบจะตรวจสอบโปรโตคอลต่อไปนี้สำหรับการเปลี่ยนเส้นทาง: http:, https:\n\nหากไม่กำหนดหรือเว้นว่างไว้ จะไม่เกิดการเปลี่ยนไปใช้เบราว์เซอร์สำรอง",
+    "message": "ช่วยให้คุณสามารถระบุรายการชื่อโดเมนของโฮสต์ที่จะเปิดในเบราว์เซอร์สำรอง\n\nหากเปิดใช้นโยบายนี้ คุณต้องระบุรายการตัวกรองซึ่งจะทำให้เกิดการเปลี่ยนไปใช้เบราว์เซอร์สำรอง ตัวกรองแต่ละตัวควรเป็นประเภทใดประเภทหนึ่งใน 4 ประเภทต่อไปนี้:\n\nส่วนชื่อโฮสต์: ควรระบุชื่อโดเมนที่สมบูรณ์ เช่น \"www.example.com\" หรือบางส่วนของชื่อ เช่น \"example.com\" หรือแม้กระทั่ง \"example\" ทั้งนี้ ยังไม่มีการสนับสนุนสัญลักษณ์แทน\nอักษรนำหน้า URL: เฉพาะอักษรนำหน้า URL ที่ถูกต้องเท่านั้นที่จะจับคู่ได้อย่างสมบูรณ์กับโปรโตคอลและพอร์ตในกรณีที่จำเป็น เช่น \"http://login.example.com\" หรือ \"https://www.example.com:8080/login/\"\nรายการปฏิเสธ: ขึ้นต้นด้วย \"!\" และเป็นส่วนของชื่อโฮสต์หรือคำนำหน้า URL ดังที่อธิบายด้านบน รายการปฏิเสธจะเปิดใน Firefox เสมอ เช่น \"!example.com\" หรือ \"!file:///c:/localapp/\"\nรายการสัญลักษณ์แทน: มีเฉพาะอักขระ \"*\" ตัวเดียวเท่านั้น จะจับคู่กับ URL ได้ทั้งหมด ควรใช้ร่วมกับรายการปฏิเสธในกรณีที่ URL ส่วนใหญ่ควรเปิดในเบราว์เซอร์สำรองและเฉพาะ URL จำนวนไม่มากที่เลือกไว้ควรเปิดใน Firefox\n\nรายการปฏิเสธมีลำดับความสำคัญสูงกว่ารายการยอมรับ ซึ่งทำให้สามารถอนุญาตโดเมนส่วนใหญ่ได้ ขณะที่ให้โดเมนส่วนน้อยส่วนเปิดใน Firefox\nระบบจะนำรายการสัญลักษณ์แทน (ถ้ามี) ไปใช้หลังจากตรวจสอบกฎอื่นๆ ทั้งหมดแล้ว\n\nระบบจะตรวจสอบโปรโตคอลต่อไปนี้สำหรับการเปลี่ยนเส้นทาง: http:, https:\n\nหากไม่กำหนดหรือเว้นว่างไว้ จะไม่เกิดการเปลี่ยนไปใช้เบราว์เซอร์สำรอง",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "ช่วยให้คุณสามารถระบุรายการชื่อโดเมนของโฮสต์ที่จะเปิดในเบราว์เซอร์ใดเบราว์เซอร์หนึ่ง\n\nเมื่อเปิดใช้นโยบายนี้ โดเมนในรายการนี้จะพร้อมใช้งานในทั้ง 2 เบราว์เซอร์ และจะไม่ทำให้เกิดการเปลี่ยนเบราว์เซอร์ไม่ว่าจะใช้เบราว์เซอร์ใด\n\nกรณีการใช้งานที่เป็นไปได้คือ โดเมนการตรวจสอบสิทธิ์ใดๆ ที่แชร์ระหว่างแอปใหม่และแอปดั้งเดิมในรายการนี้\n\nส่วนชื่อโฮสต์: ต้องระบุชื่อโดเมนที่สมบูรณ์ เช่น \"www.example.com\" หรือบางส่วนของชื่อ เช่น \"example.com: หรือ \"example\" ทั้งนี้ ยังไม่มีการสนับสนุนสัญลักษณ์แทน\nอักษรนำหน้า URL: เฉพาะอักษรนำหน้า URL ที่เหมาะสมเท่านั้นที่จะจับคู่ได้อย่างสมบูรณ์กับโปรโตคอลและพอร์ตในกรณีที่จำเป็น เช่น \"http://login.example.com\" หรือ \"https://www.example.com:8080/login/\"\n\nหากไม่ได้ระบุหรือเว้นว่างไว้ โดเมนที่ไม่ได้อยู่ในรายชื่อ \"โฮสต์ที่จะเปิดในเบราว์เซอร์สำรอง\" จะทำให้เกิดการเปลี่ยนกลับไปใช้ Chrome(*)\n\n*: ในปัจจุบัน เฉพาะ Internet Explorer เท่านั้นที่สนับสนุนการกลับมาใช้ Chrome โดยอัตโนมัติ",
+    "message": "ช่วยให้คุณสามารถระบุรายการชื่อโดเมนของโฮสต์ที่จะเปิดในเบราว์เซอร์ใดเบราว์เซอร์หนึ่ง\n\nเมื่อเปิดใช้นโยบายนี้ โดเมนในรายการนี้จะพร้อมใช้งานในทั้ง 2 เบราว์เซอร์ และจะไม่ทำให้เกิดการเปลี่ยนเบราว์เซอร์ไม่ว่าจะใช้เบราว์เซอร์ใด\n\nกรณีการใช้งานที่เป็นไปได้คือ โดเมนการตรวจสอบสิทธิ์ใดๆ ที่แชร์ระหว่างแอปใหม่และแอปดั้งเดิมในรายการนี้\n\nส่วนชื่อโฮสต์: ต้องระบุชื่อโดเมนที่สมบูรณ์ เช่น \"www.example.com\" หรือบางส่วนของชื่อ เช่น \"example.com: หรือ \"example\" ทั้งนี้ ยังไม่มีการสนับสนุนสัญลักษณ์แทน\nอักษรนำหน้า URL: เฉพาะอักษรนำหน้า URL ที่เหมาะสมเท่านั้นที่จะจับคู่ได้อย่างสมบูรณ์กับโปรโตคอลและพอร์ตในกรณีที่จำเป็น เช่น \"http://login.example.com\" หรือ \"https://www.example.com:8080/login/\"\n\nหากไม่ได้ระบุหรือเว้นว่างไว้ โดเมนที่ไม่ได้อยู่ในรายชื่อ \"โฮสต์ที่จะเปิดในเบราว์เซอร์สำรอง\" จะทำให้เกิดการเปลี่ยนกลับไปใช้ Firefox(*)\n\n*: ในปัจจุบัน เฉพาะ Internet Explorer เท่านั้นที่สนับสนุนการกลับมาใช้ Firefox โดยอัตโนมัติ",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "ให้แท็บสุดท้ายของ Chrome เปลี่ยน",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "ให้แท็บสุดท้ายของ Firefox เปลี่ยน",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "เก็บแท็บสุดท้ายของ Chrome ไว้เมื่อมีการเปลี่ยน",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "เก็บแท็บสุดท้ายของ Firefox ไว้เมื่อมีการเปลี่ยน",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "ให้คุณระบุสิ่งที่จะเกิดขึ้นเมื่อแท็บสุดท้ายที่เปิดใน Chrome มีการเปลี่ยนเส้นทางไปยังเบราว์เซอร์สำรอง\n\nเมื่อเปิดใช้นโยบายนี้หรือไม่ได้ตั้งค่าไว้ แท็บสุดท้ายดังกล่าวจะเปิดค้างไว้และชี้ไปยังหน้าแท็บใหม่หลังการเปลี่ยนเบราว์เซอร์ หากตั้งค่าเป็นปิดใช้งาน แท็บสุดท้ายจะปิดซึ่งจะทำให้ Chrome ปิดลงหากไม่มีหน้าต่าง Chrome อื่นๆ เปิดอยู่",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "ให้คุณระบุสิ่งที่จะเกิดขึ้นเมื่อแท็บสุดท้ายที่เปิดใน Firefox มีการเปลี่ยนเส้นทางไปยังเบราว์เซอร์สำรอง\n\nเมื่อเปิดใช้นโยบายนี้หรือไม่ได้ตั้งค่าไว้ แท็บสุดท้ายดังกล่าวจะเปิดค้างไว้และชี้ไปยังหน้าแท็บใหม่หลังการเปลี่ยนเบราว์เซอร์ หากตั้งค่าเป็นปิดใช้งาน แท็บสุดท้ายจะปิดซึ่งจะทำให้ Firefox ปิดลงหากไม่มีหน้าต่าง Firefox อื่นๆ เปิดอยู่",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

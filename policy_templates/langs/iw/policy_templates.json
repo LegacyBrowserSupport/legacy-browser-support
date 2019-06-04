@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 ואילך",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "ציין את קובץ ההפעלה של הדפדפן החלופי.\nמאפשרת לך לציין את התוכנית שתשמש כדפדפן החלופי.\n\nאם אפשרות זו מופעלת, תוכל לציין במדיניות נתיב מוחלט או להשתמש באחד מהמשתנים הבאים:\n\n{ie}$$ - מיקום ברירת המחדל שבו מותקן Internet Explorer HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE משמש לבחירת מיקום הדפדפן במקרה זה.\n{‏firefox}$$‏ - מיקום ברירת המחדל להתקנת Firefox ‏HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App  Paths\\FIREFOX.EXE משמש לבחירת מיקום הדפדפן במקרה זה.\n{‏safari}‏$$ - מיקום ברירת המחדל להתקנת Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App  Paths\\SAFARI.EXE משמש לבחירת מיקום הדפדפן במקרה זה.\n\nאם המדיניות אינה מופעלת או נשארת ריקה, ייעשה שימוש בדפדפן ברירת המחדל החלופי, שהוא Internet Explorer, שייקבע כאילו נעשה שימוש בערך {ie}$$.\n",
+    "message": "ציין את קובץ ההפעלה של הדפדפן החלופי.\nמאפשרת לך לציין את התוכנית שתשמש כדפדפן החלופי.\n\nאם אפשרות זו מופעלת, תוכל לציין במדיניות נתיב מוחלט או להשתמש באחד מהמשתנים הבאים:\n\n{ie}$$ - מיקום ברירת המחדל שבו מותקן Internet Explorer HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE משמש לבחירת מיקום הדפדפן במקרה זה.\n{‏replaceme}$$‏ - מיקום ברירת המחדל להתקנת Chrome ‏HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App  Paths\\Chrome.EXE משמש לבחירת מיקום הדפדפן במקרה זה.\n{‏safari}‏$$ - מיקום ברירת המחדל להתקנת Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App  Paths\\SAFARI.EXE משמש לבחירת מיקום הדפדפן במקרה זה.\n\nאם המדיניות אינה מופעלת או נשארת ריקה, ייעשה שימוש בדפדפן ברירת המחדל החלופי, שהוא Internet Explorer, שייקבע כאילו נעשה שימוש בערך {ie}$$.\n",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "מאפשרת לך לציין את הארגומנטים שיועברו אל קובץ ההפעלה של הדפדפן החלופי. \n\nאם המדיניות מופעלת, ייעשה שימוש בפרמטרים שסופקו כשהדפדפן החלופי יופעל. \n\nאתה יכול להשתמש גם במציין המיקום המיוחד {url}$$ כדי לציין היכן צריכה להופיע כתובת האתר בשורת הפקודה. למשל \"--url=$${url} --kiosk\".\nאתה לא חייב להוסיף את מציין המיקום. אם הוא צריך להיות מצורף לסוף או אם הוא צריך להיות הארגומנט היחיד, אתה יכול להשאיר את המדיניות הזו ריקה.\n\nאם המדיניות מושבתת או נשארת ריקה, רק כתובת האתר תועבר כפרמטר לדפדפן.\n",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "נתיב Chrome",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "נתיב Firefox",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "נתיב Chrome",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "נתיב Firefox",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "מאפשרת לך לציין את קובץ ההפעלה של Chrome שיופעל בעת חזרה מהדפדפן החלופי(*).\n\nכשהמדיניות מופעלת, תוכל לציין במדיניות נתיב מוחלט או להשתמש במשתנה הבא:\n\n{chrome}$$ - מיקום ברירת המחדל להתקנת Chrome.\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE משמש לבחירת מיקום הדפדפן במקרה זה.\n\nאם המדיניות מושבתת או נשארת ריקה ייעשה שימוש בהתקנת ברירת המחדל של Chrome כאילו נעשה שימוש בערך ‎‏{chrome}$$.\n\n*: נכון לעכשיו, רק Internet Explorer תומך בחזרה אוטומטית ל-Chrome.\n",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "מאפשרת לך לציין את קובץ ההפעלה של Firefox שיופעל בעת חזרה מהדפדפן החלופי(*).\n\nכשהמדיניות מופעלת, תוכל לציין במדיניות נתיב מוחלט או להשתמש במשתנה הבא:\n\n{firefox}$$ - מיקום ברירת המחדל להתקנת Firefox.\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE משמש לבחירת מיקום הדפדפן במקרה זה.\n\nאם המדיניות מושבתת או נשארת ריקה ייעשה שימוש בהתקנת ברירת המחדל של Firefox כאילו נעשה שימוש בערך ‎‏{firefox}$$.\n\n*: נכון לעכשיו, רק Internet Explorer תומך בחזרה אוטומטית ל-Firefox.\n",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "ארגומנטים של Chrome",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "ארגומנטים של Firefox",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "ארגומנטים של Chrome",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "ארגומנטים של Firefox",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "מאפשרת לך לציין את הארגומנטים שיועברו ל-Chrome כשיופעל.\n\nאם המדיניות מופעלת, ייעשה שימוש בפרמטרים שסופקו כש-Chrome יופעל.\n\nניתן גם להשתמש במציין המיקום המיוחד {url}$$ כדי לציין היכן צריכה להופיע כתובת האתר בשורת הפקודה. למשל \"--url=$${url} --kiosk\".\nאתה לא חייב לפרט את מציין המיקום. אם הוא צריך להיות מצורף לסוף או אם הוא צריך להיות הארגומנט היחיד, אתה יכול להשאיר את המדיניות הזו ריקה.\n\nאם המדיניות מושבתת או נשארת ריקה רק כתובת האתר תועבר כפרמטר לדפדפן.\n",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "מאפשרת לך לציין את הארגומנטים שיועברו ל-Firefox כשיופעל.\n\nאם המדיניות מופעלת, ייעשה שימוש בפרמטרים שסופקו כש-Firefox יופעל.\n\nניתן גם להשתמש במציין המיקום המיוחד {url}$$ כדי לציין היכן צריכה להופיע כתובת האתר בשורת הפקודה. למשל \"--url=$${url} --kiosk\".\nאתה לא חייב לפרט את מציין המיקום. אם הוא צריך להיות מצורף לסוף או אם הוא צריך להיות הארגומנט היחיד, אתה יכול להשאיר את המדיניות הזו ריקה.\n\nאם המדיניות מושבתת או נשארת ריקה רק כתובת האתר תועבר כפרמטר לדפדפן.\n",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "מארחים שייפתחו בדפדפן החלופי",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "מאפשרת לך לציין רשימה של שמות דומיינים מארחים לפתיחה בדפדפן החלופי.\n\nאם המדיניות הופעלה, עליך לספק רשימת מסננים שיפעילו את המעבר אל הדפדפן החלופי. כל פריט שמזינים צריך להיות מאחד מבין ארבעה הסוגים הבאים:\n\nחלקי שמות מארחים: יש לציין שמות דומיינים מלאים, כמו www.example.com, או חלקים מהם, כמו \"example.com\" או אפילו \"example\". תווים כלליים אינם נתמכים בשלב זה.\nתחילית של כתובות אתרים: רק תחיליות תקינות של כתובות אתרים מותאמות באופן מלא עם פרוטוקול ויציאה, במקרה הצורך. לדוגמה, \"http://login.example.com\" או \"https://www.example.com:8080/login/‎\".\nהזנה שלילית: מתחילה ב-\"!\" וממשיכה כחלק משם מארח או כתחילית של כתובת אתר, כמתואר למעלה. הזנות שליליות נפתחות תמיד ב-Chrome. לדוגמה, \"‎!example.com\" או \"‎!file:///c:/localapp/‎\".\nהזנות תו כללי: מכילות רק תו \"*\" יחיד. תואמות לכל כתובת אתר. מיועדות לשימוש יחד עם רשומות שליליות במקרים שבהם על רוב כתובות האתרים להיפתח בדפדפן החלופי, ורק קבוצה קטנה של כתובות אתרים צריכה להיפתח ב-Chrome.\n\nלרשומות שליליות יש עדיפות גבוהה יותר מאשר לרשומות חיוביות. מצב זה מאפשר להוסיף לרשימת ההיתרים חלקים גדולים מדומיין מסוים, תוך שמירה של חלקים קטנים יותר לפתיחה ב-Chrome.\nהזנת התו הכללי, אם תצוין, תיושם רק לאחר בדיקת כל הכללים האחרים.\n\nהפרוטוקולים הבאים מנוטרים עבור הפנייה מחדש: http:‏, https:.\n\nאם לא צוינה או נותרה ריקה – לא יופעל מעבר אל הדפדפן החלופי.\n\n",
+    "message": "מאפשרת לך לציין רשימה של שמות דומיינים מארחים לפתיחה בדפדפן החלופי.\n\nאם המדיניות הופעלה, עליך לספק רשימת מסננים שיפעילו את המעבר אל הדפדפן החלופי. כל פריט שמזינים צריך להיות מאחד מבין ארבעה הסוגים הבאים:\n\nחלקי שמות מארחים: יש לציין שמות דומיינים מלאים, כמו www.example.com, או חלקים מהם, כמו \"example.com\" או אפילו \"example\". תווים כלליים אינם נתמכים בשלב זה.\nתחילית של כתובות אתרים: רק תחיליות תקינות של כתובות אתרים מותאמות באופן מלא עם פרוטוקול ויציאה, במקרה הצורך. לדוגמה, \"http://login.example.com\" או \"https://www.example.com:8080/login/‎\".\nהזנה שלילית: מתחילה ב-\"!\" וממשיכה כחלק משם מארח או כתחילית של כתובת אתר, כמתואר למעלה. הזנות שליליות נפתחות תמיד ב-Firefox. לדוגמה, \"‎!example.com\" או \"‎!file:///c:/localapp/‎\".\nהזנות תו כללי: מכילות רק תו \"*\" יחיד. תואמות לכל כתובת אתר. מיועדות לשימוש יחד עם רשומות שליליות במקרים שבהם על רוב כתובות האתרים להיפתח בדפדפן החלופי, ורק קבוצה קטנה של כתובות אתרים צריכה להיפתח ב-Firefox.\n\nלרשומות שליליות יש עדיפות גבוהה יותר מאשר לרשומות חיוביות. מצב זה מאפשר להוסיף לרשימת ההיתרים חלקים גדולים מדומיין מסוים, תוך שמירה של חלקים קטנים יותר לפתיחה ב-Firefox.\nהזנת התו הכללי, אם תצוין, תיושם רק לאחר בדיקת כל הכללים האחרים.\n\nהפרוטוקולים הבאים מנוטרים עבור הפנייה מחדש: http:‏, https:.\n\nאם לא צוינה או נותרה ריקה – לא יופעל מעבר אל הדפדפן החלופי.\n\n",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "מאפשרת לך לציין רשימה של שמות דומיינים של מארחים שייפתחו באחד מהדפדפנים.\n\nכשהמדיניות הזו מופעלת, הדומיינים ברשימה יהיו זמינים בשני הדפדפנים ולא יפעילו מעבר לדפדפן השני.\n\nמקרה שימוש אפשרי הוא דומיינים לאימות המשותפים ברשימה בין יישומים חדשים ויישומים מדור קודם. \n\nחלקי שמות מארחים: יש לציין שמות דומיינים מלאים, כמו www.example.com, או חלקים מהם, כמו \"example.com\" או אפילו \"example\". תווים כלליים אינם נתמכים בשלב זה.\nתחיליות של כתובות אתרים: רק תחיליות תקינות של כתובות אתרים מותאמות באופן מלא עם פרוטוקול ויציאה, במקרה הצורך. לדוגמה, \"http://login.example.com\" או \"https://www.example.com:8080/login/‎\".\n\nאם לא צוינה או נותרה ריקה - כל דומיין שאינו ברשימת \"מארחים שייפתחו בדפדפן החלופי\" יפעיל מעבר חזרה אל Chrome(*)‎.\n\n*: בשלב זה רק Internet Explorer תומך בחזרה אוטומטית ל-Chrome.",
+    "message": "מאפשרת לך לציין רשימה של שמות דומיינים של מארחים שייפתחו באחד מהדפדפנים.\n\nכשהמדיניות הזו מופעלת, הדומיינים ברשימה יהיו זמינים בשני הדפדפנים ולא יפעילו מעבר לדפדפן השני.\n\nמקרה שימוש אפשרי הוא דומיינים לאימות המשותפים ברשימה בין יישומים חדשים ויישומים מדור קודם. \n\nחלקי שמות מארחים: יש לציין שמות דומיינים מלאים, כמו www.example.com, או חלקים מהם, כמו \"example.com\" או אפילו \"example\". תווים כלליים אינם נתמכים בשלב זה.\nתחיליות של כתובות אתרים: רק תחיליות תקינות של כתובות אתרים מותאמות באופן מלא עם פרוטוקול ויציאה, במקרה הצורך. לדוגמה, \"http://login.example.com\" או \"https://www.example.com:8080/login/‎\".\n\nאם לא צוינה או נותרה ריקה - כל דומיין שאינו ברשימת \"מארחים שייפתחו בדפדפן החלופי\" יפעיל מעבר חזרה אל Firefox(*)‎.\n\n*: בשלב זה רק Internet Explorer תומך בחזרה אוטומטית ל-Firefox.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "שמירת הכרטיסייה האחרונה של Chrome בעת מעבר",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "שמירת הכרטיסייה האחרונה של Firefox בעת מעבר",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "שמירת הכרטיסייה האחרונה של Chrome בעת מעבר",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "שמירת הכרטיסייה האחרונה של Firefox בעת מעבר",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "מאפשרת לך לציין מה יקרה כאשר הכרטיסייה הפתוחה האחרונה ב-Chrome תופנה מחדש אל הדפדפן החלופי.\n\nכשהמדיניות פועלת, או אם לא הוגדרה, הכרטיסייה האחרונה תישאר פתוחה ותצביע אל דף הכרטיסייה החדשה לאחר המעבר. אם היא הוגדרה כמושבתת, הכרטיסייה האחרונה תיסגר. מצב זה יגרום לסגירת Chrome אם אין עוד חלונות פתוחים של Chrome.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "מאפשרת לך לציין מה יקרה כאשר הכרטיסייה הפתוחה האחרונה ב-Firefox תופנה מחדש אל הדפדפן החלופי.\n\nכשהמדיניות פועלת, או אם לא הוגדרה, הכרטיסייה האחרונה תישאר פתוחה ותצביע אל דף הכרטיסייה החדשה לאחר המעבר. אם היא הוגדרה כמושבתת, הכרטיסייה האחרונה תיסגר. מצב זה יגרום לסגירת Firefox אם אין עוד חלונות פתוחים של Firefox.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

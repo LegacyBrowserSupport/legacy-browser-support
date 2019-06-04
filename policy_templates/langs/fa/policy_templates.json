@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 یا بالاتر",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "فایل قابل اجرای مرورگر جایگزین را مشخص کنید.\nبه شما امکان می‌دهد برنامه‌ای را مشخص کنید که باید بعنوان مرورگر جایگزین استفاده شود.\n\nدرصورت فعال بودن، می‌توانید یا مسیر قطعی را در خط‌مشی مشخص کنید یا یکی از متغیرهای زیر را استفاده کنید:\n\n{ie}$$ - مکان پیش‌فرض نصب برای Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE استفاده می‌شود تا مکان مرورگر در این مورد تعیین شود.\n{firefox}$$ - مکان پیش‌فرض نصب برای Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE استفاده می‌شود تا مکان مرورگر در این مورد تعیین شود.\n{safari}$$ - مکان پیش‌فرض نصب  برای Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE استفاده می‌شود تا مکان مرورگر در این مورد تعیین شود.\n\nاگر خط‌مشی فعال نباشد، یا خالی گذاشته شده باشد، مرورگر جایگزین پیش‌فرض استفاده می‌شود که‏ Internet Explorer است انگار که متغیر {ie}$$ استفاده شده باشد.",
+    "message": "فایل قابل اجرای مرورگر جایگزین را مشخص کنید.\nبه شما امکان می‌دهد برنامه‌ای را مشخص کنید که باید بعنوان مرورگر جایگزین استفاده شود.\n\nدرصورت فعال بودن، می‌توانید یا مسیر قطعی را در خط‌مشی مشخص کنید یا یکی از متغیرهای زیر را استفاده کنید:\n\n{ie}$$ - مکان پیش‌فرض نصب برای Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE استفاده می‌شود تا مکان مرورگر در این مورد تعیین شود.\n{chrome}$$ - مکان پیش‌فرض نصب Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE استفاده می‌شود تا مکان مرورگر در این مورد تعیین شود.\n{safari}$$ - مکان پیش‌فرض نصب  برای Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE استفاده می‌شود تا مکان مرورگر در این مورد تعیین شود.\n\nاگر خط‌مشی فعال نباشد، یا خالی گذاشته شده باشد، مرورگر جایگزین پیش‌فرض استفاده می‌شود که‏ Internet Explorer است انگار که متغیر {ie}$$ استفاده شده باشد.",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "به شما امکان می‌دهد آرگومان‌هایی را مشخص کنید که باید به فایل اجرایی مرورگر جایگزین ارائه شوند.\n\nاگر خط‌مشی فعال باشد، پارامترهای ارائه شده هنگام فراخوانی مرورگر جایگزین استفاده خواهند شد.\n\nهمچنین می‌توانید از نگهدارنده‌ مکان ویژه {url}$$‏‏ استفاده کنید تا مشخص کنید در خط فرمان، نشانی اینترنتی کجا باید نمایش داده شود. مثلاً \"--url=$${url} --kiosk\".\nدرصورتی که نگهدارنده مکان باید در انتها اضافه شود یا در صورتی که نگهدارنده مکان باید تنها آرگومانی باشد که می‌توانید خط‌مشی را برای آن خالی بگذارید، مجبور نیستید نگهدارنده مکان را مشخص کنید.\n\nاگر خط‌مشی غیرفعال یا خالی باشد فقط نشانی اینترنتی به عنوان پارامتر به مرورگر ارائه می‌شود.‏‎‎‎‎‎‎",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "مسیر Chrome",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "مسیر Firefox",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "مسیر Chrome",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "مسیر Firefox",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "به شما امکان می‌دهد فایل قابل اجرای Chrome را مشخص کنید که باید هنگام بازگشت از مرورگر جایگزین راه‌اندازی شود(*).\n\nوقتی خط‌مشی فعال باشد می‌توانید یا مسیر قطعی را در خط‌مشی مشخص کنید یا از متغیرهای زیر استفاده کنید:\n\n{chrome}$$ - مکان پیش‌فرض نصب برای Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE استفاده می‌شود تا مکان مرورگر در این مورد تعیین شود.\n\nاگر خط‌مشی غیرفعال باشد، یا خالی گذاشته شده باشد، نصب پیش‌فرض Chrome استفاده می‌شود انگار که متغیر {chrome}$$ استفاده شده باشد.\n\n*: در حال حاضر فقط Internet Explorer از بازگشت خودکار به Chrome پشتیبانی می‌کند.",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "به شما امکان می‌دهد فایل قابل اجرای Firefox را مشخص کنید که باید هنگام بازگشت از مرورگر جایگزین راه‌اندازی شود(*).\n\nوقتی خط‌مشی فعال باشد می‌توانید یا مسیر قطعی را در خط‌مشی مشخص کنید یا از متغیرهای زیر استفاده کنید:\n\n{firefox}$$ - مکان پیش‌فرض نصب برای Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE استفاده می‌شود تا مکان مرورگر در این مورد تعیین شود.\n\nاگر خط‌مشی غیرفعال باشد، یا خالی گذاشته شده باشد، نصب پیش‌فرض Firefox استفاده می‌شود انگار که متغیر {firefox}$$ استفاده شده باشد.\n\n*: در حال حاضر فقط Internet Explorer از بازگشت خودکار به Firefox پشتیبانی می‌کند.",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "آرگومان‌های Chrome",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "آرگومان‌های Firefox",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "آرگومان‌های Chrome",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "آرگومان‌های Firefox",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "به شما امکان می‌دهد آرگومان‌هایی را مشخص کنید که باید هنگام اجرای Chrome به آن ارائه شوند.\n\nاگر خط‌مشی فعال باشد پارامترهای ارائه‌شده هنگام فراخوانی Chrome استفاده می‌شوند.\n\nهمچنین می‌توانید از نگهدارنده مکان ویژه {url}$$ استفاده کنید، تا مشخص کنید در خط فرمان، نشانی اینترنتی کجا باید ظاهر شود. مثلاً \"--url=$${url} --kiosk\".\nدر صورتی که نگهدارنده مکان باید در انتها افزوده شود یا در صورتی که این تنها آرگومانی است که می‌توانید خط‌مشی را برای آن خالی بگذارید، مجبور نیستید نگهدارنده مکان را مشخص کنید.\n\nاگر خط‌مشی غیرفعال باشد یا خالی گذاشته شده باشد فقط نشانی اینترنتی به عنوان پارامتر به مرورگر ارائه می‌شود.",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "به شما امکان می‌دهد آرگومان‌هایی را مشخص کنید که باید هنگام اجرای Firefox به آن ارائه شوند.\n\nاگر خط‌مشی فعال باشد پارامترهای ارائه‌شده هنگام فراخوانی Firefox استفاده می‌شوند.\n\nهمچنین می‌توانید از نگهدارنده مکان ویژه {url}$$ استفاده کنید، تا مشخص کنید در خط فرمان، نشانی اینترنتی کجا باید ظاهر شود. مثلاً \"--url=$${url} --kiosk\".\nدر صورتی که نگهدارنده مکان باید در انتها افزوده شود یا در صورتی که این تنها آرگومانی است که می‌توانید خط‌مشی را برای آن خالی بگذارید، مجبور نیستید نگهدارنده مکان را مشخص کنید.\n\nاگر خط‌مشی غیرفعال باشد یا خالی گذاشته شده باشد فقط نشانی اینترنتی به عنوان پارامتر به مرورگر ارائه می‌شود.",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "میزبان‌هایی برای بازشدن در مرورگر جایگزین",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "به شما امکان می‌دهد فهرستی از نام‌های دامنه میزبان را برای باز شدن در مرورگر جایگزین مشخص کنید.\n\nاگر خط‌مشی فعال باشد، باید فهرستی از فیلترهایی را ارائه دهید که انتقال به مرورگر جایگزین را فعال می‌کنند. هر ورودی باید یکی از چهار نوع زیر باشد:\n\nبخش نام میزبان: یا نام‌ کامل میزبان، مانند «www.example.com» و یا بخش‌هایی از آن مانند «example.com» یا حتی «example» باید مشخص شود.\nنویسه‌های عام هنوز پشتیبانی نمی‌شوند.\nپیشوند نشانی اینترنتی: فقط پیشوندهای صحیح نشانی اینترنتی، با پروتکل و پورت در صورت نیاز، کاملاً تطابق دارند. به عنوان مثال «http://login.example.com» یا «https://www.example.com:8080/login/‎».\nورودی منفی: با «!» شروع می‌شود و همان طور که در بالا شرح داده شده است، به عنوان بخش نام میزبان یا پیشوند نشانی اینترنتی ادامه می‌یابد. ورودی‌های منفی همیشه در Chrome باز می‌شوند. مثلاً «‎!example.com» یا «‎!file:///c:/localapp/‎».\nورودی نویسه عام: فقط حاوی یک نویسه «*» است. بر هر نشانی اینترنتی منطبق می‌شود. برای استفاده با ورودی‌های منفی در نظر گرفته می‌شود، اگر اکثر نشانی‌های اینترنتی باید در مرورگر جایگزین باز شوند و فقط تعداد اندکی از نشانی‌های اینترنتی منتخب باید در Chrome باز شوند.\n\nورودی‌های منفی بر ورودی‌های مثبت اولویت‌های بالاتری دارند که اجازه می‌دهد بخش‌های بزرگی از یک دامنه در فهرست مجاز قرار بگیرند در حالیکه بخش‌های کوچکتر را برای باز شدن در Chrome ذخیره می‌کند.\nاگر ورودی نویسه عام موجود باشد فقط بعد از آنکه همه قوانین دیگر بررسی شدند، اعمال می‌شود.\n\nاین پروتکل‌ها برای هدایت کردن نظارت می‌شوند: http:‎،‏ https:‎.\n\nاگر مشخص نشده باشد یا خالی گذاشته شود - هیچ انتقالی به مرورگر جایگزین فعال نمی‌شود.",
+    "message": "به شما امکان می‌دهد فهرستی از نام‌های دامنه میزبان را برای باز شدن در مرورگر جایگزین مشخص کنید.\n\nاگر خط‌مشی فعال باشد، باید فهرستی از فیلترهایی را ارائه دهید که انتقال به مرورگر جایگزین را فعال می‌کنند. هر ورودی باید یکی از چهار نوع زیر باشد:\n\nبخش نام میزبان: یا نام‌ کامل میزبان، مانند «www.example.com» و یا بخش‌هایی از آن مانند «example.com» یا حتی «example» باید مشخص شود.\nنویسه‌های عام هنوز پشتیبانی نمی‌شوند.\nپیشوند نشانی اینترنتی: فقط پیشوندهای صحیح نشانی اینترنتی، با پروتکل و پورت در صورت نیاز، کاملاً تطابق دارند. به عنوان مثال «http://login.example.com» یا «https://www.example.com:8080/login/‎».\nورودی منفی: با «!» شروع می‌شود و همان طور که در بالا شرح داده شده است، به عنوان بخش نام میزبان یا پیشوند نشانی اینترنتی ادامه می‌یابد. ورودی‌های منفی همیشه در Firefox باز می‌شوند. مثلاً «‎!example.com» یا «‎!file:///c:/localapp/‎».\nورودی نویسه عام: فقط حاوی یک نویسه «*» است. بر هر نشانی اینترنتی منطبق می‌شود. برای استفاده با ورودی‌های منفی در نظر گرفته می‌شود، اگر اکثر نشانی‌های اینترنتی باید در مرورگر جایگزین باز شوند و فقط تعداد اندکی از نشانی‌های اینترنتی منتخب باید در Firefox باز شوند.\n\nورودی‌های منفی بر ورودی‌های مثبت اولویت‌های بالاتری دارند که اجازه می‌دهد بخش‌های بزرگی از یک دامنه در فهرست مجاز قرار بگیرند در حالیکه بخش‌های کوچکتر را برای باز شدن در Firefox ذخیره می‌کند.\nاگر ورودی نویسه عام موجود باشد فقط بعد از آنکه همه قوانین دیگر بررسی شدند، اعمال می‌شود.\n\nاین پروتکل‌ها برای هدایت کردن نظارت می‌شوند: http:‎،‏ https:‎.\n\nاگر مشخص نشده باشد یا خالی گذاشته شود - هیچ انتقالی به مرورگر جایگزین فعال نمی‌شود.",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "به شما امکان می‌دهد فهرست نام دامنه‌های میزبانی را مشخص کنید که باید در هر دو مرورگرها باز شوند.\n\nوقتی این خط‌مشی فعال باشد، دامنه‌های این فهرست در هر دو مرورگر در دسترس خواهند بود و انتقالی را در هیچ یک از دو جهت فعال نمی‌کند.\n\nیکی از موارد استفاده، دامنه‌های احراز هویت هستند که بین برنامه‌های جدید و قدیمی در این فهرست مشترک هستند.\n\nبخش‌های نام میزبان: یا نام کامل دامنه مانند «www.example.com» یا بخشی از آن مانند «example.com:» یا حتی «example» باید مشخص شود. از نویسه‌های عام هنوز پشتیبانی نمی‌شود.\n\nپیشوندهای نشانی اینترنتی: فقط پیشوندهای صحیح نشانی اینترنتی با پروتکل و پورت در صورت نیاز کاملاً تطابق دارند. مثلاً \"http://login.example.com\" یا \"https://www.example.com:8080/login‏/‏\".\n\nدر صورتی که مشخص نشده باشد یا خالی گذاشته شده باشد - هر دامنه‌ای که در فهرست «میزبان‌هایی که باید در مرورگر جایگزین باز شوند» نباشد انتقال بازگشتی به Chrome را فعال می‌کند (*).\n\n*: در حال حاضر فقط Internet Explorer از بازگشت خودکار به Chrome پشتیبانی می‌کند.",
+    "message": "به شما امکان می‌دهد فهرست نام دامنه‌های میزبانی را مشخص کنید که باید در هر دو مرورگرها باز شوند.\n\nوقتی این خط‌مشی فعال باشد، دامنه‌های این فهرست در هر دو مرورگر در دسترس خواهند بود و انتقالی را در هیچ یک از دو جهت فعال نمی‌کند.\n\nیکی از موارد استفاده، دامنه‌های احراز هویت هستند که بین برنامه‌های جدید و قدیمی در این فهرست مشترک هستند.\n\nبخش‌های نام میزبان: یا نام کامل دامنه مانند «www.example.com» یا بخشی از آن مانند «example.com:» یا حتی «example» باید مشخص شود. از نویسه‌های عام هنوز پشتیبانی نمی‌شود.\n\nپیشوندهای نشانی اینترنتی: فقط پیشوندهای صحیح نشانی اینترنتی با پروتکل و پورت در صورت نیاز کاملاً تطابق دارند. مثلاً \"http://login.example.com\" یا \"https://www.example.com:8080/login‏/‏\".\n\nدر صورتی که مشخص نشده باشد یا خالی گذاشته شده باشد - هر دامنه‌ای که در فهرست «میزبان‌هایی که باید در مرورگر جایگزین باز شوند» نباشد انتقال بازگشتی به Firefox را فعال می‌کند (*).\n\n*: در حال حاضر فقط Internet Explorer از بازگشت خودکار به Firefox پشتیبانی می‌کند.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "نگه داشتن آخرین برگه Chrome در انتقال",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "نگه داشتن آخرین برگه Firefox در انتقال",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "نگه داشتن آخرین برگه Chrome در انتقال",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "نگه داشتن آخرین برگه Firefox در انتقال",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "به شما امکان می‌دهد مشخص کنید هنگامی که آخرین برگه باز در Chrome در حال هدایت به مرورگر جایگزین است، چه اتفاقی بیافتد.\n\nاگر که این خط‌مشی فعال باشد یا تنظیم نشود، آخرین برگه، باز باقی می‌ماند و بعد از انتقال به صفحه برگه جدید تغییر می‌کند. اگر روی غیرفعال تنظیم شود، آخرین برگه بسته می‌شود که اگر پنجره Chrome دیگری باز نباشد، به بسته شدن Chrome منجر می‌شود.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "به شما امکان می‌دهد مشخص کنید هنگامی که آخرین برگه باز در Firefox در حال هدایت به مرورگر جایگزین است، چه اتفاقی بیافتد.\n\nاگر که این خط‌مشی فعال باشد یا تنظیم نشود، آخرین برگه، باز باقی می‌ماند و بعد از انتقال به صفحه برگه جدید تغییر می‌کند. اگر روی غیرفعال تنظیم شود، آخرین برگه بسته می‌شود که اگر پنجره Firefox دیگری باز نباشد، به بسته شدن Firefox منجر می‌شود.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

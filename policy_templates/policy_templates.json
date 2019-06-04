@@ -73,11 +73,11 @@
   },
   "URLGreyList_Policy": {
     "description": "Name of the URLGreyList policy",
-    "message": "Hosts that Should Not Trigger a Transition in Either Browser"
+    "message": "Hosts to Open In Either Browser"
   },
   "URLGreyList_Part": {
     "description": "Name of the URLGreyList policy part",
-    "message": "Hosts that Should Not Trigger a Transition in Either Browser"
+    "message": "Hosts to Open In Either Browser"
   },
   "URLGreyList_Explain": {
     "description": "Explanation of the URLGreyList policy",
@@ -118,5 +118,5 @@
   "UseIeSiteList_Explain": {
     "description": "Explanation of the UseIeSiteList policy",
     "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
-  }  
+  }
 }

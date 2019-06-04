@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 или более поздней версии",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "Укажите путь к исполняемому файлу альтернативного браузера.\nПозволяет выбрать программу, которая будет использоваться в качестве альтернативного браузера.\n\nЕсли политика включена, в ней можно указать абсолютный путь к файлу или использовать одну из следующих переменных:\n\n$${ie} – папка, куда по умолчанию установлен Internet Explorer.\nВ этом случае путь к файлу браузера извлекается из ключа реестра HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE.\n$${firefox} – папка, куда по умолчанию установлен Firefox.\nВ этом случае путь к файлу браузера извлекается из ключа реестра HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE.\n$${safari} – папка, куда по умолчанию установлен Safari.\nВ этом случае путь к файлу браузера извлекается из ключа реестра HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE.\n\nЕсли политика не включена или не заполнена, в качестве альтернативного браузера по умолчанию будет использоваться Internet Explorer, как если бы использовалось значение $${ie}.",
+    "message": "Укажите путь к исполняемому файлу альтернативного браузера.\nПозволяет выбрать программу, которая будет использоваться в качестве альтернативного браузера.\n\nЕсли политика включена, в ней можно указать абсолютный путь к файлу или использовать одну из следующих переменных:\n\n$${ie} – папка, куда по умолчанию установлен Internet Explorer.\nВ этом случае путь к файлу браузера извлекается из ключа реестра HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE.\n$${chrome} – папка, куда по умолчанию установлен Chrome.\nВ этом случае путь к файлу браузера извлекается из ключа реестра HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE.\n$${safari} – папка, куда по умолчанию установлен Safari.\nВ этом случае путь к файлу браузера извлекается из ключа реестра HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE.\n\nЕсли политика не включена или не заполнена, в качестве альтернативного браузера по умолчанию будет использоваться Internet Explorer, как если бы использовалось значение $${ie}.",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "Позволяет указать, с какими аргументами будет запускаться альтернативный браузер.\n\nЕсли политика включена, исполняемый файл альтернативного браузера запускается с указанными параметрами.\n\nКроме того, можно использовать специальную метку-заполнитель $${url} для указания URL-адреса в командной строке. Пример: \"--url=$${url} --kiosk\".\nЕсли заполнитель является последним или единственным аргументом в политике, его можно опустить.\n\nЕсли политика отключена или не заполнена, в качестве параметра для браузера передается только URL-адрес.",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "Путь к Chrome",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "Путь к Firefox",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "Путь к Chrome",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "Путь к Firefox",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "Позволяет указать путь к файлу Chrome, который будет запускаться после возврата из альтернативного браузера*.\n\nЕсли политика включена, в ней можно указать абсолютный путь к исполняемому файлу или использовать следующую переменную:\n\n$${chrome} – папка, куда по умолчанию установлен Chrome\nВ этом случае путь к файлу браузера извлекается из ключа реестра HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE.\n\nЕсли политика отключена или не заполнена, будет использоваться папка, куда по умолчанию установлен Chrome, как если бы использовалось значение $${chrome}.\n\n*В настоящее время автоматический возврат в Chrome возможен только из Internet Explorer.",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "Позволяет указать путь к файлу Firefox, который будет запускаться после возврата из альтернативного браузера*.\n\nЕсли политика включена, в ней можно указать абсолютный путь к исполняемому файлу или использовать следующую переменную:\n\n$${firefox} – папка, куда по умолчанию установлен Firefox\nВ этом случае путь к файлу браузера извлекается из ключа реестра HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE.\n\nЕсли политика отключена или не заполнена, будет использоваться папка, куда по умолчанию установлен Firefox, как если бы использовалось значение $${firefox}.\n\n*В настоящее время автоматический возврат в Firefox возможен только из Internet Explorer.",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "Аргументы для Chrome",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "Аргументы для Firefox",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "Аргументы для Chrome",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "Аргументы для Firefox",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "Позволяет указать аргументы, с которыми будет запускаться Chrome.\n\nЕсли политика включена, исполняемый файл Chrome запускается с указанными параметрами.\n\nКроме того, можно использовать специальную метку-заполнитель $${url} для указания URL-адреса в командной строке. Пример: \"--url=$${url} --kiosk\".\nЕсли заполнитель является последним или единственным аргументом в политике, его можно опустить.\n\nЕсли политика отключена или не заполнена, в качестве аргумента для браузера передается только URL-адрес.",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "Позволяет указать аргументы, с которыми будет запускаться Firefox.\n\nЕсли политика включена, исполняемый файл Firefox запускается с указанными параметрами.\n\nКроме того, можно использовать специальную метку-заполнитель $${url} для указания URL-адреса в командной строке. Пример: \"--url=$${url} --kiosk\".\nЕсли заполнитель является последним или единственным аргументом в политике, его можно опустить.\n\nЕсли политика отключена или не заполнена, в качестве аргумента для браузера передается только URL-адрес.",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "Хосты, которые следует открывать в альтернативном браузере",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "Позволяет указать список имен доменов, страницы которых следует открывать в альтернативном браузере.\n\nЕсли политика включена, необходимо указать список фильтров, при использовании которых будет запускаться альтернативный браузер. Допускается четыре типа записей:\n\nИмена хостов. Можно указывать как полные имена доменов, например www.example.com, так и их фрагменты, например example.com или даже example. Подстановочные знаки в настоящее время не поддерживаются.\nПрефиксы URL-адресов. Следует указывать префиксы целиком, включая протокол и, при необходимости, номер порта. Примеры: http://login.example.com или https://www.example.com:8080/login/.\nОтрицательная запись. Перед префиксом URL-адреса или имени хоста необходимо добавить символ \"!\". Отрицательные записи всегда открываются в Chrome. Примеры: !example.com или !file:///c:/localapp/.\nЗапись с подстановочными знаками. Содержит только символ \"*\". Может применяться для каждого URL-адреса. Ее следует использовать вместе с отрицательными записями, если большинство ссылок должно открываться в альтернативном браузере, а не в Chrome.\n\nОтрицательные записи имеют приоритет над положительными. Благодаря этому можно добавить в белый список большое количество доменов. Тогда только небольшая часть ссылок будет открываться в Chrome. Запись с подстановочными знаками применяется только после проверки остальных правил.\n\nПолитика действует для адресов с протоколами http и https.\n\nЕсли политика отключена или не заполнена, страницы не будут автоматически открываться в альтернативном браузере.",
+    "message": "Позволяет указать список имен доменов, страницы которых следует открывать в альтернативном браузере.\n\nЕсли политика включена, необходимо указать список фильтров, при использовании которых будет запускаться альтернативный браузер. Допускается четыре типа записей:\n\nИмена хостов. Можно указывать как полные имена доменов, например www.example.com, так и их фрагменты, например example.com или даже example. Подстановочные знаки в настоящее время не поддерживаются.\nПрефиксы URL-адресов. Следует указывать префиксы целиком, включая протокол и, при необходимости, номер порта. Примеры: http://login.example.com или https://www.example.com:8080/login/.\nОтрицательная запись. Перед префиксом URL-адреса или имени хоста необходимо добавить символ \"!\". Отрицательные записи всегда открываются в Firefox. Примеры: !example.com или !file:///c:/localapp/.\nЗапись с подстановочными знаками. Содержит только символ \"*\". Может применяться для каждого URL-адреса. Ее следует использовать вместе с отрицательными записями, если большинство ссылок должно открываться в альтернативном браузере, а не в Firefox.\n\nОтрицательные записи имеют приоритет над положительными. Благодаря этому можно добавить в белый список большое количество доменов. Тогда только небольшая часть ссылок будет открываться в Firefox. Запись с подстановочными знаками применяется только после проверки остальных правил.\n\nПолитика действует для адресов с протоколами http и https.\n\nЕсли политика отключена или не заполнена, страницы не будут автоматически открываться в альтернативном браузере.",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "Позволяет указать список имен доменов, страницы которых можно открывать в любом браузере.\n\nЕсли политика включена, страницы из указанных доменов открываются в том браузере, который активен в настоящий момент.\n\nВ данной политике можно указать, например, домены служб аутентификации, которые используются как новыми, так и более старыми приложениями.\n\nИмена хостов. Можно указывать как полные имена доменов, например www.example.com, так и их фрагменты, например example.com или даже example. Подстановочные знаки в настоящее время не поддерживаются.\nПрефиксы URL-адресов. Следует указывать префиксы целиком, включая протокол и, при необходимости, номер порта. Примеры: http://login.example.com или https://www.example.com:8080/login/.\n\nЕсли политика отключена или не заполнена, все страницы из доменов, не указанных в списке \"Хосты, которые следует открывать в альтернативном браузере\", открываются в Chrome.*\n\n*В настоящее время автоматический возврат в Chrome возможен только из Internet Explorer.",
+    "message": "Позволяет указать список имен доменов, страницы которых можно открывать в любом браузере.\n\nЕсли политика включена, страницы из указанных доменов открываются в том браузере, который активен в настоящий момент.\n\nВ данной политике можно указать, например, домены служб аутентификации, которые используются как новыми, так и более старыми приложениями.\n\nИмена хостов. Можно указывать как полные имена доменов, например www.example.com, так и их фрагменты, например example.com или даже example. Подстановочные знаки в настоящее время не поддерживаются.\nПрефиксы URL-адресов. Следует указывать префиксы целиком, включая протокол и, при необходимости, номер порта. Примеры: http://login.example.com или https://www.example.com:8080/login/.\n\nЕсли политика отключена или не заполнена, все страницы из доменов, не указанных в списке \"Хосты, которые следует открывать в альтернативном браузере\", открываются в Firefox.*\n\n*В настоящее время автоматический возврат в Firefox возможен только из Internet Explorer.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
+  "KeepLastFirefoxTab_Policy": {
     "message": "Действия с последней вкладкой при переходе в другой браузер",
-    "description": "Name of the KeepLastChromeTab policy"
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
+  "KeepLastFirefoxTab_Part": {
     "message": "Действия с последней вкладкой при переходе в другой браузер",
-    "description": "Name of the KeepLastChromeTab part"
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "Позволяет указать, что происходит, когда адрес страницы на последней открытой вкладке Chrome перенаправляется в альтернативный браузер.\n\nЕсли политика включена или не заполнена, после перехода в другой браузер на последней вкладке открывается страница быстрого доступа. Если политика отключена, последняя вкладка закрывается. В этом случае Chrome также будет закрыт, если это единственное открытое окно браузера.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "Позволяет указать, что происходит, когда адрес страницы на последней открытой вкладке Firefox перенаправляется в альтернативный браузер.\n\nЕсли политика включена или не заполнена, после перехода в другой браузер на последней вкладке открывается страница быстрого доступа. Если политика отключена, последняя вкладка закрывается. В этом случае Firefox также будет закрыт, если это единственное открытое окно браузера.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

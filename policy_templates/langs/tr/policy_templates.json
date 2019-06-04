@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 veya sonrası",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "Alternatif tarayıcının yürütülebilir dosyasını belirtin.\nAlternatif tarayıcı olarak kullanılacak programı belirtmenize olanak verir.\n\nEtkinleştirilirse, politikada mutlak bir yol belirtebilir veya aşağıdaki değişkenlerden birini kullanabilirsiniz:\n\n$${ie} - Internet Explorer için varsayılan yükleme konumu\nBu örnekte, tarayıcının konumunu seçmek için HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE kullanılmıştır.\n$${firefox} - Firefox için varsayılan yükleme konumu\nBu örnekte, tarayıcının konumunu seçmek için HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE kullanılmıştır.\n$${safari} - Safari için varsayılan yükleme konumu\nBu örnekte, tarayıcının konumunu seçmek için HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE kullanılmıştır.\n\nPolitika etkinleştirilmezse veya boş bırakılırsa, varsayılan alternatif tarayıcı olan Internet Explorer kullanılır (sanki $${ie} değeri kullanılmış gibi düşünülür).",
+    "message": "Alternatif tarayıcının yürütülebilir dosyasını belirtin.\nAlternatif tarayıcı olarak kullanılacak programı belirtmenize olanak verir.\n\nEtkinleştirilirse, politikada mutlak bir yol belirtebilir veya aşağıdaki değişkenlerden birini kullanabilirsiniz:\n\n$${ie} - Internet Explorer için varsayılan yükleme konumu\nBu örnekte, tarayıcının konumunu seçmek için HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE kullanılmıştır.\n$${chrome} - Chrome için varsayılan yükleme konumu\nBu örnekte, tarayıcının konumunu seçmek için HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE kullanılmıştır.\n$${safari} - Safari için varsayılan yükleme konumu\nBu örnekte, tarayıcının konumunu seçmek için HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE kullanılmıştır.\n\nPolitika etkinleştirilmezse veya boş bırakılırsa, varsayılan alternatif tarayıcı olan Internet Explorer kullanılır (sanki $${ie} değeri kullanılmış gibi düşünülür).",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "Alternatif tarayıcının yürütülebilir dosyasına geçirilecek bağımsız değişkenleri belirtmenize olanak verir.\n\nPolitika etkinleştirilirse, alternatif tarayıcı çağrıldığında, sağlanan parametreler kullanılır.\n\nURL'nin, komut satırının neresinde görüneceğini belirtmek için özel yer tutucu olarak $${url} öğesini de kullanabilirsiniz. Ör. \"--url=$${url} --kiosk\".\nYer tutucu sona eklenecekse belirtilmesi gerekmez veya yer tutucu tek bağımsız değişken olacaksa ilgili politika boş bırakılabilir.\n\nPolitika devre dışı veya boş bırakılırsa, parametre olarak tarayıcıya sadece URL geçirilir.",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "Chrome Yolu",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "Firefox Yolu",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "Chrome Yolu",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "Firefox Yolu",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "Alternatif tarayıcıdan geri dönüldüğünde başlatılacak Chrome yürütülebilir dosyasını belirtmenize olanak verir(*).\n\nPolitika etkinleştirildiğinde politikada mutlak bir yol belirtebilir veya aşağıdaki değişkeni kullanabilirsiniz:\n\n$${chrome} - Chrome için varsayılan yükleme konumu\nBu örnekte tarayıcının konumunu seçmek için HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE kullanılmıştır.\n\nPolitika devre dışı veya boş bırakılırsa, varsayılan Chrome yüklemesi kullanılır (sanki $${chrome} değeri kullanılmış gibi düşünülür).\n\n*: Chrome'a otomatik olarak geri dönme özelliğini şu anda sadece Internet Explorer desteklemektedir.",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "Alternatif tarayıcıdan geri dönüldüğünde başlatılacak Firefox yürütülebilir dosyasını belirtmenize olanak verir(*).\n\nPolitika etkinleştirildiğinde politikada mutlak bir yol belirtebilir veya aşağıdaki değişkeni kullanabilirsiniz:\n\n$${firefox} - Firefox için varsayılan yükleme konumu\nBu örnekte tarayıcının konumunu seçmek için HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE kullanılmıştır.\n\nPolitika devre dışı veya boş bırakılırsa, varsayılan Firefox yüklemesi kullanılır (sanki $${firefox} değeri kullanılmış gibi düşünülür).\n\n*: Firefox'a otomatik olarak geri dönme özelliğini şu anda sadece Internet Explorer desteklemektedir.",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "Chrome Bağımsız Değişkenleri",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "Firefox Bağımsız Değişkenleri",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "Chrome Bağımsız Değişkenleri",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "Firefox Bağımsız Değişkenleri",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "Chrome yürütüldüğünde ona geçirilecek bağımsız değişkenleri belirtmemize olanak verir.\n\nPolitika etkinleştirilirse, Chrome çağrıldığında, sağlanan parametreler kullanılır.\n\nURL'nin, komut satırının neresinde görüneceğini belirtmek için özel yer tutucu olarak $${url} öğesini de kullanabilirsiniz. Ör. \"--url=$${url} --kiosk\"\nYer tutucu sona eklenecekse belirtilmesi gerekmez veya yer tutucu tek bağımsız değişken olacaksa ilgili politika boş bırakılabilir.\n\nPolitika devre dışı veya boş bırakılırsa, tarayıcıya parametre olarak sadece URL geçirilir.",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "Firefox yürütüldüğünde ona geçirilecek bağımsız değişkenleri belirtmemize olanak verir.\n\nPolitika etkinleştirilirse, Firefox çağrıldığında, sağlanan parametreler kullanılır.\n\nURL'nin, komut satırının neresinde görüneceğini belirtmek için özel yer tutucu olarak $${url} öğesini de kullanabilirsiniz. Ör. \"--url=$${url} --kiosk\"\nYer tutucu sona eklenecekse belirtilmesi gerekmez veya yer tutucu tek bağımsız değişken olacaksa ilgili politika boş bırakılabilir.\n\nPolitika devre dışı veya boş bırakılırsa, tarayıcıya parametre olarak sadece URL geçirilir.",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "Alternatif Tarayıcıda Açılacak Ana Makineler",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "Alternatif tarayıcıda açılacak ana makine alan adlarının listesini belirtmenize olanak verir.\n\nPolitika etkinleştirilmişse alternatif tarayıcıya geçişi tetikleyecek bir filtre listesi sağlamanız gerekir. Her giriş aşağıdaki dört türden birinde olmalıdır:\n\nAna makine adı bölümü: Alan adının tamamı (\"www.example.com\" gibi) veya bir kısmı (\"example.com\", hatta \"example\" gibi) belirtilmelidir. Joker karakterler henüz desteklenmemektedir.\nURL öneki: Gerekirse protokol ve bağlantı noktasıyla birlikte, sadece uygun URL önekleri tam olarak eşleştirilir. Ör. \"http://login.example.com\" veya \"https://www.example.com:8080/login/\".\nNegatif giriş: \"!\" ile başlar ve yukarıda açıklandığı gibi ana makine adı kısmıyla veya URL önekiyle devam eder. Negatif girişler her zaman Chrome'da açılır. Ör. \"!example.com\" veya \"!file:///c:/localapp/\".\nJoker karakter girişi: Sadece tek bir \"*\" karakteri içerir. Her URL ile eşleşir. Çoğu URL'nin alternatif tarayıcıda, az sayıda URL'nin ise Chrome'da açılacağı durumlarda, negatif girişlerle birlikte kullanılmak için tasarlanmıştır.\n\nNegatif girişler pozitif girişlere oranla daha yüksek önceliklere sahiptir. Bu da bir alan adının büyük bölümünün beyaz listeye eklenmesine olanak sağlarken, daha küçük kısmının Chrome'da açılmak üzere kaydedilmesine izin verir.\nJoker karakter girişi (varsa), ancak diğer tüm kurallar kontrol edildikten sonra uygulanır.\n\nYönlendirme için şu protokoller izlenir: http:, https:.\n\nBelirtilmezse veya boş bırakılırsa, alternatif tarayıcıya herhangi bir geçiş tetiklenmez.",
+    "message": "Alternatif tarayıcıda açılacak ana makine alan adlarının listesini belirtmenize olanak verir.\n\nPolitika etkinleştirilmişse alternatif tarayıcıya geçişi tetikleyecek bir filtre listesi sağlamanız gerekir. Her giriş aşağıdaki dört türden birinde olmalıdır:\n\nAna makine adı bölümü: Alan adının tamamı (\"www.example.com\" gibi) veya bir kısmı (\"example.com\", hatta \"example\" gibi) belirtilmelidir. Joker karakterler henüz desteklenmemektedir.\nURL öneki: Gerekirse protokol ve bağlantı noktasıyla birlikte, sadece uygun URL önekleri tam olarak eşleştirilir. Ör. \"http://login.example.com\" veya \"https://www.example.com:8080/login/\".\nNegatif giriş: \"!\" ile başlar ve yukarıda açıklandığı gibi ana makine adı kısmıyla veya URL önekiyle devam eder. Negatif girişler her zaman Firefox'da açılır. Ör. \"!example.com\" veya \"!file:///c:/localapp/\".\nJoker karakter girişi: Sadece tek bir \"*\" karakteri içerir. Her URL ile eşleşir. Çoğu URL'nin alternatif tarayıcıda, az sayıda URL'nin ise Firefox'da açılacağı durumlarda, negatif girişlerle birlikte kullanılmak için tasarlanmıştır.\n\nNegatif girişler pozitif girişlere oranla daha yüksek önceliklere sahiptir. Bu da bir alan adının büyük bölümünün beyaz listeye eklenmesine olanak sağlarken, daha küçük kısmının Firefox'da açılmak üzere kaydedilmesine izin verir.\nJoker karakter girişi (varsa), ancak diğer tüm kurallar kontrol edildikten sonra uygulanır.\n\nYönlendirme için şu protokoller izlenir: http:, https:.\n\nBelirtilmezse veya boş bırakılırsa, alternatif tarayıcıya herhangi bir geçiş tetiklenmez.",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "Her iki tarayıcıda da açılacak ana makine alan adlarının listesini belirtmenize olanak verir.\n\nBu politika etkinleştirildiğinde, bu listedeki alan adları her iki tarayıcıda da kullanılabilir ve iki yönde de geçişi tetiklemez.\n\nOlası bir kullanım yeri, bu listedeki yeni ve eski uygulamalar arasında paylaşılan, kimlik doğrulama alan adlarıdır.\n\nAna makine adı bölümleri: Tam alan adları (\"www.example.com\" gibi) veya bu adlara ait bölümler (\"example.com: hatta \"example\" gibi) belirtilmelidir. Joker karakterler henüz desteklenmemektedir.\nURL önekleri: Gerekirse yalnızca uygun URL önekleri protokolle ve bağlantı noktasıyla tamamen eşleştirilir. Örneğin, \"http://login.example.com\" veya \"https://www.example.com:8080/login/\"\n\nBelirtilmez veya boş bırakılırsa, \"Alternatif Tarayıcıda Açılacak Ana Makineler\" listesinde bulunmayan alan adları tekrar Chrome'a geçişi tetikler(*).\n\n*: Chrome'a otomatik olarak geri dönme özelliği şu anda sadece Internet Explorer'da desteklenmektedir.",
+    "message": "Her iki tarayıcıda da açılacak ana makine alan adlarının listesini belirtmenize olanak verir.\n\nBu politika etkinleştirildiğinde, bu listedeki alan adları her iki tarayıcıda da kullanılabilir ve iki yönde de geçişi tetiklemez.\n\nOlası bir kullanım yeri, bu listedeki yeni ve eski uygulamalar arasında paylaşılan, kimlik doğrulama alan adlarıdır.\n\nAna makine adı bölümleri: Tam alan adları (\"www.example.com\" gibi) veya bu adlara ait bölümler (\"example.com: hatta \"example\" gibi) belirtilmelidir. Joker karakterler henüz desteklenmemektedir.\nURL önekleri: Gerekirse yalnızca uygun URL önekleri protokolle ve bağlantı noktasıyla tamamen eşleştirilir. Örneğin, \"http://login.example.com\" veya \"https://www.example.com:8080/login/\"\n\nBelirtilmez veya boş bırakılırsa, \"Alternatif Tarayıcıda Açılacak Ana Makineler\" listesinde bulunmayan alan adları tekrar Firefox'a geçişi tetikler(*).\n\n*: Firefox'a otomatik olarak geri dönme özelliği şu anda sadece Internet Explorer'da desteklenmektedir.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "Son Chrome Sekmesini Geçişte Sakla",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "Son Firefox Sekmesini Geçişte Sakla",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "Son Chrome Sekmesini Geçişte Sakla",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "Son Firefox Sekmesini Geçişte Sakla",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "Chrome'da açık olan son sekme alternatif tarayıcıya yönlendirildiğinde ne olacağını belirtmenize olanak verir.\n\nPolitika etkinleştirildiğinde veya hiç ayarlanmadığında, son sekme açık kalır ve geçişten sonra yeni sekme sayfasına işaret eder. Devre dışı olarak ayarlanırsa son sekme kapatılır ve bu da, açık durumda başka Chrome penceresi yoksa Chrome'u kapatır.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "Firefox'da açık olan son sekme alternatif tarayıcıya yönlendirildiğinde ne olacağını belirtmenize olanak verir.\n\nPolitika etkinleştirildiğinde veya hiç ayarlanmadığında, son sekme açık kalır ve geçişten sonra yeni sekme sayfasına işaret eder. Devre dışı olarak ayarlanırsa son sekme kapatılır ve bu da, açık durumda başka Firefox penceresi yoksa Firefox'u kapatır.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }

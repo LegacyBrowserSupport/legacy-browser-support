@@ -3,8 +3,8 @@
     "message": "Microsoft Windows XP SP2 અથવા તે પછીનું",
     "description": "States the fact that this policy is only supported on XP SP2 and above"
   },
-  "Cat_Google": {
-    "message": "Google",
+  "Cat_Mozilla": {
+    "message": "Mozilla",
     "description": "The general category in the Group Policy Editor"
   },
   "Cat_LegacyBrowserSupport": {
@@ -20,7 +20,7 @@
     "description": "Name of the AlternativeBrowserPath policy part"
   },
   "AlternativeBrowserPath_Explain": {
-    "message": "અમલીકરણયોગ્ય વૈકલ્પિક બ્રાઉઝરનો ઉલ્લેખ કરો.\nતમને વૈકલ્પિક બ્રાઉઝર તરીકે ઉપયોગ કરવા માટેના પ્રોગ્રામનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.\n\nજો સક્ષમ હોય, તો તમે નીતિમાં કોઈ ચોક્કસ પાથનો ઉલ્લેખ કરી શકો છો અથવા નીચેના ચલમાંથી એકનો ઉપયોગ કરી શકો છો:\n\n$${ie} - Internet Explorer માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.\n$${firefox} - Firefox માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.\n$${safari} - Safari માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.\n\nજો નીતિ સક્ષમ ન હોય અથવા ખાલી છોડેલી હોય, તો ડિફોલ્ટ વૈકલ્પિક બ્રાઉઝરનો ઉપયોગ થશે જે Internet Explorer છે જે $${ie} મૂલ્યનો ઉપયોગ થવા પર નિર્ધારિત થાય છે.",
+    "message": "અમલીકરણયોગ્ય વૈકલ્પિક બ્રાઉઝરનો ઉલ્લેખ કરો.\nતમને વૈકલ્પિક બ્રાઉઝર તરીકે ઉપયોગ કરવા માટેના પ્રોગ્રામનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.\n\nજો સક્ષમ હોય, તો તમે નીતિમાં કોઈ ચોક્કસ પાથનો ઉલ્લેખ કરી શકો છો અથવા નીચેના ચલમાંથી એકનો ઉપયોગ કરી શકો છો:\n\n$${ie} - Internet Explorer માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.\n$${chrome} - Chrome માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.\n$${safari} - Safari માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.\n\nજો નીતિ સક્ષમ ન હોય અથવા ખાલી છોડેલી હોય, તો ડિફોલ્ટ વૈકલ્પિક બ્રાઉઝરનો ઉપયોગ થશે જે Internet Explorer છે જે $${ie} મૂલ્યનો ઉપયોગ થવા પર નિર્ધારિત થાય છે.",
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "AlternativeBrowserArguments": {
@@ -35,29 +35,29 @@
     "message": "અમલીકરણયોગ્ય વૈકલ્પિક બ્રાઉઝર પર પસાર કરવા માટેની દલીલોનો ઉલ્લેખ કરવાની તમને મંજૂરી આપે છે.\n\nજો નીતિ સક્ષમ હોય, તો જ્યારે વૈકલ્પિક બ્રાઉઝર થરૂ કર્યું હોય ત્યારે પ્રદાન કરેલા પેરામીટર્સનો ઉપયોગ થશે.\n\nકમાન્ડ લાઇનમાં url ક્યાં દેખાવું જોઈએ તેનો ઉલ્લેખ કરવા માટે તમે વિશેષ પ્લેસહોલ્ડર $${url} નો ઉપયોગ પણ કરી શકો છો. ઉદા.ત. \"--url=$${url} --કિઓસ્ક\".\nતમારે પ્લેસહોલ્ડરનો ઉલ્લેખ કરવાનો રહેતો નથી જો તે સમાપ્તિ પર જોડાયેલું હોવું જોઈએ અથવા તે માત્ર દલીલ હોવું જોઈએ, તમે નીતિને ખાલી છોડી શકો છો.\n\nજો નીતિ અક્ષમ હોય અથવા ખાલી છોડેલી હોય, તો માત્ર url ને બ્રાઉઝર પર પેરામીટર તરીકે પસાર કરવામાં આવશે.",
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromePath": {
-    "message": "Chrome પાથ",
-    "description": "Name of the ChromePath policy"
+  "FirefoxPath": {
+    "message": "Firefox પાથ",
+    "description": "Name of the FirefoxPath policy"
   },
-  "ChromePath_Part": {
-    "message": "Chrome પાથ",
-    "description": "Name of the ChromePath policy part"
+  "FirefoxPath_Part": {
+    "message": "Firefox પાથ",
+    "description": "Name of the FirefoxPath policy part"
   },
-  "ChromePath_Explain": {
-    "message": "વૈકલ્પિક બ્રાઉઝર(*)માંથી પાછા ફરતી વખતે લોંચ થવા માટે તમને Chrome ના અમલીકરણયોગ્યનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.\n\nજ્યારે નીતિ સક્ષમ હોય ત્યારે તમે નીતિમાં ચોક્કસ પાથનો ઉલ્લેખ કરી શકો છો અથવા નીચેના ચલમાંથી એકનો ઉપયોગ કરી શકો છો:\n\n$${chrome} - Chrome માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.\n\nજો નીતિ અક્ષમ હોય અથવા ખાલી છોડેલી હોય, તો Chrome ના ડિફોલ્ટ ઇન્સ્ટોલેશનનો ઉપયોગ થશે જો $${chrome} મૂલ્યનો ઉપયોગ કરવામાં આવ્યો હોય.\n\n*: હાલમાં ફક્ત Internet Explorer જ આપમેળે Chrome પર પાછા ફરવાનું સમર્થન કરે છે.",
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxPath_Explain": {
+    "message": "વૈકલ્પિક બ્રાઉઝર(*)માંથી પાછા ફરતી વખતે લોંચ થવા માટે તમને Firefox ના અમલીકરણયોગ્યનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.\n\nજ્યારે નીતિ સક્ષમ હોય ત્યારે તમે નીતિમાં ચોક્કસ પાથનો ઉલ્લેખ કરી શકો છો અથવા નીચેના ચલમાંથી એકનો ઉપયોગ કરી શકો છો:\n\n$${firefox} - Firefox માટેના ડિફોલ્ટ ઇન્સ્ટોલ સ્થાન HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE નો ઉપયોગ આ સ્થિતિમાં બ્રાઉઝરના સ્થાનને ચૂંટવા માટે થાય છે.\n\nજો નીતિ અક્ષમ હોય અથવા ખાલી છોડેલી હોય, તો Firefox ના ડિફોલ્ટ ઇન્સ્ટોલેશનનો ઉપયોગ થશે જો $${firefox} મૂલ્યનો ઉપયોગ કરવામાં આવ્યો હોય.\n\n*: હાલમાં ફક્ત Internet Explorer જ આપમેળે Firefox પર પાછા ફરવાનું સમર્થન કરે છે.",
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
-  "ChromeArguments": {
-    "message": "Chrome દલીલો",
-    "description": "Name of the ChromeArguments policy"
+  "FirefoxArguments": {
+    "message": "Firefox દલીલો",
+    "description": "Name of the FirefoxArguments policy"
   },
-  "ChromeArguments_Part": {
-    "message": "Chrome દલીલો",
-    "description": "Name of the ChromeArguments policy part"
+  "FirefoxArguments_Part": {
+    "message": "Firefox દલીલો",
+    "description": "Name of the FirefoxArguments policy part"
   },
-  "ChromeArguments_Explain": {
-    "message": "જ્યારે Chrome નો અમલ કરવામાં આવેલો હોય ત્યારે તેના પર પસાર કરવા માટેની દલીલોનો ઉલ્લેખ કરવાની તમને મંજૂરી આપે છે.\n\nજો નીતિ સક્ષમ હોય, તો જ્યારે Chrome થરૂ કર્યું હોય ત્યારે પ્રદાન કરેલા પેરામીટર્સનો ઉપયોગ થશે.\n\nકમાન્ડ લાઇનમાં url ક્યાં દેખાવું જોઈએ તેનો ઉલ્લેખ કરવા માટે તમે વિશેષ પ્લેસહોલ્ડર $${url} નો ઉપયોગ પણ કરી શકો છો. ઉદા.ત. \"--url=$${url} --કિઓસ્ક\".\nતમારે પ્લેસહોલ્ડરનો ઉલ્લેખ કરવાનો રહેતો નથી જો તે સમાપ્તિ પર જોડાયેલું હોવું જોઈએ અથવા તે માત્ર દલીલ હોવું જોઈએ, તમે નીતિને ખાલી છોડી શકો છો.\n\nજો નીતિ અક્ષમ હોય અથવા ખાલી છોડેલી હોય, તો માત્ર url ને બ્રાઉઝર પર પેરામીટર તરીકે પસાર કરવામાં આવશે.",
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
+  "FirefoxArguments_Explain": {
+    "message": "જ્યારે Firefox નો અમલ કરવામાં આવેલો હોય ત્યારે તેના પર પસાર કરવા માટેની દલીલોનો ઉલ્લેખ કરવાની તમને મંજૂરી આપે છે.\n\nજો નીતિ સક્ષમ હોય, તો જ્યારે Firefox થરૂ કર્યું હોય ત્યારે પ્રદાન કરેલા પેરામીટર્સનો ઉપયોગ થશે.\n\nકમાન્ડ લાઇનમાં url ક્યાં દેખાવું જોઈએ તેનો ઉલ્લેખ કરવા માટે તમે વિશેષ પ્લેસહોલ્ડર $${url} નો ઉપયોગ પણ કરી શકો છો. ઉદા.ત. \"--url=$${url} --કિઓસ્ક\".\nતમારે પ્લેસહોલ્ડરનો ઉલ્લેખ કરવાનો રહેતો નથી જો તે સમાપ્તિ પર જોડાયેલું હોવું જોઈએ અથવા તે માત્ર દલીલ હોવું જોઈએ, તમે નીતિને ખાલી છોડી શકો છો.\n\nજો નીતિ અક્ષમ હોય અથવા ખાલી છોડેલી હોય, તો માત્ર url ને બ્રાઉઝર પર પેરામીટર તરીકે પસાર કરવામાં આવશે.",
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too."
   },
   "URLList_Policy": {
     "message": "વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટેના હોસ્ટ્સ",
@@ -68,7 +68,7 @@
     "description": "Name of the URLList policy part"
   },
   "URLList_Explain": {
-    "message": "તમને વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટેના હોસ્ટ ડોમેન નામોની સૂચિનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.\n\nજો નીતિ સક્ષમ કરેલ છે તો તમારે વૈકલ્પિક બ્રાઉઝર પર સંક્રમણ ટ્રિગર કરશે તે ફિલ્ટર્સની સૂચિ પ્રદાન કરવાની રહે છે. દરેક એન્ટ્રી નીચેના ચાર પ્રકારો પૈકી એક હોવી જોઈએ:\n\nહોસ્ટ-નામનો ભાગ: ક્યાં તો ડોમેનના પૂરા નામ જેમ કે \"www.example.com\" ઉલ્લેખિત હોવા જોઈએ અથવા તેમાંના ભાગો જેમ કે \"example.com: અથવા માત્ર \"example\". વાઇલ્ડકાર્ડ્સ હજી સુધી સમર્થિત નથી.\nURL ઉપસર્ગ: જો જરૂરી હોય તો ફક્ત યોગ્ય URL ઉપસર્ગો પ્રોટોકોલ અને પોર્ટ સાથે પૂર્ણ મેળ ખાય છે. ઉદા., \"http://login.example.com\" અથવા \"https://www.example.com:8080/login/\".\nનકારાત્મક એન્ટ્રી: \"!\" સાથે શરૂ થાય છે અને ઉપર વર્ણવ્યાં મુજબ હોસ્ટ-નામ ભાગ અથવા URL ઉપસર્ગ તરીકે ચાલુ રહે છે. નકારાત્મક એન્ટ્રીઓ હંમેશાં Chrome માં ખોલવામાં આવે છે. દા.ત. \"!example.com\" અથવા \"!file:///c:/localapp/\".\nવાઇલ્ડકાર્ડ એન્ટ્રી: ફક્ત એકલ \"*\" અક્ષર ધરાવે છે. કોઈપણ URL થી મેળ ખાય છે. જો મોટાભાગના URL વૈકલ્પિક બ્રાઉઝરમાં ખોલવાના હોય અને ફક્ત URL ની એક નાની પસંદગી Chrome માં ખોલવાની હોય તો નકારાત્મક એન્ટ્રીઓની સાથે એકસાથે ઉપયોગમાં લેવા માટે ઇચ્છિત.\n\nChrome માં ખોલવા માટેના નાના વિભાગોને સાચવતી વખતે ડોમેનના મોટા ભાગોને વ્હાઇટલિસ્ટ કરવાની મંજૂરી આપે છે તે સકારાત્મક એન્ટ્રીઓ કરતાં નકારાત્મક એન્ટ્રીઓની ઉચ્ચ પ્રાધાન્યતાઓ હોય છે.\nજો હાજર હોય તો વાઇલ્ડકાર્ડ એન્ટ્રી બધા અન્ય નિયમો તપાસવામાં આવે તે પછી જ લાગુ થાય છે.\n\nરીડાયરેક્ટ કરવા માટે નીચેના પ્રોટોકૉલ્સ મૉનિટર થાય છે: http:, https:.\n\nજો ઉલ્લેખિત ન હોય અથવા ખાલી છોડેલ હોય તો - વૈકલ્પિક બ્રાઉઝર પર કોઈ સંક્રમણ ટ્રિગર થશે નહીં.",
+    "message": "તમને વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટેના હોસ્ટ ડોમેન નામોની સૂચિનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.\n\nજો નીતિ સક્ષમ કરેલ છે તો તમારે વૈકલ્પિક બ્રાઉઝર પર સંક્રમણ ટ્રિગર કરશે તે ફિલ્ટર્સની સૂચિ પ્રદાન કરવાની રહે છે. દરેક એન્ટ્રી નીચેના ચાર પ્રકારો પૈકી એક હોવી જોઈએ:\n\nહોસ્ટ-નામનો ભાગ: ક્યાં તો ડોમેનના પૂરા નામ જેમ કે \"www.example.com\" ઉલ્લેખિત હોવા જોઈએ અથવા તેમાંના ભાગો જેમ કે \"example.com: અથવા માત્ર \"example\". વાઇલ્ડકાર્ડ્સ હજી સુધી સમર્થિત નથી.\nURL ઉપસર્ગ: જો જરૂરી હોય તો ફક્ત યોગ્ય URL ઉપસર્ગો પ્રોટોકોલ અને પોર્ટ સાથે પૂર્ણ મેળ ખાય છે. ઉદા., \"http://login.example.com\" અથવા \"https://www.example.com:8080/login/\".\nનકારાત્મક એન્ટ્રી: \"!\" સાથે શરૂ થાય છે અને ઉપર વર્ણવ્યાં મુજબ હોસ્ટ-નામ ભાગ અથવા URL ઉપસર્ગ તરીકે ચાલુ રહે છે. નકારાત્મક એન્ટ્રીઓ હંમેશાં Firefox માં ખોલવામાં આવે છે. દા.ત. \"!example.com\" અથવા \"!file:///c:/localapp/\".\nવાઇલ્ડકાર્ડ એન્ટ્રી: ફક્ત એકલ \"*\" અક્ષર ધરાવે છે. કોઈપણ URL થી મેળ ખાય છે. જો મોટાભાગના URL વૈકલ્પિક બ્રાઉઝરમાં ખોલવાના હોય અને ફક્ત URL ની એક નાની પસંદગી Firefox માં ખોલવાની હોય તો નકારાત્મક એન્ટ્રીઓની સાથે એકસાથે ઉપયોગમાં લેવા માટે ઇચ્છિત.\n\nFirefox માં ખોલવા માટેના નાના વિભાગોને સાચવતી વખતે ડોમેનના મોટા ભાગોને વ્હાઇટલિસ્ટ કરવાની મંજૂરી આપે છે તે સકારાત્મક એન્ટ્રીઓ કરતાં નકારાત્મક એન્ટ્રીઓની ઉચ્ચ પ્રાધાન્યતાઓ હોય છે.\nજો હાજર હોય તો વાઇલ્ડકાર્ડ એન્ટ્રી બધા અન્ય નિયમો તપાસવામાં આવે તે પછી જ લાગુ થાય છે.\n\nરીડાયરેક્ટ કરવા માટે નીચેના પ્રોટોકૉલ્સ મૉનિટર થાય છે: http:, https:.\n\nજો ઉલ્લેખિત ન હોય અથવા ખાલી છોડેલ હોય તો - વૈકલ્પિક બ્રાઉઝર પર કોઈ સંક્રમણ ટ્રિગર થશે નહીં.",
     "description": "Explanation of the URLList policy"
   },
   "URLGreyList_Policy": {
@@ -80,19 +80,43 @@
     "description": "Name of the URLGreyList policy part"
   },
   "URLGreyList_Explain": {
-    "message": "કોઈપણ બ્રાઉઝરમાં ખોલવા માટે તમને હોસ્ટ ડોમેન નામોની એક સૂચિનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.\n\nજ્યારે આ નીતિ સક્ષમ હોય, ત્યારે આ સૂચિમાંના ડોમેન્સ બંને બ્રાઉઝરમાં ઉપલબ્ધ હશે અને કોઈપણ રીતે કોઈ સંક્રમણને ટ્રિગર કરશે નહીં.\n\nએક સંભવિત ઉપયોગ કેસ એ કોઈપણ પ્રમાણીકરણ ડોમેન્સ છે કે જેને આ સૂચિમાં નવી અને લેગસી એપ્લિકેશન્સ વચ્ચે શેર કરેલા છે. \n\nહોસ્ટ-નામના ભાગો: ક્યાં તો ડોમેનના પૂરા નામ જેમ કે \"www.example.com\" ઉલ્લેખિત હોવા જોઈએ અથવા તેમાંના ભાગો જેમ કે \"example.com: અથવા માત્ર \"example\". હજી સુધી વાઇલ્ડ કાર્ડ્સને સમર્થન નથી.\nURL ઉપસર્ગો: જો જરૂરી હોય તો ફક્ત યોગ્ય URL ઉપસર્ગો પ્રોટોકોલ અને પોર્ટ સાથે પૂર્ણ મેળ ખાય છે. ઉદા., \"http://login.example.com\" અથવા \"https://www.example.com:8080/login/\".\n\nજો ઉલ્લેખ કરેલ ન હોય અથવા ખાલી છોડેલું હોય - તો \"વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટેનાં હોસ્ટ્સ'' સૂચિમાં ન હોય તે કોઈપણ ડોમેન સંક્રમણને પાછું Chrome(*) પર ટ્રિગર કરશે.\n\n*: હાલમાં ફક્ત Internet Explorer જ આપમેળે Chrome પર પાછા ફરવાને સમર્થન કરે છે.",
+    "message": "કોઈપણ બ્રાઉઝરમાં ખોલવા માટે તમને હોસ્ટ ડોમેન નામોની એક સૂચિનો ઉલ્લેખ કરવાની મંજૂરી આપે છે.\n\nજ્યારે આ નીતિ સક્ષમ હોય, ત્યારે આ સૂચિમાંના ડોમેન્સ બંને બ્રાઉઝરમાં ઉપલબ્ધ હશે અને કોઈપણ રીતે કોઈ સંક્રમણને ટ્રિગર કરશે નહીં.\n\nએક સંભવિત ઉપયોગ કેસ એ કોઈપણ પ્રમાણીકરણ ડોમેન્સ છે કે જેને આ સૂચિમાં નવી અને લેગસી એપ્લિકેશન્સ વચ્ચે શેર કરેલા છે. \n\nહોસ્ટ-નામના ભાગો: ક્યાં તો ડોમેનના પૂરા નામ જેમ કે \"www.example.com\" ઉલ્લેખિત હોવા જોઈએ અથવા તેમાંના ભાગો જેમ કે \"example.com: અથવા માત્ર \"example\". હજી સુધી વાઇલ્ડ કાર્ડ્સને સમર્થન નથી.\nURL ઉપસર્ગો: જો જરૂરી હોય તો ફક્ત યોગ્ય URL ઉપસર્ગો પ્રોટોકોલ અને પોર્ટ સાથે પૂર્ણ મેળ ખાય છે. ઉદા., \"http://login.example.com\" અથવા \"https://www.example.com:8080/login/\".\n\nજો ઉલ્લેખ કરેલ ન હોય અથવા ખાલી છોડેલું હોય - તો \"વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટેનાં હોસ્ટ્સ'' સૂચિમાં ન હોય તે કોઈપણ ડોમેન સંક્રમણને પાછું Firefox(*) પર ટ્રિગર કરશે.\n\n*: હાલમાં ફક્ત Internet Explorer જ આપમેળે Firefox પર પાછા ફરવાને સમર્થન કરે છે.",
     "description": "Explanation of the URLGreyList policy"
   },
-  "KeepLastChromeTab_Policy": {
-    "message": "છેલ્લા Chrome ટેબને સંક્રમણ પર રાખો",
-    "description": "Name of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Policy": {
+    "message": "છેલ્લા Firefox ટેબને સંક્રમણ પર રાખો",
+    "description": "Name of the KeepLastFirefoxTab policy"
   },
-  "KeepLastChromeTab_Part": {
-    "message": "છેલ્લા Chrome ટેબને સંક્રમણ પર રાખો",
-    "description": "Name of the KeepLastChromeTab part"
+  "KeepLastFirefoxTab_Part": {
+    "message": "છેલ્લા Firefox ટેબને સંક્રમણ પર રાખો",
+    "description": "Name of the KeepLastFirefoxTab part"
   },
-  "KeepLastChromeTab_Explain": {
-    "message": "જ્યારે Chrome માં છેલ્લે ખોલેલ ટેબને વૈકલ્પિક બ્રાઉઝરમાં રીડાયરેક્ટ કરવામાં આવે ત્યારે શું થાય તેનો ઉલ્લેખ કરવાની તમને મંજૂરી આપે છે.\n\nજ્યારે આ નીતિ સક્ષમ કરેલ હોય અથવા સેટ કરેલ ન હોય ત્યારે, છેલ્લું ટેબ ખુલ્લું રહેશે અને સંક્રમણ પછી નવા ટેબ પૃષ્ઠ પર જશે. જો તે અક્ષમ કરેલ પર સેટ છે, તો પછી છેલ્લું ટેબ બંધ થઈ જશે જેના લીધે જો કોઈ અન્ય Chrome વિંડોઝ ખુલ્લી નહીં હોય તો Chrome બંધ થઈ જશે.",
-    "description": "Explanation of the KeepLastChromeTab policy"
+  "KeepLastFirefoxTab_Explain": {
+    "message": "જ્યારે Firefox માં છેલ્લે ખોલેલ ટેબને વૈકલ્પિક બ્રાઉઝરમાં રીડાયરેક્ટ કરવામાં આવે ત્યારે શું થાય તેનો ઉલ્લેખ કરવાની તમને મંજૂરી આપે છે.\n\nજ્યારે આ નીતિ સક્ષમ કરેલ હોય અથવા સેટ કરેલ ન હોય ત્યારે, છેલ્લું ટેબ ખુલ્લું રહેશે અને સંક્રમણ પછી નવા ટેબ પૃષ્ઠ પર જશે. જો તે અક્ષમ કરેલ પર સેટ છે, તો પછી છેલ્લું ટેબ બંધ થઈ જશે જેના લીધે જો કોઈ અન્ય Firefox વિંડોઝ ખુલ્લી નહીં હોય તો Firefox બંધ થઈ જશે.",
+    "description": "Explanation of the KeepLastFirefoxTab policy"
+  },
+  "ShowTransitionScreen_Policy": {
+    "description": "Name of the ShowTransitionScreen policy",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Part": {
+    "description": "Name of the ShowTransitionScreen policy part",
+    "message": "Show Transition Screen in Firefox For Some Time"
+  },
+  "ShowTransitionScreen_Explain": {
+    "description": "Explanation of the ShowTransitionScreen policy",
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+  },
+  "UseIeSiteList_Policy": {
+    "description": "Name of the UseIeSiteList policy",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Part": {
+    "description": "Name of the UseIeSiteList policy part",
+    "message": "Use IE Enterprise Mode Site List Policy"
+  },
+  "UseIeSiteList_Explain": {
+    "description": "Explanation of the UseIeSiteList policy",
+    "message": "When enabled, transitions between browsers will also be triggered by entries in the SiteList policy for Internet Explorer as defined in (https://technet.microsoft.com/itpro/internet-explorer/ie11-deploy-guide/turn-on-enterprise-mode-and-use-a-site-list).\n\nIf it is not set or disabled then only the urls in the extension policy will be used."
   }
 }
