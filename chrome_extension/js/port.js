@@ -45,7 +45,7 @@ Port = function(connect_callback, disconnect_callback) {
  */
 Port.prototype.initialize = function() {
   var self = this;
-  self.port = chrome.runtime.connectNative('com.mozilla.browserswitcher');
+  self.port = chrome.runtime.connectNative('org.mozilla.browserswitcher');
   if (chrome.runtime.lastError) {
     console.error(chrome.runtime.lastError.message);
     self.port = null;
