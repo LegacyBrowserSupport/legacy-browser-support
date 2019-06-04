@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "Implemente o Chrome na sua entidade enquanto continua a suportar navegadores antigos.",
+    "message": "Implemente o Firefox na sua entidade enquanto continua a suportar navegadores antigos.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "A abrir num navegador alternativo...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "Não foi possível abrir o navegador alternativo",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "O administrador do seu sistema configurou o Chrome para abrir um navegador alternativo, de modo a aceder a <strong>$url$</strong>.",
+    "message": "O administrador do seu sistema configurou o Firefox para abrir um navegador alternativo, de modo a aceder a <strong>$url$</strong>.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "<a href='https://www.google.com/intl/pt-pt/chrome/business/'>Saiba mais</a> sobre o suporte do navegador antigo.",
+    "message": "<a href='https://www.mozilla.org/firefox/enterprise/'>Saiba mais</a> sobre o suporte do navegador antigo.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

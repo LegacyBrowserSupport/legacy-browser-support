@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "લેગસી બ્રાઉઝર્સનું સમર્થન કરતી વખતે તમારી સંસ્થા માટે Chrome નો ઉપયોગ કરો.",
+    "message": "લેગસી બ્રાઉઝર્સનું સમર્થન કરતી વખતે તમારી સંસ્થા માટે Firefox નો ઉપયોગ કરો.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "વૈકલ્પિક બ્રાઉઝરમાં ખુલી રહ્યું છે...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "વૈકલ્પિક બ્રાઉઝર ખોલી શકાયું નથી",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "તમારા સિસ્ટમ વ્યવસ્થાપકે <strong>$url$</strong> ને ઍક્સેસ કરવા માટે Chrome ને એક વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટે ગોઠવ્યું છે.",
+    "message": "તમારા સિસ્ટમ વ્યવસ્થાપકે <strong>$url$</strong> ને ઍક્સેસ કરવા માટે Firefox ને એક વૈકલ્પિક બ્રાઉઝરમાં ખોલવા માટે ગોઠવ્યું છે.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "લેગસી બ્રાઉઝર સમર્થન વિશે <a href='https://www.google.com/intl/en/chrome/business/'>વધુ જાણો</a>.",
+    "message": "લેગસી બ્રાઉઝર સમર્થન વિશે <a href='https://www.mozilla.org/firefox/enterprise/'>વધુ જાણો</a>.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

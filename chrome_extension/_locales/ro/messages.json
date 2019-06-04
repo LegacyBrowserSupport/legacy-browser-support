@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "Implementați Chrome pentru organizația dvs., beneficiind în același timp de compatibilitate pentru browsere vechi.",
+    "message": "Implementați Firefox pentru organizația dvs., beneficiind în același timp de compatibilitate pentru browsere vechi.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "Se deschide într-un browser secundar...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "Browserul secundar nu a putut fi deschis",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "Administratorul de sistem a configurat Chrome astfel încât acesta să deschidă un browser secundar pentru a accesa adresa <strong>$url$</strong>.",
+    "message": "Administratorul de sistem a configurat Firefox astfel încât acesta să deschidă un browser secundar pentru a accesa adresa <strong>$url$</strong>.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "<a href='https://www.google.com/intl/ro/chrome/business/'>Aflați mai multe</a> despre compatibilitatea pentru browsere vechi.",
+    "message": "<a href='https://www.mozilla.org/firefox/enterprise/'>Aflați mai multe</a> despre compatibilitatea pentru browsere vechi.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

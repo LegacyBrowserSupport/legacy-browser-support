@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "Implementera Chrome i organisationen och behåll samtidigt stöd för äldre webbläsare.",
+    "message": "Implementera Firefox i organisationen och behåll samtidigt stöd för äldre webbläsare.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "Öppnar sidan i den alternativa webbläsaren ...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "Det gick inte att öppna den alternativa webbläsaren",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "Systemadministratören har konfigurerat Chrome så att webbadressen <strong>$url$</ strong> öppnas i en alternativ webbläsare.",
+    "message": "Systemadministratören har konfigurerat Firefox så att webbadressen <strong>$url$</ strong> öppnas i en alternativ webbläsare.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "<a href='https://www.google.com/intl/sv/chrome/business/'>Läs mer</a> om stöd för äldre webbläsare.",
+    "message": "<a href='https://www.mozilla.org/firefox/enterprise/'>Läs mer</a> om stöd för äldre webbläsare.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "लीगेसी ब्राउज़र का समर्थन करते समय अपने संगठन के लिए Chrome को परिनियोजित करें.",
+    "message": "लीगेसी ब्राउज़र का समर्थन करते समय अपने संगठन के लिए Firefox को परिनियोजित करें.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "वैकल्पिक ब्राउज़र में खुल रहा है...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "वैकल्पिक ब्राउज़र नहीं खोला जा सका",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "आपके सिस्टम व्यवस्थापक ने <strong>$url$</strong> को एक्सेस करने हेतु वैकल्पिक ब्राउज़र खोलने के लिए Chrome को कॉन्फ़िगर किया है.",
+    "message": "आपके सिस्टम व्यवस्थापक ने <strong>$url$</strong> को एक्सेस करने हेतु वैकल्पिक ब्राउज़र खोलने के लिए Firefox को कॉन्फ़िगर किया है.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "लीगेसी ब्राउज़र समर्थन के बारे में <a href='https://www.google.com/intl/hi/chrome/business/'>और जानें</a>.",
+    "message": "लीगेसी ब्राउज़र समर्थन के बारे में <a href='https://www.mozilla.org/firefox/enterprise/'>और जानें</a>.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

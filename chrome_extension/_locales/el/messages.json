@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "Ανάπτυξη του Chrome για τον οργανισμό σας παράλληλα με την υποστήριξη προγραμμάτων περιήγησης παλαιού τύπου.",
+    "message": "Ανάπτυξη του Firefox για τον οργανισμό σας παράλληλα με την υποστήριξη προγραμμάτων περιήγησης παλαιού τύπου.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "Άνοιγμα σε εναλλακτικό πρόγραμμα περιήγησης…",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "Δεν ήταν δυνατό το άνοιγμα του εναλλακτικού προγράμματος περιήγησης",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "Ο διαχειριστής του συστήματός σας έχει διαμορφώσει το Chrome έτσι ώστε να ανοίγει ένα εναλλακτικό πρόγραμμα περιήγησης για την πρόσβαση στη διεύθυνση <strong>$url$</strong>.",
+    "message": "Ο διαχειριστής του συστήματός σας έχει διαμορφώσει το Firefox έτσι ώστε να ανοίγει ένα εναλλακτικό πρόγραμμα περιήγησης για την πρόσβαση στη διεύθυνση <strong>$url$</strong>.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "<a href='https://www.google.com/intl/en/chrome/business/'>Μάθετε περισσότερα</a> σχετικά με την υποστήριξη προγραμμάτων περιήγησης παλαιού τύπου.",
+    "message": "<a href='https://www.mozilla.org/firefox/enterprise/'>Μάθετε περισσότερα</a> σχετικά με την υποστήριξη προγραμμάτων περιήγησης παλαιού τύπου.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "Implementer Chrome i din virksomhed, men bevar samtidig understøttelse af ældre browsere.",
+    "message": "Implementer Firefox i din virksomhed, men bevar samtidig understøttelse af ældre browsere.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "Åbner alternativ browser...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "Den alternative browser kunne ikke åbnes",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "Din systemadministrator har konfigureret Chrome til at åbne en alternativ browser for at få adgang til <strong>$url$</strong>.",
+    "message": "Din systemadministrator har konfigureret Firefox til at åbne en alternativ browser for at få adgang til <strong>$url$</strong>.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "<a href='https://www.google.com/intl/da/chrome/business/'>Få flere oplysninger</a> om understøttelse af ældre browsere.",
+    "message": "<a href='https://www.mozilla.org/firefox/enterprise/'>Få flere oplysninger</a> om understøttelse af ældre browsere.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

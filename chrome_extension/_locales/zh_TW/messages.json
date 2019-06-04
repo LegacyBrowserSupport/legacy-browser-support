@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "為機構部署 Chrome 並提供舊版瀏覽器支援。",
+    "message": "為機構部署 Firefox 並提供舊版瀏覽器支援。",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "正在開啟替代瀏覽器...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "無法開啟替代瀏覽器",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "系統管理員已設定 Chrome 透過替代瀏覽器存取 <strong>$url$</strong>。",
+    "message": "系統管理員已設定 Firefox 透過替代瀏覽器存取 <strong>$url$</strong>。",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "<a href='https://www.google.com/intl/zh-TW/chrome/business/'>進一步瞭解</a>舊版瀏覽器支援。",
+    "message": "<a href='https://www.mozilla.org/firefox/enterprise/'>進一步瞭解</a>舊版瀏覽器支援。",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

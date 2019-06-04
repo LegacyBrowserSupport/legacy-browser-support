@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "Triển khai Chrome cho tổ chức của bạn trong khi hỗ trợ các trình duyệt cũ.",
+    "message": "Triển khai Firefox cho tổ chức của bạn trong khi hỗ trợ các trình duyệt cũ.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "Đang mở trong trình duyệt thay thế...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "Không thể mở trình duyệt thay thế",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "Quản trị viên hệ thống của bạn đã định cấu hình Chrome để mở một trình duyệt thay thế để truy cập vào <strong>$url$</strong>.",
+    "message": "Quản trị viên hệ thống của bạn đã định cấu hình Firefox để mở một trình duyệt thay thế để truy cập vào <strong>$url$</strong>.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "<a href='https://www.google.com/intl/vi/chrome/business/'>Tìm hiểu thêm</a> về hỗ trợ giao thức cũ.",
+    "message": "<a href='https://www.mozilla.org/firefox/enterprise/'>Tìm hiểu thêm</a> về hỗ trợ giao thức cũ.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

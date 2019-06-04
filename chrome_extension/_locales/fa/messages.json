@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "هنگام پشتیبانی از مرورگرهای قدیمی، از Chrome برای سازمان خود استفاده کنید.",
+    "message": "هنگام پشتیبانی از مرورگرهای قدیمی، از Firefox برای سازمان خود استفاده کنید.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "درحال بازکردن در مرورگر جایگزین...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "مرورگر جایگزین باز نشد",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "‫سرپرست سیستم شما Chrome را طوری پیکربندی کرده است که برای دسترسی به <strong>$url$</strong> مرورگر جایگزین را باز کند.",
+    "message": "‫سرپرست سیستم شما Firefox را طوری پیکربندی کرده است که برای دسترسی به <strong>$url$</strong> مرورگر جایگزین را باز کند.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "<a href='https://www.google.com/intl/en/chrome/business/'>درباره پشتیبانی از مرورگر قدیمی اطلاعات بیشتری کسب کنید</a>.",
+    "message": "<a href='https://www.mozilla.org/firefox/enterprise/'>درباره پشتیبانی از مرورگر قدیمی اطلاعات بیشتری کسب کنید</a>.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

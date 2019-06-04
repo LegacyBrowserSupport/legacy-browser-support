@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "为您的组织部署 Chrome，同时也支持旧版浏览器。",
+    "message": "为您的组织部署 Firefox，同时也支持旧版浏览器。",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "正在备用浏览器中打开…",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "无法打开备用浏览器",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "您的系统管理员已将 Chrome 配置为使用备用浏览器来访问 <strong>$url$</strong>。",
+    "message": "您的系统管理员已将 Firefox 配置为使用备用浏览器来访问 <strong>$url$</strong>。",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "<a href='https://www.google.com/intl/zh-CN/chrome/business/'>详细了解</a>旧版浏览器的支持情况。",
+    "message": "<a href='https://www.mozilla.org/firefox/enterprise/'>详细了解</a>旧版浏览器的支持情况。",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

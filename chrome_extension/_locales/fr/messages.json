@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "Déployez Google Chrome dans votre organisation tout en assurant la compatibilité avec les anciens navigateurs.",
+    "message": "Déployez Firefox dans votre organisation tout en assurant la compatibilité avec les anciens navigateurs.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "Ouverture dans le navigateur secondaire en cours…",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "Impossible d'ouvrir le navigateur secondaire",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "Votre administrateur système a configuré Google Chrome de sorte qu'un navigateur secondaire s'ouvre afin d'accéder à <strong>$url$</strong>.",
+    "message": "Votre administrateur système a configuré Firefox de sorte qu'un navigateur secondaire s'ouvre afin d'accéder à <strong>$url$</strong>.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "<a href='https://www.google.com/intl/fr/chrome/business/'>En savoir plus sur la compatibilité avec les anciens navigateurs</a>",
+    "message": "<a href='https://www.mozilla.org/firefox/enterprise/'>En savoir plus sur la compatibilité avec les anciens navigateurs</a>",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

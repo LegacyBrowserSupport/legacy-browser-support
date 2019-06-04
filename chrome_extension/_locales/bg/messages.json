@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "Внедрете Chrome в организацията си, като същевременно поддържате наследени браузъри.",
+    "message": "Внедрете Firefox в организацията си, като същевременно поддържате наследени браузъри.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "Отваря се в алтернативен браузър...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "Алтернативният браузър не можа да се отвори",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "Системният ви администратор е конфигурирал Chrome да отваря алтернативен браузър за достъп до <strong>$url$</strong>.",
+    "message": "Системният ви администратор е конфигурирал Firefox да отваря алтернативен браузър за достъп до <strong>$url$</strong>.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "<a href='https://www.google.com/intl/bg/chrome/business/'>Научете повече</a> за поддръжката на наследени браузъри.",
+    "message": "<a href='https://www.mozilla.org/firefox/enterprise/'>Научете повече</a> за поддръжката на наследени браузъри.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

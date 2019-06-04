@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "ಪಾರಂಪರಿಕ ಬ್ರೌಸರ್‌ಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತಿರುವಾಗ ನಿಮ್ಮ ಸಂಸ್ಥೆಗಾಗಿ Chrome ಅನ್ನು ನಿಯುಕ್ತಿಗೊಳಿಸಿ.",
+    "message": "ಪಾರಂಪರಿಕ ಬ್ರೌಸರ್‌ಗಳನ್ನು ಬೆಂಬಲಿಸುತ್ತಿರುವಾಗ ನಿಮ್ಮ ಸಂಸ್ಥೆಗಾಗಿ Firefox ಅನ್ನು ನಿಯುಕ್ತಿಗೊಳಿಸಿ.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "ಪರ್ಯಾಯ ಬ್ರೌಸರ್‌‌ನಲ್ಲಿ ತೆರೆಯಲಾಗುತ್ತಿದೆ...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "ಪರ್ಯಾಯ ಬ್ರೌಸರ್‌‌ ಅನ್ನು ತೆರೆಯಲು ಸಾಧ್ಯವಿಲ್ಲ",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "ಪ್ರವೇಶಿಸಲು ಪರ್ಯಾಯ ಬ್ರೌಸರ್‌ ತೆರೆಯುವಂತೆ ನಿಮ್ಮ ಸಿಸ್ಟಂ ನಿರ್ವಾಹಕರು Chrome ಅನ್ನು ಕಾನ್ಫಿಗರ್ ಮಾಡಿದ್ದಾರೆ <strong>$url$</strong>.",
+    "message": "ಪ್ರವೇಶಿಸಲು ಪರ್ಯಾಯ ಬ್ರೌಸರ್‌ ತೆರೆಯುವಂತೆ ನಿಮ್ಮ ಸಿಸ್ಟಂ ನಿರ್ವಾಹಕರು Firefox ಅನ್ನು ಕಾನ್ಫಿಗರ್ ಮಾಡಿದ್ದಾರೆ <strong>$url$</strong>.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "ಪಾರಂಪರಿಕ ಬ್ರೌಸರ್‌ ಬೆಂಬಲವನ್ನು ಕುರಿತು <a href='https://www.google.com/intl/en/chrome/business/'>ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ</a>.",
+    "message": "ಪಾರಂಪರಿಕ ಬ್ರೌಸರ್‌ ಬೆಂಬಲವನ್ನು ಕುರಿತು <a href='https://www.mozilla.org/firefox/enterprise/'>ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ</a>.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }

@@ -4,24 +4,24 @@
     "description": "Name of the extension."
   },
   "extension_description": {
-    "message": "परंपरागत ब्राउझर समर्थित करत असताना आपल्या संस्थेच्या Chrome चे उपयोजन करा.",
+    "message": "परंपरागत ब्राउझर समर्थित करत असताना आपल्या संस्थेच्या Firefox चे उपयोजन करा.",
     "description": "Description of the extension."
   },
   "redirect_title": {
     "message": "वैकल्पिक ब्राउझरमध्ये उघडत आहे...",
-    "description": "The title of the redirection page. Also shown in the Chrome title bar."
+    "description": "The title of the redirection page. Also shown in the Firefox title bar."
   },
   "error_title": {
     "message": "वैकल्पिक ब्राउझर उघडू शकले नाही",
     "description": "The title of the redirection page if an error has happened while trying to load the alternative browser."
   },
   "redirect_message": {
-    "message": "<strong>$url$</strong> वर प्रवेश करण्‍याकरिता वैकल्पिक ब्राउझर उघडण्यासाठी आपल्या सिस्टीम प्रशासकाने Chrome कॉन्फिगर केले आहे.",
+    "message": "<strong>$url$</strong> वर प्रवेश करण्‍याकरिता वैकल्पिक ब्राउझर उघडण्यासाठी आपल्या सिस्टीम प्रशासकाने Firefox कॉन्फिगर केले आहे.",
     "description": "Text shown on the redirection page while the alternative browser is started.",
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
@@ -35,12 +35,12 @@
     "placeholders": {
       "url": {
         "content": "$1",
-        "example": "http://google.com/"
+        "example": "https://www.mozilla.org/"
       }
     }
   },
   "learn_more_message": {
-    "message": "परंपरागत ब्राउझर समर्थनाबद्दल <a href='https://www.google.com/intl/en/chrome/business/'>अधिक जाणून घ्या</a>.",
+    "message": "परंपरागत ब्राउझर समर्थनाबद्दल <a href='https://www.mozilla.org/firefox/enterprise/'>अधिक जाणून घ्या</a>.",
     "description": "Message shown on the bottom with a link to a (potentially) internationalized 'learn more' article"
   }
 }
