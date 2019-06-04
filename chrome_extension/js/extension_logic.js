@@ -584,7 +584,8 @@ function handleMessage(request, sender, sendResponse) {
                         || windows.filter(isNormalWindow).length > 1) {
                       chrome.tabs.remove(tab.id);
                     } else {
-                      chrome.tabs.update(tab.id, {url: 'about:newtab'});
+                      chrome.tabs.create({});
+                      chrome.tabs.remove(tab.id);
                     }
                   });
                 });
