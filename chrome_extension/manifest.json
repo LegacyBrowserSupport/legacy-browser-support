@@ -1,6 +1,6 @@
 {
   "name": "__MSG_extension_name__",
-  "version": "5.1",
+  "version": "0.1",
   "icons": {
     "16": "icon.png",
     "48": "icon_48.png",
@@ -29,9 +29,6 @@
     "action.html",
     "loading.html"
   ],
-  "storage": {
-    "managed_schema": "schema.json"
-  },
   "browser_specific_settings": {
     "gecko": {
       "id": "legacy-browser-support@mozilla.com"
