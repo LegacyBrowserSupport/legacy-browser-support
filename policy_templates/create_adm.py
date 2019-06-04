@@ -28,8 +28,8 @@ def doswrite(f, text):
 
 output_json = json.load(open("policy_templates.json"))
 
-adm_file = codecs.open("LegacyBrowserSupport.adm", encoding="utf-16", mode="w")
-adml_file = open("LegacyBrowserSupport.adml", "w")
+adm_file = codecs.open("LegacyBrowserSupportFirefox.adm", encoding="utf-16", mode="w")
+adml_file = open("LegacyBrowserSupportFirefox.adml", "w")
 
 doswrite(adml_file, """<?xml version="1.0" encoding="utf-8"?>
 <policyDefinitionResources revision="1.0" schemaVersion="1.0">
@@ -44,7 +44,7 @@ doswrite(adml_file, """<?xml version="1.0" encoding="utf-8"?>
 doswrite(adm_file, """CLASS MACHINE
   CATEGORY !!Cat_Google
     CATEGORY !!Cat_LegacyBrowserSupport
-      KEYNAME "Software\\Policies\\Google\\Chrome\\3rdparty\\Extensions\\heildphpnddilhkemkielfhnkaagiabh\\policy"
+      KEYNAME "Software\\Policies\\Mozilla\\Firefox\\3rdparty\\Extensions\\legacy-browser-support@mozilla.org"
 
       POLICY !!AlternativeBrowserPath
         #if version >= 4
@@ -66,23 +66,23 @@ doswrite(adm_file, """CLASS MACHINE
         END PART
       END POLICY
 
-      POLICY !!ChromePath
+      POLICY !!FirefoxPath
         #if version >= 4
             SUPPORTED !!SUPPORTED_WINXPSP2
         #endif
-        EXPLAIN !!ChromePath_Explain
-        PART !!ChromePath_Part  EDITTEXT
-          VALUENAME "chrome_path"
+        EXPLAIN !!FirefoxPath_Explain
+        PART !!firefoxPath_Part  EDITTEXT
+          VALUENAME "firefox_path"
         END PART
       END POLICY
 
-      POLICY !!ChromeArguments
+      POLICY !!FirefoxArguments
         #if version >= 4
             SUPPORTED !!SUPPORTED_WINXPSP2
         #endif
-        EXPLAIN !!ChromeArguments_Explain
-        PART !!ChromeArguments_Part  EDITTEXT
-          VALUENAME "chrome_arguments"
+        EXPLAIN !!FirefoxArguments_Explain
+        PART !!FirefoxArguments_Part  EDITTEXT
+          VALUENAME "firefox_arguments"
         END PART
       END POLICY
 
@@ -92,7 +92,7 @@ doswrite(adm_file, """CLASS MACHINE
         #endif
         EXPLAIN !!URLList_Explain
         PART !!URLList_Part  LISTBOX
-          KEYNAME "Software\\Policies\\Google\\Chrome\\3rdparty\\Extensions\\heildphpnddilhkemkielfhnkaagiabh\\policy\\url_list"
+          KEYNAME "Software\\Policies\\Mozilla\\Firefox\\3rdparty\\Extensions\\legacy-browser-support@mozilla.org\\url_list"
           VALUEPREFIX ""
         END PART
       END POLICY
@@ -103,17 +103,17 @@ doswrite(adm_file, """CLASS MACHINE
         #endif
         EXPLAIN !!URLGreyList_Explain
         PART !!URLGreyList_Part  LISTBOX
-          KEYNAME "Software\\Policies\\Google\\Chrome\\3rdparty\\Extensions\\heildphpnddilhkemkielfhnkaagiabh\\policy\\url_greylist"
+          KEYNAME "Software\\Policies\\Mozilla\\Firefox\\3rdparty\\Extensions\\legacy-browser-support@mozilla.org\\url_greylist"
           VALUEPREFIX ""
         END PART
       END POLICY
 
-      POLICY !!KeepLastChromeTab_Policy
+      POLICY !!KeepLastFirefoxTab_Policy
         #if version >= 4
             SUPPORTED !!SUPPORTED_WINXPSP2
         #endif
-        EXPLAIN !!KeepLastChromeTab_Explain
-        VALUENAME "keep_last_chrome_tab"
+        EXPLAIN !!KeepLastFirefoxTab_Explain
+        VALUENAME "keep_last_firefox_tab"
         VALUEON NUMERIC 1
         VALUEOFF NUMERIC 0
       END POLICY
@@ -177,19 +177,19 @@ doswrite(adml_file, """</label>
         <defaultValue></defaultValue>
       </textBox>
     </presentation>
-    <presentation id="ChromePath">
-      <textBox refId="ChromePath_Part">
+    <presentation id="FirefoxPath">
+      <textBox refId="FirefoxPath_Part">
         <label>""")
-doswrite(adml_file, output_json["ChromePath"]["message"].replace("$$", "$")
+doswrite(adml_file, output_json["FirefoxPath"]["message"].replace("$$", "$")
          .replace("\\\\", "\\").encode("utf-8"))
 doswrite(adml_file, """</label>
         <defaultValue></defaultValue>
       </textBox>
     </presentation>
-    <presentation id="ChromeArguments">
-      <textBox refId="ChromeArguments_Part">
+    <presentation id="FirefoxArguments">
+      <textBox refId="FirefoxArguments_Part">
         <label>""")
-doswrite(adml_file, output_json["ChromeArguments"]["message"].replace(
+doswrite(adml_file, output_json["FirefoxArguments"]["message"].replace(
     "$$", "$").replace("\\\\", "\\").encode("utf-8"))
 doswrite(adml_file, """</label>
         <defaultValue></defaultValue>
@@ -207,7 +207,7 @@ doswrite(adml_file, output_json["URLGreyList_Policy"]["message"].replace(
     "$$", "$").replace("\\\\", "\\").encode("utf-8"))
 doswrite(adml_file, """</listBox>
     </presentation>
-    <presentation id="KeepLastChromeTab_Policy"/>
+    <presentation id="KeepLastFirefoxTab_Policy"/>
     <presentation id="ShowTransitionScreen_Policy">
       <decimalTextBox refId="ShowTransitionScreen_Part">""")
 doswrite(adml_file, output_json["ShowTransitionScreen_Policy"]["message"]

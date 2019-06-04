@@ -3,9 +3,9 @@
     "description": "States the fact that this policy is only supported on XP SP2 and above",
     "message": "Microsoft Windows XP SP2 or later"
   },
-  "Cat_Google": {
+  "Cat_Mozilla": {
     "description": "The general category in the Group Policy Editor",
-    "message": "Google"
+    "message": "Mozilla"
   },
   "Cat_LegacyBrowserSupport": {
     "description": "The specific category in the Group Policy Editor",
@@ -21,7 +21,7 @@
   },
   "AlternativeBrowserPath_Explain": {
     "description": "Explanation of the AlternativeBrowserPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too.",
-    "message": "Specify the executable of the alternative browser.\nAllows you to specify the program to be used as an alternative browser.\n\nIf enabled you can either specify an absolute path in the policy or use one of the following variables:\n\n$${ie} - The default install location for Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE is used to pick the location of the browser in this case.\n$${firefox} - The default install location for Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE is used to pick the location of the browser in this case.\n$${safari} - The default install location for Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE is used to pick the location of the browser in this case.\n\nIf the policy is not enabled or left empty the default alternative browser will be used which is Internet Explorer determined as if the $${ie} value is used."
+    "message": "Specify the executable of the alternative browser.\nAllows you to specify the program to be used as an alternative browser.\n\nIf enabled you can either specify an absolute path in the policy or use one of the following variables:\n\n$${ie} - The default install location for Internet Explorer\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE is used to pick the location of the browser in this case.\n$${chrome} - The default install location for Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE is used to pick the location of the browser in this case.\n$${safari} - The default install location for Safari\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\SAFARI.EXE is used to pick the location of the browser in this case.\n\nIf the policy is not enabled or left empty the default alternative browser will be used which is Internet Explorer determined as if the $${ie} value is used."
   },
   "AlternativeBrowserArguments": {
     "description": "Name of the AlternativeBrowserArguments policy",
@@ -35,29 +35,29 @@
     "description": "Explanation of the AlternativeBrowserArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too.",
     "message": "Allows you to specify the arguments to be passed to the executable of the alternative browser.\n\nIf the policy is enabled the provided paramters will be used when the alternative browser is invoked.\n\nYou can also use the special placeholder $${url} to specify where the url should appear in the command line. E.g. \"--url=$${url} --kiosk\".\nYou don't have to specify the placeholder if it should be appended to the end or if it should be the only argument you can leave that policy empty.\n\nIf the policy is disabled or left empty only the url will be passed as a parameter to the browser."
   },
-  "ChromePath": {
-    "description": "Name of the ChromePath policy",
-    "message": "Chrome Path"
+  "FirefoxPath": {
+    "description": "Name of the FirefoxPath policy",
+    "message": "Firefox Path"
   },
-  "ChromePath_Part": {
-    "description": "Name of the ChromePath policy part",
-    "message": "Chrome Path"
+  "FirefoxPath_Part": {
+    "description": "Name of the FirefoxPath policy part",
+    "message": "Firefox Path"
   },
-  "ChromePath_Explain": {
-    "description": "Explanation of the ChromePath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too.",
-    "message": "Allows you to specify the executable of Chrome to be lauched when returning from the alternative browser(*).\n\nWhen the policy is enabled you can either specify an absolute path in the policy or use the following variable:\n\n$${chrome} - The default install location for Chrome\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\Chrome.EXE is used to pick the location of the browser in this case.\n\nIf the policy is disabled or left empty the default installation of Chrome will be used as if the $${chrome} value has been used.\n\n*: Presently only Internet Explorer supports returning to Chrome automatically."
+  "FirefoxPath_Explain": {
+    "description": "Explanation of the FirefoxPath policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too.",
+    "message": "Allows you to specify the executable of Firefox to be launched when returning from the alternative browser(*).\n\nWhen the policy is enabled you can either specify an absolute path in the policy or use the following variable:\n\n$${firefox} - The default install location for Firefox\nHKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\FIREFOX.EXE is used to pick the location of the browser in this case.\n\nIf the policy is disabled or left empty the default installation of Firefox will be used as if the $${firefox} value has been used.\n\n*: Presently only Internet Explorer supports returning to Firefox automatically."
   },
-  "ChromeArguments": {
-    "description": "Name of the ChromeArguments policy",
-    "message": "Chrome Arguments"
+  "FirefoxArguments": {
+    "description": "Name of the FirefoxArguments policy",
+    "message": "Firefox Arguments"
   },
-  "ChromeArguments_Part": {
-    "description": "Name of the ChromeArguments policy part",
-    "message": "Chrome Arguments"
+  "FirefoxArguments_Part": {
+    "description": "Name of the FirefoxArguments policy part",
+    "message": "Firefox Arguments"
   },
-  "ChromeArguments_Explain": {
-    "description": "Explanation of the ChromeArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too.",
-    "message": "Allows you to specify the arguments to be passed to the Chrome when it is executed.\n\nIf the policy is enabled the provided paramters will be used when Chrome is invoked.\n\nYou can also use the special placeholder $${url} to specify where the url should appear in the command line. E.g. \"--url=$${url} --kiosk\".\nYou don't have to specify the placeholder if it should be appended to the end or if it should be the only argument you can leave that policy empty.\n\nIf the policy is disabled or left empty only the url will be passed as a parameter to the browser."
+  "FirefoxArguments_Explain": {
+    "description": "Explanation of the FirefoxArguments policy. Any ${TAG} should be left as is and not translated. Registry path should be left as is too.",
+    "message": "Allows you to specify the arguments to be passed to the Firefox when it is executed.\n\nIf the policy is enabled the provided paramters will be used when Firefox is invoked.\n\nYou can also use the special placeholder $${url} to specify where the url should appear in the command line. E.g. \"--url=$${url} --kiosk\".\nYou don't have to specify the placeholder if it should be appended to the end or if it should be the only argument you can leave that policy empty.\n\nIf the policy is disabled or left empty only the url will be passed as a parameter to the browser."
   },
   "URLList_Policy": {
     "description": "Name of the URLList policy",
@@ -69,7 +69,7 @@
   },
   "URLList_Explain": {
     "description": "Explanation of the URLList policy",
-    "message": "Allows you to specify a list of host domain names to be opened in the Alternative browser.\n\nIf the policy is enabled you have to provide a list of filters which will trigger the transition to the alternative browser. Every entry should be one of the following four types:\n\nHost-name part: Either complete domain names like \"www.example.com\" should be specified or parts of them like \"example.com\" or even \"example\". Wildcards are not supported yet.\nURL prefix: Only proper URL prefixes are matched complete with protocol and port if needed. E.g. \"http://login.example.com\" or \"https://www.example.com:8080/login/\".\nNegative entry: Starts with \"!\" and continues as host-name part or URL prefix as described above. Negative entries are always opened in Chrome. E.g. \"!example.com\" or \"!file:///c:/localapp/\".\nWildcard entry: Contains only a single \"*\" character. Matches any URL. Intended to be used together with negative entries, if most URLs should be open in the alternative browser and only a small selection of URLs should be opened in Chrome.\n\nNegative entries have higher priorities than positive entries which allows to whitelist large portions of a domain while saving smaller sections to be opened in Chrome.\nThe wildcard entry if present is applied only after all other rules have been checked.\n\nThe following protocols are monitored for redirecting: http:, https:.\n\nIf not specified or left empty - no transition to the alternative browser will be triggered."
+    "message": "Allows you to specify a list of host domain names to be opened in the Alternative browser.\n\nIf the policy is enabled you have to provide a list of filters which will trigger the transition to the alternative browser. Every entry should be one of the following four types:\n\nHost-name part: Either complete domain names like \"www.example.com\" should be specified or parts of them like \"example.com\" or even \"example\". Wildcards are not supported yet.\nURL prefix: Only proper URL prefixes are matched complete with protocol and port if needed. E.g. \"http://login.example.com\" or \"https://www.example.com:8080/login/\".\nNegative entry: Starts with \"!\" and continues as host-name part or URL prefix as described above. Negative entries are always opened in Firefox. E.g. \"!example.com\" or \"!file:///c:/localapp/\".\nWildcard entry: Contains only a single \"*\" character. Matches any URL. Intended to be used together with negative entries, if most URLs should be open in the alternative browser and only a small selection of URLs should be opened in Firefox.\n\nNegative entries have higher priorities than positive entries which allows to whitelist large portions of a domain while saving smaller sections to be opened in Firefox.\nThe wildcard entry if present is applied only after all other rules have been checked.\n\nThe following protocols are monitored for redirecting: http:, https:.\n\nIf not specified or left empty - no transition to the alternative browser will be triggered."
   },
   "URLGreyList_Policy": {
     "description": "Name of the URLGreyList policy",
@@ -81,31 +81,31 @@
   },
   "URLGreyList_Explain": {
     "description": "Explanation of the URLGreyList policy",
-    "message": "Allows you to specify a list of host domain names to be opened in either browser.\n\nWhen this policy is enabled, the domains in this list will be available in both browsers and will not triggera transition either way.\n\nA possible use case are any authentication domains that are shared between new and legacy apps in this list.\n\nHost-name parts: Either complete domain names like \"www.example.com\" should be specified or parts of them like \"example.com: or even \"example\". Wildcards are not supported yet.\nURL prefixes: Only proper URL prefixes are matched complete with protocol and port if needed. E.g. \"http://login.example.com\" or \"https://www.example.com:8080/login/\".\n\nIf not specified or left empty - any domain not in the \"Hosts to Open In the Alternative Browser\" list will trigger a transition back to Chrome(*).\n\n*: Presently only Internet Explorer supports returning to Chrome automatically."
+    "message": "Allows you to specify a list of host domain names to be opened in either browser.\n\nWhen this policy is enabled, the domains in this list will be available in both browsers and will not triggera transition either way.\n\nA possible use case are any authentication domains that are shared between new and legacy apps in this list.\n\nHost-name parts: Either complete domain names like \"www.example.com\" should be specified or parts of them like \"example.com: or even \"example\". Wildcards are not supported yet.\nURL prefixes: Only proper URL prefixes are matched complete with protocol and port if needed. E.g. \"http://login.example.com\" or \"https://www.example.com:8080/login/\".\n\nIf not specified or left empty - any domain not in the \"Hosts to Open In the Alternative Browser\" list will trigger a transition back to Firefox(*).\n\n*: Presently only Internet Explorer supports returning to Firefox automatically."
   },
-  "KeepLastChromeTab_Policy": {
-    "description": "Name of the KeepLastChromeTab policy",
-    "message": "Keep Last Chrome Tab On Transition"
+  "KeepLastFirefoxTab_Policy": {
+    "description": "Name of the KeepLastFirefoxTab policy",
+    "message": "Keep Last Firefox Tab On Transition"
   },
-  "KeepLastChromeTab_Part": {
-    "description": "Name of the KeepLastChromeTab part",
-    "message": "Keep Last Chrome Tab On Transition"
+  "KeepLastFirefoxTab_Part": {
+    "description": "Name of the KeepLastFirefoxTab part",
+    "message": "Keep Last Firefox Tab On Transition"
   },
-  "KeepLastChromeTab_Explain": {
-    "description": "Explanation of the KeepLastChromeTab policy",
-    "message": "Allows you to specify what happens when the last open tab in Chrome is being redirected to the alternative browser.\n\nWhen this policy is enabled or not set the last tab will be left open and point to the new tab page after the transition. If it is set to disabled then the last tab will be closed which will lead to closing Chrome if there are no other Chrome windows open."
+  "KeepLastFirefoxTab_Explain": {
+    "description": "Explanation of the KeepLastFirefoxTab policy",
+    "message": "Allows you to specify what happens when the last open tab in Firefox is being redirected to the alternative browser.\n\nWhen this policy is enabled or not set the last tab will be left open and point to the new tab page after the transition. If it is set to disabled then the last tab will be closed which will lead to closing Firefox if there are no other Firefox windows open."
   },
   "ShowTransitionScreen_Policy": {
     "description": "Name of the ShowTransitionScreen policy",
-    "message": "Show Transition Screen in Chrome For Some Time"
+    "message": "Show Transition Screen in Firefox For Some Time"
   },
   "ShowTransitionScreen_Part": {
     "description": "Name of the ShowTransitionScreen policy part",
-    "message": "Show Transition Screen in Chrome For Some Time"
+    "message": "Show Transition Screen in Firefox For Some Time"
   },
   "ShowTransitionScreen_Explain": {
     "description": "Explanation of the ShowTransitionScreen policy",
-    "message": "Allows you to specify how long the transition message in the tab will be visible in Chrome before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
+    "message": "Allows you to specify how long the transition message in the tab will be visible in Firefox before transitioning to the other browser. This helps visualize the transition. The policy is specified in seconds.\n\nIf it is not set then the tab will be closed immediately when the transition can be completed."
   },
   "UseIeSiteList_Policy": {
     "description": "Name of the UseIeSiteList policy",

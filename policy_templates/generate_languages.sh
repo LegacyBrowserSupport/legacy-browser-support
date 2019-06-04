@@ -19,11 +19,11 @@ for dir in *; do
   cd $dir
   python ../../create_adm.py
   mkdir -p ../../output/admx/$dir
-  cp LegacyBrowserSupport.adml ../../output/admx/$dir/
-  cp ../../admx/google.adml ../../output/admx/$dir/
-  unix2dos ../../output/admx/$dir/google.adml
+  cp LegacyBrowserSupportFirefox.adml ../../output/admx/$dir/
+  cp ../../admx/mozilla.adml ../../output/admx/$dir/
+  unix2dos ../../output/admx/$dir/mozilla.adml
   mkdir -p ../../output/adm/$dir
-  cp LegacyBrowserSupport.adm ../../output/adm/$dir/
+  cp LegacyBrowserSupportFirefox.adm ../../output/adm/$dir/
   echo "Done $dir"
   cd -
 done
