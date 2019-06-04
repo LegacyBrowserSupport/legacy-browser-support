@@ -28,7 +28,6 @@ for dir in *; do
   cd -
 done
 cd ..
-rm -fr ./langs
 # Zip up the output.
 cd output
 cp ../admx/*.admx ./admx/
