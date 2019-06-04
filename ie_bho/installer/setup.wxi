@@ -165,7 +165,7 @@
     <!-- Support information that will appear in "Add or Remove Programs" -->
     <Property Id="ARPCONTACT" Value="$(var.COMPANY_FULLNAME)" />
     <Property Id="ARPURLINFOABOUT" Value="$(var.URL)" />
-    <Property Id="ARPPRODUCTICON">google.ico</Property>
+    <Property Id="ARPPRODUCTICON">mozilla.ico</Property>
 
     <!-- Prevents downgrading -->
     <Upgrade Id="$(var.GUID_UPGRADE_CODE)">
@@ -193,6 +193,6 @@
 
     <Property Id="UILevel">1</Property>
     <Property Id="ALLUSERS">1</Property>
-    <Icon Id="google.ico" SourceFile="$(var.SrcIcon)" />
+    <Icon Id="mozilla.ico" SourceFile="$(var.SrcIcon)" />
   </Product>
 </Include>
