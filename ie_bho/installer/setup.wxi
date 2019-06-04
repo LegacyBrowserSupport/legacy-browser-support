@@ -98,7 +98,7 @@
               </File>
               <RegistryValue
                  Root="HKLM"
-                 Key="SOFTWARE\Mozilla\NativeMessagingHosts\com.mozilla.browserswitcher"
+                 Key="SOFTWARE\Mozilla\NativeMessagingHosts\org.mozilla.browserswitcher"
                  Value="[ProgramFilesFolder]Mozilla\$(var.INSTALL_DIR)\manifest.json" Type="string" Action="write" />
             </Component>
           </Directory>

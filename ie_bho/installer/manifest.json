@@ -1,7 +1,7 @@
 ﻿{
-  "name": "com.mozilla.browserswitcher",
+  "name": "org.mozilla.browserswitcher",
   "description": "Legacy Browser Support Launcher",
   "path": "lbs_native_host.exe",
   "type": "stdio",
-  "allowed_extensions": [ "legacy-browser-support@mozilla.com"]
+  "allowed_extensions": [ "legacy-browser-support@mozilla.org"]
 }
