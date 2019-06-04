@@ -31,7 +31,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "legacy-browser-support@mozilla.com"
+      "id": "legacy-browser-support@mozilla.org"
     }
   }
 }
