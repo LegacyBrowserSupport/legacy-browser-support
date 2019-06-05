@@ -19,7 +19,7 @@
 #include <string>
 #include <vector>
 
-// Implements the browser switching logic for both Chrome and the alternative
+// Implements the browser switching logic for both Firefox and the alternative
 // browser.
 class BrowserSwitcherCore {
  public:
@@ -31,8 +31,8 @@ class BrowserSwitcherCore {
 
   // Invokes the configured alternative browser and loads |url| in it.
   bool InvokeAlternativeBrowser(const std::wstring& url) const;
-  // Invokes Chrome and loads |url| in it.
-  bool InvokeChrome(const std::wstring& url) const;
+  // Invokes Firefox and loads |url| in it.
+  bool InvokeFirefox(const std::wstring& url) const;
 
   // Setter and getter for the alternative browser executable. |path| can be
   // either a fully qualified path to an executable or one of the following
@@ -44,6 +44,7 @@ class BrowserSwitcherCore {
   //     ${firefox} - The default location of Firefox as defined in the
   //                  registry.
   //     ${opera}   - The default location of Opera as defined in the registry.
+  //     ${chrome}   - The default location of Chrome as defined in the registry.
   void SetAlternativeBrowserPath(const std::wstring& path);
   const std::wstring& GetAlternativeBrowserPath() const;
 
@@ -55,21 +56,21 @@ class BrowserSwitcherCore {
   void SetAlternativeBrowserParameters(const std::wstring& parameters);
   const std::wstring& GetAlternativeBrowserParameters() const;
 
-  // Setter and getter for Chrome's executable. |path| can be either a fully
+  // Setter and getter for Firefox's executable. |path| can be either a fully
   // qualified path to an executable or the following variable. If this variable
   // is used then it should be the only content of the parameter as it will
   // resolve to the fully qualified path of the browser.
-  //     ${chrome}  - The default location of Chrome as defined in the registry.
-  void SetChromePath(const std::wstring& path);
-  const std::wstring& GetChromePath() const;
+  //     ${firefox}  - The default location of Firefox as defined in the registry.
+  void SetFirefoxPath(const std::wstring& path);
+  const std::wstring& GetFirefoxPath() const;
 
-  // Setter and getter for the Chrome command line parameters.
+  // Setter and getter for the Firefox command line parameters.
   // |parameters| can contain the following variable in which case this will be
   // the position of the url to be opened, otherwise it will be appended at the
   // end:
   //     ${url} - The location of the url parameter in the command line.
-  void SetChromeParameters(const std::wstring& parameters);
-  const std::wstring& GetChromeParameters() const;
+  void SetFirefoxParameters(const std::wstring& parameters);
+  const std::wstring& GetFirefoxParameters() const;
 
   // Setter and getter for the list of urls to be opened in the alternative
   // browser.
@@ -93,7 +94,7 @@ class BrowserSwitcherCore {
   // Checks if an url should be opened in the alternative browser. Returns true
   // if the hostname (or part of it) of the url is contained in the url lists.
   // This function should be used by external browsers to verify if they should
-  // bounce back to Chrome. Chrome itself uses different logic to decide if the
+  // bounce back to Firefox. Firefox itself uses different logic to decide if the
   // url should be opened in the external browser.
   bool ShouldOpenInAlternativeBrowser(const std::wstring& url);
 
@@ -169,10 +170,10 @@ class BrowserSwitcherCore {
 
   std::wstring alt_browser_path_;
   std::wstring alt_browser_dde_host_;
-  std::wstring chrome_path_;
+  std::wstring firefox_path_;
 
   std::wstring alt_browser_parameters_;
-  std::wstring chrome_parameters_;
+  std::wstring firefox_parameters_;
 
   UrlList urls_to_redirect_;
   UrlListTypes urls_to_redirect_type_;

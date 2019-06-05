@@ -13,8 +13,8 @@
 // limitations under the License.
 
 // This application is a wrapper around the BrowserSwitcherCore that is capable
-// of talking the native messaging API protocol of Chrome.
-// The application is started by Chrome automatically when the extension is
+// of talking the native messaging API protocol of Firefox.
+// The application is started by Firefox automatically when the extension is
 // loaded and uses the standard input and output to exchange json formatted
 // blobs of data.
 // The expected input objects have the following fields:
@@ -54,14 +54,14 @@ const char kLogError[] = "logError";
 
 const char kAlternativeBrowserProperty[] = "alternative_browser";
 const char kAltBrowserParametersProperty[] = "alternative_browser_arguments";
-const char kChromeBrowserProperty[] = "chrome_browser";
-const char kChromeParametersProperty[] = "chrome_arguments";
+const char kFirefoxBrowserProperty[] = "firefox_browser";
+const char kFirefoxParametersProperty[] = "firefox_arguments";
 const char kUrlListProperty[] = "urls_to_redirect";
 const char kUrlGreyListProperty[] = "url_greylist";
 const char kUseIESiteList[] = "use_ie_site_list";
 
 // The singleton core object. Created later after we have set up logging to not
-// smear stdout and cause our channel to Chrome to be closed.
+// smear stdout and cause our channel to Firefox to be closed.
 BrowserSwitcherCore* browser_switcher = NULL;
 
 void InvokeAlternativeBrowser(const Json::Value& input, Json::Value* output) {
@@ -108,11 +108,11 @@ void SetProperties(const Json::Value& input, Json::Value* output) {
     } else if (name == kAltBrowserParametersProperty) {
       browser_switcher->SetAlternativeBrowserParameters(
         GetPropertyValueAsWideString(properties[i]));
-    } else if (name == kChromeBrowserProperty) {
-      browser_switcher->SetChromePath(
+    } else if (name == kFirefoxBrowserProperty) {
+      browser_switcher->SetFirefoxPath(
         GetPropertyValueAsWideString(properties[i]));
-    } else if (name == kChromeParametersProperty) {
-      browser_switcher->SetChromeParameters(
+    } else if (name == kFirefoxParametersProperty) {
+      browser_switcher->SetFirefoxParameters(
         GetPropertyValueAsWideString(properties[i]));
     } else if (name == kUrlListProperty) {
       browser_switcher->SetUrlsToRedirect(

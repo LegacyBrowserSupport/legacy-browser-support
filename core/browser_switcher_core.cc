@@ -178,13 +178,13 @@ bool BrowserSwitcherCore::InvokeAlternativeBrowser(
   return true;
 }
 
-bool BrowserSwitcherCore::InvokeChrome(const std::wstring& url) const {
-  std::wstring command_line = CompileCommandLine(GetChromeParameters(), url);
+bool BrowserSwitcherCore::InvokeFirefox(const std::wstring& url) const {
+  std::wstring command_line = CompileCommandLine(GetFirefoxParameters(), url);
   HINSTANCE browser_instance =
-      ::ShellExecute(NULL, NULL, chrome_path_.c_str(),
+      ::ShellExecute(NULL, NULL, firefox_path_.c_str(),
                      command_line.c_str(), NULL, SW_SHOWNORMAL);
   if (reinterpret_cast<int>(browser_instance) <= 32) {
-    LOG(ERR) << "Could not start Chrome! Handle: " << browser_instance
+    LOG(ERR) << "Could not start Firefox! Handle: " << browser_instance
                 << " " << ::GetLastError() << std::endl;
     return false;
   }
@@ -224,24 +224,24 @@ BrowserSwitcherCore::GetAlternativeBrowserParameters() const {
   return alt_browser_parameters_;
 }
 
-void BrowserSwitcherCore::SetChromePath(const std::wstring& path) {
-  chrome_path_ = path;
-  if (chrome_path_.empty() || chrome_path_.compare(kChromeVarName) == 0)
-    chrome_path_ = GetBrowserLocation(kChromeKey);
+void BrowserSwitcherCore::SetFirefoxPath(const std::wstring& path) {
+  firefox_path_ = path;
+  if (firefox_path_.empty() || firefox_path_.compare(kFirefoxVarName) == 0)
+    firefox_path_ = GetBrowserLocation(kFirefoxKey);
   alt_browser_path_ = ExpandEnvironmentVariables(alt_browser_path_);
 }
 
-const std::wstring& BrowserSwitcherCore::GetChromePath() const {
-  return chrome_path_;
+const std::wstring& BrowserSwitcherCore::GetFirefoxPath() const {
+  return firefox_path_;
 }
 
-void BrowserSwitcherCore::SetChromeParameters(const std::wstring& parameters) {
-  chrome_parameters_ = parameters;
-  chrome_parameters_ = ExpandEnvironmentVariables(chrome_parameters_);
+void BrowserSwitcherCore::SetFirefoxParameters(const std::wstring& parameters) {
+  firefox_parameters_ = parameters;
+  firefox_parameters_ = ExpandEnvironmentVariables(firefox_parameters_);
 }
 
-const std::wstring& BrowserSwitcherCore::GetChromeParameters() const {
-  return chrome_parameters_;
+const std::wstring& BrowserSwitcherCore::GetFirefoxParameters() const {
+  return firefox_parameters_;
 }
 
 const BrowserSwitcherCore::UrlList& 
@@ -305,7 +305,7 @@ void BrowserSwitcherCore::ProcessUrlList(UrlList* list,
 
 bool BrowserSwitcherCore::ShouldOpenInAlternativeBrowser(
     const std::wstring& url) {
-  enum TransitionDecision { NONE, CHROME, ALT_BROWSER };
+  enum TransitionDecision { NONE, FIREFOX, ALT_BROWSER };
   TransitionDecision decision = NONE;
 
   // Since we can not decide in this case we should assume it is ok to use the
@@ -350,11 +350,11 @@ bool BrowserSwitcherCore::ShouldOpenInAlternativeBrowser(
         break;
       case NEGATED_HOST:
         if (hostname.find(urls_to_redirect_[i].substr(1)) != hostname.npos)
-          decision = CHROME;
+          decision = FIREFOX;
         break;
       case NEGATED_PREFIX:
         if (url.find(urls_to_redirect_[i].substr(1)) == 0)
-          decision = CHROME;
+          decision = FIREFOX;
         break;
       case WILDCARD:
         all_in_alternative_browser = true;
@@ -385,11 +385,11 @@ bool BrowserSwitcherCore::ShouldOpenInAlternativeBrowser(
           break;
         case NEGATED_HOST:
           if (hostname.find(urls_from_site_list_[i].substr(1)) != hostname.npos)
-            decision = CHROME;
+            decision = FIREFOX;
           break;
         case NEGATED_PREFIX:
           if (url.find(urls_from_site_list_[i].substr(1)) == 0)
-            decision = CHROME;
+            decision = FIREFOX;
           break;
         case WILDCARD:
           all_in_alternative_browser = true;
@@ -445,7 +445,7 @@ bool BrowserSwitcherCore::ShouldOpenInAlternativeBrowser(
 
 void BrowserSwitcherCore::Initialize() {
   alt_browser_path_ = GetBrowserLocation(kIExploreKey);
-  chrome_path_ = GetBrowserLocation(kChromeKey);
+  firefox_path_ = GetBrowserLocation(kFirefoxKey);
   configuration_valid_ = false;
   if (!LoadConfigFile())
     LOG(ERR) << "Confing file could not be loaded!" << std::endl;
@@ -498,14 +498,14 @@ bool BrowserSwitcherCore::LoadConfigFile() {
     return false;
   LOG(INFO) << "alternative_browser_parameters : '"
             << alternative_browser_parameters << "'" << std::endl;
-  std::wstring chrome_path;
-  if (!ReadLineFromFile(&config_file, &chrome_path))
+  std::wstring firefox_path;
+  if (!ReadLineFromFile(&config_file, &firefox_path))
     return false;
-  LOG(INFO) << "chrome_path : '" << chrome_path << "'" << std::endl;
-  std::wstring chrome_parameters;
-  if (!ReadLineFromFile(&config_file, &chrome_parameters))
+  LOG(INFO) << "firefox_path : '" << firefox_path << "'" << std::endl;
+  std::wstring firefox_parameters;
+  if (!ReadLineFromFile(&config_file, &firefox_parameters))
     return false;
-  LOG(INFO) << "chrome_parameters : '" << chrome_parameters << "'" << std::endl;
+  LOG(INFO) << "firefox_parameters : '" << firefox_parameters << "'" << std::endl;
 
   size_t urls_to_load = 0;
   config_file >> urls_to_load;
@@ -545,8 +545,8 @@ bool BrowserSwitcherCore::LoadConfigFile() {
 
   SetAlternativeBrowserPath(alternative_browser_path);
   SetAlternativeBrowserParameters(alternative_browser_parameters);
-  SetChromePath(chrome_path);
-  SetChromeParameters(chrome_parameters);
+  SetFirefoxPath(firefox_path);
+  SetFirefoxParameters(firefox_parameters);
   SetUrlsToRedirect(urls_to_redirect);
   SetUrlGreylist(url_greylist);
   configuration_valid_ = true;
@@ -573,8 +573,8 @@ bool BrowserSwitcherCore::SaveConfigFile() {
   config_file << kCurrentFileVersion << std::endl;
   config_file << GetAlternativeBrowserPath() << std::endl;
   config_file << GetAlternativeBrowserParameters() << std::endl;
-  config_file << GetChromePath() << std::endl;
-  config_file << GetChromeParameters() << std::endl;
+  config_file << GetFirefoxPath() << std::endl;
+  config_file << GetFirefoxParameters() << std::endl;
   config_file << urls_to_redirect_.size() << std::endl;
   for (size_t i = 0; i < urls_to_redirect_.size(); ++i)
     config_file << urls_to_redirect_[i] << std::endl;
