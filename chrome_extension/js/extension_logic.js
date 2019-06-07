@@ -293,7 +293,8 @@ ExtensionLogic.prototype.normalizeUrl = function(item) {
  * @param {Object} items Dictionary with items retrieved from the storage.
  */
 ExtensionLogic.prototype.createRules = function(items) {
-  if (chrome.runtime.lastError) {
+  if (chrome.runtime.lastError &&
+      chrome.runtime.lastError.message != "Managed storage manifest not found") {
     // Avoid wiping the current policy if there was an error reading the new
     // values. The cache should stay active until the situation is resolved.
     this.port.logError('background.js:createRules() : ' +
