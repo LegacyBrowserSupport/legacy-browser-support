@@ -1,0 +1,67 @@
+VERSION_MAJOR=0
+VERSION_MINOR=1
+VERSION_BUILD=0
+VERSION_PATCH=0
+VERSION=$(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_BUILD).$(VERSION_PATCH)
+CANDLE = "C:\Program Files (x86)\WiX Toolset v3.11\bin\candle.exe"
+LIGHT = "C:\Program Files (x86)\WiX Toolset v3.11\bin\light.exe"
+BINDIR = bin.msvc/
+DLLOBJDIR = bin.msvc/ie_bho/
+DLL64OBJDIR = bin.msvc/ie_bho64/
+EXEOBJDIR = bin.msvc/native_component/
+EXESRCDIR = native_component/
+INSTALLDIR = $(DLLSRCDIR)/installer/
+INSTALLOBJDIR = bin.msvc/native_component/
+DLLSRCDIR = ie_bho/
+JSONDIR = third_party/json/
+COREDIR = core
+INC = -I ./ -I third_party/libxml/src/include/
+EXEDEFINES = /MD /DUNICODE /EHsc
+DLLDEFINES =  /MD /D_WINDLL /DUNICODE
+RCDEFINES = -DVERSION_MAJOR=0 -DVERSION_MINOR=1 -DVERSION_BUILD=0 -DVERSION_PATCH=0 -DVERSION_NUMBER=0.1.0.0
+CANDLEDEFINES = -dVersion="$(VERSION)" -dVersionMajor="$(VERSION_MAJOR)" -dVersionMinor="$(VERSION_MINOR)" -dSrcNativeComponent="$(BINDIR)/lbs_native_host.exe" -dSrcManifest="$(INSTALLDIR)/manifest.json" -dSrcIcon="$(INSTALLDIR)/mozilla.ico" -dSrcLibrary="$(BINDIR)/browser_switcher_bho.dll"  -dSrc64Library="$(BINDIR)/browser_switcher_bho_x64.dll"
+
+all: $(BINDIR) $(BINDIR)/browser_switcher_bho_x64.dll $(BINDIR)/setup64.msi
+
+$(BINDIR)/setup64.msi: $(INSTALLOBJDIR)/setup64.wixobj
+    $(LIGHT) -o "$(BINDIR)/setup64.msi" -loc $(INSTALLDIR)/lang_en.wxl "$(INSTALLOBJDIR)/setup64.wixobj"
+
+$(INSTALLOBJDIR)/setup64.wixobj: $(INSTALLDIR)/setup64.wxs
+    $(CANDLE)  -o "$(INSTALLOBJDIR)" $(CANDLEDEFINES) "$(INSTALLDIR)/setup64.wxs"
+
+$(BINDIR):
+	-mkdir -p $(BINDIR)
+	-mkdir -p $(DLLOBJDIR)
+	-mkdir -p $(DLL64OBJDIR)
+	-mkdir -p $(EXEOBJDIR)
+	-mkdir -p $(INSTALLOBJDIR)
+
+$(DLL64OBJDIR)/bho.obj: $(DLLSRCDIR)/bho.cc $(DLLSRCDIR)/ie_bho.h
+	cl /Fo$(DLL64OBJDIR) $(INC) $(DLLDEFINES) -c $(DLLSRCDIR)/bho.cc
+
+$(DLL64OBJDIR)/ie_bho.obj: $(DLLSRCDIR)/ie_bho.cc $(DLLSRCDIR)/ie_bho.h
+	cl /Fo$(DLL64OBJDIR) $(INC) $(DLLDEFINES) -c $(DLLSRCDIR)/ie_bho.cc
+
+$(DLL64OBJDIR)/ie_bho_i.obj: $(DLLSRCDIR)/ie_bho_i.c
+	cl /Fo$(DLL64OBJDIR) $(INC) $(DLLDEFINES) -c $**
+
+$(DLLSRCDIR)/ie_bho.h: $(DLLSRCDIR)/ie_bho.idl
+	midl /out $(DLLSRCDIR) $**
+	
+$(DLL64OBJDIR)/ie_bho.res: $(DLLSRCDIR)/ie_bho.rc
+	rc -fo$@ $(RCDEFINES) $**
+
+$(DLL64OBJDIR)/browser_switcher_core.obj: $(COREDIR)/browser_switcher_core.cc
+	cl /Fo$(DLL64OBJDIR) $(INC) $(DLLDEFINES) -c $**
+
+$(DLL64OBJDIR)/logging.obj: $(COREDIR)/logging.cc
+	cl /Fo$(DLL64OBJDIR) $(INC) $(DLLDEFINES) -c $**
+
+$(DLL64OBJDIR)/ieem_site_list_parser.obj: $(COREDIR)/ieem_site_list_parser.cc
+	cl /Fo$(DLL64OBJDIR) $(INC) $(DLLDEFINES) -c $**
+
+$(DLL64OBJDIR)/libxml_utils.obj: $(COREDIR)/libxml_utils.cc
+	cl /Fo$(DLL64OBJDIR) $(INC) $(DLLDEFINES) -c $**
+
+$(BINDIR)/browser_switcher_bho_x64.dll: $(DLL64OBJDIR)/bho.obj $(DLL64OBJDIR)/ie_bho.obj $(DLL64OBJDIR)/browser_switcher_core.obj $(DLL64OBJDIR)/logging.obj $(DLL64OBJDIR)/ieem_site_list_parser.obj  $(DLL64OBJDIR)/libxml_utils.obj $(DLL64OBJDIR)/ie_bho_i.obj $(DLL64OBJDIR)/ie_bho.res
+  link /DLL /DEF:$(DLLSRCDIR)/ie_bho.def /OUT:$(BINDIR)/browser_switcher_bho_x64.dll $** AdvAPI32.Lib shell32.lib wininet.lib User32.lib libxml2_a.lib urlmon.lib /LIBPATH:third_party\libxml\src\win32\bin64.msvc
