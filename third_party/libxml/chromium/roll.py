@@ -85,10 +85,10 @@ PATCHES = [
 SHARED_XML_CONFIGURE_OPTIONS = [
     # These options are turned ON
     ('--with-html', 'html=yes'),
-    ('--with-icu', 'icu=yes'),
+    ('--with-icu', 'icu=no'),
     ('--with-output', 'output=yes'),
     ('--with-push', 'push=yes'),
-    ('--with-python', 'python=yes'),
+    ('--with-python', 'python=no'),
     ('--with-reader', 'reader=yes'),
     ('--with-sax1', 'sax1=yes'),
     ('--with-tree', 'tree=yes'),
