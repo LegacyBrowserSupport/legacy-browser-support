@@ -52,7 +52,7 @@ STDMETHODIMP CBrowserSwitcherBHO::SetSite(IUnknown* site) {
   return IObjectWithSiteImpl<CBrowserSwitcherBHO>::SetSite(site);
 }
 
-// If enabled, monitors navigations and redirects them to Chrome if they are
+// If enabled, monitors navigations and redirects them to Firefox if they are
 // not intended to happen in IE according to the Legacy Browser Support policy.
 // This only applies to top-level documents (not to frames).
 void STDMETHODCALLTYPE CBrowserSwitcherBHO::BeforeNavigate(
@@ -90,7 +90,7 @@ bool CBrowserSwitcherBHO::CheckUrl(LPOLESTR url, bool cancel) {
        !_wcsnicmp(url, kFilePrefix, wcslen(kFilePrefix))) &&
       !browser_switcher_.ShouldOpenInAlternativeBrowser(url)) {
     LOG(INFO) << "\tTriggering redirect" << std::endl;
-    if (!browser_switcher_.InvokeChrome(url)) {
+    if (!browser_switcher_.InvokeFirefox(url)) {
       LOG(ERR) << "Cound not invoke alternative browser! "
                << "Will resume loading in IE!" << std::endl;
     } else {
