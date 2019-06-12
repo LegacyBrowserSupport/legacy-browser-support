@@ -45,7 +45,7 @@
           <Directory Id="INSTALLDIR" Name="$(var.INSTALL_DIR)">
             <Component Id="BrowserSwitcherLibrary" Guid="$(var.GUID_COMPONENT)">
               <AppId Description="LegacyBrowserSupport" Id="$(var.GUID_LIBRARY)" />
-<!--              <File Id="browser_switcher_bho.dll"
+              <File Id="browser_switcher_bho.dll"
                     Name="browser_switcher_bho.dll"
                     DiskId="1"
                     Source="$(var.SrcLibrary)"
@@ -77,7 +77,7 @@
                  Root="HKLM"
                  Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects\$(var.GUID_BHO)"
                  Name="NoExplorer" Value="1" Type="integer" Action="write" />
--->
+
               <RegistryValue
                  Root="HKLM"
                  Key="SOFTWARE\Mozilla\LegacyBrowserSupport"
@@ -104,10 +104,10 @@
           </Directory>
         </Directory>
       </Directory>
-<!--
+
       <?if $(var.PLATFORM) = x64 ?>
         <Directory Id="ProgramFiles64Folder" Name="ProgsDir">
-          <Directory Id="Google64" Name="Google">
+          <Directory Id="Mozilla64" Name="Mozilla">
             <Directory Id="INSTALLDIR64" Name="$(var.INSTALL_DIR)">
               <Component Id="BrowserSwitcherLibrary64" Guid="$(var.GUID_COMPONENT64)" Win64="yes">
                 <AppId Description="BrowserSwitcherLibrary" Id="$(var.GUID_LIBRARY)" />
@@ -152,7 +152,7 @@
           </Directory>
         </Directory>
       <?endif ?>
--->
+
     </Directory>
 
     <Feature Id="Complete" Level="1">
