@@ -42,7 +42,7 @@ doswrite(adml_file, """<?xml version="1.0" encoding="utf-8"?>
 """)
 
 doswrite(adm_file, """CLASS MACHINE
-  CATEGORY !!Cat_Google
+  CATEGORY !!Cat_Mozilla
     CATEGORY !!Cat_LegacyBrowserSupport
       KEYNAME "Software\\Policies\\Mozilla\\Firefox\\3rdparty\\Extensions\\legacy-browser-support@mozilla.org"
 
