@@ -55,7 +55,7 @@ Port.prototype.initialize = function() {
   self.port.onMessage.addListener(self.onMessageReceived.bind(self));
   self.port.onDisconnect.addListener(function() {
     console.error('Lost connection to the native host: ' +
-                  chrome.runtime.lastError.message);
+                  self.port.error);
     self.port = null;
     if (--self.connect_attempts_left > 0) {
       // Retry up to three times to re-establish connection with some delay.
