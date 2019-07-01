@@ -27,7 +27,7 @@ class CBrowserSwitcherModule
  public:
   DECLARE_LIBID(LIBID_BrowserSwitcherLib)
   DECLARE_REGISTRY_APPID_RESOURCEID(IDR_BROWSERSWITCHER,
-                                    "{7D7BEC19-57EE-41C9-9FEE-63A873363614}")
+                                    "{76B4711C-C8C4-4C52-8657-B7BEBBEAB44A}")
 };
 
 CBrowserSwitcherModule _AtlModule;
