@@ -1,5 +1,5 @@
-VERSION_MAJOR=0
-VERSION_MINOR=1
+VERSION_MAJOR=1
+VERSION_MINOR=0
 VERSION_BUILD=0
 VERSION_PATCH=0
 VERSION=$(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_BUILD).$(VERSION_PATCH)
@@ -18,7 +18,7 @@ COREDIR = core
 INC = -I ./ -I third_party/libxml/src/include/
 EXEDEFINES = /MD /DUNICODE /EHsc
 DLLDEFINES =  /MD /D_WINDLL /DUNICODE
-RCDEFINES = -DVERSION_MAJOR=0 -DVERSION_MINOR=1 -DVERSION_BUILD=0 -DVERSION_PATCH=0 -DVERSION_NUMBER=0.1.0.0
+RCDEFINES = -DVERSION_MAJOR=0 -DVERSION_MINOR=1 -DVERSION_BUILD=0 -DVERSION_PATCH=0 -DVERSION_NUMBER=1.0.0.0
 CANDLEDEFINES = -dVersion="$(VERSION)" -dVersionMajor="$(VERSION_MAJOR)" -dVersionMinor="$(VERSION_MINOR)" -dSrcNativeComponent="$(BINDIR)/lbs_native_host.exe" -dSrcManifest="$(INSTALLDIR)/manifest.json" -dSrcIcon="$(INSTALLDIR)/mozilla.ico" -dSrcLibrary="$(BINDIR)/browser_switcher_bho.dll" -dSrc64Library="$(BINDIR)/browser_switcher_bho_x64.dll"
 
 all: $(BINDIR) $(BINDIR)/lbs_native_host.exe  $(BINDIR)/browser_switcher_bho.dll $(BINDIR)/setup.msi
