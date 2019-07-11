@@ -176,7 +176,7 @@ bool BrowserSwitcherCore::InvokeAlternativeBrowser(
   PROCESS_INFORMATION pi;
 
   bool rv = CreateProcess(alt_browser_path_.c_str(), const_cast<LPWSTR>(new_command_line.c_str()), NULL, NULL, TRUE, CREATE_BREAKAWAY_FROM_JOB, NULL, NULL, &si, &pi);
-  if (rv) {
+  if (rv == 0) {
     LOG(ERR) << "Could not start the alternative browser! Handle: "
              << rv << " " << ::GetLastError() << std::endl;
     return false;
@@ -195,7 +195,7 @@ bool BrowserSwitcherCore::InvokeFirefox(const std::wstring& url) const {
   PROCESS_INFORMATION pi;
 
   bool rv = CreateProcess(firefox_path_.c_str(), const_cast<LPWSTR>(new_command_line.c_str()), NULL, NULL, TRUE, CREATE_BREAKAWAY_FROM_JOB, NULL, NULL, &si, &pi);
-  if (rv) {
+  if (rv == 0) {
     LOG(ERR) << "Could not start Firefox! Handle: " << rv
                 << " " << ::GetLastError() << std::endl;
     return false;
