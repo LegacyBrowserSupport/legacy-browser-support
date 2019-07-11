@@ -65,7 +65,7 @@ extern "C" BOOL WINAPI DllMain(HINSTANCE instance,
           break;
         log_file_path = path;
       }
-      ::CreateDirectory(log_file_path.append(L"\\Google").c_str(), NULL);
+      ::CreateDirectory(log_file_path.append(L"\\Mozilla").c_str(), NULL);
       ::CreateDirectory(log_file_path.append(L"\\BrowserSwitcher").c_str(),
                         NULL);
       log_file_path.append(L"\\ie_bho_log.txt");

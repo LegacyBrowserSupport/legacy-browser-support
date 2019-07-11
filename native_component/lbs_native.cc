@@ -172,7 +172,7 @@ int _tmain(int argc, _TCHAR* argv[]) {
   wchar_t path[MAX_PATH];
   if (::SHGetSpecialFolderPath(0, path, CSIDL_LOCAL_APPDATA, false)) {
     std::wstring log_file_path(path);
-    ::CreateDirectory(log_file_path.append(L"\\Google").c_str(), NULL);
+    ::CreateDirectory(log_file_path.append(L"\\Mozilla").c_str(), NULL);
     ::CreateDirectory(log_file_path.append(L"\\BrowserSwitcher").c_str(), NULL);
     log_file_path.append(L"\\native_log.txt");
     InitLog(log_file_path.c_str());

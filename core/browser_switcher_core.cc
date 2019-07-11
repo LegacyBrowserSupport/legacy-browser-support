@@ -787,7 +787,7 @@ const std::wstring BrowserSwitcherCore::GetConfigPath() const {
     return config_path;
   }
   config_path.assign(path);
-  ::CreateDirectory(config_path.append(L"\\Google").c_str(), NULL);
+  ::CreateDirectory(config_path.append(L"\\Mozilla").c_str(), NULL);
   ::CreateDirectory(config_path.append(L"\\BrowserSwitcher").c_str(),
                     NULL);
   return config_path;

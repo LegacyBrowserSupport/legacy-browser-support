@@ -44,7 +44,7 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "Google Inc"
+            VALUE "CompanyName", "Mozilla Corp."
             VALUE "FileVersion", VERSION_NUMBER
             VALUE "InternalName", "lbs_native_host.exe"
             VALUE "OriginalFilename", "lbs_native_host.dll"

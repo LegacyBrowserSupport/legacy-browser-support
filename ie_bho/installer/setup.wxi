@@ -145,7 +145,7 @@
                    Name="NoExplorer" Value="1" Type="integer" Action="write" />
                 <RegistryValue
                    Root="HKLM"
-                   Key="SOFTWARE\Google\LegacyBrowserSupport"
+                   Key="SOFTWARE\Mozilla\LegacyBrowserSupport"
                    Name="Active" Value="1" Type="integer" Action="write" />
               </Component>
             </Directory>
