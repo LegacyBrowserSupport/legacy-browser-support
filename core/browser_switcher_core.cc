@@ -167,12 +167,18 @@ bool BrowserSwitcherCore::InvokeAlternativeBrowser(
 
   std::wstring command_line =
       CompileCommandLine(GetAlternativeBrowserParameters(), url);
-  HINSTANCE browser_instance =
-      ::ShellExecute(NULL, NULL, alt_browser_path_.c_str(),
-                     command_line.c_str(), NULL, SW_SHOWNORMAL);
-  if (reinterpret_cast<int>(browser_instance) <= 32) {
+
+  std::wstring new_command_line = L"";
+  new_command_line.append(L"\"").append(alt_browser_path_.c_str()).append(L"\"");
+  new_command_line.append(L" ").append(command_line.c_str());
+
+  STARTUPINFO si = { sizeof(si) };
+  PROCESS_INFORMATION pi;
+
+  bool rv = CreateProcess(alt_browser_path_.c_str(), const_cast<LPWSTR>(new_command_line.c_str()), NULL, NULL, TRUE, CREATE_BREAKAWAY_FROM_JOB, NULL, NULL, &si, &pi);
+  if (rv) {
     LOG(ERR) << "Could not start the alternative browser! Handle: "
-             << browser_instance << " " << ::GetLastError() << std::endl;
+             << rv << " " << ::GetLastError() << std::endl;
     return false;
   }
   return true;
@@ -180,11 +186,17 @@ bool BrowserSwitcherCore::InvokeAlternativeBrowser(
 
 bool BrowserSwitcherCore::InvokeFirefox(const std::wstring& url) const {
   std::wstring command_line = CompileCommandLine(GetFirefoxParameters(), url);
-  HINSTANCE browser_instance =
-      ::ShellExecute(NULL, NULL, firefox_path_.c_str(),
-                     command_line.c_str(), NULL, SW_SHOWNORMAL);
-  if (reinterpret_cast<int>(browser_instance) <= 32) {
-    LOG(ERR) << "Could not start Firefox! Handle: " << browser_instance
+
+  std::wstring new_command_line = L"";
+  new_command_line.append(L"\"").append(firefox_path_.c_str()).append(L"\"");
+  new_command_line.append(L" ").append(command_line.c_str());
+
+  STARTUPINFO si = { sizeof(si) };
+  PROCESS_INFORMATION pi;
+
+  bool rv = CreateProcess(firefox_path_.c_str(), const_cast<LPWSTR>(new_command_line.c_str()), NULL, NULL, TRUE, CREATE_BREAKAWAY_FROM_JOB, NULL, NULL, &si, &pi);
+  if (rv) {
+    LOG(ERR) << "Could not start Firefox! Handle: " << rv
                 << " " << ::GetLastError() << std::endl;
     return false;
   }
