@@ -564,7 +564,7 @@ function handleMessage(request, sender, sendResponse) {
       break;
     case "urlNeedsRedirect":
       let urlNeedsRedirect = extension.urlNeedsRedirect(request.url);
-      sendResponse({urlNeedsRedirect, show_transition_screen: extension.show_transition_screen});
+      sendResponse({urlNeedsRedirect, show_transition_screen: extension.show_transition_screen, tabID: sender.tab.id});
       break;
     case "invokeAlternativeBrowser":
       extension.invokeAlternativeBrowser(request.url, function(msg) {
@@ -578,17 +578,19 @@ function handleMessage(request, sender, sendResponse) {
                 if (window.type === "popup") {
                   chrome.windows.remove(window.id);
                 }
-                chrome.tabs.query({active: true}, function(tabs) {
-                  let tab = tabs[0];
-                  chrome.windows.getAll(function(windows) {
-                    if (!extension.keep_last_firefox_tab || window.tabs.length > 1
-                        || windows.filter(isNormalWindow).length > 1) {
-                      chrome.tabs.remove(tab.id);
-                    } else {
-                      chrome.tabs.create({});
-                      chrome.tabs.remove(tab.id);
-                    }
-                  });
+                let actionURL = browser.runtime.getURL("action.html") + "#" + request.url;
+                chrome.tabs.get(request.tabID, function(tab) {
+                  if (tab && tab.url == actionURL) {
+                    chrome.windows.getAll(function(windows) {
+                      if (!extension.keep_last_firefox_tab || window.tabs.length > 1
+                          || windows.filter(isNormalWindow).length > 1) {
+                        chrome.tabs.remove(tab.id);
+                      } else {
+                        chrome.tabs.create({});
+                        chrome.tabs.remove(tab.id);
+                      }
+                    });
+                  }
                 });
               });
         } else {

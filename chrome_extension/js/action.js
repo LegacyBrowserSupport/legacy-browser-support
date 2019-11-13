@@ -67,7 +67,7 @@ function invokeFinished(msg) {
     let response = await browser.runtime.sendMessage({msg: "urlNeedsRedirect", url});
     if (response.urlNeedsRedirect) {
       setTimeout((async() => {
-        let innerResponse = await browser.runtime.sendMessage({msg: "invokeAlternativeBrowser", url});
+        let innerResponse = await browser.runtime.sendMessage({msg: "invokeAlternativeBrowser", url, tabID: response.tabID});
         invokeFinished(innerResponse);
       }), response.show_transition_screen * 1000);
       // Start the countdown timer in the UI if needed.
